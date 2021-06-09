@@ -1,0 +1,9 @@
+.outer {
+    width: 100%;
+
+    .inner {
+        max-width: 1240px;
+        margin: auto;
+        position: relative;
+    }
+}

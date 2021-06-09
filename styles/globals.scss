@@ -1,0 +1,25 @@
+@import "page.scss";
+@import "fonts.scss";
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: 'SharpGrotesk';
+    font-display: swap;
+    src: local('SharpGrotesk'), url("/fonts/SharpGroteskDBMedium20.ttf") format('truetype');
+}
+
