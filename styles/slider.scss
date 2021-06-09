@@ -1,0 +1,14 @@
+.slick-slide {
+    margin: 0 10px;
+
+    img {
+        filter: grayscale(100%);
+    }
+}
+
+.slick-center {
+
+    img {
+        filter: none;
+    }
+}

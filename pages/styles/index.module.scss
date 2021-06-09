@@ -1,3 +1,17 @@
+.strip {
+    height: 56px;
+    background: black;
+}
+
+.skinCareOuter {
+
+}
+
+.servicesOuter {
+    background: #EEEADD;
+}
+
+
 .skinCare {
     padding: 128px 0;
 
@@ -13,7 +27,8 @@
 
 
         div {
-            width: 900px;
+            max-width: 900px;
+            width: 80%;
             min-height: 900px;
             background: gray;
         }
@@ -31,4 +46,230 @@
     }
 
 
+}
+
+.skinCarePhil {
+    display: flex;
+    justify-content: space-between;
+    padding: 160px 0;
+
+    .scLeft {
+        margin-right: 106px;
+    }
+
+    .scRight {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 528px;
+
+        h2 {
+            margin-bottom: 53px;
+        }
+
+        p {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.sayHelloOuter {
+    background: #EEEADD;
+    border-bottom: 1px solid black;
+}
+
+.sayHello {
+    display: flex;
+    flex-direction: column;
+    padding: 160px 0;
+
+    .shTop {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 113px;
+
+        h2 {
+            margin-right: 56px;
+            font-size: 60px;
+            text-transform: uppercase;
+            margin-top: -10px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            width: 530px;
+
+            p {
+                margin-bottom: 36px;
+            }
+        }
+    }
+
+    .scBottom {
+        display: flex;
+        flex-direction: column;
+
+        img {
+            margin-bottom: 65px;
+        }
+
+        header {
+            text-transform: uppercase;
+        }
+
+    }
+}
+
+
+.slidersOuter {
+    background: black;
+}
+
+.sliders {
+    padding: 128px 0;
+
+    .desc {
+        width: 878px;
+        margin: auto auto 219px;
+        font-size: 22px;
+        color: #C4C4C4;
+    }
+
+    .slide {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        margin-right: 60px;
+
+        img {
+            margin-right: 60px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 263px;
+
+            h3 {
+                margin-bottom: 28px;
+            }
+
+            p {
+                margin-bottom: 60px;
+            }
+
+
+            div {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+
+                img {
+                    margin-right: 10px;
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+    }
+}
+
+
+.welcomeToGlowOuter {
+    background: black;
+    border-top: 1px solid white;
+}
+
+.welcomeToGlow {
+    padding: 180px 0;
+
+    video {
+        width: 100%
+    }
+}
+
+
+.glowEditOuter {
+    background: white;
+}
+
+.glowEdit {
+    .scRight {
+        h2 {
+            font-size: 48px;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .skinCarePhil {
+        padding: 80px 0;
+
+        .scLeft {
+            margin-right: 50px;
+        }
+
+        .scRight {
+            width: 528px;
+            min-height: 521px;
+        }
+    }
+
+    .sayHello {
+        padding: 80px 0;
+
+
+        .shTop {
+            margin-bottom: 85px;
+
+            h2 {
+                margin-right: 36px;
+                font-size: 40px;
+            }
+        }
+    }
+
+}
+
+
+@media only screen and (max-width: 648px) {
+    .skinCarePhil {
+        flex-direction: column;
+        padding: 35px 0;
+
+        .scLeft {
+            margin-right: 0;
+            height: 200px;
+            margin-bottom: 50px;
+        }
+
+        .scRight {
+            width: 100%;
+            min-height: 380px;
+        }
+    }
+
+    .sayHello {
+        padding: 35px 0;
+
+        .shTop {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+
+
+            h2 {
+                margin-right: 0;
+                margin-bottom: 35px;
+            }
+
+            div {
+                width: 100%;
+            }
+        }
+    }
 }
