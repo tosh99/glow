@@ -12,3 +12,105 @@ p {
 @media only screen and (max-width: 1024px) {
 
 }
+
+@font-face {
+    font-family: 'EmpireBold';
+    font-display: swap;
+    src: local('EmpireBold'), url("/fonts/EmpireBold.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'EmpireRegular';
+    font-display: swap;
+    src: local('EmpireRegular'), url("/fonts/EmpireRegular.otf") format('opentype');
+}
+
+
+@font-face {
+    font-family: 'HattonUltraLight';
+    font-display: swap;
+    src: local('HattonUltraLight'), url("/fonts/HattonUltraLight.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'HattonLight';
+    font-display: swap;
+    src: local('HattonLight'), url("/fonts/HattonLight.otf") format('opentype');
+}
+
+
+@font-face {
+    font-family: 'HattonRegular';
+    font-display: swap;
+    src: local('HattonRegular'), url("/fonts/HattonRegular.otf") format('opentype');
+}
+
+
+@font-face {
+    font-family: 'HattonMedium';
+    font-display: swap;
+    src: local('HattonMedium'), url("/fonts/HattonMedium.otf") format('opentype');
+}
+
+
+@font-face {
+    font-family: 'OggItalic';
+    font-display: swap;
+    src: local('OggItalic'), url("/fonts/OggItalic.otf") format('opentype');
+}
+
+
+@font-face {
+    font-family: 'OggRegular';
+    font-display: swap;
+    src: local('OggRegular'), url("/fonts/OggRegular.otf") format('opentype');
+}
+
+
+@font-face {
+    font-family: 'SaolRegular';
+    font-display: swap;
+    src: local('SaolRegular'), url("/fonts/SaolRegular.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'SaolBold';
+    font-display: swap;
+    src: local('SaolBold'), url("/fonts/SaolBold.otf") format('opentype');
+}
+
+
+@font-face {
+    font-family: 'SaolBoldItalic';
+    font-display: swap;
+    src: local('SaolBoldItalic'), url("/fonts/SaolBoldItalic.otf") format('opentype');
+}
+
+
+@font-face {
+    font-family: 'SaolRegularItalic';
+    font-display: swap;
+    src: local('SaolRegularItalic'), url("/fonts/SaolRegularItalic.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'TelegrafUltraLight';
+    font-display: swap;
+    src: local('TelegrafUltraLight'), url("/fonts/TelegrafUltraLight.otf") format('opentype');
+}
+
+
+@font-face {
+    font-family: 'TelegrafRegular';
+    font-display: swap;
+    src: local('TelegrafRegular'), url("/fonts/TelegrafRegular.otf") format('opentype');
+}
+
+
+@font-face {
+    font-family: 'TelegrafUltraBold';
+    font-display: swap;
+    src: local('TelegrafUltraBold'), url("/fonts/TelegrafUltraBold.otf") format('opentype');
+}
+
+

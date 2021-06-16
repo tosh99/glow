@@ -7,42 +7,48 @@
 
 }
 
-.servicesOuter {
-    background: #EEEADD;
-}
-
-
 .skinCare {
     padding: 128px 0;
 
     h1 {
         position: absolute;
+        font-family: EmpireBold, sans-serif;
+        text-transform: uppercase;
+        font-size: 160px;
+        line-height: 110%;
+        letter-spacing: 0.12em;
+        margin-top: -20px;
     }
 
     .img {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
         margin-bottom: 130px;
 
+        .imgRight {
+            div {
+                width: 958px;
+                min-height: 900px;
+                background: gray;
+                margin-bottom: 130px;
+            }
 
-        div {
-            max-width: 900px;
-            width: 80%;
-            min-height: 900px;
-            background: gray;
+            p {
+                max-width: 663px;
+                font-size: 18px;
+                margin-bottom: 60px;
+                font-family: TelegrafRegular;
+                line-height: 150%;
+            }
+
+            .reju {
+                font-family: SaolRegularItalic;
+                line-height: 151.8%;
+                letter-spacing: 2px;
+            }
         }
-    }
 
-    .desc {
-        max-width: 663px;
-        font-size: 18px;
-        margin-bottom: 60px;
-    }
 
-    .reju {
-        max-width: 663px;
-        font-size: 18px;
     }
 
 
@@ -65,10 +71,29 @@
 
         h2 {
             margin-bottom: 53px;
+            font-family: EmpireBold, sans-serif;
+            font-size: 80px;
+            line-height: 107.6%;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         p {
             margin-bottom: 50px;
+            font-family: TelegrafRegular;
+            line-height: 150%;
+        }
+
+        .identity {
+            font-family: SaolRegularItalic;
+            line-height: 151.8%;
+            letter-spacing: 1.5px;
+        }
+
+        header {
+            font-family: OggItalic;
+            font-size: 20px;
+            cursor: pointer;
         }
     }
 }
@@ -90,9 +115,12 @@
 
         h2 {
             margin-right: 56px;
-            font-size: 60px;
             text-transform: uppercase;
             margin-top: -10px;
+            font-family: EmpireBold, sans-serif;
+            font-size: 120px;
+            line-height: 100%;
+            letter-spacing: 0.11em;
         }
 
         div {
@@ -102,6 +130,15 @@
 
             p {
                 margin-bottom: 36px;
+                letter-spacing: 0.04em;
+                line-height: 23px;
+                font-family: TelegrafRegular;
+            }
+
+            .selfcare {
+                font-family: SaolRegularItalic;
+                line-height: 151.8%;
+                letter-spacing: 2px;
             }
         }
     }
@@ -116,8 +153,26 @@
 
         header {
             text-transform: uppercase;
+            font-family: HattonMedium;
+            font-size: 20px;
+            line-height: 155.5%;
+            letter-spacing: 0.06em;
+            cursor: pointer;
         }
 
+    }
+}
+
+.servicesOuter {
+    background: #EEEADD;
+}
+
+.services {
+    .scRight {
+        h2 {
+            font-size: 120px;
+            letter-spacing: 0.07em;
+        }
     }
 }
 
@@ -132,8 +187,11 @@
     .desc {
         width: 878px;
         margin: auto auto 219px;
-        font-size: 22px;
         color: #C4C4C4;
+        font-family: SaolRegularItalic;
+        font-size: 32px;
+        line-height: 140%;
+        letter-spacing: 2px;
     }
 
     .slide {
@@ -154,10 +212,20 @@
 
             h3 {
                 margin-bottom: 28px;
+                font-family: SaolBold;
+                font-size: 24px;
+                color: #EEEADD;
+
+                span {
+
+                }
             }
 
             p {
                 margin-bottom: 60px;
+                font-family: TelegrafRegular;
+                line-height: 150%;
+                color: #C4C4C4;
             }
 
 
@@ -177,10 +245,9 @@
     }
 }
 
-
 .welcomeToGlowOuter {
     background: black;
-    border-top: 1px solid white;
+    border-top: 1px solid #010101;
 }
 
 .welcomeToGlow {
@@ -191,7 +258,6 @@
     }
 }
 
-
 .glowEditOuter {
     background: white;
 }
@@ -199,11 +265,10 @@
 .glowEdit {
     .scRight {
         h2 {
-            font-size: 48px;
+            font-size: 140px;
         }
     }
 }
-
 
 @media only screen and (max-width: 1024px) {
     .skinCarePhil {

@@ -1,0 +1,144 @@
+.bodyOuter {
+    background: #EEEADD;
+}
+
+.body {
+    padding: 160px 0;
+    display: flex;
+
+    .bLeft {
+        width: 100%;
+        max-width: 450px;
+        margin-right: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        div {
+            h1 {
+                font-family: EmpireBold, sans-serif;
+                text-transform: uppercase;
+                margin-bottom: 134px;
+                font-size: 160px;
+                line-height: 100%;
+                letter-spacing: 0.07em;
+                margin-top: -12px;
+            }
+
+            p {
+                font-family: SaolRegularItalic;
+                font-size: 24px;
+                line-height: 168%;
+                letter-spacing: 0.05em;
+            }
+        }
+
+
+        header {
+            text-transform: uppercase;
+            font-family: HattonMedium;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    }
+
+    .bRight {
+        width: 100%;
+        max-width: 742px;
+
+        .slide {
+            img {
+                margin-bottom: 35px;
+            }
+        }
+    }
+}
+
+
+.productDescOuter {
+    border-bottom: 1px solid black;
+}
+
+.productDesc {
+    padding: 111px 0;
+
+    p {
+        font-family: SaolRegularItalic;
+        font-size: 32px;
+        line-height: 140%;
+        letter-spacing: 2px;
+    }
+}
+
+.currentFavouritesOuter {
+    padding: 120px 0 0;
+
+}
+
+.currentFavourites {
+    .cfHeader {
+        display: flex;
+        margin-bottom: 70px;
+
+        h2 {
+            font-family: HattonMedium;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+    }
+
+    .cfSlide {
+        margin-right: 20px;
+    }
+
+}
+
+.shopMyShelfieOuter {
+
+}
+
+.shopMyShelfie {
+    padding: 209px 0 181px 0;
+    display: flex;
+
+    .smLeft {
+        width: 100%;
+        max-width: 540px;
+        margin-right: 50px;
+
+
+        h2 {
+            font-family: EmpireBold, sans-serif;
+            font-size: 120px;
+            line-height: 100%;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-top: -7px;
+        }
+    }
+
+    .smRight {
+        width: 100%;
+
+        p {
+            margin-bottom: 40px;
+            font-family: TelegrafRegular;
+            font-size: 20px;
+            line-height: 150%;
+            letter-spacing: 0.05em;
+        }
+
+        header {
+            font-family: HattonMedium;
+            font-size: 24px;
+            line-height: 155.5%;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+
+        }
+
+
+    }
+
+}
