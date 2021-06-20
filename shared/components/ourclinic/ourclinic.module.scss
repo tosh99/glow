@@ -1,0 +1,66 @@
+.visitUsOuter {
+    background: black;
+}
+
+.visitUs {
+    padding: 133px 0;
+
+    .vuHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        color: #FFFFFF;
+        margin-bottom: 70px;
+
+        h2 {
+            font-family: EmpireBold;
+            font-size: 80px;
+            line-height: 98.1%;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
+
+        header {
+            font-family: OggItalic;
+            font-size: 18px;
+            line-height: 143%;
+        }
+    }
+
+    .vuMap {
+        margin-bottom: 58px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .vuAddress {
+        display: flex;
+        justify-content: space-between;
+
+        .vuaLeft {
+            font-family: HattonRegular;
+
+            h3 {
+                font-size: 24px;
+                line-height: 186.3%;
+                letter-spacing: 1px;
+                color: #EEEADD;
+            }
+
+            header {
+                font-size: 16px;
+                line-height: 123.8%;
+                letter-spacing: 0.5px;
+                color: #C4C4C4;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 648px) {
+    .visitUs {
+        padding: 50px 0;
+    }
+}

@@ -135,10 +135,97 @@
             line-height: 155.5%;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-
         }
 
 
     }
 
+}
+
+.slidersOuter {
+    background: black;
+}
+
+.sliders {
+    padding: 128px 0;
+
+    .desc {
+        width: 878px;
+        margin: auto auto 219px;
+        color: #C4C4C4;
+        font-family: SaolRegularItalic;
+        font-size: 32px;
+        line-height: 140%;
+        letter-spacing: 2px;
+    }
+
+    .slide {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        margin-right: 60px;
+        position: relative;
+
+        .title {
+            position: absolute;
+            width: 199px;
+            font-family: EmpireBold;
+            font-size: 160px;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            height: 100%;
+        }
+
+
+        img {
+            margin-right: 60px;
+        }
+
+        .banner {
+            margin-left: 199px;
+        }
+
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 263px;
+
+            h3 {
+                margin-bottom: 28px;
+                font-family: SaolBold;
+                font-size: 24px;
+                color: #EEEADD;
+
+                span {
+
+                }
+            }
+
+            p {
+                margin-bottom: 60px;
+                font-family: TelegrafRegular;
+                line-height: 150%;
+                color: #C4C4C4;
+                height: 300px;
+            }
+
+
+            div {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+
+                img {
+                    margin-right: 10px;
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+    }
 }

@@ -1,0 +1,41 @@
+@import 'index.module.scss';
+
+.advocacyOuter {
+    background: #EEEADD;
+}
+
+.advocacy {
+    padding-top: 118px;
+    padding-bottom: 139px;
+
+
+    header {
+        font-family: Poppins;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+
+    p {
+        font-family: SaolRegularItalic;
+        font-size: 54px;
+        line-height: 70px;
+        letter-spacing: 0.02em;
+    }
+
+}
+
+.journey {
+    .joLeft {
+
+
+        h2 {
+            font-size: 120px;
+            line-height: 120px;
+            letter-spacing: 0.05em;
+        }
+    }
+}

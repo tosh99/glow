@@ -1,0 +1,39 @@
+.headerOuter {
+
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px 0;
+    border-bottom: 0.5px solid #000000;
+
+    .hLeft {
+        img {
+            cursor: pointer;
+        }
+    }
+
+    .hRight {
+        display: flex;
+
+
+        header {
+            margin-left: 36px;
+            line-height: 20px;
+            letter-spacing: 0.02em;
+            font-family: HattonRegular;
+            cursor: pointer;
+        }
+
+        p {
+            margin-left: 86px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-family: HattonMedium;
+            cursor: pointer;
+        }
+    }
+
+}

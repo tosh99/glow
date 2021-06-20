@@ -4,6 +4,8 @@ import {Fragment, useEffect, useState} from "react";
 import Slider from "react-slick";
 import {motion} from "framer-motion"
 import {InView, useInView} from 'react-intersection-observer';
+import Ourclinic from "../shared/components/ourclinic/ourclinic";
+import HomePageHeader from "../shared/components/home-page-header/home-page-header";
 
 export default function Home() {
     const settings = {
@@ -13,22 +15,52 @@ export default function Home() {
         adaptiveHeight: true,
         variableWidth: true,
         arrows: false,
-        autoplay: true,
-        autoplaySpeed: 2000,
+        autoplay: false,
+        autoplaySpeed: 4000,
+        beforeChange: (current, next) => {
+            set_current_slide(next)
+        },
     };
 
+    const [current_slide, set_current_slide] = useState(0);
+
+
     const [slider, setslider] = useState();
-    const rtl = [1, 2, 3, 4, 5, 6, 7];
+    const carousel_content = [
+        {
+            title: 'Body',
+            content: 'A range of hand-picked brands for the best of body care products that are made with clean, active ingredients and are result-driven. Taking care of your body is equally rewarding.'
+        },
+        {
+            title: 'Hair',
+            content: 'Give your hair care routine a bump onto the next level. Whether it is finding the right products for your hair type and concern or adding some lovely serums for that extra bounce, we’ve curated an array of products for each and every one of your needs.'
+        },
+        {
+            title: 'Skincare',
+            content: 'Whether you’re a beginner or a skincare enthusiast, we have something for you all. Choose from our repertoire of curated skincare products that have acquired a cult status for their new-age formulations and are targeted towards lasting skincare benefits. A healthy glow awaits you.'
+        },
+        {
+            title: 'Supplements',
+            content: 'At Glow, we promote overall well-being for healthy skin and hair. Find supplements that come recommended for a glow that’s from within.'
+        },
+        {
+            title: 'Tools',
+            content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.'
+        }
+    ];
 
     return (
         <Fragment>
+            <HomePageHeader/>
             <div className={"outer " + styles.skinCareOuter}>
                 <div className={"inner " + styles.skinCare}>
                     <h1>Experience a new <br/> kind of skincare <br/> indulgence</h1>
                     <div className={styles.img}>
                         <div>&nbsp;</div>
                         <div className={styles.imgRight}>
-                            <div>&nbsp;</div>
+                            <div>
+                                <img src={'images/home/banner.png'}/>
+                            </div>
                             <p>Your skin changes with age, diet, weather, lifestyle choices and your state of mind. At every turning point, you need to check in with your skin.
                                 At Glow, we don’t categorise you into a skin type. We consult with you to get to know your skin and then proceed with a personalised service.
                             </p>
@@ -169,16 +201,41 @@ export default function Home() {
                         setslider(slider)
                     }} {...settings}>
                         {
-                            rtl.map((item, index) => {
+                            carousel_content.map((item, index) => {
                                 return (<Fragment>
                                     <div className={styles.slide}>
-                                        <img className={"gr"} src={'images/home/slider-' + (index + 1) + '.png'}/>
-                                        <div>
-                                            <h3>0{index + 1} / <span>0{rtl.length}</span></h3>
-                                            <p>Whether you’re a beginner or a skincare enthusiast, we have something for you all.
-                                                Choose from our repertoire of curated skincare products that have been praised and given a cult status for
-                                                their new-age formulations, therapies and lasting skincare benefits. A healthy glow awaits you</p>
+                                        {
+                                            current_slide === index &&
+                                            <InView threshold={0}>
+                                                {
+                                                    ({ref, inView}) => (
+                                                        <motion.div className={styles.title}
+                                                                    ref={ref}
+                                                                    initial={{opacity: 0}}
+                                                                    animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                    transition={{duration: 0.7}}>
+                                                            {item.title}
+                                                        </motion.div>)
+                                                }
+                                            </InView>
+                                        }
 
+                                        <img className={"gr " + (current_slide === index ? styles.banner : '')} src={'images/home/slider-' + (index + 1) + '.png'}/>
+                                        <div>
+                                            <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
+                                            <p>{item.content}</p>
+                                            <InView threshold={0}>
+                                                {
+                                                    ({ref, inView}) => (
+                                                        <motion.div className={styles.titleM}
+                                                                    ref={ref}
+                                                                    initial={{opacity: 0}}
+                                                                    animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                    transition={{duration: 0.7}}>
+                                                            {item.title}
+                                                        </motion.div>)
+                                                }
+                                            </InView>
                                             <div>
                                                 <img src={'icons/back.svg'} onClick={() => {
                                                     slider.slickPrev()
@@ -198,38 +255,86 @@ export default function Home() {
             </div>
 
 
-            <div className={"outer " + styles.welcomeToGlowOuter}>
-                <div className={"inner " + styles.welcomeToGlow}>
-                    <video controls>
-                        <source src="movie.mp4" type="video/mp4"/>
-                        <source src="movie.ogg" type="video/ogg"/>
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
+            {/*<div className={"outer " + styles.welcomeToGlowOuter}>*/}
+            {/*    <div className={"inner " + styles.welcomeToGlow}>*/}
+            {/*        <video controls>*/}
+            {/*            <source src="movie.mp4" type="video/mp4"/>*/}
+            {/*            <source src="movie.ogg" type="video/ogg"/>*/}
+            {/*            Your browser does not support the video tag.*/}
+            {/*        </video>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
 
-            <div className={"outer " + ' ' + styles.glowEditOuter}>
-                <div className={"inner " + styles.skinCarePhil + ' ' + styles.glowEdit}>
-                    <div className={styles.scLeft}>
-                        <img src={'images/home/glowedit.png'}/>
-                    </div>
-                    <div className={styles.scRight}>
-                        <div>
-                            <h2>The <br/>Glow Edit</h2>
-                            <p>Dr. Varshini Reddy started Glow as a skincare destination that could serve as a clinic, medispa and a rest stop for you to
-                                indulge in some self-care. Apart from being a dermatologist, she is also a skincare
-                                enthusiast who is here to share all her clinical know-how and experience.
-                                Let's cover our bases with all the basic information everyone just assumes you know. At Glow, we want to enlighten you so
-                                you can make an informed decision. A Holy-Glow-Grail to guide you on your journey to
-                                clinical skincare, beauty and wellness.
-                            </p>
+            <InView threshold={0.25} triggerOnce={true}>
+                {
+                    ({ref, inView}) => (
+                        <motion.div className={"outer " + ' ' + styles.glowEditOuter}
+                                    ref={ref}
+                                    initial={{opacity: 0}}
+                                    animate={inView ? {opacity: 1} : {opacity: 0}}
+                                    transition={{duration: 0.8}}>
+                            <div className={"inner " + styles.skinCarePhil + ' ' + styles.glowEdit}>
+                                <div className={styles.scLeft}>
+                                    <img src={'images/home/glowedit.png'}/>
+                                </div>
+                                <div className={styles.scRight}>
+                                    <div>
+                                        <h2>The <br/>Glow Edit</h2>
+                                        <p>Dr. Varshini Reddy started Glow as a skincare destination that could serve as a clinic, medispa and a rest stop for you to
+                                            indulge in some self-care. Apart from being a dermatologist, she is also a skincare
+                                            enthusiast who is here to share all her clinical know-how and experience.
+                                            Let's cover our bases with all the basic information everyone just assumes you know. At Glow, we want to enlighten you so
+                                            you can make an informed decision. A Holy-Glow-Grail to guide you on your journey to
+                                            clinical skincare, beauty and wellness.
+                                        </p>
 
-                        </div>
+                                    </div>
 
-                        <header>find articles</header>
-                    </div>
-                </div>
-            </div>
+                                    <header>find articles</header>
+                                </div>
+                            </div>
+                        </motion.div>)
+                }
+            </InView>
+
+            <Ourclinic/>
+
+            <InView threshold={0.25} triggerOnce={true}>
+                {
+                    ({ref, inView}) => (
+                        <motion.div className={"outer " + ' ' + styles.journeyOuter}
+                                    ref={ref}
+                                    initial={{opacity: 0}}
+                                    animate={inView ? {opacity: 1} : {opacity: 0}}
+                                    transition={{duration: 0.8}}>
+                            <div className={"inner " + styles.journey}>
+                                <div className={styles.joLeft}>
+                                    <h2>Shedding Light on Dr.Varshini’s Journey</h2>
+
+                                    <div>
+                                        {/* Font Specification */}
+                                        <p>dr. Varshini reddy</p>
+                                        <header>MD Dermatology</header>
+                                    </div>
+                                </div>
+                                <div className={styles.joRight}>
+                                    <img src={'images/home/varshini.png'}/>
+                                    <p>At Glow, we wanted to promote skin, beauty and wellness as ideologies that go hand-in-hand. Having studied MD
+                                        Dermatology and been around the globe to learn about new-age technologies in the world of skincare, Dr.
+                                        Varshini Reddy wanted to bring the best of those to India. Her journey has been exciting and full of new
+                                        learnings which took her from being a skincare enthusiast to a practicing dermatologist.</p>
+                                    <p>She has consulted with many people over the course of years and has distinguished herself as an advocate for wholesome rejuvenation.
+                                        With an established and ever-growing
+                                        clientbase she has extended her platform to a larger audience and opened doors to Glow, a contemporary space for skin indulgence.</p>
+                                    <header>read more</header>
+                                </div>
+
+                            </div>
+                        </motion.div>)
+                }
+            </InView>
+
+
         </Fragment>
     )
 }

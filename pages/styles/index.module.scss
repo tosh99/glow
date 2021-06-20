@@ -23,14 +23,14 @@
     .img {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 130px;
 
         .imgRight {
             div {
-                width: 958px;
-                min-height: 900px;
-                background: gray;
                 margin-bottom: 130px;
+
+                img {
+                    width: 100%;
+                }
             }
 
             p {
@@ -61,6 +61,10 @@
 
     .scLeft {
         margin-right: 106px;
+
+        img {
+            width: 100%;
+        }
     }
 
     .scRight {
@@ -176,7 +180,6 @@
     }
 }
 
-
 .slidersOuter {
     background: black;
 }
@@ -185,8 +188,9 @@
     padding: 128px 0;
 
     .desc {
-        width: 878px;
+        max-width: 978px;
         margin: auto auto 219px;
+        padding: 0 50px;
         color: #C4C4C4;
         font-family: SaolRegularItalic;
         font-size: 32px;
@@ -199,9 +203,30 @@
         justify-content: space-between;
         color: white;
         margin-right: 60px;
+        position: relative;
+
+        .title {
+            position: absolute;
+            width: 199px;
+            font-family: EmpireBold;
+            font-size: 160px;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            height: 100%;
+        }
+
+        .titleM {
+            display: none;
+        }
 
         img {
             margin-right: 60px;
+        }
+
+        .banner {
+            margin-left: 199px;
         }
 
         div {
@@ -226,6 +251,7 @@
                 font-family: TelegrafRegular;
                 line-height: 150%;
                 color: #C4C4C4;
+                height: 300px;
             }
 
 
@@ -270,9 +296,80 @@
     }
 }
 
+.journeyOuter {
+
+}
+
+.journey {
+    padding: 140px 0;
+    display: flex;
+    justify-content: space-between;
+
+    .joLeft {
+        margin-right: 30px;
+
+        h2 {
+            font-family: EmpireBold;
+            font-size: 160px;
+            line-height: 180px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            height: 783px;
+        }
+
+        div {
+            border-top: 1px solid black;
+            padding-top: 60px;
+            width: 90%;
+
+            p {
+                text-transform: uppercase;
+            }
+
+            header {
+
+            }
+        }
+    }
+
+    .joRight {
+        width: 100%;
+        max-width: 498px;
+
+        img {
+            margin-bottom: 70px;
+            width: 100%;
+        }
+
+        p {
+            font-family: TelegrafRegular;
+            font-size: 18px;
+            line-height: 150%;
+            margin-bottom: 18px;
+        }
+
+        p:last-of-type {
+            margin-bottom: 56px;
+        }
+
+        header {
+            font-family: OggItalic;
+            font-size: 20px;
+            line-height: 143%;
+            cursor: pointer;
+        }
+    }
+
+}
+
+
 @media only screen and (max-width: 1024px) {
+    .skinCare {
+        padding: 100px 0;
+    }
+
     .skinCarePhil {
-        padding: 80px 0;
+        padding: 100px 0;
 
         .scLeft {
             margin-right: 50px;
@@ -285,16 +382,46 @@
     }
 
     .sayHello {
-        padding: 80px 0;
-
+        padding: 100px 0;
 
         .shTop {
             margin-bottom: 85px;
 
             h2 {
                 margin-right: 36px;
-                font-size: 40px;
             }
+        }
+    }
+
+    .services {
+        .scRight {
+            h2 {
+                font-size: 100px;
+                line-height: 107.6%;
+            }
+        }
+    }
+
+
+    .sliders {
+        padding: 100px 0;
+    }
+
+    .journey {
+    }
+
+    .journey {
+        padding: 100px 0;
+
+        .joLeft {
+            margin-bottom: 35px;
+
+            h2 {
+                font-size: 100px;
+                line-height: 107.6%;
+                height: 565px;
+            }
+
         }
     }
 
@@ -302,13 +429,36 @@
 
 
 @media only screen and (max-width: 648px) {
+    .skinCare {
+        padding: 50px 0;
+
+        h1 {
+            font-size: 80px;
+            margin-top: -10px;
+        }
+
+        .img {
+            margin-bottom: 0;
+
+            .imgRight {
+                div {
+                    margin-bottom: 60px;
+                }
+
+                .reju {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+
     .skinCarePhil {
         flex-direction: column;
-        padding: 35px 0;
+        padding: 50px 0;
 
         .scLeft {
             margin-right: 0;
-            height: 200px;
             margin-bottom: 50px;
         }
 
@@ -319,21 +469,90 @@
     }
 
     .sayHello {
-        padding: 35px 0;
+        padding: 50px 0;
 
         .shTop {
             display: flex;
             flex-direction: column;
             margin-bottom: 40px;
 
-
             h2 {
                 margin-right: 0;
                 margin-bottom: 35px;
+                font-size: 80px;
             }
 
             div {
                 width: 100%;
+            }
+        }
+    }
+
+    .services {
+        .scRight {
+            h2 {
+                font-size: 80px;
+            }
+        }
+    }
+
+    .sliders {
+        padding: 50px 0;
+
+        .desc {
+            margin-bottom: 80px;
+        }
+
+        .slide {
+            flex-direction: column;
+
+            .title {
+                display: none;
+            }
+
+            .titleM {
+                display: block;
+                font-family: EmpireBold;
+                font-size: 80px;
+                text-transform: uppercase;
+            }
+
+            img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .banner {
+                margin-left: 0;
+            }
+
+            div {
+                p {
+                    height: 250px;
+                    margin-bottom: 35px;
+                }
+            }
+        }
+    }
+
+    .journey {
+        padding: 50px 0;
+        flex-direction: column;
+
+        .joLeft {
+            margin-bottom: 35px;
+
+            h2 {
+                font-size: 80px;
+                line-height: 107.6%;
+                letter-spacing: 0.11em;
+                height: auto;
+                padding-bottom: 35px;
+            }
+
+            div {
+                width: 100%;
+                padding-top: 35px;
             }
         }
     }

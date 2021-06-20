@@ -6,7 +6,7 @@ import {motion} from "framer-motion"
 import {InView, useInView} from 'react-intersection-observer';
 
 export default function Products() {
-    const settings = {
+    const body_slider_settings = {
         dots: false,
         speed: 1250,
         arrows: false,
@@ -19,6 +19,8 @@ export default function Products() {
             set_current_body_slide(next)
         },
     };
+    const [current_body_slide, set_current_body_slide] = useState(0);
+    const [body_slider, set_body_slider] = useState();
 
     const favorite_slider_settings = {
         dots: false,
@@ -30,10 +32,47 @@ export default function Products() {
         autoplay: true,
         autoplaySpeed: 2000,
     };
-
-    const [current_body_slide, set_current_body_slide] = useState(0);
-    const [body_slider, set_body_slider] = useState();
     const [favorite_slider, set_favorite_slider] = useState();
+
+    const products_alternate_settings = {
+        dots: true,
+        speed: 1250,
+        centerMode: true,
+        adaptiveHeight: true,
+        variableWidth: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        beforeChange: (current, next) => {
+            set_current_products_alternate_slide(next)
+        },
+    };
+    const [products_alternate_slider, set_products_alternate_slider] = useState();
+    const [current_products_alternate_slide, set_current_products_alternate_slide] = useState();
+    const products_alternate_content = [
+        {
+            title: 'Body',
+            content: 'A range of hand-picked brands for the best of body care products that are made with clean, active ingredients and are result-driven. Taking care of your body is equally rewarding.'
+        },
+        {
+            title: 'Hair',
+            content: 'Give your hair care routine a bump onto the next level. Whether it is finding the right products for your hair type and concern or adding some lovely serums for that extra bounce, we’ve curated an array of products for each and every one of your needs.'
+        },
+        {
+            title: 'Skincare',
+            content: 'Whether you’re a beginner or a skincare enthusiast, we have something for you all. Choose from our repertoire of curated skincare products that have acquired a cult status for their new-age formulations and are targeted towards lasting skincare benefits. A healthy glow awaits you.'
+        },
+        {
+            title: 'Supplements',
+            content: 'At Glow, we promote overall well-being for healthy skin and hair. Find supplements that come recommended for a glow that’s from within.'
+        },
+        {
+            title: 'Tools',
+            content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.'
+        }
+    ];
+
+
     const rtl = [
         {
             title: 'Good for <br/>' + 'Glow',
@@ -62,10 +101,34 @@ export default function Products() {
         },
     ];
 
-    useEffect(() => {
-        console.log(current_body_slide);
+    const favorite_products = [
+        {
+            title: 'Lotion P50 BR',
+        },
+        {
+            title: 'Lotion P50 BR',
+        },
+        {
+            title: 'Lotion P50 BR',
+        },
+        {
+            title: 'Lotion P50 BR',
+        },
+        {
+            title: 'Lotion P50 BR',
+        },
+        {
+            title: 'Lotion P50 BR',
+        },
+        {
+            title: 'Lotion P50 BR',
+        },
+        {
+            title: 'Lotion P50 BR',
+        },
 
-    }, [current_body_slide])
+
+    ];
 
 
     return (<Fragment>
@@ -81,7 +144,7 @@ export default function Products() {
                 <div className={styles.bRight}>
                     <Slider ref={slider => {
                         set_body_slider(slider)
-                    }} {...settings}>
+                    }} {...body_slider_settings}>
                         {
                             rtl.map((item, index) => {
                                 return (<Fragment>
@@ -107,6 +170,7 @@ export default function Products() {
 
             </div>
         </div>
+
         <div className={"outer " + styles.productDescOuter}>
             <div className={"inner " + styles.productDesc}>
                 <p>After a lot of deliberation we have curated a wide range of products that are available to you 24 x 7 on our
@@ -129,10 +193,10 @@ export default function Products() {
                     set_favorite_slider(slider)
                 }} {...favorite_slider_settings}>
                     {
-                        rtl.map((item, index) => {
+                        favorite_products.map((item, index) => {
                             return (<Fragment>
                                 <div className={styles.cfSlide}>
-                                    <img src={'images/products/fav/' + (0) + '.png'}/>
+                                    <img src={'images/products/fav/' + (index) + '.png'}/>
                                 </div>
                             </Fragment>)
                         })
@@ -140,7 +204,6 @@ export default function Products() {
                 </Slider>
             </div>
         </div>
-
 
         <div className={"outer " + styles.shopMyShelfieOuter}>
             <div className={"inner " + styles.shopMyShelfie}>
@@ -158,6 +221,60 @@ export default function Products() {
             </div>
         </div>
 
+        <div className={styles.slidersOuter}>
+            <div className={styles.sliders}>
+                <p className={styles.desc}>
+                    After a lot of deliberation we have curated a
+                    wide range of products that are available to you 24 x 7 on our online boutique glow.shop. You can also purchase them in-store with the assistance of our skincare experts or
+                    even place an order for curbside pick-up. These products are tried and tested cult favourites and made
+                    with innovative formulations to offer you an everlasting glow and help you on your skincare, beauty and wellness
+                    journey.
+                </p>
+
+                <Slider ref={slider => {
+                    set_products_alternate_slider(slider)
+                }} {...products_alternate_settings}>
+                    {
+                        products_alternate_content.map((item, index) => {
+                            return (<Fragment>
+                                <div className={styles.slide}>
+                                    {
+                                        current_products_alternate_slide === index &&
+                                        <InView threshold={0}>
+                                            {
+                                                ({ref, inView}) => (
+                                                    <motion.div className={styles.title}
+                                                                ref={ref}
+                                                                initial={{opacity: 0}}
+                                                                animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                transition={{duration: 0.7}}>
+                                                        {item.title}
+                                                    </motion.div>)
+                                            }
+                                        </InView>
+                                    }
+
+                                    <img className={"gr " + (current_products_alternate_slide === index ? styles.banner : '')} src={'images/home/slider-' + (index + 1) + '.png'}/>
+                                    <div>
+                                        <h3>0{index + 1} / <span>0{products_alternate_content.length}</span></h3>
+                                        <p>{item.content}</p>
+                                        <div>
+                                            <img src={'icons/back.svg'} onClick={() => {
+                                                products_alternate_slider.slickPrev()
+                                            }}/>
+                                            <img src={'icons/forward.svg'} onClick={() => {
+                                                products_alternate_slider.slickNext()
+                                            }}/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </Fragment>)
+                        })
+                    }
+                </Slider>
+            </div>
+        </div>
 
     </Fragment>)
 
