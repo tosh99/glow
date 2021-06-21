@@ -162,7 +162,7 @@ export default function Products() {
                             rtl.map((item, index) => {
                                 return (<Fragment>
                                     <div className={styles.slide}>
-                                        <img src={'/images/products/top/' + (index) + '.png'}/>
+                                        <img src={'images/products/top/' + (index) + '.png'}/>
                                     </div>
                                 </Fragment>)
                             })
@@ -204,7 +204,7 @@ export default function Products() {
                         favorite_products.map((item, index) => {
                             return (<Fragment>
                                 <div className={styles.cfSlide}>
-                                    <img src={'/images/products/fav/' + (index) + '.png'}/>
+                                    <img src={'images/products/fav/' + (index) + '.png'}/>
                                     <header>{item.title}</header>
                                 </div>
                             </Fragment>)
@@ -254,7 +254,7 @@ export default function Products() {
                                             }
                                         </InView>
                                     }
-                                    <img className={"gr " + (current_products_alternate_slide === index ? styles.banner : '')} src={'/images/products/alternate-products/' + index + '.png'}/>
+                                    <img className={"gr " + (current_products_alternate_slide === index ? styles.banner : '')} src={'images/products/alternate-products/' + index + '.png'}/>
                                     <div className={styles.shopNow}>
                                         {/*<h3>0{index + 1} / <span>0{products_alternate_content.length}</span></h3>*/}
                                         <p>SHOP NOW</p>

@@ -43,7 +43,7 @@ export default function About() {
                                 </div>
                             </div>
                             <div className={styles.joRight}>
-                                <img src={'/images/home/varshini.png'}/>
+                                <img src={'images/home/varshini.png'}/>
                                 <p>At Glow, we wanted to promote skin, beauty and wellness as ideologies that go hand-in-hand. Having studied MD
                                     Dermatology and been around the globe to learn about new-age technologies in the world of skincare, Dr.
                                     Varshini Reddy wanted to bring the best of those to India. Her journey has been exciting and full of new
