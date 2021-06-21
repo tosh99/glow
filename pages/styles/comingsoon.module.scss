@@ -1,0 +1,37 @@
+.page {
+    background: url("/images/comingsoon/comingsoon.png") no-repeat;
+    background-size: cover;
+}
+
+.banner {
+    min-height: calc(100vh - 107px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    img {
+        margin-bottom: 67px;
+    }
+
+    h1 {
+        font-family: EmpireBold;
+        font-size: 160px;
+        line-height: 160px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #222222;
+        margin-bottom: 33px;
+    }
+
+    h2 {
+        font-family: TelegrafUltraLight;
+        margin-bottom: 52px;
+        font-size: 20px;
+        line-height: 150%;
+        text-align: center;
+        letter-spacing: 0.05em;
+    }
+}

@@ -21,7 +21,7 @@ export default function Biologique() {
                     </div>
                     <div className={styles.imgRight}>
                         <div>
-                            <img src={'images/biologue/banner.png'}/>
+                            <img src={'/images/biologue/banner.png'}/>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,10 @@
 .headerOuter {
+    background: #EEEADD;
     border-bottom: 0.5px solid #000000;
+}
 
-
+.headerOuterTrans {
+    background: transparent;
 }
 
 .header {
@@ -17,22 +20,19 @@
 
     .hRight {
         display: flex;
-
+        align-items: center;
 
         header {
-            margin-left: 36px;
-            line-height: 20px;
-            letter-spacing: 0.02em;
-            font-family: HattonRegular;
-            cursor: pointer;
-        }
-
-        p {
             margin-left: 86px;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            font-family: HattonMedium;
+            font-family: HattonRegular;
             cursor: pointer;
+            margin-top: 8px;
+        }
+
+        img {
+            margin-left: 62px;
         }
     }
 

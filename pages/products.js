@@ -4,6 +4,7 @@ import {Fragment, useEffect, useState} from "react";
 import Slider from "react-slick";
 import {motion} from "framer-motion"
 import {InView, useInView} from 'react-intersection-observer';
+import NextBack from "../shared/components/nextback/nextback";
 
 export default function Products() {
     const body_slider_settings = {
@@ -20,7 +21,7 @@ export default function Products() {
         },
     };
     const [current_body_slide, set_current_body_slide] = useState(0);
-    const [body_slider, set_body_slider] = useState();
+    const [body_slider, set_body_slider] = useState({});
 
     const favorite_slider_settings = {
         dots: false,
@@ -32,7 +33,7 @@ export default function Products() {
         autoplay: true,
         autoplaySpeed: 2000,
     };
-    const [favorite_slider, set_favorite_slider] = useState();
+    const [favorite_slider, set_favorite_slider] = useState({});
 
     const products_alternate_settings = {
         dots: true,
@@ -41,33 +42,41 @@ export default function Products() {
         adaptiveHeight: true,
         variableWidth: true,
         arrows: false,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 4000,
         beforeChange: (current, next) => {
             set_current_products_alternate_slide(next)
         },
     };
-    const [products_alternate_slider, set_products_alternate_slider] = useState();
-    const [current_products_alternate_slide, set_current_products_alternate_slide] = useState();
+    const [products_alternate_slider, set_products_alternate_slider] = useState({});
+    const [current_products_alternate_slide, set_current_products_alternate_slide] = useState(0);
     const products_alternate_content = [
         {
-            title: 'Body',
+            title: 'Sesderma Azelac Ru Liposomal Serum',
             content: 'A range of hand-picked brands for the best of body care products that are made with clean, active ingredients and are result-driven. Taking care of your body is equally rewarding.'
         },
         {
-            title: 'Hair',
+            title: 'Cleansing complex',
             content: 'Give your hair care routine a bump onto the next level. Whether it is finding the right products for your hair type and concern or adding some lovely serums for that extra bounce, we’ve curated an array of products for each and every one of your needs.'
         },
         {
-            title: 'Skincare',
+            title: 'Mask vivant',
             content: 'Whether you’re a beginner or a skincare enthusiast, we have something for you all. Choose from our repertoire of curated skincare products that have acquired a cult status for their new-age formulations and are targeted towards lasting skincare benefits. A healthy glow awaits you.'
         },
         {
-            title: 'Supplements',
+            title: 'Lait vip 02',
             content: 'At Glow, we promote overall well-being for healthy skin and hair. Find supplements that come recommended for a glow that’s from within.'
         },
         {
-            title: 'Tools',
+            title: 'P50 pigm400',
+            content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.'
+        },
+        {
+            title: 'Isdin fotoprotector fusion water',
+            content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.'
+        },
+        {
+            title: 'Dubai lips',
             content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.'
         }
     ];
@@ -106,28 +115,32 @@ export default function Products() {
             title: 'Lotion P50 BR',
         },
         {
-            title: 'Lotion P50 BR',
+            title: 'Warming Honey Cleanser',
         },
         {
-            title: 'Lotion P50 BR',
+            title: 'Mitti raw face mask pureearth',
         },
         {
-            title: 'Lotion P50 BR',
+            title: 'Pro heal serum is clinical',
         },
         {
-            title: 'Lotion P50 BR',
+            title: 'Oligo proteins marines serum',
         },
         {
-            title: 'Lotion P50 BR',
+            title: 'Lait vip 02',
         },
         {
-            title: 'Lotion P50 BR',
+            title: 'Heliocare mineral tolerance fluid',
         },
         {
-            title: 'Lotion P50 BR',
+            title: 'Biokiss lip balm',
         },
-
-
+        {
+            title: 'Creme aux acid de fruits',
+        },
+        {
+            title: 'Masque vip 02',
+        },
     ];
 
 
@@ -149,21 +162,14 @@ export default function Products() {
                             rtl.map((item, index) => {
                                 return (<Fragment>
                                     <div className={styles.slide}>
-                                        <img src={'images/products/top/' + (index) + '.png'}/>
+                                        <img src={'/images/products/top/' + (index) + '.png'}/>
                                     </div>
                                 </Fragment>)
                             })
                         }
                     </Slider>
                     <div>
-                        <div>
-                            <img src={'icons/back.svg'} onClick={() => {
-                                body_slider.slickPrev()
-                            }}/>
-                            <img src={'icons/forward.svg'} onClick={() => {
-                                body_slider.slickNext()
-                            }}/>
-                        </div>
+                        <NextBack onBack={body_slider.slickPrev} onNext={body_slider.slickNext}/>
                     </div>
 
                 </div>
@@ -186,7 +192,9 @@ export default function Products() {
             <div className={"inner " + styles.currentFavourites}>
                 <div className={styles.cfHeader}>
                     <h2>Varshini's Current Favourites</h2>
-                    <div></div>
+                    <div>
+                        <NextBack onBack={favorite_slider.slickPrev} onNext={favorite_slider.slickNext}/>
+                    </div>
                 </div>
 
                 <Slider ref={slider => {
@@ -196,7 +204,8 @@ export default function Products() {
                         favorite_products.map((item, index) => {
                             return (<Fragment>
                                 <div className={styles.cfSlide}>
-                                    <img src={'images/products/fav/' + (index) + '.png'}/>
+                                    <img src={'/images/products/fav/' + (index) + '.png'}/>
+                                    <header>{item.title}</header>
                                 </div>
                             </Fragment>)
                         })
@@ -223,14 +232,6 @@ export default function Products() {
 
         <div className={styles.slidersOuter}>
             <div className={styles.sliders}>
-                <p className={styles.desc}>
-                    After a lot of deliberation we have curated a
-                    wide range of products that are available to you 24 x 7 on our online boutique glow.shop. You can also purchase them in-store with the assistance of our skincare experts or
-                    even place an order for curbside pick-up. These products are tried and tested cult favourites and made
-                    with innovative formulations to offer you an everlasting glow and help you on your skincare, beauty and wellness
-                    journey.
-                </p>
-
                 <Slider ref={slider => {
                     set_products_alternate_slider(slider)
                 }} {...products_alternate_settings}>
@@ -253,19 +254,11 @@ export default function Products() {
                                             }
                                         </InView>
                                     }
-
-                                    <img className={"gr " + (current_products_alternate_slide === index ? styles.banner : '')} src={'images/home/slider-' + (index + 1) + '.png'}/>
-                                    <div>
-                                        <h3>0{index + 1} / <span>0{products_alternate_content.length}</span></h3>
-                                        <p>{item.content}</p>
-                                        <div>
-                                            <img src={'icons/back.svg'} onClick={() => {
-                                                products_alternate_slider.slickPrev()
-                                            }}/>
-                                            <img src={'icons/forward.svg'} onClick={() => {
-                                                products_alternate_slider.slickNext()
-                                            }}/>
-                                        </div>
+                                    <img className={"gr " + (current_products_alternate_slide === index ? styles.banner : '')} src={'/images/products/alternate-products/' + index + '.png'}/>
+                                    <div className={styles.shopNow}>
+                                        {/*<h3>0{index + 1} / <span>0{products_alternate_content.length}</span></h3>*/}
+                                        <p>SHOP NOW</p>
+                                        <NextBack theme={'light'} onBack={products_alternate_slider.slickPrev} onNext={products_alternate_slider.slickNext}/>
                                     </div>
                                 </div>
 

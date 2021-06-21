@@ -3,11 +3,13 @@ import styles from "./styles/about.module.scss";
 import {InView} from "react-intersection-observer";
 import {motion} from "framer-motion";
 import Ourclinic from "../shared/components/ourclinic/ourclinic";
+import PageHeader from "../shared/components/page-header/page-header";
 
 export default function About() {
 
 
     return (<Fragment>
+        <PageHeader title={'About'}/>
         <div className={"outer " + styles.advocacyOuter}>
             <div className={"inner " + styles.advocacy}>
                 <header>Our Skincare Advocacy</header>
@@ -41,7 +43,7 @@ export default function About() {
                                 </div>
                             </div>
                             <div className={styles.joRight}>
-                                <img src={'images/home/varshini.png'}/>
+                                <img src={'/images/home/varshini.png'}/>
                                 <p>At Glow, we wanted to promote skin, beauty and wellness as ideologies that go hand-in-hand. Having studied MD
                                     Dermatology and been around the globe to learn about new-age technologies in the world of skincare, Dr.
                                     Varshini Reddy wanted to bring the best of those to India. Her journey has been exciting and full of new

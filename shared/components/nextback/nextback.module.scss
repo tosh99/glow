@@ -1,0 +1,11 @@
+.nextback {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 80px !important;
+
+    img {
+        cursor: pointer;
+    }
+}
