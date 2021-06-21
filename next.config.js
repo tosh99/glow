@@ -1,4 +1,4 @@
 module.exports = {
     trailingSlash: true,
-    // basePath: '/glow'
+    basePath: '/glow'
 }
