@@ -2,6 +2,7 @@ import {InView} from "react-intersection-observer";
 import {motion} from "framer-motion";
 import styles from "./ourclinic.module.scss";
 import {Fragment} from "react";
+import {constants} from "../../../styles/constants";
 
 export default function Ourclinic() {
 
@@ -21,7 +22,7 @@ export default function Ourclinic() {
                                 <header>get direction</header>
                             </div>
                             <div className={styles.vuMap}>
-                                <img src={'images/home/hyderabad.png'}/>
+                                <img src={constants.assetPrefix + 'images/home/hyderabad.png'}/>
                             </div>
                             <div className={styles.vuAddress}>
                                 <div className={styles.vuaLeft}>

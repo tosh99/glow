@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
+$assetPrefix: 'https://tosh99.github.io/glow/';
+
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
@@ -17,101 +19,101 @@ p {
 @font-face {
     font-family: 'EmpireBold';
     font-display: swap;
-    src: local('EmpireBold'), url("/fonts/EmpireBold.ttf") format('truetype');
+    src: local('EmpireBold'), url($assetPrefix + "/fonts/EmpireBold.ttf") format('truetype');
 }
 
 @font-face {
     font-family: 'EmpireRegular';
     font-display: swap;
-    src: local('EmpireRegular'), url("/fonts/EmpireRegular.otf") format('opentype');
+    src: local('EmpireRegular'), url($assetPrefix + "/fonts/EmpireRegular.otf") format('opentype');
 }
 
 
 @font-face {
     font-family: 'HattonUltraLight';
     font-display: swap;
-    src: local('HattonUltraLight'), url("/fonts/HattonUltraLight.otf") format('opentype');
+    src: local('HattonUltraLight'), url($assetPrefix + "/fonts/HattonUltraLight.otf") format('opentype');
 }
 
 @font-face {
     font-family: 'HattonLight';
     font-display: swap;
-    src: local('HattonLight'), url("/fonts/HattonLight.otf") format('opentype');
+    src: local('HattonLight'), url($assetPrefix + "/fonts/HattonLight.otf") format('opentype');
 }
 
 
 @font-face {
     font-family: 'HattonRegular';
     font-display: swap;
-    src: local('HattonRegular'), url("/fonts/HattonRegular.otf") format('opentype');
+    src: local('HattonRegular'), url($assetPrefix + "/fonts/HattonRegular.otf") format('opentype');
 }
 
 
 @font-face {
     font-family: 'HattonMedium';
     font-display: swap;
-    src: local('HattonMedium'), url("/fonts/HattonMedium.otf") format('opentype');
+    src: local('HattonMedium'), url($assetPrefix + "/fonts/HattonMedium.otf") format('opentype');
 }
 
 
 @font-face {
     font-family: 'OggItalic';
     font-display: swap;
-    src: local('OggItalic'), url("/fonts/OggItalic.otf") format('opentype');
+    src: local('OggItalic'), url($assetPrefix + "/fonts/OggItalic.otf") format('opentype');
 }
 
 
 @font-face {
     font-family: 'OggRegular';
     font-display: swap;
-    src: local('OggRegular'), url("/fonts/OggRegular.otf") format('opentype');
+    src: local('OggRegular'), url($assetPrefix + "/fonts/OggRegular.otf") format('opentype');
 }
 
 
 @font-face {
     font-family: 'SaolRegular';
     font-display: swap;
-    src: local('SaolRegular'), url("/fonts/SaolRegular.otf") format('opentype');
+    src: local('SaolRegular'), url($assetPrefix + "/fonts/SaolRegular.otf") format('opentype');
 }
 
 @font-face {
     font-family: 'SaolBold';
     font-display: swap;
-    src: local('SaolBold'), url("/fonts/SaolBold.otf") format('opentype');
+    src: local('SaolBold'), url($assetPrefix + "/fonts/SaolBold.otf") format('opentype');
 }
 
 
 @font-face {
     font-family: 'SaolBoldItalic';
     font-display: swap;
-    src: local('SaolBoldItalic'), url("/fonts/SaolBoldItalic.otf") format('opentype');
+    src: local('SaolBoldItalic'), url($assetPrefix + "/fonts/SaolBoldItalic.otf") format('opentype');
 }
 
 
 @font-face {
     font-family: 'SaolRegularItalic';
     font-display: swap;
-    src: local('SaolRegularItalic'), url("/fonts/SaolRegularItalic.otf") format('opentype');
+    src: local('SaolRegularItalic'), url($assetPrefix + "/fonts/SaolRegularItalic.otf") format('opentype');
 }
 
 @font-face {
     font-family: 'TelegrafUltraLight';
     font-display: swap;
-    src: local('TelegrafUltraLight'), url("/fonts/TelegrafUltraLight.otf") format('opentype');
+    src: local('TelegrafUltraLight'), url($assetPrefix + "/fonts/TelegrafUltraLight.otf") format('opentype');
 }
 
 
 @font-face {
     font-family: 'TelegrafRegular';
     font-display: swap;
-    src: local('TelegrafRegular'), url("/fonts/TelegrafRegular.otf") format('opentype');
+    src: local('TelegrafRegular'), url($assetPrefix + "/fonts/TelegrafRegular.otf") format('opentype');
 }
 
 
 @font-face {
     font-family: 'TelegrafUltraBold';
     font-display: swap;
-    src: local('TelegrafUltraBold'), url("/fonts/TelegrafUltraBold.otf") format('opentype');
+    src: local('TelegrafUltraBold'), url($assetPrefix + "/fonts/TelegrafUltraBold.otf") format('opentype');
 }
 
 

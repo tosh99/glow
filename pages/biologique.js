@@ -3,6 +3,7 @@ import styles from "./styles/biologue.module.scss";
 import {InView} from "react-intersection-observer";
 import {motion} from "framer-motion";
 import Ourclinic from "../shared/components/ourclinic/ourclinic";
+import {constants} from "../styles/constants";
 
 export default function Biologique() {
 
@@ -21,7 +22,7 @@ export default function Biologique() {
                     </div>
                     <div className={styles.imgRight}>
                         <div>
-                            <img src={'images/biologue/banner.png'}/>
+                            <img src={constants.assetPrefix + 'images/biologue/banner.png'}/>
                         </div>
                     </div>
                 </div>
