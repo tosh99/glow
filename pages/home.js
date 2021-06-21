@@ -7,11 +7,12 @@ import {InView, useInView} from 'react-intersection-observer';
 import Ourclinic from "../shared/components/ourclinic/ourclinic";
 import HomePageHeader from "../shared/components/home-page-header/home-page-header";
 import {constants} from "../styles/constants";
+import NextBack from "../shared/components/nextback/nextback";
 
 export default function Home() {
     const settings = {
         dots: true,
-        speed: 1250,
+        speed: 2250,
         centerMode: true,
         adaptiveHeight: true,
         variableWidth: true,
@@ -26,7 +27,7 @@ export default function Home() {
     const [current_slide, set_current_slide] = useState(0);
 
 
-    const [slider, setslider] = useState();
+    const [slider, setslider] = useState({});
     const carousel_content = [
         {
             title: 'Body',
@@ -237,14 +238,7 @@ export default function Home() {
                                                         </motion.div>)
                                                 }
                                             </InView>
-                                            <div>
-                                                <img src={'icons/back.svg'} onClick={() => {
-                                                    slider.slickPrev()
-                                                }}/>
-                                                <img src={'icons/forward.svg'} onClick={() => {
-                                                    slider.slickNext()
-                                                }}/>
-                                            </div>
+                                            <NextBack theme={'light'} onBack={slider.slickPrev} onNext={slider.slickNext}/>
                                         </div>
                                     </div>
 

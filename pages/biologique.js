@@ -4,12 +4,13 @@ import {InView} from "react-intersection-observer";
 import {motion} from "framer-motion";
 import Ourclinic from "../shared/components/ourclinic/ourclinic";
 import {constants} from "../styles/constants";
+import PageHeader from "../shared/components/page-header/page-header";
 
 export default function Biologique() {
 
 
     return (<Fragment>
-
+        <PageHeader title={'Biologique Recherche'}/>
 
         <div className={"outer " + styles.skinCareOuter}>
             <div className={"inner " + styles.skinCare}>

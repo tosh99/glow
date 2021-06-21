@@ -6,6 +6,7 @@ import {motion} from "framer-motion"
 import {InView, useInView} from 'react-intersection-observer';
 import NextBack from "../shared/components/nextback/nextback";
 import {constants} from "../styles/constants";
+import PageHeader from "../shared/components/page-header/page-header";
 
 export default function Products() {
     const body_slider_settings = {
@@ -38,7 +39,7 @@ export default function Products() {
 
     const products_alternate_settings = {
         dots: true,
-        speed: 1250,
+        speed: 2250,
         centerMode: true,
         adaptiveHeight: true,
         variableWidth: true,
@@ -46,6 +47,8 @@ export default function Products() {
         autoplay: false,
         autoplaySpeed: 4000,
         beforeChange: (current, next) => {
+            console.log(current)
+            console.log(next)
             set_current_products_alternate_slide(next)
         },
     };
@@ -91,22 +94,22 @@ export default function Products() {
         },
         {
             title: 'Get set <br/>' + 'Glow',
-            desc: 'A range of hand-picked brands for the best of body care products that are made with clean, active ingredients and are result-driven. Taking care of your body is equally rewarding.',
+            desc: 'Give your hair care routine a bump onto the next level. Whether it is finding the right products for your hair type and concern or adding some lovely serums for that extra bounce, we’ve curated an array of products for each and every one of your needs.',
             shop: 'Body',
         },
         {
             title: 'You <br/>' + 'Glow',
-            desc: 'A range of hand-picked brands for the best of body care products that are made with clean, active ingredients and are result-driven. Taking care of your body is equally rewarding.',
+            desc: 'Whether you’re a beginner or a skincare enthusiast, we have something for you all. Choose from our repertoire of curated skincare products that have been praised and given a cult status for their new-age formulations, therapies and lasting skincare benefits. A healthy glow awaits you.',
             shop: 'Body',
         },
         {
             title: 'Glow From <br/>' + 'Within',
-            desc: 'A range of hand-picked brands for the best of body care products that are made with clean, active ingredients and are result-driven. Taking care of your body is equally rewarding.',
+            desc: 'At Glow, we promote overall well-being for healthy skin and hair. Find supplements that come recommended for a glow that’s from within.',
             shop: 'Body',
         },
         {
             title: 'At home <br/>' + 'Glow',
-            desc: 'A range of hand-picked brands for the best of body care products that are made with clean, active ingredients and are result-driven. Taking care of your body is equally rewarding.',
+            desc: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.',
             shop: 'Body',
         },
     ];
@@ -146,6 +149,7 @@ export default function Products() {
 
 
     return (<Fragment>
+        <PageHeader title={'Products'}/>
         <div className={"outer " + styles.bodyOuter}>
             <div className={"inner " + styles.body}>
                 <div className={styles.bLeft}>
@@ -254,6 +258,7 @@ export default function Products() {
                                                     </motion.div>)
                                             }
                                         </InView>
+
                                     }
                                     <img className={"gr " + (current_products_alternate_slide === index ? styles.banner : '')} src={constants.assetPrefix + 'images/products/alternate-products/' + index + '.png'}/>
                                     <div className={styles.shopNow}>
@@ -271,6 +276,4 @@ export default function Products() {
         </div>
 
     </Fragment>)
-
-
 }
