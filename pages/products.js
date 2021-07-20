@@ -36,6 +36,38 @@ export default function Products() {
         autoplaySpeed: 2000,
     };
     const [favorite_slider, set_favorite_slider] = useState({});
+    const favorite_products = [
+        {
+            title: 'Lotion P50 BR',
+        },
+        {
+            title: 'Warming Honey Cleanser',
+        },
+        {
+            title: 'Mitti raw face mask pureearth',
+        },
+        {
+            title: 'Pro heal serum is clinical',
+        },
+        {
+            title: 'Oligo proteins marines serum',
+        },
+        {
+            title: 'Lait vip 02',
+        },
+        {
+            title: 'Heliocare mineral tolerance fluid',
+        },
+        {
+            title: 'Biokiss lip balm',
+        },
+        {
+            title: 'Creme aux acid de fruits',
+        },
+        {
+            title: 'Masque vip 02',
+        },
+    ];
 
     const products_alternate_settings = {
         dots: true,
@@ -114,38 +146,6 @@ export default function Products() {
         },
     ];
 
-    const favorite_products = [
-        {
-            title: 'Lotion P50 BR',
-        },
-        {
-            title: 'Warming Honey Cleanser',
-        },
-        {
-            title: 'Mitti raw face mask pureearth',
-        },
-        {
-            title: 'Pro heal serum is clinical',
-        },
-        {
-            title: 'Oligo proteins marines serum',
-        },
-        {
-            title: 'Lait vip 02',
-        },
-        {
-            title: 'Heliocare mineral tolerance fluid',
-        },
-        {
-            title: 'Biokiss lip balm',
-        },
-        {
-            title: 'Creme aux acid de fruits',
-        },
-        {
-            title: 'Masque vip 02',
-        },
-    ];
 
 
     return (<Fragment>
@@ -167,7 +167,7 @@ export default function Products() {
                             rtl.map((item, index) => {
                                 return (<Fragment>
                                     <div className={styles.slide}>
-                                        <img src={constants.assetPrefix + 'images/products/top/' + (index) + '.png'}/>
+                                        <img src={'/images/products/top/' + (index) + '.png'}/>
                                     </div>
                                 </Fragment>)
                             })
@@ -209,7 +209,7 @@ export default function Products() {
                         favorite_products.map((item, index) => {
                             return (<Fragment>
                                 <div className={styles.cfSlide}>
-                                    <img src={constants.assetPrefix + 'images/products/fav/' + (index) + '.png'}/>
+                                    <img src={'/images/products/fav/' + (index) + '.png'}/>
                                     <header>{item.title}</header>
                                 </div>
                             </Fragment>)
@@ -260,7 +260,7 @@ export default function Products() {
                                         </InView>
 
                                     }
-                                    <img className={"gr " + (current_products_alternate_slide === index ? styles.banner : '')} src={constants.assetPrefix + 'images/products/alternate-products/' + index + '.png'}/>
+                                    <img className={"gr " + (current_products_alternate_slide === index ? styles.banner : '')} src={'/images/products/alternate-products/' + index + '.png'}/>
                                     <div className={styles.shopNow}>
                                         {/*<h3>0{index + 1} / <span>0{products_alternate_content.length}</span></h3>*/}
                                         <p>SHOP NOW</p>

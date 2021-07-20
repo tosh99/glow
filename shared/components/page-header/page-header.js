@@ -13,14 +13,14 @@ export default function PageHeader({title, bg = 'solid'}) {
             <div className={"inner " + styles.header}>
                 <Link href="/">
                     <div className={styles.hLeft}>
-                        <img src={constants.assetPrefix + 'icons/header/back.svg'}/>
+                        <img src={'/icons/header/back.svg'}/>
                     </div>
                 </Link>
                 <div className={styles.hRight}>
                     <Link href="about">
                         <header>{title}</header>
                     </Link>
-                    <img src={constants.assetPrefix + 'icons/header/star.svg'}/>
+                    <img src={'/icons/header/star.svg'}/>
                 </div>
             </div>
         </div>

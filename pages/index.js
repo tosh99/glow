@@ -11,7 +11,7 @@ export default function Home() {
             <PageHeader bg={'transparent'}/>
             <div className={"outer " + styles.banner}>
                 <div className={"inner"}>
-                    <img src={constants.assetPrefix + 'icons/header/logo.svg'} />
+                    <img src={'/icons/header/logo.svg'} />
                     <h1>Coming Soon!</h1>
                     <h2>Glow is a skincare wonderland with services designed for your upkeep and indulgence.
                         We are currently curating our services menu so do check back.</h2>

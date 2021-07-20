@@ -1,10 +1,10 @@
-import {Fragment, useEffect, useState} from "react";
+import {Fragment} from "react";
 import styles from "./styles/about.module.scss";
 import {InView} from "react-intersection-observer";
 import {motion} from "framer-motion";
 import Ourclinic from "../shared/components/ourclinic/ourclinic";
 import PageHeader from "../shared/components/page-header/page-header";
-import {constants} from "../styles/constants";
+import Footer from "../shared/components/footer/footer";
 
 export default function About() {
 
@@ -44,7 +44,7 @@ export default function About() {
                                 </div>
                             </div>
                             <div className={styles.joRight}>
-                                <img src={constants.assetPrefix + 'images/home/varshini.png'}/>
+                                <img src={'/images/home/varshini.png'}/>
                                 <p>At Glow, we wanted to promote skin, beauty and wellness as ideologies that go hand-in-hand. Having studied MD
                                     Dermatology and been around the globe to learn about new-age technologies in the world of skincare, Dr.
                                     Varshini Reddy wanted to bring the best of those to India. Her journey has been exciting and full of new
@@ -62,6 +62,7 @@ export default function About() {
 
         <Ourclinic/>
 
+        <Footer />
 
     </Fragment>)
 }

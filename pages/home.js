@@ -61,7 +61,7 @@ export default function Home() {
                         <div>&nbsp;</div>
                         <div className={styles.imgRight}>
                             <div>
-                                <img src={constants.assetPrefix + 'images/home/banner.png'}/>
+                                <img src={'/images/home/banner.png'}/>
                             </div>
                             <p>Your skin changes with age, diet, weather, lifestyle choices and your state of mind. At every turning point, you need to check in with your skin.
                                 At Glow, we don’t categorise you into a skin type. We consult with you to get to know your skin and then proceed with a personalised service.
@@ -86,7 +86,7 @@ export default function Home() {
                                     transition={{duration: 0.8}}>
                             <div className={"inner " + styles.skinCarePhil}>
                                 <div className={styles.scLeft}>
-                                    <img src={constants.assetPrefix + 'images/home/skincare.png'}/>
+                                    <img src={'/images/home/skincare.png'}/>
                                 </div>
                                 <div className={styles.scRight}>
                                     <div>
@@ -146,7 +146,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className={styles.scBottom}>
-                                    <img src={constants.assetPrefix + 'images/home/sayhello.png'}/>
+                                    <img src={'/images/home/sayhello.png'}/>
                                     <header>make AN appointment</header>
                                 </div>
                             </div>
@@ -167,7 +167,7 @@ export default function Home() {
                                     transition={{duration: 0.8}}>
                             <div className={"inner " + styles.skinCarePhil + ' ' + styles.services}>
                                 <div className={styles.scLeft}>
-                                    <img src={constants.assetPrefix + 'images/home/services.png'}/>
+                                    <img src={'/images/home/services.png'}/>
                                 </div>
                                 <div className={styles.scRight}>
                                     <div>
@@ -222,7 +222,7 @@ export default function Home() {
                                             </InView>
                                         }
 
-                                        <img className={"gr " + (current_slide === index ? styles.banner : '')} src={constants.assetPrefix + 'images/home/slider-' + (index + 1) + '.png'}/>
+                                        <img className={"gr " + (current_slide === index ? styles.banner : '')} src={'/images/home/slider-' + (index + 1) + '.png'}/>
                                         <div>
                                             <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
                                             <p>{item.content}</p>
@@ -270,7 +270,7 @@ export default function Home() {
                                     transition={{duration: 0.8}}>
                             <div className={"inner " + styles.skinCarePhil + ' ' + styles.glowEdit}>
                                 <div className={styles.scLeft}>
-                                    <img src={constants.assetPrefix + 'images/home/glowedit.png'}/>
+                                    <img src={'/images/home/glowedit.png'}/>
                                 </div>
                                 <div className={styles.scRight}>
                                     <div>
@@ -313,7 +313,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className={styles.joRight}>
-                                    <img src={constants.assetPrefix + 'images/home/varshini.png'}/>
+                                    <img src={'/images/home/varshini.png'}/>
                                     <p>At Glow, we wanted to promote skin, beauty and wellness as ideologies that go hand-in-hand. Having studied MD
                                         Dermatology and been around the globe to learn about new-age technologies in the world of skincare, Dr.
                                         Varshini Reddy wanted to bring the best of those to India. Her journey has been exciting and full of new

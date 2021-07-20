@@ -12,7 +12,7 @@ export default function HomePageHeader() {
         <div className={"outer " + ' ' + styles.headerOuter}>
             <div className={"inner " + styles.header}>
                 <div className={styles.hLeft}>
-                    <img src={constants.assetPrefix + 'icons/header/logo.svg'}/>
+                    <img src={'/icons/header/logo.svg'}/>
                 </div>
                 <div className={styles.hRight}>
                     <Link href="/services">

@@ -22,7 +22,7 @@ export default function Ourclinic() {
                                 <header>get direction</header>
                             </div>
                             <div className={styles.vuMap}>
-                                <img src={constants.assetPrefix + 'images/home/hyderabad.png'}/>
+                                <img src={'/images/home/hyderabad.png'}/>
                             </div>
                             <div className={styles.vuAddress}>
                                 <div className={styles.vuaLeft}>
