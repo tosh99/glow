@@ -1,19 +1,13 @@
 import styles from './styles/products.module.scss'
-import Link from 'next/link'
-import {Fragment, useEffect, useState} from "react";
+import {Fragment, useState} from "react";
 import Slider from "react-slick";
 import {motion} from "framer-motion"
-import {InView, useInView} from 'react-intersection-observer';
+import {InView} from 'react-intersection-observer';
 import NextBack from "../shared/components/nextback/nextback";
-import {constants} from "../styles/constants";
 import PageHeader from "../shared/components/page-header/page-header";
-import GliderComponent from 'react-glider-carousel';
-import dynamic from "next/dynamic";
 import Head from "next/head";
 
 export default function Products() {
-    const OwlCarousel = dynamic(import("react-owl-carousel2"), {ssr: false});
-
     const body_slider_settings = {
         dots: false,
         speed: 1250,
