@@ -37,3 +37,33 @@
     }
 
 }
+
+@media only screen and (max-width: 648px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 38px 0;
+
+        .hLeft {
+            img {
+                cursor: pointer;
+            }
+        }
+
+        .hRight {
+            display: flex;
+            align-items: center;
+
+            header {
+                margin-left: 0px;
+            }
+
+            img {
+                margin-left: 10px;
+            }
+        }
+
+    }
+
+
+}

@@ -8,6 +8,7 @@ import Ourclinic from "../shared/components/ourclinic/ourclinic";
 import HomePageHeader from "../shared/components/home-page-header/home-page-header";
 import {constants} from "../styles/constants";
 import NextBack from "../shared/components/nextback/nextback";
+import Footer from "../shared/components/footer/footer";
 
 export default function Home() {
     const settings = {
@@ -327,7 +328,7 @@ export default function Home() {
                 }
             </InView>
 
-
+            <Footer/>
         </Fragment>
     )
 }

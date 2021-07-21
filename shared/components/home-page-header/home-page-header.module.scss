@@ -1,13 +1,11 @@
 .headerOuter {
-    border-bottom: 0.5px solid #000000;
-
-
+    border-bottom: 0.3px solid #c6c6c6;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
-    padding: 38px 0;
+    padding: 35px 0;
 
     .hLeft {
         img {
@@ -17,7 +15,6 @@
 
     .hRight {
         display: flex;
-
 
         header {
             margin-left: 36px;
@@ -35,5 +32,35 @@
             cursor: pointer;
         }
     }
+
+    .hRightMob {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 648px) {
+    .header {
+        padding: 20px 35px;
+
+        .hLeft {
+            img {
+                cursor: pointer;
+                width: 47px;
+            }
+        }
+
+        .hRight {
+            display: none;
+        }
+
+        .hRightMob {
+            display: flex;
+
+            img {
+                width: 13px;
+            }
+        }
+    }
+
 
 }

@@ -48,8 +48,7 @@ export default function Biologique() {
         }
     ];
 
-
-    const favorite_slider_settings = {
+    const sl = {
         loop: true,
         center: true,
         autoplay: true,
@@ -60,14 +59,11 @@ export default function Biologique() {
             0: {
                 items: 1,
             },
-            600: {
+            768: {
                 items: 3,
             },
-            1000: {
-                items: 5,
-            }
         }
-    };
+    }
     const [favorite_slider, set_favorite_slider] = useState({});
     const favorite_products = [
         {
@@ -103,16 +99,9 @@ export default function Biologique() {
     ];
 
     useEffect(() => {
-        const owl = $('.owl-carousel');
-        owl.owlCarousel(favorite_slider_settings);
+        const ol = $('.owl-carousel');
+        ol.owlCarousel(sl)
 
-        $('#cfPrevId').click(function () {
-            owl.trigger('prev.owl.carousel');
-        })
-
-        $('#cfNextId').click(function () {
-            owl.trigger('next.owl.carousel');
-        })
 
     }, [])
 
@@ -254,8 +243,7 @@ export default function Biologique() {
             <div className={"inner " + styles.currentFavourites}>
                 <div className={styles.cfHeader}>
                     <p className={styles.title}>
-                        Buy
-                        Biologique Recherche
+                        Buy Biologique Recherche
                     </p>
                     <p className={styles.desc}>
                         Biologique Recherche products have been accredited for their effectiveness and, immediate and lasting results. The Biologique Recherche methodology is based on targeted products with a high concentration of active
@@ -264,7 +252,6 @@ export default function Biologique() {
                         Invest in a highly personalised and effective skincare regime with the assistance of our Skin Experts at Glow.
 
                     </p>
-
                 </div>
 
                 <div className={"owl-carousel"}>

@@ -46,12 +46,9 @@ export default function Products() {
             0: {
                 items: 1,
             },
-            600: {
+            768: {
                 items: 3,
             },
-            1000: {
-                items: 5,
-            }
         }
     }
     const [favorite_slider, set_favorite_slider] = useState({});
@@ -175,7 +172,6 @@ export default function Products() {
         $('#cfNextId').click(function () {
             owl.trigger('next.owl.carousel');
         })
-
     }, [])
 
     return (<Fragment>

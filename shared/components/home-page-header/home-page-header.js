@@ -1,12 +1,13 @@
 import {InView} from "react-intersection-observer";
 import {motion} from "framer-motion";
 import styles from "./home-page-header.module.scss";
-import {Fragment} from "react";
+import {Fragment, useState} from "react";
 import Link from "next/link";
 import {constants} from "../../../styles/constants";
+import Menu from "../menu/menu";
 
 export default function HomePageHeader() {
-
+    const [show_menu, set_show_menu] = useState(false)
 
     return (<Fragment>
         <div className={"outer " + ' ' + styles.headerOuter}>
@@ -31,7 +32,18 @@ export default function HomePageHeader() {
                     </Link>
                     <p>make AN appointment</p>
                 </div>
+                <div className={styles.hRightMob}>
+                    <img src={'/icons/header/star.svg'} onClick={() => {
+                        set_show_menu(true)
+                    }}/>
+                </div>
             </div>
         </div>
+        {
+            show_menu &&
+            <Menu close={() => {
+                set_show_menu(false)
+            }}/>
+        }
     </Fragment>)
 }
