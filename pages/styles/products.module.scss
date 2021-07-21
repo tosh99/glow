@@ -33,7 +33,6 @@
             }
         }
 
-
         header {
             text-transform: uppercase;
             font-family: HattonMedium;
@@ -54,7 +53,6 @@
     }
 }
 
-
 .productDescOuter {
     border-bottom: 1px solid black;
 }
@@ -71,11 +69,12 @@
 }
 
 .currentFavouritesOuter {
-    padding: 120px 0 0;
 
 }
 
 .currentFavourites {
+    padding: 120px 0 0;
+
     .cfHeader {
         display: flex;
         justify-content: space-between;
@@ -211,4 +210,60 @@
         }
 
     }
+}
+
+@media only screen and (max-width: 648px) {
+    .body {
+        flex-direction: column;
+        padding: 50px 0;
+
+        .bLeft {
+            margin-right: 0;
+            margin-bottom: 35px;
+
+            header {
+                margin-top: 35px;
+            }
+
+            div {
+                h1 {
+                    margin-bottom: 50px;
+                }
+            }
+        }
+
+        .slide {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .productDesc {
+        padding: 50px 0;
+    }
+
+    .currentFavourites {
+        padding: 50px 0;
+
+        .cfSlide {
+            margin-right: 0;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .shopMyShelfie {
+        padding: 50px 0;
+        flex-direction: column;
+
+        h2 {
+            margin-right: 0;
+            margin-bottom: 35px;
+            font-size: 80px;
+        }
+    }
+
 }

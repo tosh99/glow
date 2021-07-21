@@ -7,6 +7,7 @@ import {constants} from "../styles/constants";
 import PageHeader from "../shared/components/page-header/page-header";
 import Slider from "react-slick";
 import NextBack from "../shared/components/nextback/nextback";
+import Head from "next/head";
 
 export default function Biologique() {
     const settings = {
@@ -94,6 +95,50 @@ export default function Biologique() {
 
 
     return (<Fragment>
+        <Head>
+            <title>Products</title>
+            <script src={`https://code.jquery.com/jquery-3.2.1.slim.min.js`}/>
+            <script src={`https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js`}/>
+            <script dangerouslySetInnerHTML={{
+                __html: `
+                    $(document).ready(function(){
+                        var owl = $('.owl-carousel');
+                        const settings = {
+                            loop: true,
+                            center: true,
+                            autoplay: true,
+                            nav: false,
+                            autoplayTimeout: 2500,
+                            autoplaySpeed: 1000,
+                            responsive: {
+                                0: {
+                                    items: 1,
+                                },
+                                600: {
+                                    items: 2,
+                                },
+                                1000: {
+                                    items: 3,
+                                }
+                            }
+                        }
+                        
+                        owl.owlCarousel(settings);
+                        
+                        $('#cfPrevId').click(function() {
+                            owl.trigger('prev.owl.carousel');
+                        })
+                        
+                        $('#cfNextId').click(function() {
+                            owl.trigger('next.owl.carousel');
+                        })
+                        
+                    });
+                    
+                `,
+            }}>
+            </script>
+        </Head>
         <PageHeader title={'Biologique Recherche'}/>
 
         <div className={"outer " + styles.skinCareOuter}>
@@ -199,9 +244,7 @@ export default function Biologique() {
 
                 </div>
 
-                <Slider ref={slider => {
-                    set_favorite_slider(slider)
-                }} {...favorite_slider_settings}>
+                <div className={"owl-carousel"}>
                     {
                         favorite_products.map((item, index) => {
                             return (<Fragment>
@@ -212,7 +255,7 @@ export default function Biologique() {
                             </Fragment>)
                         })
                     }
-                </Slider>
+                </div>
             </div>
         </div>
 

@@ -7,8 +7,13 @@ import {InView, useInView} from 'react-intersection-observer';
 import NextBack from "../shared/components/nextback/nextback";
 import {constants} from "../styles/constants";
 import PageHeader from "../shared/components/page-header/page-header";
+import GliderComponent from 'react-glider-carousel';
+import dynamic from "next/dynamic";
+import Head from "next/head";
 
 export default function Products() {
+    const OwlCarousel = dynamic(import("react-owl-carousel2"), {ssr: false});
+
     const body_slider_settings = {
         dots: false,
         speed: 1250,
@@ -25,15 +30,22 @@ export default function Products() {
     const [current_body_slide, set_current_body_slide] = useState(0);
     const [body_slider, set_body_slider] = useState({});
 
+    // const favorite_slider_settings = {
+    //     dots: false,
+    //     speed: 1250,
+    //     centerMode: true,
+    //     adaptiveHeight: true,
+    //     variableWidth: true,
+    //     arrows: false,
+    //     // autoplay: true,
+    //     autoplaySpeed: 2000,
+    // };
     const favorite_slider_settings = {
-        dots: false,
-        speed: 1250,
-        centerMode: true,
-        adaptiveHeight: true,
-        variableWidth: true,
-        arrows: false,
+        nav: false,
         autoplay: true,
-        autoplaySpeed: 2000,
+        dots: false,
+        rewind: false,
+        loop: true
     };
     const [favorite_slider, set_favorite_slider] = useState({});
     const favorite_products = [
@@ -117,7 +129,6 @@ export default function Products() {
         }
     ];
 
-
     const rtl = [
         {
             title: 'Good for <br/>' + 'Glow',
@@ -146,9 +157,51 @@ export default function Products() {
         },
     ];
 
-
-
     return (<Fragment>
+        <Head>
+            <title>Products</title>
+            <script src={`https://code.jquery.com/jquery-3.2.1.slim.min.js`}/>
+            <script src={`https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js`}/>
+            <script dangerouslySetInnerHTML={{
+                __html: `
+                    $(document).ready(function(){
+                        var owl = $('.owl-carousel');
+                        const settings = {
+                            loop: true,
+                            center: true,
+                            autoplay: true,
+                            nav: false,
+                            autoplayTimeout: 2500,
+                            autoplaySpeed: 1000,
+                            responsive: {
+                                0: {
+                                    items: 1,
+                                },
+                                600: {
+                                    items: 3,
+                                },
+                                1000: {
+                                    items: 5,
+                                }
+                            }
+                        }
+                        
+                        owl.owlCarousel(settings);
+                        
+                        $('#cfPrevId').click(function() {
+                            owl.trigger('prev.owl.carousel');
+                        })
+                        
+                        $('#cfNextId').click(function() {
+                            owl.trigger('next.owl.carousel');
+                        })
+                        
+                    });
+                    
+                `,
+            }}>
+            </script>
+        </Head>
         <PageHeader title={'Products'}/>
         <div className={"outer " + styles.bodyOuter}>
             <div className={"inner " + styles.body}>
@@ -198,13 +251,11 @@ export default function Products() {
                 <div className={styles.cfHeader}>
                     <h2>Varshini's Current Favourites</h2>
                     <div>
-                        <NextBack onBack={favorite_slider.slickPrev} onNext={favorite_slider.slickNext}/>
+                        <NextBack prevId={'cfPrevId'} nextId={'cfNextId'}/>
                     </div>
                 </div>
 
-                <Slider ref={slider => {
-                    set_favorite_slider(slider)
-                }} {...favorite_slider_settings}>
+                <div className={"owl-carousel"}>
                     {
                         favorite_products.map((item, index) => {
                             return (<Fragment>
@@ -215,7 +266,21 @@ export default function Products() {
                             </Fragment>)
                         })
                     }
-                </Slider>
+                </div>
+                {/*<Slider ref={slider => {*/}
+                {/*    set_favorite_slider(slider)*/}
+                {/*}} {...favorite_slider_settings}>*/}
+                {/*    {*/}
+                {/*        favorite_products.map((item, index) => {*/}
+                {/*            return (<Fragment>*/}
+                {/*                <div className={styles.cfSlide}>*/}
+                {/*                    <img src={'/images/products/fav/' + (index) + '.png'}/>*/}
+                {/*                    <header>{item.title}</header>*/}
+                {/*                </div>*/}
+                {/*            </Fragment>)*/}
+                {/*        })*/}
+                {/*    }*/}
+                {/*</Slider>*/}
             </div>
         </div>
 
