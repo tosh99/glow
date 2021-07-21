@@ -1,5 +1,5 @@
 import styles from './styles/products.module.scss'
-import {Fragment, useState} from "react";
+import {Fragment, useEffect, useState} from "react";
 import Slider from "react-slick";
 import {motion} from "framer-motion"
 import {InView} from 'react-intersection-observer';
@@ -34,13 +34,26 @@ export default function Products() {
     //     // autoplay: true,
     //     autoplaySpeed: 2000,
     // };
+
     const favorite_slider_settings = {
-        nav: false,
+        loop: true,
+        center: true,
         autoplay: true,
-        dots: false,
-        rewind: false,
-        loop: true
-    };
+        nav: false,
+        autoplayTimeout: 2500,
+        autoplaySpeed: 1000,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 3,
+            },
+            1000: {
+                items: 5,
+            }
+        }
+    }
     const [favorite_slider, set_favorite_slider] = useState({});
     const favorite_products = [
         {
@@ -151,50 +164,64 @@ export default function Products() {
         },
     ];
 
+    useEffect(() => {
+        const owl = $('.owl-carousel');
+        owl.owlCarousel(favorite_slider_settings);
+
+        $('#cfPrevId').click(function () {
+            owl.trigger('prev.owl.carousel');
+        })
+
+        $('#cfNextId').click(function () {
+            owl.trigger('next.owl.carousel');
+        })
+
+    }, [])
+
     return (<Fragment>
         <Head>
             <title>Products</title>
-            <script src={`https://code.jquery.com/jquery-3.2.1.slim.min.js`}/>
-            <script src={`https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js`}/>
-            <script dangerouslySetInnerHTML={{
-                __html: `
-                    $(document).ready(function(){
-                        var owl = $('.owl-carousel');
-                        const settings = {
-                            loop: true,
-                            center: true,
-                            autoplay: true,
-                            nav: false,
-                            autoplayTimeout: 2500,
-                            autoplaySpeed: 1000,
-                            responsive: {
-                                0: {
-                                    items: 1,
-                                },
-                                600: {
-                                    items: 3,
-                                },
-                                1000: {
-                                    items: 5,
-                                }
-                            }
-                        }
-                        
-                        owl.owlCarousel(settings);
-                        
-                        $('#cfPrevId').click(function() {
-                            owl.trigger('prev.owl.carousel');
-                        })
-                        
-                        $('#cfNextId').click(function() {
-                            owl.trigger('next.owl.carousel');
-                        })
-                        
-                    });
-                    
-                `,
-            }}>
-            </script>
+            {/*<script src={`https://code.jquery.com/jquery-3.2.1.slim.min.js`}/>*/}
+            {/*<script src={`https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js`}/>*/}
+            {/*<script dangerouslySetInnerHTML={{*/}
+            {/*    __html: `*/}
+            {/*        $(document).ready(function(){*/}
+            {/*            var owl = $('.owl-carousel');*/}
+            {/*            const settings = {*/}
+            {/*                loop: true,*/}
+            {/*                center: true,*/}
+            {/*                autoplay: true,*/}
+            {/*                nav: false,*/}
+            {/*                autoplayTimeout: 2500,*/}
+            {/*                autoplaySpeed: 1000,*/}
+            {/*                responsive: {*/}
+            {/*                    0: {*/}
+            {/*                        items: 1,*/}
+            {/*                    },*/}
+            {/*                    600: {*/}
+            {/*                        items: 3,*/}
+            {/*                    },*/}
+            {/*                    1000: {*/}
+            {/*                        items: 5,*/}
+            {/*                    }*/}
+            {/*                }*/}
+            {/*            }*/}
+            {/*            */}
+            {/*            owl.owlCarousel(settings);*/}
+            {/*            */}
+            {/*            $('#cfPrevId').click(function() {*/}
+            {/*                owl.trigger('prev.owl.carousel');*/}
+            {/*            })*/}
+            {/*            */}
+            {/*            $('#cfNextId').click(function() {*/}
+            {/*                owl.trigger('next.owl.carousel');*/}
+            {/*            })*/}
+            {/*            */}
+            {/*        });*/}
+            {/*        */}
+            {/*    `,*/}
+            {/*}}>*/}
+            {/*</script>*/}
         </Head>
         <PageHeader title={'Products'}/>
         <div className={"outer " + styles.bodyOuter}>

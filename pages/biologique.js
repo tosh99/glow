@@ -50,14 +50,23 @@ export default function Biologique() {
 
 
     const favorite_slider_settings = {
-        dots: false,
-        speed: 1250,
-        centerMode: true,
-        adaptiveHeight: true,
-        variableWidth: true,
-        arrows: false,
+        loop: true,
+        center: true,
         autoplay: true,
-        autoplaySpeed: 2000,
+        nav: false,
+        autoplayTimeout: 2500,
+        autoplaySpeed: 1000,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 3,
+            },
+            1000: {
+                items: 5,
+            }
+        }
     };
     const [favorite_slider, set_favorite_slider] = useState({});
     const favorite_products = [
@@ -93,51 +102,65 @@ export default function Biologique() {
         },
     ];
 
+    useEffect(() => {
+        const owl = $('.owl-carousel');
+        owl.owlCarousel(favorite_slider_settings);
+
+        $('#cfPrevId').click(function () {
+            owl.trigger('prev.owl.carousel');
+        })
+
+        $('#cfNextId').click(function () {
+            owl.trigger('next.owl.carousel');
+        })
+
+    }, [])
+
 
     return (<Fragment>
         <Head>
             <title>Products</title>
-            <script src={`https://code.jquery.com/jquery-3.2.1.slim.min.js`}/>
-            <script src={`https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js`}/>
-            <script dangerouslySetInnerHTML={{
-                __html: `
-                    $(document).ready(function(){
-                        var owl = $('.owl-carousel');
-                        const settings = {
-                            loop: true,
-                            center: true,
-                            autoplay: true,
-                            nav: false,
-                            autoplayTimeout: 2500,
-                            autoplaySpeed: 1000,
-                            responsive: {
-                                0: {
-                                    items: 1,
-                                },
-                                600: {
-                                    items: 2,
-                                },
-                                1000: {
-                                    items: 3,
-                                }
-                            }
-                        }
-                        
-                        owl.owlCarousel(settings);
-                        
-                        $('#cfPrevId').click(function() {
-                            owl.trigger('prev.owl.carousel');
-                        })
-                        
-                        $('#cfNextId').click(function() {
-                            owl.trigger('next.owl.carousel');
-                        })
-                        
-                    });
-                    
-                `,
-            }}>
-            </script>
+            {/*<script src={`https://code.jquery.com/jquery-3.2.1.slim.min.js`}/>*/}
+            {/*<script src={`https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js`}/>*/}
+            {/*<script dangerouslySetInnerHTML={{*/}
+            {/*    __html: `*/}
+            {/*        $(document).ready(function(){*/}
+            {/*            var owl = $('.owl-carousel');*/}
+            {/*            const settings = {*/}
+            {/*                loop: true,*/}
+            {/*                center: true,*/}
+            {/*                autoplay: true,*/}
+            {/*                nav: false,*/}
+            {/*                autoplayTimeout: 2500,*/}
+            {/*                autoplaySpeed: 1000,*/}
+            {/*                responsive: {*/}
+            {/*                    0: {*/}
+            {/*                        items: 1,*/}
+            {/*                    },*/}
+            {/*                    600: {*/}
+            {/*                        items: 2,*/}
+            {/*                    },*/}
+            {/*                    1000: {*/}
+            {/*                        items: 3,*/}
+            {/*                    }*/}
+            {/*                }*/}
+            {/*            }*/}
+            {/*            */}
+            {/*            owl.owlCarousel(settings);*/}
+            {/*            */}
+            {/*            $('#cfPrevId').click(function() {*/}
+            {/*                owl.trigger('prev.owl.carousel');*/}
+            {/*            })*/}
+            {/*            */}
+            {/*            $('#cfNextId').click(function() {*/}
+            {/*                owl.trigger('next.owl.carousel');*/}
+            {/*            })*/}
+            {/*            */}
+            {/*        });*/}
+            {/*        */}
+            {/*    `,*/}
+            {/*}}>*/}
+            {/*</script>*/}
         </Head>
         <PageHeader title={'Biologique Recherche'}/>
 
