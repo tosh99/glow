@@ -271,7 +271,6 @@ export default function Products() {
                         <NextBack prevId={'cfPrevId'} nextId={'cfNextId'}/>
                     </div>
                 </div>
-
                 <div className={"owl-carousel"}>
                     {
                         favorite_products.map((item, index) => {
@@ -284,20 +283,6 @@ export default function Products() {
                         })
                     }
                 </div>
-                {/*<Slider ref={slider => {*/}
-                {/*    set_favorite_slider(slider)*/}
-                {/*}} {...favorite_slider_settings}>*/}
-                {/*    {*/}
-                {/*        favorite_products.map((item, index) => {*/}
-                {/*            return (<Fragment>*/}
-                {/*                <div className={styles.cfSlide}>*/}
-                {/*                    <img src={'/images/products/fav/' + (index) + '.png'}/>*/}
-                {/*                    <header>{item.title}</header>*/}
-                {/*                </div>*/}
-                {/*            </Fragment>)*/}
-                {/*        })*/}
-                {/*    }*/}
-                {/*</Slider>*/}
             </div>
         </div>
 

@@ -4,7 +4,7 @@ import {Fragment, useEffect, useState} from "react";
 import Slider from "react-slick";
 import {motion} from "framer-motion"
 import {InView, useInView} from 'react-intersection-observer';
-import Ourclinic from "../shared/components/ourclinic/ourclinic";
+import Ourclinic from "../shared/sections/ourclinic/ourclinic";
 import HomePageHeader from "../shared/components/home-page-header/home-page-header";
 import {constants} from "../styles/constants";
 import NextBack from "../shared/components/nextback/nextback";
@@ -24,6 +24,25 @@ export default function Home() {
             set_current_slide(next)
         },
     };
+    const favorite_slider_settings = {
+        loop: true,
+        center: true,
+        autoplay: true,
+        nav: false,
+        autoplayTimeout: 4500,
+        autoplaySpeed: 1000,
+        autoWidth: true,
+        responsive: {
+            0: {
+                items: 1,
+                autoWidth: false
+            },
+            //     768: {
+            //         items: 2,
+            //     },
+        },
+    }
+
 
     const [current_slide, set_current_slide] = useState(0);
 
@@ -51,6 +70,26 @@ export default function Home() {
             content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.'
         }
     ];
+
+    useEffect(() => {
+        const owl = $('.owl-carousel');
+        owl.owlCarousel(favorite_slider_settings);
+
+        for (let i = 0; i < carousel_content.length; i++) {
+            $('#cfPrevId' + i).click(function () {
+                owl.trigger('prev.owl.carousel');
+            })
+
+            $('#cfNextId' + i).click(function () {
+                console.log('Here')
+                owl.trigger('next.owl.carousel');
+            })
+        }
+
+        owl.on('changed.owl.carousel', function (event) {
+            set_current_slide(event.item.index - 3);
+        })
+    }, [])
 
     return (
         <Fragment>
@@ -151,8 +190,6 @@ export default function Home() {
                                     <header>make AN appointment</header>
                                 </div>
                             </div>
-
-
                         </motion.div>)
                 }
             </InView>
@@ -200,13 +237,11 @@ export default function Home() {
                         journey.
                     </p>
 
-                    <Slider ref={slider => {
-                        setslider(slider)
-                    }} {...settings}>
+                    <div className={"owl-carousel"}>
                         {
                             carousel_content.map((item, index) => {
                                 return (<Fragment>
-                                    <div className={styles.slide}>
+                                    <div className={styles.slide} id={'slide_' + index}>
                                         {
                                             current_slide === index &&
                                             <InView threshold={0}>
@@ -238,14 +273,62 @@ export default function Home() {
                                                         </motion.div>)
                                                 }
                                             </InView>
-                                            <NextBack theme={'light'} onBack={slider.slickPrev} onNext={slider.slickNext}/>
+                                            <NextBack theme={'light'} prevId={'cfPrevId' + index} nextId={'cfNextId' + index}/>
                                         </div>
                                     </div>
 
                                 </Fragment>)
                             })
                         }
-                    </Slider>
+                    </div>
+
+
+                    {/*<Slider ref={slider => {*/}
+                    {/*    setslider(slider)*/}
+                    {/*}} {...settings}>*/}
+                    {/*    {*/}
+                    {/*        carousel_content.map((item, index) => {*/}
+                    {/*            return (<Fragment>*/}
+                    {/*                <div className={styles.slide}>*/}
+                    {/*                    {*/}
+                    {/*                        current_slide === index &&*/}
+                    {/*                        <InView threshold={0}>*/}
+                    {/*                            {*/}
+                    {/*                                ({ref, inView}) => (*/}
+                    {/*                                    <motion.div className={styles.title}*/}
+                    {/*                                                ref={ref}*/}
+                    {/*                                                initial={{opacity: 0}}*/}
+                    {/*                                                animate={inView ? {opacity: 1} : {opacity: 0}}*/}
+                    {/*                                                transition={{duration: 0.7}}>*/}
+                    {/*                                        {item.title}*/}
+                    {/*                                    </motion.div>)*/}
+                    {/*                            }*/}
+                    {/*                        </InView>*/}
+                    {/*                    }*/}
+                    {/*                    <img className={"gr " + (current_slide === index ? styles.banner : '')} src={'/images/home/slider-' + (index + 1) + '.png'}/>*/}
+                    {/*                    <div>*/}
+                    {/*                        <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>*/}
+                    {/*                        <p>{item.content}</p>*/}
+                    {/*                        <InView threshold={0}>*/}
+                    {/*                            {*/}
+                    {/*                                ({ref, inView}) => (*/}
+                    {/*                                    <motion.div className={styles.titleM}*/}
+                    {/*                                                ref={ref}*/}
+                    {/*                                                initial={{opacity: 0}}*/}
+                    {/*                                                animate={inView ? {opacity: 1} : {opacity: 0}}*/}
+                    {/*                                                transition={{duration: 0.7}}>*/}
+                    {/*                                        {item.title}*/}
+                    {/*                                    </motion.div>)*/}
+                    {/*                            }*/}
+                    {/*                        </InView>*/}
+                    {/*                        <NextBack theme={'light'} onBack={slider.slickPrev} onNext={slider.slickNext}/>*/}
+                    {/*                    </div>*/}
+                    {/*                </div>*/}
+
+                    {/*            </Fragment>)*/}
+                    {/*        })*/}
+                    {/*    }*/}
+                    {/*</Slider>*/}
                 </div>
             </div>
 

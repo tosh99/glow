@@ -2,7 +2,7 @@ import {Fragment} from "react";
 import styles from "./styles/about.module.scss";
 import {InView} from "react-intersection-observer";
 import {motion} from "framer-motion";
-import Ourclinic from "../shared/components/ourclinic/ourclinic";
+import Ourclinic from "../shared/sections/ourclinic/ourclinic";
 import PageHeader from "../shared/components/page-header/page-header";
 import Footer from "../shared/components/footer/footer";
 

@@ -2,7 +2,7 @@ import {Fragment, useEffect, useState} from "react";
 import styles from "./styles/biologue.module.scss";
 import {InView} from "react-intersection-observer";
 import {motion} from "framer-motion";
-import Ourclinic from "../shared/components/ourclinic/ourclinic";
+import Ourclinic from "../shared/sections/ourclinic/ourclinic";
 import {constants} from "../styles/constants";
 import PageHeader from "../shared/components/page-header/page-header";
 import Slider from "react-slick";

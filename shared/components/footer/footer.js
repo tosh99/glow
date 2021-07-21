@@ -101,7 +101,7 @@ export default function Footer() {
                                 ref={ref}
                                 initial={{opacity: 0}}
                                 animate={inView ? {opacity: 1} : {opacity: 0}}
-                                transition={{duration: 0.8}}>
+                                transition={{duration: 0.4}}>
                         <div className={"inner " + styles.footer}>
                             <div className={styles.footerBase}>
                                 <header>Language</header>

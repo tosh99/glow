@@ -223,10 +223,15 @@
 
         img {
             margin-right: 60px;
+            width: unset;
+            filter: grayscale(100%);
+            animation: 0.5s;
         }
 
         .banner {
             margin-left: 199px;
+            filter: unset;
+            animation: 0.5s;
         }
 
         div {
@@ -504,6 +509,8 @@
 
         .slide {
             flex-direction: column;
+            margin-right: 0;
+            padding: 0 35px;
 
             .title {
                 display: none;
@@ -519,7 +526,7 @@
             img {
                 margin-right: 0;
                 margin-bottom: 20px;
-                width: 250px;
+                width: 100%;
             }
 
             .banner {
