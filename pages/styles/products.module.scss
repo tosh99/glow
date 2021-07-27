@@ -185,17 +185,22 @@
 
         img {
             margin-right: 60px;
+            width: unset;
+            filter: grayscale(100%);
+            animation: 0.5s;
         }
 
         .banner {
             margin-left: 199px;
+            filter: unset;
+            animation: 0.5s;
         }
 
         .shopNow {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            width: 263px;
+            min-width: 263px;
             margin-bottom: 70px;
 
             p {

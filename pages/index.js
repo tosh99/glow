@@ -11,19 +11,6 @@ import NextBack from "../shared/components/nextback/nextback";
 import Footer from "../shared/components/footer/footer";
 
 export default function Home() {
-    const settings = {
-        dots: true,
-        speed: 2250,
-        centerMode: true,
-        adaptiveHeight: true,
-        variableWidth: true,
-        arrows: false,
-        autoplay: false,
-        autoplaySpeed: 4000,
-        beforeChange: (current, next) => {
-            set_current_slide(next)
-        },
-    };
     const favorite_slider_settings = {
         loop: true,
         center: true,
@@ -37,9 +24,9 @@ export default function Home() {
                 items: 1,
                 autoWidth: false
             },
-            //     768: {
-            //         items: 2,
-            //     },
+            768: {
+                autoWidth: true
+            },
         },
     }
 
@@ -81,7 +68,6 @@ export default function Home() {
             })
 
             $('#cfNextId' + i).click(function () {
-                console.log('Here')
                 owl.trigger('next.owl.carousel');
             })
         }

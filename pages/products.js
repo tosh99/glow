@@ -41,7 +41,7 @@ export default function Products() {
         autoplay: true,
         nav: false,
         autoplayTimeout: 2500,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 1500,
         responsive: {
             0: {
                 items: 1,
@@ -51,6 +51,7 @@ export default function Products() {
             },
         }
     }
+
     const [favorite_slider, set_favorite_slider] = useState({});
     const favorite_products = [
         {
@@ -85,6 +86,25 @@ export default function Products() {
         },
     ];
 
+
+    const alternate_product_settings = {
+        loop: true,
+        center: true,
+        autoplay: true,
+        nav: false,
+        autoplayTimeout: 2500,
+        autoplaySpeed: 1500,
+        autoWidth: true,
+        responsive: {
+            0: {
+                items: 1,
+                autoWidth: false
+            },
+            768: {
+                autoWidth: true
+            },
+        },
+    }
     const products_alternate_settings = {
         dots: true,
         speed: 2250,
@@ -162,16 +182,22 @@ export default function Products() {
     ];
 
     useEffect(() => {
-        const owl = $('.owl-carousel');
+        const owl = $('.fav-carousel');
         owl.owlCarousel(favorite_slider_settings);
 
         $('#cfPrevId').click(function () {
             owl.trigger('prev.owl.carousel');
         })
-
         $('#cfNextId').click(function () {
             owl.trigger('next.owl.carousel');
         })
+
+        const owl_main = $('.alternate-carousel');
+        owl_main.owlCarousel(alternate_product_settings);
+        owl_main.on('changed.owl.carousel', function (event) {
+            set_current_products_alternate_slide(event.item.index - 4);
+        })
+
     }, [])
 
     return (<Fragment>
@@ -271,7 +297,7 @@ export default function Products() {
                         <NextBack prevId={'cfPrevId'} nextId={'cfNextId'}/>
                     </div>
                 </div>
-                <div className={"owl-carousel"}>
+                <div className={"owl-carousel fav-carousel"}>
                     {
                         favorite_products.map((item, index) => {
                             return (<Fragment>
@@ -304,9 +330,7 @@ export default function Products() {
 
         <div className={styles.slidersOuter}>
             <div className={styles.sliders}>
-                <Slider ref={slider => {
-                    set_products_alternate_slider(slider)
-                }} {...products_alternate_settings}>
+                <div className={'owl-carousel alternate-carousel'}>
                     {
                         products_alternate_content.map((item, index) => {
                             return (<Fragment>
@@ -338,7 +362,8 @@ export default function Products() {
                             </Fragment>)
                         })
                     }
-                </Slider>
+                </div>
+
             </div>
         </div>
 
