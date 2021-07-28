@@ -21,21 +21,8 @@ const locations = [
 export default function Ourclinic() {
 
     const clinic_slider_settings = {
-        loop: true,
-        center: true,
         nav: false,
-        autoplayTimeout: 4500,
-        autoplaySpeed: 1000,
-        autoWidth: true,
-        responsive: {
-            0: {
-                items: 1,
-                autoWidth: false
-            },
-            768: {
-                autoWidth: true
-            },
-        },
+        items: 1,
     }
     const [current_slide, set_current_slide] = useState(0);
 
@@ -45,7 +32,8 @@ export default function Ourclinic() {
         owl.owlCarousel(clinic_slider_settings);
 
         owl.on('changed.owl.carousel', function (e) {
-            set_current_slide(e.item.index - 3);
+            console.log(e.item.index)
+            set_current_slide(e.item.index);
         })
 
         $('#ocPrevId').click(function () {
