@@ -1,0 +1,21 @@
+.stripOuter {
+    background: black;
+}
+
+.strip {
+    color: white;
+    padding: 14px 0;
+    display: flex;
+    align-items: center;
+
+    header {
+        font-family: HattonRegular;
+        font-size: 20px;
+        line-height: 143%;
+        color: #EEEADD;
+    }
+
+    img {
+        height: 13px;
+    }
+}

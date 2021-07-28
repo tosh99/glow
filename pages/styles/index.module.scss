@@ -185,7 +185,8 @@
 }
 
 .sliders {
-    padding: 128px 0;
+    padding: 213px 0;
+    padding-bottom: 128px;
 
     .desc {
         max-width: 978px;
@@ -329,6 +330,8 @@
 
             p {
                 text-transform: uppercase;
+                font-family: HattonMedium;
+                letter-spacing: 0.2em;
             }
 
             header {

@@ -1,12 +1,49 @@
-import {Fragment} from "react";
+import {Fragment, useEffect, useState} from "react";
 import styles from "./styles/about.module.scss";
 import {InView} from "react-intersection-observer";
 import {motion} from "framer-motion";
 import Ourclinic from "../shared/sections/ourclinic/ourclinic";
 import PageHeader from "../shared/components/page-header/page-header";
 import Footer from "../shared/components/footer/footer";
+import NextBack from "../shared/components/nextback/nextback";
 
 export default function About() {
+    const testimonial_settings = {
+        loop: true,
+        autoplay: true,
+        nav: false,
+        dots: false,
+        autoplayTimeout: 4500,
+        autoplaySpeed: 1000,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            },
+        },
+    }
+
+    const [current_slide, set_current_slide] = useState(0);
+
+
+    useEffect(() => {
+        const owl = $('.testimonials-carousel');
+        owl.owlCarousel(testimonial_settings);
+
+        $('#ctPrevId').click(function () {
+            owl.trigger('prev.owl.carousel');
+        })
+
+        $('#ctNextId').click(function () {
+            owl.trigger('next.owl.carousel');
+        })
+
+        owl.on('changed.owl.carousel', function (event) {
+            set_current_slide(event.item.index - 3);
+        })
+    }, [])
 
 
     return (<Fragment>
@@ -62,7 +99,47 @@ export default function About() {
 
         <Ourclinic/>
 
-        <Footer />
+        <InView threshold={0.25} triggerOnce={true}>
+            {
+                ({ref, inView}) => (
+                    <motion.div className={"outer " + ' ' + styles.clientTestimonialsOuter}
+                                ref={ref}
+                                initial={{opacity: 0}}
+                                animate={inView ? {opacity: 1} : {opacity: 0}}
+                                transition={{duration: 0.8}}>
+                        <div className={"inner " + styles.clientTestimonials}>
+                            <div className={styles.ctHeader}>
+                                <h2>Client Testimonials</h2>
+                                <NextBack prevId={'ctPrevId'} nextId={'ctNextId'}/>
+                            </div>
+                        </div>
+
+                        <div className={"owl-carousel owl-theme testimonials-carousel"}>
+                            {
+                                [1, 3, 4, 5, 6, 6].map((item, index) => {
+                                    return <div className={styles.ctContent}>
+                                        <header>sandhya Shekar</header>
+                                        <span>APR 26, 2021</span>
+                                        <p>I reached out to Varshini when I was on of my life’s worst acne phase ever.
+                                            I was a month away from getting married and my skin didn’t show signs of settling
+                                            anytime soon. She instantly recommended me a list of Biologique Research Products.
+                                            I was apprehensive at first as I couldn’t believe that any product could change
+                                            my skin texture changed within a matter of 20 days. My acne marks lightened and I
+                                            had a smooth even texture on my big day. I have seen a visible reduction in my pore
+                                            size and wrinkles. I can’t be more thankful to her. Varshini is super patient and really listens
+                                            to you. She also has eye to understand your aesthetic and personality before she is recommending
+                                            products and procedures to you by giving you the space to choose rather than hard selling. Thank
+                                            you for the new skin revelation at age of 36. Absolutely love it 💓🤗</p>
+                                    </div>
+                                })
+                            }
+                        </div>
+                    </motion.div>)
+            }
+        </InView>
+
+
+        <Footer/>
 
     </Fragment>)
 }

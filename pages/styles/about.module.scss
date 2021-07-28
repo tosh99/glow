@@ -40,8 +40,70 @@
     }
 }
 
+.clientTestimonialsOuter {
+    .ctContent {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid #000000;
+        border-right: 1px solid #000000;
+        padding: 90px;
+
+        header {
+            font-size: 24px;
+            font-family: HattonMedium;
+            text-transform: uppercase;
+            line-height: 149.8%;
+            letter-spacing: 3px;
+            margin-bottom: 13px;
+        }
+
+        span {
+            font-family: TelegrafRegular;
+            font-size: 14px;
+            line-height: 101.1%;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 36px;
+        }
+
+        p {
+            font-family: TelegrafRegular;
+            font-size: 18px;
+            line-height: 149.8%;
+            letter-spacing: 0.1px;
+        }
+
+    }
+}
+
+.clientTestimonials {
+    display: flex;
+    flex-direction: column;
+
+    .ctHeader {
+        display: flex;
+        justify-content: space-between;
+        padding: 83px 0;
+
+        h2 {
+            font-family: EmpireBold;
+            font-size: 80px;
+            line-height: 98.1%;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+    }
+
+}
+
 @media only screen and (max-width: 648px) {
     .advocacy {
         padding: 50px 0;
+    }
+
+    .clientTestimonialsOuter {
+        .ctContent {
+            padding: 35px;
+        }
     }
 }

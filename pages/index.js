@@ -9,13 +9,15 @@ import HomePageHeader from "../shared/components/home-page-header/home-page-head
 import {constants} from "../styles/constants";
 import NextBack from "../shared/components/nextback/nextback";
 import Footer from "../shared/components/footer/footer";
+import Strip from "../shared/sections/strip/strip";
 
 export default function Home() {
-    const favorite_slider_settings = {
+    const carousel_settings = {
         loop: true,
         center: true,
         autoplay: true,
         nav: false,
+        dots: true,
         autoplayTimeout: 4500,
         autoplaySpeed: 1000,
         autoWidth: true,
@@ -60,16 +62,16 @@ export default function Home() {
 
     useEffect(() => {
         const owl = $('.owl-carousel');
-        owl.owlCarousel(favorite_slider_settings);
+        owl.owlCarousel(carousel_settings);
 
         for (let i = 0; i < carousel_content.length; i++) {
-            $('#cfPrevId' + i).click(function () {
-                owl.trigger('prev.owl.carousel');
-            })
-
-            $('#cfNextId' + i).click(function () {
-                owl.trigger('next.owl.carousel');
-            })
+            // $('#cfPrevId' + i).click(function () {
+            //     owl.trigger('prev.owl.carousel');
+            // })
+            //
+            // $('#cfNextId' + i).click(function () {
+            //     owl.trigger('next.owl.carousel');
+            // })
         }
 
         owl.on('changed.owl.carousel', function (event) {
@@ -99,9 +101,9 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className={styles.strip}>
 
-            </div>
+            <Strip/>
+
             <InView threshold={0.25} triggerOnce={true}>
                 {
                     ({ref, inView}) => (
@@ -223,7 +225,7 @@ export default function Home() {
                         journey.
                     </p>
 
-                    <div className={"owl-carousel"}>
+                    <div className={"owl-carousel owl-theme"}>
                         {
                             carousel_content.map((item, index) => {
                                 return (<Fragment>
@@ -243,7 +245,7 @@ export default function Home() {
                                                 }
                                             </InView>
                                         }
-                                        <img className={"gr " + (current_slide === index ? styles.banner : '')} src={'/images/home/slider-' + (index + 1) + '.png'}/>
+                                        <img className={"gr " + (current_slide === index ? styles.banner : '')} src={'/images/home/sliders/' + (index) + '.png'}/>
                                         <div>
                                             <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
                                             <p>{item.content}</p>
@@ -259,7 +261,7 @@ export default function Home() {
                                                         </motion.div>)
                                                 }
                                             </InView>
-                                            <NextBack theme={'light'} prevId={'cfPrevId' + index} nextId={'cfNextId' + index}/>
+                                            {/*<NextBack theme={'light'} prevId={'cfPrevId' + index} nextId={'cfNextId' + index}/>*/}
                                         </div>
                                     </div>
 
