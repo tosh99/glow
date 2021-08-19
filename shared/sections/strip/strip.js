@@ -1,6 +1,9 @@
 import styles from "./strip.module.scss";
-import {useEffect, useState} from "react";
+import {useState} from "react";
+import {Swiper, SwiperSlide} from 'swiper/react';
+import SwiperCore, {Autoplay, Controller, Navigation, Pagination} from 'swiper/core';
 
+SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 
 const items = [
     {
@@ -26,32 +29,38 @@ export default function Strip() {
 
     }
 
-
     const [current_slide, set_current_slide] = useState(0);
-
-
-    useEffect(() => {
-        const owl = $('.strip-carousel');
-        owl.owlCarousel(carousel_settings);
-
-        owl.on('changed.owl.carousel', function (event) {
-            set_current_slide(event.item.index - 3);
-        })
-    }, [])
 
     return (<>
         <div className={"outer " + styles.stripOuter}>
             <div className={"inner"}>
-                <div className={'owl-carousel owl-theme strip-carousel'}>
+                <Swiper slidesPerView={3}
+                        autoplay={{
+                            delay: 2500,
+                        }}
+                        loop={true}
+                        onInit={(ev) => {
+                            // set_body_swiper(ev)
+                        }}
+                        onSlideChange={(ev) => {
+                            if (ev.activeIndex - 1 === 5) {
+                                // set_current_body_slide(0)
+                            } else {
+                                // set_current_body_slide(ev.activeIndex - 1)
+                            }
+                        }}>
                     {
                         items.map((item, index) => {
-                            return <div className={styles.strip}>
-                                <header> {item.title}</header>
-                                <img src={'/icons/common/star.svg'}/>
-                            </div>
+                            return (<SwiperSlide>
+                                    <div className={styles.strip}>
+                                        <header> {item.title}</header>
+                                        <img src={'/icons/common/star.svg'}/>
+                                    </div>
+                                </SwiperSlide>
+                            )
                         })
                     }
-                </div>
+                </Swiper>
             </div>
         </div>
     </>)

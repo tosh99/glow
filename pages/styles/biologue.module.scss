@@ -2,6 +2,7 @@
     background: rgba(238, 234, 221, 0.9);;
 }
 
+
 .skinCare {
     padding: 128px 0;
 
@@ -107,10 +108,15 @@
 
         img {
             margin-right: 60px;
+            width: unset;
+            filter: grayscale(100%);
+            animation: 0.5s;
         }
 
         .banner {
             margin-left: 199px;
+            filter: unset;
+            animation: 0.5s;
         }
 
         div {
@@ -155,6 +161,89 @@
     }
 }
 
+.threeStageOuter {
+    background: black;
+
+    .threeStage {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding: 184px 100px 140px;
+        border-bottom: 1px solid #444444;
+
+        header {
+            color: #FFFFFF;
+            font-family: HattonRegular, sans-serif;
+            font-size: 280px;
+            line-height: 350px;
+            margin-right: 120px;
+        }
+
+        h1 {
+            font-family: EmpireBold, sans-serif;
+            font-size: 120px;
+            line-height: 130px;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            max-width: 414px;
+        }
+    }
+
+}
+
+.methodologyOuter {
+    background: black;
+}
+
+.methodology {
+    display: flex;
+    border-bottom: 1px solid #444444;
+    padding: 0 100px;
+
+    .metLeft {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid #444444;
+        padding: 100px 100px 100px 0;
+        height: 900px;
+
+        header {
+            font-family: SaolRegular, sans-serif;
+            font-size: 32px;
+            line-height: 150%;
+            letter-spacing: 0.1em;
+            color: #FFFFFF;
+            margin-bottom: 114px;
+        }
+
+        h2 {
+            font-family: EmpireBold, sans-serif;
+            font-size: 100px;
+            line-height: 100px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            margin-bottom: 35px;
+        }
+
+        p {
+            line-height: 150%;
+            letter-spacing: 0.05em;
+            color: #FFFFFF;
+            font-family: TelegrafRegular, sans-serif;
+        }
+    }
+
+    .metRight {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .currentFavouritesOuter {
 
 }
@@ -189,18 +278,19 @@
 
     }
 
-    .cfSlide {
+    .buyBr {
         margin-right: 20px;
+        width: 100%;
 
         img {
             margin-bottom: 20px;
         }
 
         header {
-            font-family: TelegrafRegular;
-            font-size: 20px;
-            line-height: 131.78%;
-            letter-spacing: 0.05em;
+            font-family: TelegrafRegular, sans-serif;
+            font-size: 24px;
+            line-height: 150%;
+            margin-bottom: 25px;
         }
     }
 
@@ -254,7 +344,7 @@
         }
     }
 
-    .sliders {
+   .sliders {
         padding: 50px 0;
 
         .content {
@@ -272,7 +362,103 @@
             }
         }
 
+        .desc {
+            margin-bottom: 80px;
+        }
 
+        .slide {
+            flex-direction: column;
+            margin-right: 0;
+            padding: 0 35px;
+
+            .title {
+                display: none;
+            }
+
+            .titleM {
+                display: block;
+                font-family: EmpireBold;
+                font-size: 80px;
+                text-transform: uppercase;
+            }
+
+            img {
+                margin-right: 0;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            .banner {
+                margin-left: 0;
+            }
+
+            div {
+                p {
+                    height: 250px;
+                    margin-bottom: 35px;
+                }
+            }
+        }
+    }
+
+
+    .threeStageOuter {
+
+        .threeStage {
+            padding: 50px 35px 50px;
+
+            header {
+                color: #FFFFFF;
+                font-family: HattonRegular, sans-serif;
+                font-size: 150px;
+                line-height: 110%;
+                margin-right: 20px;
+            }
+
+            h1 {
+                font-size: 60px;
+                line-height: 110%;
+                letter-spacing: 0.11em;
+            }
+        }
+
+    }
+
+    .methodology {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #444444;
+        padding: 0 35px 50px;
+
+        .metLeft {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            border-right: none;
+            padding: 50px 0;
+            height: auto;
+
+            header {
+                font-family: SaolRegular, sans-serif;
+                font-size: 32px;
+                margin-bottom: 64px;
+            }
+
+            h2 {
+                font-size: 60px;
+                line-height: 110%;
+                letter-spacing: 0.1em;
+                margin-bottom: 35px;
+            }
+
+            p {
+                height: 370px;
+            }
+        }
+
+        .metRight {
+            width: 100%;
+        }
     }
 
     .currentFavourites {

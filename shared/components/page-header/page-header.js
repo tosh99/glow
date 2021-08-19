@@ -19,9 +19,7 @@ export default function PageHeader({title, bg = 'solid'}) {
                     </div>
                 </Link>
                 <div className={styles.hRight}>
-                    <Link href="about">
-                        <header>{title}</header>
-                    </Link>
+                    <header>{title}</header>
                     <img src={'/icons/header/star.svg'} onClick={() => {
                         set_show_menu(true)
                     }}/>

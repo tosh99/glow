@@ -1,38 +1,18 @@
 import styles from './styles/index.module.scss'
-import Link from 'next/link'
 import {Fragment, useEffect, useState} from "react";
-import Slider from "react-slick";
 import {motion} from "framer-motion"
-import {InView, useInView} from 'react-intersection-observer';
+import {InView} from 'react-intersection-observer';
 import Ourclinic from "../shared/sections/ourclinic/ourclinic";
 import HomePageHeader from "../shared/components/home-page-header/home-page-header";
-import {constants} from "../styles/constants";
 import NextBack from "../shared/components/nextback/nextback";
 import Footer from "../shared/components/footer/footer";
 import Strip from "../shared/sections/strip/strip";
+import {Swiper, SwiperSlide} from 'swiper/react';
+import SwiperCore, {Autoplay, Controller, Navigation, Pagination} from 'swiper/core';
+
+SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 
 export default function Home() {
-    const carousel_settings = {
-        loop: true,
-        center: true,
-        autoplay: true,
-        nav: false,
-        dots: true,
-        autoplayTimeout: 4500,
-        autoplaySpeed: 1000,
-        autoWidth: true,
-        responsive: {
-            0: {
-                items: 1,
-                autoWidth: false
-            },
-            768: {
-                autoWidth: true
-            },
-        },
-    }
-
-
     const [current_slide, set_current_slide] = useState(0);
 
 
@@ -59,25 +39,6 @@ export default function Home() {
             content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.'
         }
     ];
-
-    useEffect(() => {
-        const owl = $('.owl-carousel');
-        owl.owlCarousel(carousel_settings);
-
-        for (let i = 0; i < carousel_content.length; i++) {
-            // $('#cfPrevId' + i).click(function () {
-            //     owl.trigger('prev.owl.carousel');
-            // })
-            //
-            // $('#cfNextId' + i).click(function () {
-            //     owl.trigger('next.owl.carousel');
-            // })
-        }
-
-        owl.on('changed.owl.carousel', function (event) {
-            set_current_slide(event.item.index - 3);
-        })
-    }, [])
 
     return (
         <Fragment>
@@ -225,98 +186,62 @@ export default function Home() {
                         journey.
                     </p>
 
-                    <div className={"owl-carousel owl-theme"}>
+                    <Swiper slidesPerView={'auto'}
+                            autoplay={{
+                                delay: 2500,
+                            }} centeredSlides={true}
+                            loop={true}
+                            onSlideChange={(ev) => {
+                                if (ev.activeIndex - 5 === 5) {
+                                    set_current_slide(0)
+                                } else {
+                                    set_current_slide(ev.activeIndex - 5)
+                                }
+
+                            }}>
                         {
                             carousel_content.map((item, index) => {
-                                return (<Fragment>
-                                    <div className={styles.slide} id={'slide_' + index}>
-                                        {
-                                            current_slide === index &&
-                                            <InView threshold={0}>
-                                                {
-                                                    ({ref, inView}) => (
-                                                        <motion.div className={styles.title}
-                                                                    ref={ref}
-                                                                    initial={{opacity: 0}}
-                                                                    animate={inView ? {opacity: 1} : {opacity: 0}}
-                                                                    transition={{duration: 0.7}}>
-                                                            {item.title}
-                                                        </motion.div>)
-                                                }
-                                            </InView>
-                                        }
-                                        <img className={"gr " + (current_slide === index ? styles.banner : '')} src={'/images/home/sliders/' + (index) + '.png'}/>
-                                        <div>
-                                            <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
-                                            <p>{item.content}</p>
-                                            <InView threshold={0}>
-                                                {
-                                                    ({ref, inView}) => (
-                                                        <motion.div className={styles.titleM}
-                                                                    ref={ref}
-                                                                    initial={{opacity: 0}}
-                                                                    animate={inView ? {opacity: 1} : {opacity: 0}}
-                                                                    transition={{duration: 0.7}}>
-                                                            {item.title}
-                                                        </motion.div>)
-                                                }
-                                            </InView>
-                                            {/*<NextBack theme={'light'} prevId={'cfPrevId' + index} nextId={'cfNextId' + index}/>*/}
+                                return (<SwiperSlide>
+                                        <div className={styles.slide}>
+                                            {
+                                                current_slide === index &&
+                                                <InView threshold={0}>
+                                                    {
+                                                        ({ref, inView}) => (
+                                                            <motion.div className={styles.title}
+                                                                        ref={ref}
+                                                                        initial={{opacity: 0}}
+                                                                        animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                        transition={{duration: 0.7}}>
+                                                                {item.title}
+                                                            </motion.div>)
+                                                    }
+                                                </InView>
+                                            }
+                                            <img className={"gr " + (current_slide === index ? styles.banner : '')} src={'/images/home/sliders/' + (index) + '.png'}/>
+                                            <div>
+                                                <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
+                                                <p>{item.content}</p>
+                                                <InView threshold={0}>
+                                                    {
+                                                        ({ref, inView}) => (
+                                                            <motion.div className={styles.titleM}
+                                                                        ref={ref}
+                                                                        initial={{opacity: 0}}
+                                                                        animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                        transition={{duration: 0.7}}>
+                                                                {item.title}
+                                                            </motion.div>)
+                                                    }
+                                                </InView>
+                                                <NextBack theme={'light'}/>
+                                            </div>
                                         </div>
-                                    </div>
-
-                                </Fragment>)
+                                    </SwiperSlide>
+                                )
                             })
                         }
-                    </div>
-
-
-                    {/*<Slider ref={slider => {*/}
-                    {/*    setslider(slider)*/}
-                    {/*}} {...settings}>*/}
-                    {/*    {*/}
-                    {/*        carousel_content.map((item, index) => {*/}
-                    {/*            return (<Fragment>*/}
-                    {/*                <div className={styles.slide}>*/}
-                    {/*                    {*/}
-                    {/*                        current_slide === index &&*/}
-                    {/*                        <InView threshold={0}>*/}
-                    {/*                            {*/}
-                    {/*                                ({ref, inView}) => (*/}
-                    {/*                                    <motion.div className={styles.title}*/}
-                    {/*                                                ref={ref}*/}
-                    {/*                                                initial={{opacity: 0}}*/}
-                    {/*                                                animate={inView ? {opacity: 1} : {opacity: 0}}*/}
-                    {/*                                                transition={{duration: 0.7}}>*/}
-                    {/*                                        {item.title}*/}
-                    {/*                                    </motion.div>)*/}
-                    {/*                            }*/}
-                    {/*                        </InView>*/}
-                    {/*                    }*/}
-                    {/*                    <img className={"gr " + (current_slide === index ? styles.banner : '')} src={'/images/home/slider-' + (index + 1) + '.png'}/>*/}
-                    {/*                    <div>*/}
-                    {/*                        <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>*/}
-                    {/*                        <p>{item.content}</p>*/}
-                    {/*                        <InView threshold={0}>*/}
-                    {/*                            {*/}
-                    {/*                                ({ref, inView}) => (*/}
-                    {/*                                    <motion.div className={styles.titleM}*/}
-                    {/*                                                ref={ref}*/}
-                    {/*                                                initial={{opacity: 0}}*/}
-                    {/*                                                animate={inView ? {opacity: 1} : {opacity: 0}}*/}
-                    {/*                                                transition={{duration: 0.7}}>*/}
-                    {/*                                        {item.title}*/}
-                    {/*                                    </motion.div>)*/}
-                    {/*                            }*/}
-                    {/*                        </InView>*/}
-                    {/*                        <NextBack theme={'light'} onBack={slider.slickPrev} onNext={slider.slickNext}/>*/}
-                    {/*                    </div>*/}
-                    {/*                </div>*/}
-
-                    {/*            </Fragment>)*/}
-                    {/*        })*/}
-                    {/*    }*/}
-                    {/*</Slider>*/}
+                    </Swiper>
                 </div>
             </div>
 

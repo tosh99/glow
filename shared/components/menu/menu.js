@@ -4,6 +4,7 @@ import styles from "./menu.module.scss";
 import {Fragment} from "react";
 import Link from "next/link";
 import {constants} from "../../../styles/constants";
+import Router from "next/router";
 
 export default function Menu({close}) {
 
@@ -12,10 +13,14 @@ export default function Menu({close}) {
 
     }
 
+    const navigateHome = () => {
+        Router.push('/');
+    }
+
     return (<Fragment>
         <div className={styles.menu}>
             <div className={styles.menuTop}>
-                <img className={styles.logo} src={'/icons/header/logo.svg'}/>
+                <img className={styles.logo} src={'/icons/header/logo.svg'} onClick={navigateHome}/>
                 <img src={'/icons/header/close.svg'} onClick={close}/>
             </div>
             <div className={styles.menuContent}>

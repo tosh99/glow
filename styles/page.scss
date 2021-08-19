@@ -11,6 +11,20 @@
     }
 }
 
+.frameOuter {
+    display: flex;
+    justify-content: center;
+}
+
+
+.frame {
+    max-width: 1440px;
+    position: relative;
+    padding: 0 20px;
+    width: 100%;
+}
+
+
 @media only screen and (max-width: 1024px) {
     .outer {
         .inner {

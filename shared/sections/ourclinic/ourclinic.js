@@ -3,6 +3,10 @@ import {motion} from "framer-motion";
 import styles from "./ourclinic.module.scss";
 import {Fragment, useEffect, useState} from "react";
 import NextBack from "../../components/nextback/nextback";
+import {Swiper, SwiperSlide} from 'swiper/react';
+import SwiperCore, {Autoplay, Navigation, Pagination} from 'swiper/core';
+
+SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const locations = [
     {
@@ -20,29 +24,13 @@ const locations = [
 
 export default function Ourclinic() {
 
-    const clinic_slider_settings = {
-        nav: false,
-        items: 1,
-    }
+    const [clinic_swiper, set_clinic_swiper] = useState({});
+
     const [current_slide, set_current_slide] = useState(0);
 
 
     useEffect(() => {
-        const owl = $('.address-carousel');
-        owl.owlCarousel(clinic_slider_settings);
 
-        owl.on('changed.owl.carousel', function (e) {
-            console.log(e.item.index)
-            set_current_slide(e.item.index);
-        })
-
-        $('#ocPrevId').click(function () {
-            owl.trigger('prev.owl.carousel');
-        })
-
-        $('#ocNextId').click(function () {
-            owl.trigger('next.owl.carousel');
-        })
     }, [])
 
     return (<Fragment>
@@ -61,14 +49,28 @@ export default function Ourclinic() {
                                 <header>get direction</header>
                             </div>
                             <div className={styles.vuMap}>
-                                <div className={"owl-carousel address-carousel"}>
-                                    <div>
-                                        <img src={'/images/home/hyderabad.png'}/>
-                                    </div>
-                                    <div>
-                                        <img src={'/images/home/hyderabad.png'}/>
-                                    </div>
-                                </div>
+                                <Swiper slidesPerView={1}
+                                        autoplay={{
+                                            delay: 2500,
+                                        }}
+                                        onInit={(ev) => {
+                                            set_clinic_swiper(ev)
+                                        }}
+                                        onSlideChange={(ev) => {
+                                            console.log(ev.activeIndex)
+                                            set_current_slide(ev.activeIndex)
+                                        }}>
+                                    <SwiperSlide>
+                                        <div>
+                                            <img src={'/images/home/hyderabad.png'}/>
+                                        </div>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <div>
+                                            <img src={'/images/home/hyderabad.png'}/>
+                                        </div>
+                                    </SwiperSlide>
+                                </Swiper>
                             </div>
                             <div className={styles.vuAddress}>
                                 <div className={styles.vuaLeft}>
@@ -80,7 +82,11 @@ export default function Ourclinic() {
                                     </header>
                                 </div>
                                 <div className={styles.vuaRight}>
-                                    <NextBack theme={'light'} prevId={'ocPrevId'} nextId={'ocNextId'}/>
+                                    <NextBack theme={'light'} onBack={() => {
+                                        clinic_swiper.slidePrev()
+                                    }} onNext={() => {
+                                        clinic_swiper.slideNext()
+                                    }}/>
                                 </div>
                             </div>
                         </div>

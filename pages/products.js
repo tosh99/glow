@@ -1,46 +1,50 @@
 import styles from './styles/products.module.scss'
-import {Fragment, useEffect, useState} from "react";
-import Slider from "react-slick";
+import {Fragment, useState} from "react";
 import {motion} from "framer-motion"
 import {InView} from 'react-intersection-observer';
 import NextBack from "../shared/components/nextback/nextback";
 import PageHeader from "../shared/components/page-header/page-header";
 import Head from "next/head";
+import {Swiper, SwiperSlide} from 'swiper/react';
+import SwiperCore, {Autoplay, Navigation, Pagination} from 'swiper/core';
+
+SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 export default function Products() {
-    const body_slider_settings = {
-        dots: false,
-        speed: 1250,
-        arrows: false,
-        centerMode: false,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        slidesToShow: 1,
-        adaptiveHeight: true,
-        beforeChange: (current, next) => {
-            set_current_body_slide(next)
-        },
-    };
+    // Body Settings
     const [current_body_slide, set_current_body_slide] = useState(0);
-    const [body_slider, set_body_slider] = useState({});
+    const [body_swiper, set_body_swiper] = useState({});
+    const body_content = [
+        {
+            title: 'Good for <br/>' + 'Glow',
+            desc: 'A range of hand-picked brands for the best of body care products that are made with clean, active ingredients and are result-driven. Taking care of your body is equally rewarding.',
+            shop: 'Body',
+        },
+        {
+            title: 'Get set <br/>' + 'Glow',
+            desc: 'Give your hair care routine a bump onto the next level. Whether it is finding the right products for your hair type and concern or adding some lovely serums for that extra bounce, we’ve curated an array of products for each and every one of your needs.',
+            shop: 'Body',
+        },
+        {
+            title: 'You <br/>' + 'Glow',
+            desc: 'Whether you’re a beginner or a skincare enthusiast, we have something for you all. Choose from our repertoire of curated skincare products that have been praised and given a cult status for their new-age formulations, therapies and lasting skincare benefits. A healthy glow awaits you.',
+            shop: 'Body',
+        },
+        {
+            title: 'Glow From <br/>' + 'Within',
+            desc: 'At Glow, we promote overall well-being for healthy skin and hair. Find supplements that come recommended for a glow that’s from within.',
+            shop: 'Body',
+        },
+        {
+            title: 'At home <br/>' + 'Glow',
+            desc: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.',
+            shop: 'Body',
+        },
+    ];
 
-    const favorite_slider_settings = {
-        loop: true,
-        center: true,
-        nav: false,
-        autoplayTimeout: 2500,
-        autoplaySpeed: 1500,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            768: {
-                items: 3,
-            },
-        }
-    }
-
-    const [favorite_slider, set_favorite_slider] = useState({});
+    // Favorite Settings
+    const [favorite_swiper, set_favorite_swiper] = useState({});
+    const [current_favorite_slide, set_current_favorite_slide] = useState(0);
     const favorite_products = [
         {
             title: 'Lotion P50 BR',
@@ -74,41 +78,8 @@ export default function Products() {
         },
     ];
 
-
-    const alternate_product_settings = {
-        loop: true,
-        center: true,
-        autoplay: true,
-        nav: false,
-        autoplayTimeout: 2500,
-        autoplaySpeed: 1500,
-        autoWidth: true,
-        responsive: {
-            0: {
-                items: 1,
-                autoWidth: false
-            },
-            768: {
-                autoWidth: true
-            },
-        },
-    }
-    const products_alternate_settings = {
-        dots: true,
-        speed: 2250,
-        centerMode: true,
-        adaptiveHeight: true,
-        variableWidth: true,
-        arrows: false,
-        autoplay: false,
-        autoplaySpeed: 4000,
-        beforeChange: (current, next) => {
-            console.log(current)
-            console.log(next)
-            set_current_products_alternate_slide(next)
-        },
-    };
-    const [products_alternate_slider, set_products_alternate_slider] = useState({});
+    // Alternate Settings
+    const [products_alternate_swiper, set_products_alternate_swiper] = useState({});
     const [current_products_alternate_slide, set_current_products_alternate_slide] = useState(0);
     const products_alternate_content = [
         {
@@ -141,52 +112,6 @@ export default function Products() {
         }
     ];
 
-    const rtl = [
-        {
-            title: 'Good for <br/>' + 'Glow',
-            desc: 'A range of hand-picked brands for the best of body care products that are made with clean, active ingredients and are result-driven. Taking care of your body is equally rewarding.',
-            shop: 'Body',
-        },
-        {
-            title: 'Get set <br/>' + 'Glow',
-            desc: 'Give your hair care routine a bump onto the next level. Whether it is finding the right products for your hair type and concern or adding some lovely serums for that extra bounce, we’ve curated an array of products for each and every one of your needs.',
-            shop: 'Body',
-        },
-        {
-            title: 'You <br/>' + 'Glow',
-            desc: 'Whether you’re a beginner or a skincare enthusiast, we have something for you all. Choose from our repertoire of curated skincare products that have been praised and given a cult status for their new-age formulations, therapies and lasting skincare benefits. A healthy glow awaits you.',
-            shop: 'Body',
-        },
-        {
-            title: 'Glow From <br/>' + 'Within',
-            desc: 'At Glow, we promote overall well-being for healthy skin and hair. Find supplements that come recommended for a glow that’s from within.',
-            shop: 'Body',
-        },
-        {
-            title: 'At home <br/>' + 'Glow',
-            desc: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.',
-            shop: 'Body',
-        },
-    ];
-
-    useEffect(() => {
-        const owl = $('.fav-carousel');
-        owl.owlCarousel(favorite_slider_settings);
-
-        $('#cfPrevId').click(function () {
-            owl.trigger('prev.owl.carousel');
-        })
-        $('#cfNextId').click(function () {
-            owl.trigger('next.owl.carousel');
-        })
-
-        const owl_main = $('.alternate-carousel');
-        owl_main.owlCarousel(alternate_product_settings);
-        owl_main.on('changed.owl.carousel', function (event) {
-            set_current_products_alternate_slide(event.item.index - 4);
-        })
-
-    }, [])
 
     return (<Fragment>
         <Head>
@@ -197,31 +122,46 @@ export default function Products() {
             <div className={"inner " + styles.body}>
                 <div className={styles.bLeft}>
                     <div>
-                        <h1 dangerouslySetInnerHTML={{__html: rtl[current_body_slide].title}}/>
-                        <p>{rtl[current_body_slide].desc}</p>
+                        <h1 dangerouslySetInnerHTML={{__html: body_content[current_body_slide].title}}/>
+                        <p>{body_content[current_body_slide].desc}</p>
                     </div>
-                    <header>Shop {rtl[current_body_slide].shop}</header>
+                    <header>Shop {body_content[current_body_slide].shop}</header>
                 </div>
                 <div className={styles.bRight}>
-                    <Slider ref={slider => {
-                        set_body_slider(slider)
-                    }} {...body_slider_settings}>
+                    <Swiper slidesPerView={1}
+                            autoplay={{
+                                delay: 2500,
+                            }}
+                            loop={true}
+                            onInit={(ev) => {
+                                set_body_swiper(ev)
+                            }}
+                            onSlideChange={(ev) => {
+                                if (ev.activeIndex - 1 === 5) {
+                                    set_current_body_slide(0)
+                                } else {
+                                    set_current_body_slide(ev.activeIndex - 1)
+                                }
+                            }}>
                         {
-                            rtl.map((item, index) => {
-                                return (<Fragment>
-                                    <div className={styles.slide}>
-                                        <img src={'/images/products/top/' + (index) + '.png'}/>
-                                    </div>
-                                </Fragment>)
+                            body_content.map((item, index) => {
+                                return (<SwiperSlide>
+                                        <div className={styles.slide}>
+                                            <img src={'/images/products/top/' + (index) + '.png'}/>
+                                        </div>
+                                    </SwiperSlide>
+                                )
                             })
                         }
-                    </Slider>
+                    </Swiper>
                     <div>
-                        <NextBack onBack={body_slider.slickPrev} onNext={body_slider.slickNext}/>
+                        <NextBack onBack={() => {
+                            body_swiper.slidePrev()
+                        }} onNext={() => {
+                            body_swiper.slideNext()
+                        }}/>
                     </div>
-
                 </div>
-
             </div>
         </div>
 
@@ -241,21 +181,40 @@ export default function Products() {
                 <div className={styles.cfHeader}>
                     <h2>Varshini's Current Favourites</h2>
                     <div>
-                        <NextBack prevId={'cfPrevId'} nextId={'cfNextId'}/>
+                        <NextBack onBack={() => {
+                            favorite_swiper.slidePrev()
+                        }} onNext={() => {
+                            favorite_swiper.slideNext()
+                        }}/>
                     </div>
                 </div>
-                <div className={"owl-carousel fav-carousel"}>
+                <Swiper
+                    autoplay={{
+                        delay: 2500,
+                    }}
+                    loop={true}
+                    onInit={(ev) => {
+                        set_favorite_swiper(ev)
+                    }}
+                    onSlideChange={(ev) => {
+                        if (ev.activeIndex - 1 === 5) {
+                            set_current_favorite_slide(0)
+                        } else {
+                            set_current_favorite_slide(ev.activeIndex - 1)
+                        }
+                    }}>
                     {
                         favorite_products.map((item, index) => {
-                            return (<Fragment>
-                                <div className={styles.cfSlide}>
-                                    <img src={'/images/products/fav/' + (index) + '.png'}/>
-                                    <header>{item.title}</header>
-                                </div>
-                            </Fragment>)
+                            return (<SwiperSlide>
+                                    <div className={styles.cfSlide}>
+                                        <img src={'/images/products/fav/' + (index) + '.png'}/>
+                                        <header>{item.title}</header>
+                                    </div>
+                                </SwiperSlide>
+                            )
                         })
                     }
-                </div>
+                </Swiper>
             </div>
         </div>
 
@@ -277,40 +236,68 @@ export default function Products() {
 
         <div className={styles.slidersOuter}>
             <div className={styles.sliders}>
-                <div className={'owl-carousel alternate-carousel'}>
+                <Swiper slidesPerView={'auto'}
+                        breakpoints={{
+                            // when window width is >= 320px
+                            200: {
+                                slidesPerView: 1,
+                            },
+                            // when window width is >= 480px
+                            648: {
+                                slidesPerView: 'auto',
+                            }
+                        }}
+                        autoplay={{
+                            delay: 2500,
+                        }}
+                        loop={true}
+                        centeredSlides={true}
+                        onInit={(ev) => {
+                            set_products_alternate_swiper(ev)
+                        }}
+                        onSlideChange={(ev) => {
+                            if (ev.activeIndex - 7 === 7) {
+                                set_current_products_alternate_slide(0)
+                            } else {
+                                set_current_products_alternate_slide(ev.activeIndex - 7)
+                            }
+                        }}>
                     {
                         products_alternate_content.map((item, index) => {
-                            return (<Fragment>
-                                <div className={styles.slide}>
-                                    {
-                                        current_products_alternate_slide === index &&
-                                        <InView threshold={0}>
-                                            {
-                                                ({ref, inView}) => (
-                                                    <motion.div className={styles.title}
-                                                                ref={ref}
-                                                                initial={{opacity: 0}}
-                                                                animate={inView ? {opacity: 1} : {opacity: 0}}
-                                                                transition={{duration: 0.7}}>
-                                                        {item.title}
-                                                    </motion.div>)
-                                            }
-                                        </InView>
+                            return (<SwiperSlide>
+                                    <div className={styles.slide}>
+                                        <img className={"gr " + (current_products_alternate_slide === index ? styles.banner : '')} src={'/images/products/alternate-products/' + index + '.png'}/>
+                                        {
+                                            current_products_alternate_slide === index &&
+                                            <InView threshold={0}>
+                                                {
+                                                    ({ref, inView}) => (
+                                                        <motion.div className={styles.title}
+                                                                    ref={ref}
+                                                                    initial={{opacity: 0}}
+                                                                    animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                    transition={{duration: 0.7}}>
+                                                            {item.title}
+                                                        </motion.div>)
+                                                }
+                                            </InView>
 
-                                    }
-                                    <img className={"gr " + (current_products_alternate_slide === index ? styles.banner : '')} src={'/images/products/alternate-products/' + index + '.png'}/>
-                                    <div className={styles.shopNow}>
-                                        {/*<h3>0{index + 1} / <span>0{products_alternate_content.length}</span></h3>*/}
-                                        <p>SHOP NOW</p>
-                                        <NextBack theme={'light'} onBack={products_alternate_slider.slickPrev} onNext={products_alternate_slider.slickNext}/>
+                                        }
+                                        <div className={styles.shopNow}>
+                                            {/*<h3>0{index + 1} / <span>0{products_alternate_content.length}</span></h3>*/}
+                                            <p>SHOP NOW</p>
+                                            <NextBack theme={'light'} onBack={() => {
+                                                products_alternate_swiper.slidePrev()
+                                            }} onNext={() => {
+                                                products_alternate_swiper.slideNext()
+                                            }}/>
+                                        </div>
                                     </div>
-                                </div>
-
-                            </Fragment>)
+                                </SwiperSlide>
+                            )
                         })
                     }
-                </div>
-
+                </Swiper>
             </div>
         </div>
 
