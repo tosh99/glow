@@ -192,6 +192,7 @@ export default function Products() {
                     autoplay={{
                         delay: 2500,
                     }}
+                    slidesPerView={'auto'}
                     loop={true}
                     onInit={(ev) => {
                         set_favorite_swiper(ev)

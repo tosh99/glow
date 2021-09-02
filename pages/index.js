@@ -189,7 +189,8 @@ export default function Home() {
                     <Swiper slidesPerView={'auto'}
                             autoplay={{
                                 delay: 2500,
-                            }} centeredSlides={true}
+                            }}
+                            centeredSlides={true}
                             loop={true}
                             onSlideChange={(ev) => {
                                 if (ev.activeIndex - 5 === 5) {
