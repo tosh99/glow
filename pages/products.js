@@ -7,6 +7,7 @@ import PageHeader from "../shared/components/page-header/page-header";
 import Head from "next/head";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, Navigation, Pagination} from 'swiper/core';
+import Footer from "../shared/components/footer/footer";
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
@@ -189,9 +190,6 @@ export default function Products() {
                     </div>
                 </div>
                 <Swiper
-                    autoplay={{
-                        delay: 2500,
-                    }}
                     slidesPerView={'auto'}
                     loop={true}
                     onInit={(ev) => {
@@ -267,7 +265,7 @@ export default function Products() {
                         products_alternate_content.map((item, index) => {
                             return (<SwiperSlide>
                                     <div className={styles.slide}>
-                                        <img className={"gr " + (current_products_alternate_slide === index ? styles.banner : '')} src={'/images/products/alternate-products/' + index + '.png'}/>
+                                        <img className={"grayscale " + (current_products_alternate_slide === index ? styles.banner : '')} src={'/images/products/alternate-products/' + index + '.png'}/>
                                         {
                                             current_products_alternate_slide === index &&
                                             <InView threshold={0}>
@@ -301,6 +299,8 @@ export default function Products() {
                 </Swiper>
             </div>
         </div>
+
+        <Footer/>
 
     </Fragment>)
 }

@@ -1,0 +1,125 @@
+@import 'index.module.scss';
+
+.faqBanner {
+    border-bottom: 0.3px solid #c6c6c6;
+}
+
+.banner {
+    padding: 96px 0;
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    header {
+        font-weight: bold;
+        font-size: 160px;
+        line-height: 160px;
+        font-family: EmpireBold, sans-serif;
+        position: absolute;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        width: 845px;
+    }
+}
+
+.faqList {
+}
+
+.faqItem {
+    display: flex;
+    flex-direction: column;
+    padding: 96px 0;
+
+    .faq {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #000000;
+        margin-bottom: 28px;
+        padding: 40px 50px;
+
+        .faqContent {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-family: HattonMedium, sans-serif;
+            text-transform: uppercase;
+        }
+
+        .faqContentExpanded {
+            font-size: 20px;
+            font-family: TelegrafRegular, sans-serif;
+            line-height: 150%;
+            border-top: 1px solid #000000;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .banner {
+        padding: 50px 0;
+
+        header {
+            font-size: 85px;
+            line-height: 85px;
+            width: 415px;
+        }
+    }
+
+    .faqItem {
+        padding: 50px 0;
+
+        .faq {
+            margin-bottom: 28px;
+            padding: 20px;
+
+            .faqContent {
+                font-size: 16px;
+            }
+
+            .faqContentExpanded {
+                font-size: 16px;
+                line-height: 150%;
+                margin-top: 16px;
+                padding-top: 16px;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 648px) {
+    .banner {
+        padding: 35px 0;
+
+        header {
+            font-size: 45px;
+            line-height: 45px;
+            width: 215px;
+        }
+    }
+
+    .faqItem {
+        padding: 35px 0;
+
+        .faq {
+            margin-bottom: 28px;
+            padding: 20px;
+
+            .faqContent {
+                font-size: 16px;
+            }
+
+            .faqContentExpanded {
+                font-size: 16px;
+                line-height: 150%;
+                margin-top: 16px;
+                padding-top: 16px;
+            }
+        }
+    }
+
+}

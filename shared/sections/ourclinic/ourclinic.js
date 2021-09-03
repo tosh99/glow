@@ -8,30 +8,31 @@ import SwiperCore, {Autoplay, Navigation, Pagination} from 'swiper/core';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
+
 const locations = [
     {
         title: 'Chennai',
-        address: '3rd Floor Door No. 3 Khader Nawaz Khan Road',
-        phone: '99513 55555'
+        address: '3rd Floor, Door No. 3, Khader Nawaz Khan Road',
+        phone: ['+91 99513 55555', '044 4553 5555'],
+        link: 'https://www.google.com/maps/place/Glow+-+Skin+%7C+Beauty+%7C+Wellness/@12.9749069,80.1315287,12z/data=!4m9!1m2!2m1!1sglow+clinic+chennai!3m5!1s0x3a52672c0d216887:0xe945533f4203fde4!8m2!3d13.0608313!4d80.2513894!15sChNnbG93IGNsaW5pYyBjaGVubmFpWhUiE2dsb3cgY2xpbmljIGNoZW5uYWmSARBza2luX2NhcmVfY2xpbmljmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU5oYkc5cE1XSkJFQUU',
     },
     {
         title: 'Hyderabad',
-        address: '3rd Floor Door No. 2 Khader Nawaz Khan Road',
-        phone: '99513 55555'
+        address: '1st & 2nd Floor, Plot No. 73, Vemireddy Enclave,Road No. 12, Banjarahills',
+        phone: ['+91 96772 92429', '040 4850 5555'],
+        link: 'https://www.google.com/maps/place/Glow+-+Skin+%7C+Beauty+%7C+Wellness/@17.4400203,78.3947969,12z/data=!4m9!1m2!2m1!1sglow+clinic+hyderabad!3m5!1s0x3bcb973c9c19eee9:0x9db4ce07389c05a8!8m2!3d17.4077161!4d78.4429068!15sChVnbG93IGNsaW5pYyBoeWRlcmFiYWSSARBza2luX2NhcmVfY2xpbmlj'
     }
 ]
 
 
 export default function Ourclinic() {
-
     const [clinic_swiper, set_clinic_swiper] = useState({});
-
     const [current_slide, set_current_slide] = useState(0);
 
+    const goToAddress = () => {
+        window.open(locations[current_slide].link);
+    }
 
-    useEffect(() => {
-
-    }, [])
 
     return (<Fragment>
         <InView threshold={0.25} triggerOnce={true}>
@@ -46,7 +47,7 @@ export default function Ourclinic() {
                         <div className={"inner " + styles.visitUs}>
                             <div className={styles.vuHeader}>
                                 <h2>Visit Us</h2>
-                                <header>get direction</header>
+                                <header onClick={goToAddress}>get direction</header>
                             </div>
                             <div className={styles.vuMap}>
                                 <Swiper slidesPerView={1}
@@ -57,7 +58,6 @@ export default function Ourclinic() {
                                             set_clinic_swiper(ev)
                                         }}
                                         onSlideChange={(ev) => {
-                                            console.log(ev.activeIndex)
                                             set_current_slide(ev.activeIndex)
                                         }}>
                                     <SwiperSlide>
@@ -78,7 +78,9 @@ export default function Ourclinic() {
                                     <header>
                                         {locations[current_slide].address}
                                         <br/><br/>
-                                        phone +91 {locations[current_slide].phone}<br/>
+                                        {locations[current_slide].phone.map((item, index) => {
+                                            return <header className={styles.phone}>{item}</header>
+                                        })}<br/>
                                     </header>
                                 </div>
                                 <div className={styles.vuaRight}>

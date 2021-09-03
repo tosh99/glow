@@ -29,9 +29,7 @@
 }
 
 .journey {
-    .joLeft {
-
-
+    .joTop {
         h2 {
             font-size: 120px;
             line-height: 120px;
@@ -45,12 +43,13 @@
         display: flex;
         flex-direction: column;
         border-top: 1px solid #000000;
-        border-right: 1px solid #000000;
+        border-left: 1px solid #000000;
         padding: 90px;
+        min-height: 600px;
 
         header {
             font-size: 24px;
-            font-family: HattonMedium;
+            font-family: HattonMedium, sans-serif;
             text-transform: uppercase;
             line-height: 149.8%;
             letter-spacing: 3px;
@@ -58,7 +57,7 @@
         }
 
         span {
-            font-family: TelegrafRegular;
+            font-family: TelegrafRegular, sans-serif;
             font-size: 14px;
             line-height: 101.1%;
             letter-spacing: 0.05em;
@@ -67,7 +66,7 @@
         }
 
         p {
-            font-family: TelegrafRegular;
+            font-family: TelegrafRegular, sans-serif;
             font-size: 18px;
             line-height: 149.8%;
             letter-spacing: 0.1px;
@@ -86,7 +85,7 @@
         padding: 83px 0;
 
         h2 {
-            font-family: EmpireBold;
+            font-family: EmpireBold, sans-serif;
             font-size: 80px;
             line-height: 98.1%;
             letter-spacing: 0.1em;

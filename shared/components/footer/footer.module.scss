@@ -28,7 +28,7 @@
                 align-items: flex-end;
 
                 .clHeader {
-                    font-family: TerminaRegular;
+                    font-family: TerminaRegular, sans-serif;
                     font-size: 18px;
                     line-height: 123.8%;
                     letter-spacing: 0.1px;
@@ -38,21 +38,23 @@
                 }
 
                 .item {
-                    font-family: TelegrafRegular;
+                    font-family: TelegrafRegular, sans-serif;
                     font-size: 16px;
                     line-height: 123.8%;
                     letter-spacing: 0.5px;
                     margin-bottom: 19px;
                     color: #FFFFFF;
-
+                    transition: 0.4s;
+                    cursor: pointer;
                 }
 
-
+                .item:hover {
+                    color: #757575;
+                    transition: 0.4s;
+                }
             }
 
         }
-
-
     }
 
     .footerBottom {
@@ -66,7 +68,7 @@
 
             .address {
                 display: flex;
-                font-family: TerminaRegular;
+                font-family: TerminaRegular, sans-serif;
                 color: #FFFFFF;
                 font-size: 16px;
                 line-height: 123.8%;
@@ -74,7 +76,7 @@
             }
 
             .appoint {
-                font-family: HattonMedium;
+                font-family: HattonMedium, sans-serif;
                 font-size: 20px;
                 line-height: 123.8%;
                 letter-spacing: 5px;
@@ -95,7 +97,7 @@
                 max-width: 200px;
 
                 .clHeader {
-                    font-family: EmpireBold;
+                    font-family: EmpireBold, sans-serif;
                     font-size: 54px;
                     line-height: 100%;
                     letter-spacing: 5px;
@@ -105,7 +107,7 @@
                 }
 
                 .item {
-                    font-family: TelegrafRegular;
+                    font-family: TelegrafRegular, sans-serif;
                     font-size: 16px;
                     line-height: 123.8%;
                     letter-spacing: 0.5px;
@@ -127,7 +129,7 @@
         line-height: 123.8%;
         letter-spacing: 0.5px;
         color: #BABABA;
-        font-family: TelegrafRegular;
+        font-family: TelegrafRegular, sans-serif;
         padding: 17px 0;
     }
 }
@@ -142,12 +144,37 @@
     }
 }
 
+@media only screen and (max-width: 1024px) {
+    .footer {
+
+        .footerTop {
+            .ftRight {
+
+                .column {
+                    margin-left: 45px;
+                }
+
+            }
+        }
+
+        .footerBottom {
+            .fbRight {
+                flex-direction: column;
+
+                .column {
+                    margin-bottom: 10px;
+                }
+
+            }
+        }
+
+    }
+}
+
+
 @media only screen and (max-width: 648px) {
     .footer {
-        padding: 50px 0;
-        padding-bottom: 0 !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+        padding: 50px 0 0 0 !important;
 
         .footerTop {
             flex-direction: column;
@@ -161,10 +188,8 @@
             .ftRight {
                 flex-direction: column;
                 justify-content: unset;
-                padding: 0 35px;
-                padding-top: 45px;
+                padding: 45px 35px 0;
                 border-top: 0.3px solid #FFFFFF;
-
 
                 .column {
                     margin-left: 0;

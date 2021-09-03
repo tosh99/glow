@@ -1,12 +1,12 @@
 .slick-slide {
-    img.gr {
+    img.grayscale {
         filter: grayscale(100%);
         animation: 0.5s;
     }
 }
 
 .slick-center {
-    img.gr {
+    img.grayscale {
         filter: none;
         animation: 0.5s;
     }

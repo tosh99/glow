@@ -98,20 +98,6 @@ export default function Home() {
                 }
             </InView>
 
-            {/*<InView threshold={0.25}>*/}
-            {/*    {*/}
-            {/*        ({ref, inView}) => (*/}
-            {/*            <motion.div className={"outer"}*/}
-            {/*                        ref={ref}*/}
-            {/*                        initial={{opacity: 0}}*/}
-            {/*                        animate={inView ? {opacity: 1} : {opacity: 0}}*/}
-            {/*                        transition={{duration: 0.8}}>*/}
-
-
-            {/*            </motion.div>)*/}
-            {/*    }*/}
-            {/*</InView>*/}
-
             <InView threshold={0.25} triggerOnce={true}>
                 {
                     ({ref, inView}) => (
@@ -142,7 +128,6 @@ export default function Home() {
                         </motion.div>)
                 }
             </InView>
-
 
             <InView threshold={0.25} triggerOnce={true}>
                 {
@@ -175,7 +160,6 @@ export default function Home() {
                 }
             </InView>
 
-
             <div className={styles.slidersOuter}>
                 <div className={styles.sliders}>
                     <p className={styles.desc}>
@@ -188,7 +172,7 @@ export default function Home() {
 
                     <Swiper slidesPerView={'auto'}
                             autoplay={{
-                                delay: 2500,
+                                delay: 250000,
                             }}
                             centeredSlides={true}
                             loop={true}
@@ -219,7 +203,7 @@ export default function Home() {
                                                     }
                                                 </InView>
                                             }
-                                            <img className={"gr " + (current_slide === index ? styles.banner : '')} src={'/images/home/sliders/' + (index) + '.png'}/>
+                                            <img className={"grayscale " + (current_slide === index ? styles.banner : '')} src={'/images/home/sliders/' + (index) + '.png'}/>
                                             <div>
                                                 <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
                                                 <p>{item.content}</p>
@@ -245,17 +229,6 @@ export default function Home() {
                     </Swiper>
                 </div>
             </div>
-
-
-            {/*<div className={"outer " + styles.welcomeToGlowOuter}>*/}
-            {/*    <div className={"inner " + styles.welcomeToGlow}>*/}
-            {/*        <video controls>*/}
-            {/*            <source src="movie.mp4" type="video/mp4"/>*/}
-            {/*            <source src="movie.ogg" type="video/ogg"/>*/}
-            {/*            Your browser does not support the video tag.*/}
-            {/*        </video>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
 
             <InView threshold={0.25} triggerOnce={true}>
                 {
@@ -300,24 +273,25 @@ export default function Home() {
                                     animate={inView ? {opacity: 1} : {opacity: 0}}
                                     transition={{duration: 0.8}}>
                             <div className={"inner " + styles.journey}>
-                                <div className={styles.joLeft}>
+                                <div className={styles.joTop}>
                                     <h2>Shedding Light on Dr.Varshini’s Journey</h2>
-
-                                    <div>
-                                        <p>dr. Varshini reddy</p>
-                                        <header>MD Dermatology</header>
-                                    </div>
-                                </div>
-                                <div className={styles.joRight}>
                                     <img src={'/images/home/varshini.png'}/>
-                                    <p>At Glow, we wanted to promote skin, beauty and wellness as ideologies that go hand-in-hand. Having studied MD
-                                        Dermatology and been around the globe to learn about new-age technologies in the world of skincare, Dr.
-                                        Varshini Reddy wanted to bring the best of those to India. Her journey has been exciting and full of new
-                                        learnings which took her from being a skincare enthusiast to a practicing dermatologist.</p>
-                                    <p>She has consulted with many people over the course of years and has distinguished herself as an advocate for wholesome rejuvenation.
-                                        With an established and ever-growing
-                                        clientbase she has extended her platform to a larger audience and opened doors to Glow, a contemporary space for skin indulgence.</p>
-                                    <header>read more</header>
+                                </div>
+                                <div className={styles.joBottom}>
+                                    <div className={styles.jobTitle}>
+                                        <header className={styles.name}>dr. Varshini reddy</header>
+                                        <header className={styles.desig}>MD Dermatology</header>
+                                    </div>
+                                    <div className={styles.jobContent}>
+                                        <p>At Glow, we wanted to promote skin, beauty and wellness as ideologies that go hand-in-hand. Having studied MD
+                                            Dermatology and been around the globe to learn about new-age technologies in the world of skincare, Dr.
+                                            Varshini Reddy wanted to bring the best of those to India. Her journey has been exciting and full of new
+                                            learnings which took her from being a skincare enthusiast to a practicing dermatologist.</p>
+                                        <p>She has consulted with many people over the course of years and has distinguished herself as an advocate for wholesome rejuvenation.
+                                            With an established and ever-growing
+                                            clientbase she has extended her platform to a larger audience and opened doors to Glow, a contemporary space for skin indulgence.</p>
+                                        <header>read more</header>
+                                    </div>
                                 </div>
 
                             </div>
