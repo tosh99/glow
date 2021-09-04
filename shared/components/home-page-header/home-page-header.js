@@ -22,8 +22,9 @@ export default function HomePageHeader() {
                     <Link href="/products">
                         <header>Products</header>
                     </Link>
-                    <header>The Edit</header>
-
+                    <Link href="/theedit">
+                        <header>The Edit</header>
+                    </Link>
                     <Link href="/biologique">
                         <header>Biologique Recherche</header>
                     </Link>

@@ -1,0 +1,140 @@
+.editBannerOuter {
+    background: rgba(238, 234, 221, 0.9);;
+}
+
+.editBanner {
+    padding: 128px 0;
+
+    h1 {
+        position: absolute;
+        font-family: EmpireBold, sans-serif;
+        text-transform: uppercase;
+        font-size: 160px;
+        line-height: 100%;
+        letter-spacing: 0.1em;
+        margin-top: -5px;
+        max-width: 817px;
+    }
+
+    .imgContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .imgLeft {
+            max-width: 391px;
+            margin-right: 32px;
+            font-family: SaolRegularItalic, sans-serif;
+            font-size: 24px;
+            line-height: 153%;
+            letter-spacing: 0.05em;
+            margin-bottom: 200px;
+        }
+
+        .imgRight {
+            div {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+
+    }
+}
+
+.postOuter {
+    border-top: 1px solid #000000;
+
+}
+
+.post {
+    display: flex;
+    justify-content: center;
+    height: 951px;
+
+    .postLeft {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 80px;
+        border-right: 1px solid #000000;
+        padding: 80px 0;
+
+        .plTitle {
+            width: 362px;
+            font-size: 120px;
+            line-height: 100%;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-family: EmpireBold, sans-serif;
+        }
+
+        .plDesc {
+            header {
+                font-family: TelegrafRegular, sans-serif;
+                text-transform: uppercase;
+                line-height: 120%;
+            }
+
+            header:first-of-type {
+                font-size: 25px;
+                letter-spacing: 0.1em;
+                font-weight: bold;
+            }
+
+            header:last-of-type {
+                font-size: 24px;
+                letter-spacing: 0.05em;
+            }
+        }
+    }
+
+    .postRight {
+        width: 725px;
+        padding: 80px 0;
+
+    }
+}
+
+@media only screen and (max-width: 648px) {
+    .editBanner {
+        padding: 50px 0;
+
+        h1 {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .imgContainer {
+            flex-direction: column;
+            align-items: flex-start;
+
+            .imgLeft {
+                margin-right: 0;
+                margin-bottom: 35px;
+            }
+
+            .imgRight {
+                div {
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                p {
+                    max-width: 663px;
+                    font-size: 18px;
+                    margin-bottom: 60px;
+                }
+
+                .reju {
+                    line-height: 151.8%;
+                    letter-spacing: 2px;
+                }
+            }
+
+
+        }
+    }
+}

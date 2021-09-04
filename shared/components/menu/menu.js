@@ -30,7 +30,7 @@ export default function Menu({close}) {
                 <Link href="/products">
                     <header>Products</header>
                 </Link>
-                <Link href="/products">
+                <Link href="/theedit">
                     <header>The Edit</header>
                 </Link>
                 <Link href="/biologique">

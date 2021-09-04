@@ -1,9 +1,6 @@
-import {InView} from "react-intersection-observer";
-import {motion} from "framer-motion";
 import styles from "./page-header.module.scss";
 import {Fragment, useState} from "react";
 import Link from "next/link";
-import {constants} from "../../../styles/constants";
 import Menu from "../menu/menu";
 
 export default function PageHeader({title, bg = 'solid'}) {
