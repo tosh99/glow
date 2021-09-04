@@ -13,7 +13,7 @@
         margin-bottom: 70px;
 
         h2 {
-            font-family: EmpireBold;
+            font-family: EmpireBold, sans-serif;
             font-size: 80px;
             line-height: 98.1%;
             letter-spacing: 0.13em;
@@ -60,6 +60,12 @@
                 margin-bottom: 3px;
             }
         }
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .visitUs {
+        padding: 100px 0;
     }
 }
 

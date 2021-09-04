@@ -1,3 +1,5 @@
+@import 'index.module.scss';
+
 .bodyOuter {
     background: #EEEADD;
 }
@@ -26,7 +28,7 @@
             }
 
             p {
-                font-family: SaolRegularItalic;
+                font-family: SaolRegularItalic, sans-serif;
                 font-size: 24px;
                 line-height: 168%;
                 letter-spacing: 0.05em;
@@ -61,7 +63,7 @@
     padding: 111px 0;
 
     p {
-        font-family: SaolRegularItalic;
+        font-family: SaolRegularItalic, sans-serif;
         font-size: 32px;
         line-height: 140%;
         letter-spacing: 2px;
@@ -97,7 +99,7 @@
         }
 
         header {
-            font-family: TelegrafRegular;
+            font-family: TelegrafRegular, sans-serif;
             font-size: 20px;
             line-height: 131.78%;
             letter-spacing: 0.05em;
@@ -135,7 +137,7 @@
 
         p {
             margin-bottom: 40px;
-            font-family: TelegrafRegular;
+            font-family: TelegrafRegular, sans-serif;
             font-size: 20px;
             line-height: 150%;
             letter-spacing: 0.05em;
@@ -154,76 +156,46 @@
 
 }
 
-.slidersOuter {
-    background: black;
-}
-
 .sliders {
-    padding: 128px 0;
-
     .slide {
-        display: flex;
-        justify-content: space-between;
-        color: white;
-        margin-right: 60px;
-        position: relative;
-
         .title {
-            position: absolute;
-            width: 460px;
-            font-family: EmpireBold, sans-serif;
             font-size: 100px;
-            line-height: 98.1%;
-            letter-spacing: 0.09em;
-            text-transform: uppercase;
-            display: flex;
-            flex-direction: row;
-            align-items: flex-end;
-            height: 100%;
-            margin-top: -50px
         }
 
-        img {
-            margin-right: 60px;
-            width: unset;
-            filter: grayscale(100%);
-            animation: 0.5s;
-        }
-
-        .banner {
-            margin-left: 199px;
-            filter: unset;
-            animation: 0.5s;
-        }
-
-        .shopNow {
-            display: flex;
-            flex-direction: column;
+        div {
             justify-content: flex-end;
-            min-width: 263px;
-            margin-bottom: 70px;
+            margin-bottom: 50px;
 
-            p {
-                margin-bottom: 20px;
+            header {
+                font-family: HattonMedium, sans-serif;
+                margin-bottom: 65px;
                 font-size: 24px;
                 line-height: 143%;
                 letter-spacing: 0.1em;
                 text-transform: uppercase;
                 color: #C4C4C4;
-                font-family: HattonMedium, sans-serif;
             }
         }
     }
 }
 
-@media only screen and (max-width: 648px) {
+@media only screen and (max-width: 1280px) {
     .body {
-        flex-direction: column;
-        padding: 50px 0;
+        padding: 100px 0;
 
         .bLeft {
-            margin-right: 0;
-            margin-bottom: 35px;
+            width: 50%;
+            margin-right: 10px;
+
+            div {
+                h1 {
+                    font-size: 80px;
+                }
+
+                p {
+                    font-size: 18px;
+                }
+            }
 
             header {
                 margin-top: 35px;
@@ -236,11 +208,135 @@
             }
         }
 
+        .bRight {
+            width: 50%;
+        }
+
         .slide {
             img {
                 width: 100%;
             }
         }
+    }
+
+    .productDesc {
+        padding: 100px 0;
+
+        p {
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+    }
+
+    .currentFavourites {
+        padding: 100px 0;
+
+        .cfHeader {
+            margin-bottom: 70px;
+
+            h2 {
+
+            }
+
+        }
+
+        .cfSlide {
+            margin-right: 20px;
+
+            img {
+                margin-bottom: 20px;
+                height: 535px;
+            }
+
+            header {
+                font-size: 20px;
+                line-height: 131.78%;
+                letter-spacing: 0.05em;
+            }
+        }
+
+    }
+
+    .shopMyShelfie {
+        padding: 100px 0;
+
+        .smLeft {
+            width: 100%;
+            max-width: 540px;
+            margin-right: 50px;
+
+            h2 {
+                font-size: 80px;
+                margin-top: -7px;
+            }
+        }
+
+        .smRight {
+            width: 100%;
+
+            p {
+                margin-bottom: 40px;
+                font-family: TelegrafRegular, sans-serif;
+                font-size: 20px;
+                line-height: 150%;
+                letter-spacing: 0.05em;
+            }
+
+            header {
+                font-family: HattonMedium;
+                font-size: 24px;
+                line-height: 155.5%;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+            }
+
+
+        }
+    }
+
+    .sliders {
+        .slide {
+            .banner {
+                margin-left: 100px;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 648px) {
+    .body {
+        flex-direction: column;
+        padding: 50px 0;
+
+        .bLeft {
+            margin-right: 0;
+            margin-bottom: 35px;
+            width: 100%;
+            max-width: unset;
+
+            header {
+                margin-top: 35px;
+            }
+
+            div {
+                h1 {
+                    margin-bottom: 50px;
+                }
+            }
+        }
+
+        .bRight {
+            width: 100%;
+
+            .slide {
+                img {
+                    width: 100%;
+                }
+            }
+
+        }
+
     }
 
     .productDesc {
@@ -273,47 +369,10 @@
     }
 
     .sliders {
-        padding: 50px 35px;
-
         .slide {
-            display: flex;
-            flex-direction: column;
-            margin-right: 0;
-
-            .title {
-                position: relative;
-                font-size: 70px;
-                text-transform: uppercase;
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
-
-            img {
-                margin-right: 0;
-            }
-
             .banner {
                 margin-left: 0;
             }
-
-            .shopNow {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-                min-width: 263px;
-                margin-bottom: 70px;
-
-                p {
-                    margin-bottom: 20px;
-                    font-size: 24px;
-                    line-height: 143%;
-                    letter-spacing: 0.1em;
-                    text-transform: uppercase;
-                    color: #C4C4C4;
-                    font-family: HattonMedium;
-                }
-            }
         }
-
     }
 }

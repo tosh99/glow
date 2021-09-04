@@ -236,36 +236,23 @@ export default function Products() {
         <div className={styles.slidersOuter}>
             <div className={styles.sliders}>
                 <Swiper slidesPerView={'auto'}
-                        breakpoints={{
-                            // when window width is >= 320px
-                            200: {
-                                slidesPerView: 1,
-                            },
-                            // when window width is >= 480px
-                            648: {
-                                slidesPerView: 'auto',
-                            }
-                        }}
                         autoplay={{
-                            delay: 2500,
+                            delay: 250000,
                         }}
-                        loop={true}
                         centeredSlides={true}
-                        onInit={(ev) => {
-                            set_products_alternate_swiper(ev)
-                        }}
+                        loop={true}
                         onSlideChange={(ev) => {
                             if (ev.activeIndex - 7 === 7) {
                                 set_current_products_alternate_slide(0)
                             } else {
                                 set_current_products_alternate_slide(ev.activeIndex - 7)
                             }
+
                         }}>
                     {
                         products_alternate_content.map((item, index) => {
                             return (<SwiperSlide>
                                     <div className={styles.slide}>
-                                        <img className={"grayscale " + (current_products_alternate_slide === index ? styles.banner : '')} src={'/images/products/alternate-products/' + index + '.png'}/>
                                         {
                                             current_products_alternate_slide === index &&
                                             <InView threshold={0}>
@@ -280,16 +267,25 @@ export default function Products() {
                                                         </motion.div>)
                                                 }
                                             </InView>
-
                                         }
-                                        <div className={styles.shopNow}>
+                                        <img className={"grayscale " + (current_products_alternate_slide === index ? styles.banner : '')} src={'/images/products/alternate-products/' + (index) + '.png'}/>
+                                        <div>
                                             {/*<h3>0{index + 1} / <span>0{products_alternate_content.length}</span></h3>*/}
-                                            <p>SHOP NOW</p>
-                                            <NextBack theme={'light'} onBack={() => {
-                                                products_alternate_swiper.slidePrev()
-                                            }} onNext={() => {
-                                                products_alternate_swiper.slideNext()
-                                            }}/>
+                                            {/*<p>{item.content}</p>*/}
+                                            <InView threshold={0}>
+                                                {
+                                                    ({ref, inView}) => (
+                                                        <motion.div className={styles.titleM}
+                                                                    ref={ref}
+                                                                    initial={{opacity: 0}}
+                                                                    animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                    transition={{duration: 0.7}}>
+                                                            {item.title}
+                                                        </motion.div>)
+                                                }
+                                            </InView>
+                                            <header>ENQUIRE</header>
+                                            <NextBack theme={'light'}/>
                                         </div>
                                     </div>
                                 </SwiperSlide>
@@ -299,6 +295,7 @@ export default function Products() {
                 </Swiper>
             </div>
         </div>
+
 
         <Footer/>
 
