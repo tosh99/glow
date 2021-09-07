@@ -6,10 +6,10 @@ import NextBack from "../shared/components/nextback/nextback";
 import PageHeader from "../shared/components/page-header/page-header";
 import Head from "next/head";
 import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperCore, {Autoplay, Navigation, Pagination} from 'swiper/core';
+import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from 'swiper/core';
 import Footer from "../shared/components/footer/footer";
 
-SwiperCore.use([Autoplay, Pagination, Navigation]);
+SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 
 export default function Products() {
     // Body Settings
@@ -134,6 +134,7 @@ export default function Products() {
                                 delay: 2500,
                             }}
                             loop={true}
+                            effect={'fade'}
                             onInit={(ev) => {
                                 set_body_swiper(ev)
                             }}
@@ -227,7 +228,7 @@ export default function Products() {
                         These are a few of my current favourites, some of which are staples in my routine and some new ones you would
                         be happy to discover. Shop these curated products and refresh your skincare shelf.
                     </p>
-                    <header>glow.shop</header>
+                    <header>enquire</header>
                 </div>
 
             </div>

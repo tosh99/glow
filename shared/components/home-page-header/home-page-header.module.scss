@@ -28,7 +28,7 @@
             margin-left: 86px;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            font-family: HattonMedium;
+            font-family: HattonMedium, sans-serif;
             cursor: pointer;
         }
     }
@@ -57,7 +57,7 @@
             display: flex;
 
             img {
-                width: 13px;
+                width: 20px;
             }
         }
     }

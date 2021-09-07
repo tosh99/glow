@@ -22,3 +22,15 @@
         margin-left: 10px;
     }
 }
+
+@media only screen and (max-width: 648px) {
+
+    .strip {
+        color: white;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}

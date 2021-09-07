@@ -8,6 +8,7 @@ import Footer from "../shared/components/footer/footer";
 import NextBack from "../shared/components/nextback/nextback";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, Controller, Navigation, Pagination} from 'swiper/core';
+import ReadMoreReact from "read-more-react";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 
@@ -153,8 +154,12 @@ export default function About() {
                                     return (<SwiperSlide>
                                             <div className={styles.ctContent}>
                                                 <header>{item.title}</header>
-                                                <span>{item.date}</span>
-                                                <p>{item.desc}</p>
+                                                <p className={styles.date}>{item.date}</p>
+
+                                                <div className={styles.desc}>
+                                                    <ReadMoreReact min={125} ideal={405} max={655} text={item.desc}/>
+                                                </div>
+                                                {/*<p>{item.desc}</p>*/}
                                             </div>
                                         </SwiperSlide>
                                     )

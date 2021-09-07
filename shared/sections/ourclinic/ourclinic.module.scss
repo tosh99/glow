@@ -40,25 +40,37 @@
         justify-content: space-between;
 
         .vuaLeft {
-            font-family: HattonRegular;
+            font-family: TelegrafUltraLight, sans-serif;
 
             h3 {
-                font-size: 24px;
-                line-height: 186.3%;
-                letter-spacing: 1px;
-                color: #EEEADD;
+                font-size: 32px;
+                line-height: 98.1%;
+                letter-spacing: 0.13em;
+                color: #FFFFFF;
+                text-transform: uppercase;
+                margin-bottom: 18px;
             }
 
             header {
-                font-size: 16px;
-                line-height: 123.8%;
-                letter-spacing: 0.5px;
-                color: #C4C4C4;
+                font-size: 18px;
+                line-height: 136%;
+                letter-spacing: 0.05em;
+                color: #FFFFFF;
             }
 
             .phone {
                 margin-bottom: 3px;
             }
+        }
+
+        .vuaRight {
+            font-family: HattonRegular, sans-serif;
+            font-size: 20px;
+            line-height: 155.5%;
+            text-align: right;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #FFFFFF;
         }
     }
 }
@@ -72,5 +84,28 @@
 @media only screen and (max-width: 648px) {
     .visitUs {
         padding: 50px 0;
+
+        .vuHeader {
+            margin-bottom: 40px;
+
+            h2 {
+                font-size: 60px;
+            }
+        }
+
+        .vuMap {
+            margin-bottom: 40px;
+        }
+
+        .vuAddress {
+            flex-direction: column;
+            justify-content: flex-start;
+
+            .vuaRight {
+                text-align: left;
+            }
+        }
     }
+
+
 }

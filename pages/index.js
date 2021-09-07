@@ -9,6 +9,7 @@ import Footer from "../shared/components/footer/footer";
 import Strip from "../shared/sections/strip/strip";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, Controller, Navigation, Pagination} from 'swiper/core';
+import Visitus from "../shared/sections/visitus/visitus";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 
@@ -50,7 +51,7 @@ export default function Home() {
                         <div>&nbsp;</div>
                         <div className={styles.imgRight}>
                             <div>
-                                <img src={'/images/home/banner.png'}/>
+                                <img src={'/images/home/banner.gif'}/>
                             </div>
                             <p>Your skin changes with age, diet, weather, lifestyle choices and your state of mind. At every turning point, you need to check in with your skin.
                                 At Glow, we don’t categorise you into a skin type. We consult with you to get to know your skin and then proceed with a personalised service.
@@ -262,7 +263,7 @@ export default function Home() {
                 }
             </InView>
 
-            <Ourclinic/>
+            <Visitus/>
 
             <InView threshold={0.25} triggerOnce={true}>
                 {

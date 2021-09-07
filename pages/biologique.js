@@ -1,14 +1,14 @@
-import {Fragment, useEffect, useState} from "react";
+import {Fragment, useState} from "react";
 import styles from "./styles/biologue.module.scss";
 import {InView} from "react-intersection-observer";
 import {motion} from "framer-motion";
 import PageHeader from "../shared/components/page-header/page-header";
-import Slider from "react-slick";
 import NextBack from "../shared/components/nextback/nextback";
 import Head from "next/head";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, Controller, Navigation, Pagination} from 'swiper/core';
 import Footer from "../shared/components/footer/footer";
+import ReadMoreReact from 'read-more-react';
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 
@@ -42,33 +42,28 @@ const buy_br = [
         title: 'Initialisation Stage',
         img_url: 'hair.png'
     }
-]
+];
+const carousel_content = [
+    {
+        title: 'For bODY',
+        content: 'Biologique Recherche body treatments are tailored to your needs for a relaxing massage or body sculpting using high-tech tools.',
+        imgurl: 'body.png'
+    },
+    {
+        title: 'FOR FACE',
+        content: 'Biologique Recherche facials are hyper personalised and devised for that forever glow and a sculpted visage.',
+        imgurl: 'face.png'
+    },
+    {
+        title: 'FOR SCALP',
+        content: 'Biologique Recherche procedures for the scalp are highly effective for rejuvenated hair that is shiny and strong, and a healthy scalp.',
+        imgurl: 'scalp.png'
+    },
+];
 
 export default function Biologique() {
     const [current_slide, set_current_slide] = useState(0);
     const [slider, setslider] = useState({});
-    const carousel_content = [
-        {
-            title: 'Body',
-            content: 'A range of hand-picked brands for the best of body care products that are made with clean, active ingredients and are result-driven. Taking care of your body is equally rewarding.'
-        },
-        {
-            title: 'Hair',
-            content: 'Give your hair care routine a bump onto the next level. Whether it is finding the right products for your hair type and concern or adding some lovely serums for that extra bounce, we’ve curated an array of products for each and every one of your needs.'
-        },
-        {
-            title: 'Skincare',
-            content: 'Whether you’re a beginner or a skincare enthusiast, we have something for you all. Choose from our repertoire of curated skincare products that have acquired a cult status for their new-age formulations and are targeted towards lasting skincare benefits. A healthy glow awaits you.'
-        },
-        {
-            title: 'Supplements',
-            content: 'At Glow, we promote overall well-being for healthy skin and hair. Find supplements that come recommended for a glow that’s from within.'
-        },
-        {
-            title: 'Tools',
-            content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.'
-        }
-    ];
 
 
     const sl = {
@@ -146,6 +141,26 @@ export default function Biologique() {
             </div>
         </div>
 
+
+        <div className={"outer " + styles.shopMyShelfieOuter}>
+            <div className={"inner " + styles.shopMyShelfie}>
+                <div className={styles.smLeft}>
+                    <h2>The Birth of <br/> Hyper-Personalisation</h2>
+                </div>
+                <div className={styles.smRight}>
+                    <p> Founded in the late 1970s by a family of artisanal skincare experts, Biologique Recherche came about through the passion of biologist and physiotherapist duo Yvan and Josette Allouche.
+                        Their consummate savoir-faire and visionary approach underpin the brand’s reputation for effectiveness and outstanding products.
+                    </p>
+                    <p>
+                        In 1992 Biologique Recherche set up its Ambasade in the heart of Paris, on the historic Champs Elysées. Even after all these years they stay true to their personalised methodology and products while preserving the
+                        authenticity and continuing to innovate so that their clients can enjoy an ever-more customised experience
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+
         {/*Three Stage*/}
         <div className={"outer " + styles.threeStageOuter}>
             <div className={styles.threeStage}>
@@ -157,10 +172,6 @@ export default function Biologique() {
             <Swiper
                 slidesPerView={1}
                 spaceBetween={50}
-                autoplay={{
-                    delay: 2222500,
-                }}
-
                 loop={true}>
                 {
                     methodologies.map((item, index) => {
@@ -169,7 +180,11 @@ export default function Biologique() {
                                     <div className={styles.metLeft}>
                                         <header>Step - 0{index + 1}</header>
                                         <h2>{item.title}</h2>
-                                        <p>{item.desc}</p>
+                                        {/*<p>{item.desc}</p>*/}
+
+                                        <div className={styles.desc}>
+                                            <ReadMoreReact min={150} ideal={220} max={250} text={item.desc}/>
+                                        </div>
                                     </div>
                                     <div className={styles.metRight}>
                                         <img src={'/images/biologue/methodology/' + (index + 1) + '.png'}/>
@@ -198,16 +213,17 @@ export default function Biologique() {
                     </div>
                 </div>
 
-                <Swiper slidesPerView={'auto'} autoplay={{
-                    delay: 2500,
-                }} centeredSlides={true} loop={true} onSlideChange={(ev) => {
-                    if (ev.activeIndex - 5 === 5) {
-                        set_current_slide(0)
-                    } else {
-                        set_current_slide(ev.activeIndex - 5)
-                    }
+                <Swiper slidesPerView={'auto'}
+                        centeredSlides={true}
+                        loop={true}
+                        onSlideChange={(ev) => {
+                            if (ev.activeIndex - 3 === 3) {
+                                set_current_slide(0)
+                            } else {
+                                set_current_slide(ev.activeIndex - 3)
+                            }
 
-                }}>
+                        }}>
                     {
                         carousel_content.map((item, index) => {
                             return (<SwiperSlide>
@@ -227,7 +243,7 @@ export default function Biologique() {
                                                 }
                                             </InView>
                                         }
-                                        <img className={"grayscale " + (current_slide === index ? styles.banner : '')} src={'/images/home/sliders/' + (index) + '.png'}/>
+                                        <img className={"grayscale " + (current_slide === index ? styles.banner : '')} src={'/images/biologue/services/' + item.imgurl}/>
                                         <div>
                                             <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
                                             <p>{item.content}</p>

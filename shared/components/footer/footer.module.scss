@@ -35,6 +35,12 @@
                     margin-bottom: 34px;
                     text-transform: uppercase;
                     color: #EEEADD;
+                    display: flex;
+                    justify-content: space-between;
+
+                    img {
+                        display: none;
+                    }
                 }
 
                 .item {
@@ -152,6 +158,17 @@
 
                 .column {
                     margin-left: 45px;
+                    margin-bottom: 20px;
+
+                    .clHeader {
+                        width: 100%;
+                        margin-bottom: 20px;
+
+                        img {
+                            display: block;
+                            width: 10px;
+                        }
+                    }
                 }
 
             }
@@ -178,7 +195,7 @@
 
         .footerTop {
             flex-direction: column;
-            margin-bottom: 80px;
+            margin-bottom: 35px;
 
             .ftLeft {
                 margin-bottom: 17px;

@@ -157,7 +157,7 @@
 
         header {
             text-transform: uppercase;
-            font-family: HattonMedium;
+            font-family: HattonMedium, sans-serif;
             font-size: 20px;
             line-height: 155.5%;
             letter-spacing: 0.06em;
@@ -202,7 +202,7 @@
         display: flex;
         justify-content: space-between;
         color: white;
-        margin-right: 60px;
+        margin-right: 100px;
         position: relative;
 
         .title {
@@ -343,10 +343,12 @@
                 font-family: HattonMedium, sans-serif;
                 letter-spacing: 0.2em;
                 min-width: 300px;
+                font-size: 26px;
             }
 
             .desig {
-
+                font-family: SaolRegularItalic, sans-serif;
+                font-size: 20px;
             }
         }
 
@@ -496,9 +498,9 @@
         padding: 50px 0;
 
         h1 {
-            font-size: 55px;
+            font-size: 65px;
             margin-left: 3px;
-            width: 266px;
+            width: 100%;
             margin-top: -6px;
         }
 
@@ -509,6 +511,8 @@
                 div {
                     margin-bottom: 50px;
                 }
+
+
 
                 .reju {
                     margin-bottom: 0;
@@ -581,9 +585,10 @@
             .titleM {
                 display: block;
                 font-family: EmpireBold, sans-serif;
-                font-size: 80px;
+                font-size: 100px;
                 text-transform: uppercase;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
+                letter-spacing: 0.03em;
             }
 
             img {
@@ -597,9 +602,12 @@
             }
 
             div {
+                width: 100%;
+
                 p {
-                    height: 250px;
+                    height: 240px;
                     margin-bottom: 35px;
+                    font-size: 18px;
                 }
             }
         }

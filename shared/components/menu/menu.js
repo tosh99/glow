@@ -21,7 +21,7 @@ export default function Menu({close}) {
         <div className={styles.menu}>
             <div className={styles.menuTop}>
                 <img className={styles.logo} src={'/icons/header/logo.svg'} onClick={navigateHome}/>
-                <img src={'/icons/header/close.svg'} onClick={close}/>
+                <img className={styles.close} src={'/icons/header/close.svg'} onClick={close}/>
             </div>
             <div className={styles.menuContent}>
                 <Link href="/services">

@@ -46,8 +46,12 @@ export default function Ourclinic() {
 
                         <div className={"inner " + styles.visitUs}>
                             <div className={styles.vuHeader}>
-                                <h2>Visit Us</h2>
-                                <header onClick={goToAddress}>get direction</header>
+                                <h2>our Clinic</h2>
+                                <NextBack theme={'light'} onBack={() => {
+                                    clinic_swiper.slidePrev()
+                                }} onNext={() => {
+                                    clinic_swiper.slideNext()
+                                }}/>
                             </div>
                             <div className={styles.vuMap}>
                                 <Swiper slidesPerView={1}
@@ -62,7 +66,7 @@ export default function Ourclinic() {
                                         }}>
                                     <SwiperSlide>
                                         <div>
-                                            <img src={'/images/home/hyderabad.png'}/>
+                                            <img src={'/images/home/chennai.png'}/>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
@@ -84,11 +88,7 @@ export default function Ourclinic() {
                                     </header>
                                 </div>
                                 <div className={styles.vuaRight}>
-                                    <NextBack theme={'light'} onBack={() => {
-                                        clinic_swiper.slidePrev()
-                                    }} onNext={() => {
-                                        clinic_swiper.slideNext()
-                                    }}/>
+                                    <header>Make an Appointment</header>
                                 </div>
                             </div>
                         </div>

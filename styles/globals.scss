@@ -5,8 +5,9 @@
 @import "buttons.scss";
 
 // Import Swiper styles
-@import '~swiper/swiper.scss';
+//@import '~swiper/swiper.scss';
 @import '~swiper/swiper-bundle.css';
+//@import '~swiper/effect-fade';
 
 
 html,
@@ -28,3 +29,9 @@ a {
     width: auto;
 }
 
+.read-more-button {
+    font-family: OggItalic, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}

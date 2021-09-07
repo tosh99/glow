@@ -22,20 +22,24 @@
             width: 47px;
             cursor: pointer;
         }
+
+        .close {
+            width: 20px;
+        }
     }
 
     .menuContent {
         display: flex;
         flex-direction: column;
-        padding: 20px 35px;
-
+        padding: 45px 35px;
 
         header {
-            margin-bottom: 25px;
+            margin-bottom: 45px;
             line-height: 20px;
             letter-spacing: 0.02em;
-            font-family: HattonRegular;
+            font-family: HattonRegular, sans-serif;
             cursor: pointer;
+            font-size: 24px;
         }
     }
 
@@ -44,13 +48,14 @@
         flex-direction: column;
         padding: 20px 35px;
         position: absolute;
-        bottom: 30px;
+        bottom: 75px;
 
         p {
-            font-family: HattonRegular;
+            font-family: HattonRegular, sans-serif;
             line-height: 155.5%;
             letter-spacing: 0.05em;
             text-transform: uppercase;
+            font-size: 24px;
         }
     }
 }

@@ -1,3 +1,5 @@
+@import 'index.module.scss';
+
 .skinCareOuter {
     background: rgba(238, 234, 221, 0.9);;
 }
@@ -9,8 +11,8 @@
         position: absolute;
         font-family: EmpireBold, sans-serif;
         text-transform: uppercase;
-        font-size: 100px;
-        line-height: 100px;
+        font-size: 120px;
+        line-height: 120px;
         letter-spacing: 0.1em;
         margin-top: -5px;
         max-width: 570px;
@@ -40,15 +42,74 @@
     }
 }
 
+.shopMyShelfieOuter {
+    background: rgba(238, 234, 221, 0.9);
+    border-top: 1px solid #000000;
+}
+
+.shopMyShelfie {
+    padding: 128px 0;
+    display: flex;
+
+    .smLeft {
+        width: 100%;
+        min-width: 635px;
+        margin-right: 50px;
+
+        h2 {
+            font-family: EmpireBold, sans-serif;
+            font-size: 100px;
+            line-height: 100%;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-top: -7px;
+        }
+    }
+
+    .smRight {
+        width: 100%;
+
+        p {
+            margin-bottom: 40px;
+            font-family: TelegrafRegular, sans-serif;
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: 0.05em;
+        }
+
+        p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        header {
+            font-family: HattonMedium, sans-serif;
+            font-size: 24px;
+            line-height: 155.5%;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        header:hover {
+            transition: 0.3s;
+        }
+
+
+    }
+
+}
+
+
 .threeStageOuter {
     background: black;
 
     .threeStage {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: flex-start;
         padding: 184px 100px 140px;
-        border-bottom: 1px solid #444444;
+        border-bottom: 1px solid #b7b7b7;
 
         header {
             color: #FFFFFF;
@@ -107,7 +168,7 @@
             margin-bottom: 35px;
         }
 
-        p {
+        .desc {
             line-height: 150%;
             letter-spacing: 0.05em;
             color: #FFFFFF;
@@ -123,9 +184,6 @@
     }
 }
 
-.slidersOuter {
-    background: black;
-}
 
 .sliders {
     padding: 128px 0;
@@ -134,7 +192,6 @@
         display: flex;
         justify-content: space-between;
         color: white;
-        margin-bottom: 217px;
 
         .title {
             font-family: EmpireBold, sans-serif;
@@ -166,80 +223,9 @@
     }
 
     .slide {
-        display: flex;
-        justify-content: space-between;
-        color: white;
-        margin-right: 60px;
-        position: relative;
-
         .title {
-            position: absolute;
-            width: 199px;
-            font-family: EmpireBold, sans-serif;
-            font-size: 160px;
-            text-transform: uppercase;
-            display: flex;
-            flex-direction: row;
-            align-items: flex-end;
-            height: 100%;
-        }
-
-        .titleM {
-            display: none;
-        }
-
-        img {
-            margin-right: 60px;
             width: unset;
-            filter: grayscale(100%);
-            animation: 0.5s;
         }
-
-        .banner {
-            margin-left: 199px;
-            filter: unset;
-            animation: 0.5s;
-        }
-
-        div {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 263px;
-
-            h3 {
-                margin-bottom: 28px;
-                font-family: SaolBold, sans-serif;
-                font-size: 24px;
-                color: #EEEADD;
-
-                span {
-
-                }
-            }
-
-            p {
-                margin-bottom: 60px;
-                font-family: TelegrafRegular, sans-serif;
-                line-height: 150%;
-                color: #C4C4C4;
-                height: 300px;
-            }
-
-
-            div {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-
-                img {
-                    margin-right: 10px;
-                    cursor: pointer;
-                }
-            }
-
-        }
-
     }
 }
 
@@ -316,22 +302,24 @@
         h1 {
             position: relative;
             margin-bottom: 35px;
+            font-size: 80px;
+            line-height: 80px;
         }
 
         .img {
-            flex-direction: column;
+            flex-direction: column-reverse;
             align-items: flex-start;
 
             .imgLeft {
                 margin-right: 0;
                 font-family: TelegrafRegular, sans-serif;
                 line-height: 150%;
-                margin-bottom: 35px;
-
             }
 
             .imgRight {
                 div {
+                    margin-bottom: 35px;
+
                     img {
                         width: 100%;
                     }
@@ -362,8 +350,8 @@
             padding: 50px 35px 50px;
 
             header {
-                font-size: 66px;
-                line-height: 83px;
+                font-size: 91px;
+                line-height: 108px;
                 margin-right: 20px;
             }
 
@@ -392,12 +380,12 @@
 
             header {
                 font-family: SaolRegular, sans-serif;
-                font-size: 32px;
-                margin-bottom: 64px;
+                font-size: 24px;
+                margin-bottom: 0;
             }
 
             h2 {
-                font-size: 60px;
+                font-size: 48px;
                 line-height: 110%;
                 letter-spacing: 0.1em;
                 margin-bottom: 35px;
@@ -418,8 +406,6 @@
     }
 
     .sliders {
-        padding: 50px 0;
-
         .content {
             flex-direction: column;
             padding: 0 35px;
@@ -432,46 +418,7 @@
 
             .title {
                 margin-bottom: 35px;
-            }
-        }
-
-        .desc {
-            margin-bottom: 40px;
-        }
-
-        .slide {
-            flex-direction: column;
-            margin-right: 0;
-            padding: 0 35px;
-            width: 100vw;
-
-            .title {
-                display: none;
-            }
-
-            .titleM {
-                display: block;
-                font-family: EmpireBold, sans-serif;
-                font-size: 80px;
-                text-transform: uppercase;
-                margin-bottom: 10px;
-            }
-
-            img {
-                margin-right: 0;
-                margin-bottom: 20px;
-                width: 100%;
-            }
-
-            .banner {
-                margin-left: 0;
-            }
-
-            div {
-                p {
-                    height: 250px;
-                    margin-bottom: 35px;
-                }
+                font-size: 60px;
             }
         }
     }

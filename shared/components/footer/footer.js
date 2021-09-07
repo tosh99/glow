@@ -1,11 +1,21 @@
 import {InView} from "react-intersection-observer";
 import {motion} from "framer-motion";
 import styles from "./footer.module.scss";
-import {Fragment} from "react";
+import {Fragment, useEffect, useState} from "react";
 import Router from "next/router";
 
 export default function Footer() {
+    const [is_visible, set_is_visible] = useState({});
 
+    useEffect(() => {
+        if (screen.width > 648) {
+            set_is_visible({
+                follow: true,
+                legal: true,
+                company: true
+            })
+        }
+    }, [])
 
     return (<Fragment>
         <div className={"outer " + ' ' + styles.footerOuter}>
@@ -16,37 +26,58 @@ export default function Footer() {
                     </div>
                     <div className={styles.ftRight}>
                         <div className={styles.column}>
-                            <header className={styles.clHeader}>
-                                Follow
-                            </header>
-                            <header className={styles.item}>Linkedin</header>
-                            <header className={styles.item}>Instagram</header>
+                            <div className={styles.clHeader} onClick={() => {
+                                set_is_visible(prev => ({...prev, follow: !prev.follow}))
+                            }}>
+                                <header> Follow</header>
+                                <img src={'/icons/common/down_white.svg'}/>
+                            </div>
+                            {
+                                is_visible.follow && <>
+                                    <header className={styles.item}>Linkedin</header>
+                                    <header className={styles.item}>Instagram</header>
+                                </>
+                            }
                         </div>
                         <div className={styles.column}>
-                            <header className={styles.clHeader}>
-                                Legal
-                            </header>
-                            <header className={styles.item}>Terms of Use</header>
-                            <header className={styles.item}>Privacy Policy</header>
-                            <header className={styles.item}>Services</header>
+                            <div className={styles.clHeader} onClick={() => {
+                                set_is_visible(prev => ({...prev, legal: !prev.legal}))
+                            }}>
+                                <header> Legal</header>
+                                <img src={'/icons/common/down_white.svg'}/>
+                            </div>
+                            {
+                                is_visible.legal && <>
+                                    <header className={styles.item}>Terms of Use</header>
+                                    <header className={styles.item}>Privacy Policy</header>
+                                    <header className={styles.item}>Services</header>
+                                </>
+                            }
                         </div>
                         <div className={styles.column}>
-                            <header className={styles.clHeader}>
-                                Company
-                            </header>
-                            <header className={styles.item} onClick={() => {
-                                Router.push('/faq')
-                            }}>FAQs
-                            </header>
-                            <header className={styles.item} onClick={() => {
-                                Router.push('/about')
-                            }}>About
-                            </header>
-                            <header className={styles.item}>Blog</header>
-                            <header className={styles.item} onClick={() => {
-                                Router.push('/services')
-                            }}>Services
-                            </header>
+                            <div className={styles.clHeader} onClick={() => {
+                                set_is_visible(prev => ({...prev, company: !prev.company}))
+                            }}>
+                                <header> Company</header>
+                                <img src={'/icons/common/down_white.svg'}/>
+                            </div>
+                            {
+                                is_visible.company && <>
+                                    <header className={styles.item} onClick={() => {
+                                        Router.push('/faq')
+                                    }}>FAQs
+                                    </header>
+                                    <header className={styles.item} onClick={() => {
+                                        Router.push('/about')
+                                    }}>About
+                                    </header>
+                                    <header className={styles.item}>Blog</header>
+                                    <header className={styles.item} onClick={() => {
+                                        Router.push('/services')
+                                    }}>Services
+                                    </header>
+                                </>
+                            }
                         </div>
                     </div>
                 </div>
