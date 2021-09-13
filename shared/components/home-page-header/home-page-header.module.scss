@@ -15,9 +15,11 @@
 
     .hRight {
         display: flex;
+        justify-content: space-between;
+        max-width: 958px;
+        width: 100%;
 
         header {
-            margin-left: 36px;
             line-height: 20px;
             letter-spacing: 0.02em;
             font-family: HattonMedium, serif;

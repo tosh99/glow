@@ -17,7 +17,7 @@ export default function Home() {
     const [current_slide, set_current_slide] = useState(0);
 
 
-    const [slider, setslider] = useState({});
+    const [slider, set_slider] = useState({});
     const carousel_content = [
         {
             title: 'Body',
@@ -40,6 +40,10 @@ export default function Home() {
             content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.'
         }
     ];
+
+    useEffect(() => {
+        console.log(current_slide)
+    }, [current_slide])
 
     return (
         <Fragment>
@@ -172,18 +176,21 @@ export default function Home() {
                     </p>
 
                     <Swiper slidesPerView={'auto'}
-                            autoplay={{
-                                delay: 250000,
-                            }}
                             centeredSlides={true}
                             loop={true}
+                            onInit={(ev) => {
+                                set_slider(ev)
+                            }}
+                            spaceBetween={100}
                             onSlideChange={(ev) => {
-                                if (ev.activeIndex - 5 === 5) {
+                                if (ev.activeIndex === 10) {
                                     set_current_slide(0)
+
+                                } else if (ev.activeIndex - 5 === -1) {
+                                    set_current_slide(4)
                                 } else {
                                     set_current_slide(ev.activeIndex - 5)
                                 }
-
                             }}>
                         {
                             carousel_content.map((item, index) => {
@@ -204,24 +211,43 @@ export default function Home() {
                                                     }
                                                 </InView>
                                             }
-                                            <img className={"grayscale " + (current_slide === index ? styles.banner : '')} src={'/images/home/sliders/' + (index) + '.png'}/>
-                                            <div>
-                                                <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
-                                                <p>{item.content}</p>
-                                                <InView threshold={0}>
-                                                    {
-                                                        ({ref, inView}) => (
-                                                            <motion.div className={styles.titleM}
-                                                                        ref={ref}
-                                                                        initial={{opacity: 0}}
-                                                                        animate={inView ? {opacity: 1} : {opacity: 0}}
-                                                                        transition={{duration: 0.7}}>
-                                                                {item.title}
-                                                            </motion.div>)
-                                                    }
-                                                </InView>
-                                                <NextBack theme={'light'}/>
-                                            </div>
+                                            <img
+                                                className={
+                                                    "grayscale " + styles.bannerImg + ' '
+                                                    + (current_slide === index ? styles.banner : '') + ' '
+                                                    + (
+                                                        ((current_slide > 0 && index >= current_slide) || (current_slide === 0 && index !== carousel_content.length - 1) || (current_slide === carousel_content.length - 1 && index === 0)) ?
+                                                            '' : styles.prevImg)
+                                                }
+                                                src={'/images/home/sliders/' + (index) + '.png'}
+                                            />
+                                            {
+                                                ((current_slide > 0 && index >= current_slide) || (current_slide === 0 && index !== carousel_content.length - 1) || (current_slide === carousel_content.length - 1 && index === 0)) ?
+                                                    <div>
+                                                        <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
+                                                        <p>{item.content}</p>
+                                                        <InView threshold={0}>
+                                                            {
+                                                                ({ref, inView}) => (
+                                                                    <motion.div className={styles.titleM}
+                                                                                ref={ref}
+                                                                                initial={{opacity: 0}}
+                                                                                animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                                transition={{duration: 0.7}}>
+                                                                        {item.title}
+                                                                    </motion.div>)
+                                                            }
+                                                        </InView>
+                                                        <NextBack
+                                                            theme={'light'}
+                                                            onNext={() => {
+                                                                slider.slideNext()
+                                                            }}
+                                                            onBack={() => {
+                                                                slider.slidePrev()
+                                                            }}/>
+                                                    </div> : <div>&nbsp;</div>
+                                            }
                                         </div>
                                     </SwiperSlide>
                                 )

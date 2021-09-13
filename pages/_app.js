@@ -1,12 +1,16 @@
 import '../styles/globals.scss'
 import Head from "next/head";
+import TransitionLayout from "../shared/components/transition";
 
 function MyApp({Component, pageProps}) {
     return <>
         <Head>
             <title>Products</title>
         </Head>
-        <Component {...pageProps} />
+
+        <TransitionLayout>
+            <Component {...pageProps} />
+        </TransitionLayout>
     </>
 }
 

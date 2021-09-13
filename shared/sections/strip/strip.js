@@ -1,9 +1,7 @@
 import styles from "./strip.module.scss";
 import {useState} from "react";
-import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperCore, {Autoplay, Controller, Navigation, Pagination} from 'swiper/core';
+import Marquee from "react-fast-marquee";
 
-SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 
 const items = [
     {
@@ -22,46 +20,20 @@ const items = [
 
 
 export default function Strip() {
-    const carousel_settings = {
-        nav: false,
-        autoPlay: true,
-        dots: false
-
-    }
-
-    const [current_slide, set_current_slide] = useState(0);
-
-    return (<>
-        <div className={"outer " + styles.stripOuter}>
-            <div className={"inner"}>
-                <Swiper slidesPerView={3}
-                        autoplay={{
-                            delay: 2500,
-                        }}
-                        loop={true}
-                        onInit={(ev) => {
-                            // set_body_swiper(ev)
-                        }}
-                        onSlideChange={(ev) => {
-                            if (ev.activeIndex - 1 === 5) {
-                                // set_current_body_slide(0)
-                            } else {
-                                // set_current_body_slide(ev.activeIndex - 1)
-                            }
-                        }}>
-                    {
-                        items.map((item, index) => {
-                            return (<SwiperSlide>
-                                    <div className={styles.strip}>
-                                        <header> {item.title}</header>
-                                        <img src={'/icons/common/star.svg'}/>
-                                    </div>
-                                </SwiperSlide>
-                            )
-                        })
-                    }
-                </Swiper>
-            </div>
+    return <div className={"outer " + styles.stripOuter}>
+        <div className={"inner " + styles.strips}>
+            <Marquee gradient={false} speed={40}>
+                {
+                    items.map((item, index) => {
+                        return <div className={styles.strip}>
+                            <header> {item.title}</header>
+                            <div className={styles.imgContainer}>
+                                <img src={'/icons/common/star.svg'}/>
+                            </div>
+                        </div>
+                    })
+                }
+            </Marquee>
         </div>
-    </>)
+    </div>
 }

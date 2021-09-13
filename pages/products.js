@@ -237,9 +237,6 @@ export default function Products() {
         <div className={styles.slidersOuter}>
             <div className={styles.sliders}>
                 <Swiper slidesPerView={'auto'}
-                        autoplay={{
-                            delay: 250000,
-                        }}
                         centeredSlides={true}
                         loop={true}
                         onSlideChange={(ev) => {
@@ -270,24 +267,25 @@ export default function Products() {
                                             </InView>
                                         }
                                         <img className={"grayscale " + (current_products_alternate_slide === index ? styles.banner : '')} src={'/images/products/alternate-products/' + (index) + '.png'}/>
-                                        <div>
-                                            {/*<h3>0{index + 1} / <span>0{products_alternate_content.length}</span></h3>*/}
-                                            {/*<p>{item.content}</p>*/}
-                                            <InView threshold={0}>
-                                                {
-                                                    ({ref, inView}) => (
-                                                        <motion.div className={styles.titleM}
-                                                                    ref={ref}
-                                                                    initial={{opacity: 0}}
-                                                                    animate={inView ? {opacity: 1} : {opacity: 0}}
-                                                                    transition={{duration: 0.7}}>
-                                                            {item.title}
-                                                        </motion.div>)
-                                                }
-                                            </InView>
-                                            <header>ENQUIRE</header>
-                                            <NextBack theme={'light'}/>
-                                        </div>
+                                        {
+                                            ((current_products_alternate_slide > 0 && index >= current_products_alternate_slide) || (current_products_alternate_slide === 0 && index !== products_alternate_content.length - 1) || (current_products_alternate_slide === products_alternate_content.length - 1 && index === 0)) ?
+                                                <div>
+                                                    <InView threshold={0}>
+                                                        {
+                                                            ({ref, inView}) => (
+                                                                <motion.div className={styles.titleM}
+                                                                            ref={ref}
+                                                                            initial={{opacity: 0}}
+                                                                            animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                            transition={{duration: 0.7}}>
+                                                                    {item.title}
+                                                                </motion.div>)
+                                                        }
+                                                    </InView>
+                                                    <header>ENQUIRE</header>
+                                                    <NextBack theme={'light'}/>
+                                                </div> : <div></div>
+                                        }
                                     </div>
                                 </SwiperSlide>
                             )
