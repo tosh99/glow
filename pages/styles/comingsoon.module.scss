@@ -1,7 +1,7 @@
 @import 'styles/vars.scss';
 
 .page {
-    background: url( "../../public/images/comingsoon/comingsoon.png") no-repeat;
+    background: url("../../public/images/comingsoon/comingsoon.png") no-repeat;
     background-size: cover;
 }
 
@@ -35,5 +35,26 @@
         line-height: 150%;
         text-align: center;
         letter-spacing: 0.05em;
+    }
+}
+
+@media only screen and (max-width: 648px) {
+    .banner {
+
+        img {
+            margin-bottom: 35px;
+            width: 60px;
+        }
+
+        h1 {
+            font-size: 80px;
+            line-height: 80px;
+            margin-bottom: 33px;
+        }
+
+        h2 {
+            margin-bottom: 35px;
+            font-size: 16px;
+        }
     }
 }

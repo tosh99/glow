@@ -10,11 +10,14 @@ import Strip from "../shared/sections/strip/strip";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, Controller, Navigation, Pagination} from 'swiper/core';
 import Visitus from "../shared/sections/visitus/visitus";
+import ReadMoreReact from "read-more-react";
+import Head from "next/head";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 
 export default function Home() {
     const [current_slide, set_current_slide] = useState(0);
+    const [device, set_device] = useState(2);
 
 
     const [slider, set_slider] = useState({});
@@ -45,8 +48,22 @@ export default function Home() {
         console.log(current_slide)
     }, [current_slide])
 
+
+    useEffect(() => {
+        if (screen.width <= 648) {
+            set_device(0)
+        }
+    }, [])
+
+    const gotoShop = () => {
+
+    }
+
     return (
         <Fragment>
+            <Head>
+                <title>Glow</title>
+            </Head>
             <HomePageHeader/>
             <div className={"outer " + styles.skinCareOuter}>
                 <div className={"inner " + styles.skinCare}>
@@ -169,7 +186,7 @@ export default function Home() {
                 <div className={styles.sliders}>
                     <p className={styles.desc}>
                         After a lot of deliberation we have curated a
-                        wide range of products that are available to you 24 x 7 on our online boutique glow.shop. You can also purchase them in-store with the assistance of our skincare experts or
+                        wide range of products that are available to you 24 x 7 on our online boutique <span onClick={gotoShop}>glow.shop</span>. You can also purchase them in-store with the assistance of our skincare experts or
                         even place an order for curbside pick-up. These products are tried and tested cult favourites and made
                         with innovative formulations to offer you an everlasting glow and help you on your skincare, beauty and wellness
                         journey.
@@ -224,8 +241,23 @@ export default function Home() {
                                             {
                                                 ((current_slide > 0 && index >= current_slide) || (current_slide === 0 && index !== carousel_content.length - 1) || (current_slide === carousel_content.length - 1 && index === 0)) ?
                                                     <div>
-                                                        <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
-                                                        <p>{item.content}</p>
+                                                        <section>
+                                                            <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
+                                                            {
+                                                                device === 0 && <NextBack
+                                                                    theme={'light'}
+                                                                    onNext={() => {
+                                                                        slider.slideNext()
+                                                                    }}
+                                                                    onBack={() => {
+                                                                        slider.slidePrev()
+                                                                    }}/>
+                                                            }
+
+                                                        </section>
+                                                        <p>
+                                                            <ReadMoreReact min={65} ideal={105} max={165} text={item.content}/>
+                                                        </p>
                                                         <InView threshold={0}>
                                                             {
                                                                 ({ref, inView}) => (
@@ -238,14 +270,16 @@ export default function Home() {
                                                                     </motion.div>)
                                                             }
                                                         </InView>
-                                                        <NextBack
-                                                            theme={'light'}
-                                                            onNext={() => {
-                                                                slider.slideNext()
-                                                            }}
-                                                            onBack={() => {
-                                                                slider.slidePrev()
-                                                            }}/>
+                                                        {
+                                                            device !== 0 && <NextBack
+                                                                theme={'light'}
+                                                                onNext={() => {
+                                                                    slider.slideNext()
+                                                                }}
+                                                                onBack={() => {
+                                                                    slider.slidePrev()
+                                                                }}/>
+                                                        }
                                                     </div> : <div>&nbsp;</div>
                                             }
                                         </div>

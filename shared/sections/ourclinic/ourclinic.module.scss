@@ -33,6 +33,10 @@
         img {
             width: 100%;
         }
+
+        .imgMob {
+            display: none;
+        }
     }
 
     .vuAddress {
@@ -95,14 +99,28 @@
 
         .vuMap {
             margin-bottom: 40px;
+
+            .imgDesktop {
+                display: none;
+            }
+
+            .imgMob {
+                display: block;
+            }
         }
 
         .vuAddress {
             flex-direction: column;
             justify-content: flex-start;
 
+            .vuaLeft {
+
+
+            }
+
             .vuaRight {
                 text-align: left;
+                margin-top: 40px;
             }
         }
     }

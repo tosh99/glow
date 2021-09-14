@@ -31,8 +31,8 @@
                 margin-bottom: 130px;
 
                 img {
-                    width: 100%;
                     max-width: 958px;
+                    width: 958px;
                 }
             }
 
@@ -199,6 +199,12 @@
         font-size: 32px;
         line-height: 140%;
         letter-spacing: 2px;
+
+        span {
+            font-family: HattonMedium, sans-serif;
+            margin-left: 5px;
+            cursor: pointer;
+        }
     }
 
     .slide {
@@ -243,7 +249,6 @@
             right: 90px;
         }
 
-
         div {
             display: flex;
             flex-direction: column;
@@ -251,16 +256,20 @@
             min-width: 240px;
             max-width: 240px;
 
-            h3 {
+            section {
                 margin-bottom: 28px;
-                font-family: SaolBold, sans-serif;
-                font-size: 24px;
-                color: #EEEADD;
 
-                span {
+                h3 {
+                    font-family: SaolBold, sans-serif;
+                    font-size: 24px;
+                    color: #EEEADD;
 
+                    span {
+
+                    }
                 }
             }
+
 
             p {
                 margin-bottom: 60px;
@@ -360,6 +369,7 @@
             .desig {
                 font-family: SaolRegularItalic, sans-serif;
                 font-size: 20px;
+                letter-spacing: 0.1em;
             }
         }
 
@@ -521,8 +531,11 @@
             .imgRight {
                 div {
                     margin-bottom: 50px;
-                }
 
+                    img {
+                        width: 100%;
+                    }
+                }
 
                 .reju {
                     margin-bottom: 0;
@@ -587,7 +600,7 @@
             margin-right: 0;
             padding: 0 35px;
             width: 100vw;
-            min-width: unset;
+            min-width: unset !important;
 
             .title {
                 display: none;
@@ -616,8 +629,15 @@
                 width: 100%;
                 max-width: 100%;
 
+                section {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 28px;
+                }
+
                 p {
-                    height: 240px;
+                    height: auto;
                     margin-bottom: 35px;
                     font-size: 18px;
                 }
@@ -653,6 +673,16 @@
 
             .jobTitle, .jobContent {
                 width: 100%;
+            }
+
+            .jobTitle {
+                .name {
+                    font-size: 22px;
+                }
+
+                .desig {
+
+                }
             }
 
             .jobContent {

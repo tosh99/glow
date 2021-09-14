@@ -45,6 +45,8 @@
         padding: 38px 0;
 
         .hLeft {
+            display: none;
+
             img {
                 cursor: pointer;
             }
@@ -52,7 +54,9 @@
 
         .hRight {
             display: flex;
+            justify-content: space-between;
             align-items: center;
+            width: 100%;
 
             header {
                 margin-left: 0px;

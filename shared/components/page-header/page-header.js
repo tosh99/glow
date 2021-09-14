@@ -10,11 +10,11 @@ export default function PageHeader({title, bg = 'solid'}) {
     return (<Fragment>
         <div className={"outer " + ' ' + styles.headerOuter + ' ' + (bg === 'transparent' ? styles.headerOuterTrans : '')}>
             <div className={"inner " + styles.header}>
-                <Link href="/">
-                    <div className={styles.hLeft}>
+                <div className={styles.hLeft}>
+                    <Link href="/">
                         <img src={'/icons/header/back.svg'}/>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
                 <div className={styles.hRight}>
                     <header>{title}</header>
                     <img src={'/icons/header/star.svg'} onClick={() => {

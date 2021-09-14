@@ -7,6 +7,33 @@
 .body {
     padding: 160px 0;
     display: flex;
+    justify-content: space-between;
+
+    .bodyContent {
+        h1 {
+            font-family: EmpireBold, sans-serif;
+            text-transform: uppercase;
+            margin-bottom: 134px;
+            font-size: 160px;
+            line-height: 100%;
+            letter-spacing: 0.07em;
+            margin-top: -12px;
+        }
+
+        p {
+            font-family: SaolRegularItalic, sans-serif;
+            font-size: 24px;
+            line-height: 168%;
+            letter-spacing: 0.05em;
+        }
+    }
+
+    .shopBody {
+        text-transform: uppercase;
+        font-family: HattonMedium, sans-serif;
+        font-size: 24px;
+        cursor: pointer;
+    }
 
     .bLeft {
         width: 100%;
@@ -15,32 +42,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
-        div {
-            h1 {
-                font-family: EmpireBold, sans-serif;
-                text-transform: uppercase;
-                margin-bottom: 134px;
-                font-size: 160px;
-                line-height: 100%;
-                letter-spacing: 0.07em;
-                margin-top: -12px;
-            }
-
-            p {
-                font-family: SaolRegularItalic, sans-serif;
-                font-size: 24px;
-                line-height: 168%;
-                letter-spacing: 0.05em;
-            }
-        }
-
-        header {
-            text-transform: uppercase;
-            font-family: HattonMedium, sans-serif;
-            font-size: 24px;
-            cursor: pointer;
-        }
     }
 
     .bRight {
@@ -51,6 +52,14 @@
             img {
                 margin-bottom: 35px;
             }
+        }
+
+        .bodyContent {
+            display: none;
+        }
+
+        .shopBody {
+            display: none;
         }
     }
 }
@@ -166,6 +175,8 @@
     border-bottom: 1px solid #444444;
 
     .slide {
+        min-width: 850px;
+
         .title {
             font-size: 100px;
             letter-spacing: 0.09em;
@@ -199,7 +210,7 @@
 
             div {
                 h1 {
-                    font-size: 80px;
+                    font-size: 100px;
                 }
 
                 p {
@@ -303,14 +314,6 @@
 
         }
     }
-
-    .sliders {
-        .slide {
-            .banner {
-                margin-left: 100px;
-            }
-        }
-    }
 }
 
 
@@ -321,18 +324,25 @@
 
         .bLeft {
             margin-right: 0;
-            margin-bottom: 35px;
             width: 100%;
             max-width: unset;
 
-            header {
-                margin-top: 35px;
+            .bodyContent {
+                h1 {
+                    font-size: 80px;
+
+                    br {
+                        display: none;
+                    }
+                }
+
+                p {
+                    display: none;
+                }
             }
 
-            div {
-                h1 {
-                    margin-bottom: 50px;
-                }
+            .shopBody {
+                display: none;
             }
         }
 
@@ -345,6 +355,23 @@
                 }
             }
 
+            .bodyContent {
+                display: flex;
+                margin-top: 35px;
+
+                h1 {
+                    margin-bottom: 50px;
+                }
+            }
+
+            .nextBack {
+
+            }
+
+            .shopBody {
+                display: flex;
+                margin-top: 35px;
+            }
         }
 
     }
@@ -356,12 +383,23 @@
     .currentFavourites {
         padding: 50px 0;
 
+        .cfHeader {
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            h2 {
+                margin-bottom: 20px;
+                font-size: 22px;
+            }
+        }
+
         .cfSlide {
             margin-right: 0;
-            width: 100vw;
+            width: 75vw;
 
             img {
-                height: 354px;
+                width: 90%;
+                height: auto;
             }
 
             header {
@@ -379,12 +417,27 @@
             margin-bottom: 35px;
             font-size: 80px;
         }
+
+        .smRight {
+            header {
+                font-size: 20px;
+            }
+        }
     }
 
     .sliders {
         .slide {
-            .banner {
-                margin-left: 0;
+            .titleM {
+                font-size: 65px;
+            }
+
+            div {
+                justify-content: flex-end;
+                margin-bottom: 50px;
+
+                header {
+                    font-size: 18px;
+                }
             }
         }
     }

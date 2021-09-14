@@ -61,13 +61,15 @@ export default function Visitus() {
                                             set_current_slide(ev.activeIndex)
                                         }}>
                                     <SwiperSlide>
-                                        <div>
-                                            <img src={'/images/home/chennai.png'}/>
+                                        <div onClick={goToAddress}>
+                                            <img className={styles.imgDesktop} src={'/images/locations/chennai.png'}/>
+                                            <img className={styles.imgMob} src={'/images/locations/chennai_mobile.png'}/>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
-                                        <div>
-                                            <img src={'/images/home/hyderabad.png'}/>
+                                        <div onClick={goToAddress}>
+                                            <img className={styles.imgDesktop} src={'/images/locations/hyderabad.png'}/>
+                                            <img className={styles.imgMob} src={'/images/locations/hyderabad_mobile.png'}/>
                                         </div>
                                     </SwiperSlide>
                                 </Swiper>

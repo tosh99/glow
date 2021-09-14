@@ -8,6 +8,7 @@ import Head from "next/head";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from 'swiper/core';
 import Footer from "../shared/components/footer/footer";
+import ReadMoreReact from "read-more-react";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 
@@ -84,32 +85,43 @@ export default function Products() {
     const [current_products_alternate_slide, set_current_products_alternate_slide] = useState(0);
     const products_alternate_content = [
         {
-            title: 'Sesderma Azelac Ru Liposomal Serum',
-            content: 'A range of hand-picked brands for the best of body care products that are made with clean, active ingredients and are result-driven. Taking care of your body is equally rewarding.'
+            title: 'Sesderma \n' +
+                'Azelac \n' +
+                'Ru Liposomal Serum',
         },
         {
-            title: 'Cleansing complex',
-            content: 'Give your hair care routine a bump onto the next level. Whether it is finding the right products for your hair type and concern or adding some lovely serums for that extra bounce, we’ve curated an array of products for each and every one of your needs.'
+            title: 'iS Clinical\n' +
+                'Cleansing \n' +
+                'Complex',
         },
         {
-            title: 'Mask vivant',
-            content: 'Whether you’re a beginner or a skincare enthusiast, we have something for you all. Choose from our repertoire of curated skincare products that have acquired a cult status for their new-age formulations and are targeted towards lasting skincare benefits. A healthy glow awaits you.'
+            title: 'Placenta \n' +
+                'Biologique \n' +
+                'Recherche',
         },
         {
-            title: 'Lait vip 02',
-            content: 'At Glow, we promote overall well-being for healthy skin and hair. Find supplements that come recommended for a glow that’s from within.'
+            title: 'Lait vip 02\n' +
+                'Biologique \n' +
+                'Recherche',
         },
         {
-            title: 'P50 pigm400',
-            content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.'
+            title: 'Isdin \n' +
+                'fotoprotector \n' +
+                'fusion water ',
         },
         {
-            title: 'Isdin fotoprotector fusion water',
-            content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.'
+            title: 'FERULAC \n' +
+                'DUBAI LIPS BALM',
         },
         {
-            title: 'Dubai lips',
-            content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.'
+            title: 'MASQUE VIVANT\n' +
+                'Biologique Recherche',
+        },
+        {
+            title: 'Crème \n' +
+                'Dermopurifiante \n' +
+                'Biologique \n' +
+                'Recherche'
         }
     ];
 
@@ -122,25 +134,25 @@ export default function Products() {
         <div className={"outer " + styles.bodyOuter}>
             <div className={"inner " + styles.body}>
                 <div className={styles.bLeft}>
-                    <div>
+                    <div className={styles.bodyContent}>
                         <h1 dangerouslySetInnerHTML={{__html: body_content[current_body_slide].title}}/>
                         <p>{body_content[current_body_slide].desc}</p>
                     </div>
-                    <header>Shop {body_content[current_body_slide].shop}</header>
+                    <header className={styles.shopBody}>Shop {body_content[current_body_slide].shop}</header>
                 </div>
                 <div className={styles.bRight}>
                     <Swiper slidesPerView={1}
-                            autoplay={{
-                                delay: 2500,
-                            }}
                             loop={true}
                             effect={'fade'}
+                            speed={2000}
                             onInit={(ev) => {
                                 set_body_swiper(ev)
                             }}
                             onSlideChange={(ev) => {
-                                if (ev.activeIndex - 1 === 5) {
+                                if (ev.activeIndex === 6) {
                                     set_current_body_slide(0)
+                                } else if (ev.activeIndex - 1 === -1) {
+                                    set_current_body_slide(4)
                                 } else {
                                     set_current_body_slide(ev.activeIndex - 1)
                                 }
@@ -156,13 +168,28 @@ export default function Products() {
                             })
                         }
                     </Swiper>
-                    <div>
+                    <div className={styles.nextBack}>
                         <NextBack onBack={() => {
                             body_swiper.slidePrev()
                         }} onNext={() => {
                             body_swiper.slideNext()
                         }}/>
                     </div>
+                    <div className={styles.bodyContent}>
+                        <p>
+                            {
+                                body_content.map((item, index) => {
+                                    return <>
+                                        {
+                                            index === current_body_slide && <ReadMoreReact min={10} ideal={135} max={505} text={item.desc}/>
+                                        }
+                                    </>
+                                })
+                            }
+                        </p>
+                        {/*<p>{body_content[current_body_slide].desc}</p>*/}
+                    </div>
+                    <header className={styles.shopBody}>Shop {body_content[current_body_slide].shop}</header>
                 </div>
             </div>
         </div>
@@ -239,11 +266,14 @@ export default function Products() {
                 <Swiper slidesPerView={'auto'}
                         centeredSlides={true}
                         loop={true}
+                        spaceBetween={100}
                         onSlideChange={(ev) => {
-                            if (ev.activeIndex - 7 === 7) {
+                            if (ev.activeIndex === 16) {
                                 set_current_products_alternate_slide(0)
+                            } else if (ev.activeIndex - 8 === -1) {
+                                set_current_products_alternate_slide(7)
                             } else {
-                                set_current_products_alternate_slide(ev.activeIndex - 7)
+                                set_current_products_alternate_slide(ev.activeIndex - 8)
                             }
 
                         }}>
@@ -266,7 +296,17 @@ export default function Products() {
                                                 }
                                             </InView>
                                         }
-                                        <img className={"grayscale " + (current_products_alternate_slide === index ? styles.banner : '')} src={'/images/products/alternate-products/' + (index) + '.png'}/>
+                                        <img
+                                            className={
+                                                "grayscale " + styles.bannerImg + ' '
+                                                + (current_products_alternate_slide === index ? styles.banner : '') + ' '
+                                                + (
+                                                    ((current_products_alternate_slide > 0 && index >= current_products_alternate_slide) || (current_products_alternate_slide === 0 && index !== products_alternate_content.length - 1) || (current_products_alternate_slide === products_alternate_content.length - 1 && index === 0)) ?
+                                                        '' : styles.prevImg)
+                                            }
+                                            src={'/images/products/alternate-products/' + (index) + '.png'}
+                                        />
+                                        {/*<img className={"grayscale " + (current_products_alternate_slide === index ? styles.banner : '')} src={'/images/products/alternate-products/' + (index) + '.png'}/>*/}
                                         {
                                             ((current_products_alternate_slide > 0 && index >= current_products_alternate_slide) || (current_products_alternate_slide === 0 && index !== products_alternate_content.length - 1) || (current_products_alternate_slide === products_alternate_content.length - 1 && index === 0)) ?
                                                 <div>
@@ -294,7 +334,6 @@ export default function Products() {
                 </Swiper>
             </div>
         </div>
-
 
         <Footer/>
 

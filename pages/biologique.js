@@ -1,4 +1,4 @@
-import {Fragment, useState} from "react";
+import {Fragment, useEffect, useState} from "react";
 import styles from "./styles/biologue.module.scss";
 import {InView} from "react-intersection-observer";
 import {motion} from "framer-motion";
@@ -61,60 +61,22 @@ const carousel_content = [
     },
 ];
 
+const content = 'Biologique Recherche products have been accredited for their effectiveness and, immediate and lasting results. The Biologique Recherche methodology is based on targeted products with a high concentration of active\n' +
+    '                        ingredients. Their products are formulated in a dedicated research and development lab using plant, biomarine and biotechnological extracts at very high concentrations – above 20% in most products. These extracts are\n' +
+    '                        derived using the cold pressed method which adds to their potency. Additionally, the entire range of Biologique Recherche products is fragrance free so as to not sensitise your skin.\n' +
+    '                        Invest in a highly personalised and effective skincare regime with the assistance of our Skin Experts at Glow.'
+
 export default function Biologique() {
     const [current_slide, set_current_slide] = useState(0);
     const [slider, setslider] = useState({});
 
+    const [device, set_device] = useState(2);
 
-    const sl = {
-        loop: true,
-        center: true,
-        autoplay: true,
-        nav: false,
-        autoplayTimeout: 2500,
-        autoplaySpeed: 1000,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            768: {
-                items: 3,
-            },
+    useEffect(() => {
+        if (screen.width <= 648) {
+            set_device(0)
         }
-    }
-    const [favorite_slider, set_favorite_slider] = useState({});
-    const favorite_products = [
-        {
-            title: 'Lotion P50 BR',
-        },
-        {
-            title: 'Warming Honey Cleanser',
-        },
-        {
-            title: 'Mitti raw face mask pureearth',
-        },
-        {
-            title: 'Pro heal serum is clinical',
-        },
-        {
-            title: 'Oligo proteins marines serum',
-        },
-        {
-            title: 'Lait vip 02',
-        },
-        {
-            title: 'Heliocare mineral tolerance fluid',
-        },
-        {
-            title: 'Biokiss lip balm',
-        },
-        {
-            title: 'Creme aux acid de fruits',
-        },
-        {
-            title: 'Masque vip 02',
-        },
-    ];
+    }, [])
 
 
     return (<Fragment>
@@ -216,9 +178,12 @@ export default function Biologique() {
                 <Swiper slidesPerView={'auto'}
                         centeredSlides={true}
                         loop={true}
+                        spaceBetween={100}
                         onSlideChange={(ev) => {
-                            if (ev.activeIndex - 3 === 3) {
+                            if (ev.activeIndex === 6) {
                                 set_current_slide(0)
+                            } else if (ev.activeIndex - 3 === -1) {
+                                set_current_slide(2)
                             } else {
                                 set_current_slide(ev.activeIndex - 3)
                             }
@@ -243,24 +208,61 @@ export default function Biologique() {
                                                 }
                                             </InView>
                                         }
-                                        <img className={"grayscale " + (current_slide === index ? styles.banner : '')} src={'/images/biologue/services/' + item.imgurl}/>
-                                        <div>
-                                            <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
-                                            <p>{item.content}</p>
-                                            <InView threshold={0}>
-                                                {
-                                                    ({ref, inView}) => (
-                                                        <motion.div className={styles.titleM}
-                                                                    ref={ref}
-                                                                    initial={{opacity: 0}}
-                                                                    animate={inView ? {opacity: 1} : {opacity: 0}}
-                                                                    transition={{duration: 0.7}}>
-                                                            {item.title}
-                                                        </motion.div>)
-                                                }
-                                            </InView>
-                                            <NextBack theme={'light'}/>
-                                        </div>
+                                        <img
+                                            className={
+                                                "grayscale " + styles.bannerImg + ' '
+                                                + (current_slide === index ? styles.banner : '') + ' '
+                                                + (
+                                                    ((current_slide > 0 && index >= current_slide) || (current_slide === 0 && index !== carousel_content.length - 1) || (current_slide === carousel_content.length - 1 && index === 0)) ?
+                                                        '' : styles.prevImg)
+                                            }
+                                            src={'/images/biologue/services/' + item.imgurl}
+                                        />
+                                        {
+                                            ((current_slide > 0 && index >= current_slide) || (current_slide === 0 && index !== carousel_content.length - 1) || (current_slide === carousel_content.length - 1 && index === 0)) ?
+                                                <div>
+                                                    <section>
+                                                        <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
+                                                        {
+                                                            device === 0 &&
+                                                            <NextBack
+                                                                theme={'light'}
+                                                                onNext={() => {
+                                                                    slider.slideNext()
+                                                                }}
+                                                                onBack={() => {
+                                                                    slider.slidePrev()
+                                                                }}/>
+                                                        }
+
+                                                    </section>
+                                                    <p>
+                                                        <ReadMoreReact min={65} ideal={105} max={165} text={item.content}/>
+                                                    </p>
+                                                    <InView threshold={0}>
+                                                        {
+                                                            ({ref, inView}) => (
+                                                                <motion.div className={styles.titleM}
+                                                                            ref={ref}
+                                                                            initial={{opacity: 0}}
+                                                                            animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                            transition={{duration: 0.7}}>
+                                                                    {item.title}
+                                                                </motion.div>)
+                                                        }
+                                                    </InView>
+                                                    {
+                                                        device !== 0 && <NextBack
+                                                            theme={'light'}
+                                                            onNext={() => {
+                                                                slider.slideNext()
+                                                            }}
+                                                            onBack={() => {
+                                                                slider.slidePrev()
+                                                            }}/>
+                                                    }
+                                                </div> : <div>&nbsp;</div>
+                                        }
                                     </div>
                                 </SwiperSlide>
                             )
@@ -278,16 +280,19 @@ export default function Biologique() {
                         Buy Biologique Recherche
                     </p>
                     <p className={styles.desc}>
-                        Biologique Recherche products have been accredited for their effectiveness and, immediate and lasting results. The Biologique Recherche methodology is based on targeted products with a high concentration of active
-                        ingredients. Their products are formulated in a dedicated research and development lab using plant, biomarine and biotechnological extracts at very high concentrations – above 20% in most products. These extracts are
-                        derived using the cold pressed method which adds to their potency. Additionally, the entire range of Biologique Recherche products is fragrance free so as to not sensitise your skin.
-                        Invest in a highly personalised and effective skincare regime with the assistance of our Skin Experts at Glow.
+                        {
+                            device === 0 ? <ReadMoreReact
+                                min={65}
+                                ideal={355}
+                                max={655}
+                                text={content}/> : content
+                        }
                     </p>
                 </div>
 
-                <Swiper slidesPerView={'auto'} autoplay={{
-                    delay: 2500,
-                }} loop={true}>
+                <Swiper
+                    slidesPerView={'auto'}
+                    loop={true}>
                     {
                         buy_br.map((item, index) => {
                             return (<SwiperSlide>

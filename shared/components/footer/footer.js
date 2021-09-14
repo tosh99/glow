@@ -17,12 +17,17 @@ export default function Footer() {
         }
     }, [])
 
+    const backToTop = () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
     return (<Fragment>
         <div className={"outer " + ' ' + styles.footerOuter}>
             <div className={"inner " + styles.footer}>
                 <div className={styles.footerTop}>
                     <div className={styles.ftLeft}>
                         <img src={'/icons/header/logo_footer.svg'}/>
+                        <header onClick={backToTop}>Back to Top</header>
                     </div>
                     <div className={styles.ftRight}>
                         <div className={styles.column}>

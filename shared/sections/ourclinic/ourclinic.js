@@ -66,12 +66,14 @@ export default function Ourclinic() {
                                         }}>
                                     <SwiperSlide>
                                         <div>
-                                            <img src={'/images/home/chennai.png'}/>
+                                            <img className={styles.imgDesktop} src={'/images/locations/chennai.png'}/>
+                                            <img className={styles.imgMob} src={'/images/locations/chennai_mobile.png'}/>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div>
-                                            <img src={'/images/home/hyderabad.png'}/>
+                                            <img className={styles.imgDesktop} src={'/images/locations/hyderabad.png'}/>
+                                            <img className={styles.imgMob} src={'/images/locations/hyderabad_mobile.png'}/>
                                         </div>
                                     </SwiperSlide>
                                 </Swiper>

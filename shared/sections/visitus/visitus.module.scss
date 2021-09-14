@@ -33,6 +33,10 @@
         img {
             width: 100%;
         }
+
+        .imgMob {
+            display: none;
+        }
     }
 
     .vuAddress {
@@ -79,10 +83,38 @@
             h2 {
                 font-size: 60px;
             }
+
+            header {
+                font-size: 14px;
+            }
         }
 
         .vuMap {
             margin-bottom: 40px;
+
+            .imgDesktop {
+                display: none;
+            }
+
+            .imgMob {
+                display: block;
+            }
         }
+
+        .vuAddress {
+            .vuaLeft {
+
+                h3 {
+                    font-size: 32px;
+                    line-height: unset;
+                    margin-bottom: 25px;
+                }
+            }
+
+            .vuaRight {
+                padding-top: 10px;
+            }
+        }
+
     }
 }

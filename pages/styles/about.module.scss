@@ -20,8 +20,8 @@
 
     p {
         font-family: SaolRegularItalic, sans-serif;
-        font-size: 54px;
-        line-height: 70px;
+        font-size: 32px;
+        line-height: 150%;
         letter-spacing: 0.02em;
         margin-bottom: 54px;
     }
@@ -121,9 +121,14 @@
     .advocacy {
         padding: 50px 0;
 
+        header {
+            font-size: 22px;
+        }
+
         p {
             font-size: 20px;
             line-height: 167%;
+            margin-bottom: 35px;
         }
     }
 
@@ -136,6 +141,11 @@
     .clientTestimonials {
         .ctHeader {
             padding: 50px 0;
+            flex-direction: column;
+
+            h2 {
+                margin-bottom: 35px;
+            }
         }
     }
 

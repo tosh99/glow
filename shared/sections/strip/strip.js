@@ -22,7 +22,7 @@ const items = [
 export default function Strip() {
     return <div className={"outer " + styles.stripOuter}>
         <div className={"inner " + styles.strips}>
-            <Marquee gradient={false} speed={40}>
+            <Marquee gradient={false} speed={40} pauseOnHover={true} pauseOnClick={true}>
                 {
                     items.map((item, index) => {
                         return <div className={styles.strip}>

@@ -73,9 +73,6 @@ export default function TheEdit() {
                         </div>
                         <div className={styles.postRight}>
                             <Swiper slidesPerView={1}
-                                    autoplay={{
-                                        delay: 2500,
-                                    }}
                                     loop={true}
                                     onInit={(ev) => {
                                         post.swiper = ev;

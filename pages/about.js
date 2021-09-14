@@ -7,10 +7,10 @@ import PageHeader from "../shared/components/page-header/page-header";
 import Footer from "../shared/components/footer/footer";
 import NextBack from "../shared/components/nextback/nextback";
 import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperCore, {Autoplay, Controller, Navigation, Pagination} from 'swiper/core';
+import SwiperCore, {Autoplay, Controller, EffectFade, Navigation, Pagination} from 'swiper/core';
 import ReadMoreReact from "read-more-react";
 
-SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
+SwiperCore.use([Autoplay, Pagination, Navigation, Controller, EffectFade]);
 
 const testimonials = [
     {
@@ -33,29 +33,12 @@ const testimonials = [
 ]
 
 export default function About() {
-    const testimonial_settings = {
-        loop: true,
-        autoplay: true,
-        nav: false,
-        dots: false,
-        autoplayTimeout: 4500,
-        autoplaySpeed: 1000,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            768: {
-                items: 2,
-            },
-        },
-    }
-
     const [testimonial_swiper, set_testimonial_swiper] = useState({});
     const [current_slide, set_current_slide] = useState(0);
 
 
     return (<Fragment>
-        <PageHeader title={'About'}/>
+        <PageHeader title={'About Glow'}/>
         <div className={"outer " + styles.advocacyOuter}>
             <div className={"inner " + styles.advocacy}>
                 <header>Our Skincare Advocacy</header>
@@ -135,9 +118,7 @@ export default function About() {
                                         slidesPerView: 2,
                                     }
                                 }}
-                                autoplay={{
-                                    delay: 2500,
-                                }}
+                                speed={2000}
                                 loop={true}
                                 onInit={(ev) => {
                                     set_testimonial_swiper(ev)
@@ -159,7 +140,6 @@ export default function About() {
                                                 <div className={styles.desc}>
                                                     <ReadMoreReact min={125} ideal={405} max={655} text={item.desc}/>
                                                 </div>
-                                                {/*<p>{item.desc}</p>*/}
                                             </div>
                                         </SwiperSlide>
                                     )
