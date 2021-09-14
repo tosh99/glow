@@ -214,6 +214,49 @@
         position: relative;
         min-width: 765px;
 
+        .menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-right: 50px;
+            width: 150px;
+
+            .menuTitle {
+                font-family: OggRegular, sans-serif;
+                font-size: 24px;
+                line-height: 143%;
+                letter-spacing: 0.07em;
+                text-transform: uppercase;
+                margin-bottom: 16px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            .menuItems {
+                display: flex;
+                flex-direction: column;
+                font-family: OggRegular, sans-serif;
+                font-size: 16px;
+                line-height: 143%;
+                letter-spacing: 0.07em;
+                text-transform: uppercase;
+                color: #EEEADD;
+
+                .item {
+                    margin-bottom: 16px;
+                    cursor: pointer;
+                }
+
+                .item:hover {
+                    transition: 0.1s;
+                    cursor: pointer;
+                    opacity: 0.7;
+                }
+            }
+        }
+
         .title {
             position: absolute;
             width: 600px;
@@ -225,7 +268,6 @@
             justify-content: flex-start;
             letter-spacing: 0.1em;
             bottom: 67px;
-            margin-left: -200px;
         }
 
         .titleM {
@@ -246,10 +288,10 @@
 
         .prevImg {
             position: absolute;
-            right: 90px;
+            right: -40px;
         }
 
-        div {
+        .content {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -280,16 +322,16 @@
             }
 
 
-            div {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-
-                img {
-                    margin-right: 10px;
-                    cursor: pointer;
-                }
-            }
+            //div {
+            //    display: flex;
+            //    flex-direction: row;
+            //    justify-content: flex-start;
+            //
+            //    img {
+            //        margin-right: 10px;
+            //        cursor: pointer;
+            //    }
+            //}
 
         }
 

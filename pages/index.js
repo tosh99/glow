@@ -19,6 +19,7 @@ export default function Home() {
     const [current_slide, set_current_slide] = useState(0);
     const [device, set_device] = useState(2);
 
+    const [is_menu_visible, set_is_menu_visible] = useState(false);
 
     const [slider, set_slider] = useState({});
     const carousel_content = [
@@ -214,19 +215,40 @@ export default function Home() {
                                 return (<SwiperSlide>
                                         <div className={styles.slide}>
                                             {
-                                                current_slide === index &&
-                                                <InView threshold={0}>
-                                                    {
-                                                        ({ref, inView}) => (
-                                                            <motion.div className={styles.title}
-                                                                        ref={ref}
-                                                                        initial={{opacity: 0}}
-                                                                        animate={inView ? {opacity: 1} : {opacity: 0}}
-                                                                        transition={{duration: 0.7}}>
-                                                                {item.title}
-                                                            </motion.div>)
-                                                    }
-                                                </InView>
+                                                current_slide === index && <>
+                                                    <InView threshold={0}>
+                                                        {
+                                                            ({ref, inView}) => (
+                                                                <motion.div className={styles.title}
+                                                                            ref={ref}
+                                                                            initial={{opacity: 0}}
+                                                                            animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                            transition={{duration: 0.7}}>
+                                                                    {item.title}
+                                                                </motion.div>)
+                                                        }
+                                                    </InView>
+                                                    <div className={styles.menu}>
+                                                        <div className={styles.menuTitle} onClick={() => {
+                                                            set_is_menu_visible(!is_menu_visible)
+                                                        }}>
+                                                            <header>Index</header>
+                                                            <img src={'/icons/common/down_white.svg'}/>
+                                                        </div>
+                                                        {
+                                                            is_menu_visible && <div className={styles.menuItems}>
+                                                                {
+                                                                    carousel_content.map((citem, cindex) => {
+                                                                        return <header onClick={() => {
+                                                                            set_current_slide(cindex);
+                                                                            slider.slideTo(cindex + 5);
+                                                                        }} className={styles.item}>{citem.title}</header>
+                                                                    })
+                                                                }
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                </>
                                             }
                                             <img
                                                 className={
@@ -240,7 +262,7 @@ export default function Home() {
                                             />
                                             {
                                                 ((current_slide > 0 && index >= current_slide) || (current_slide === 0 && index !== carousel_content.length - 1) || (current_slide === carousel_content.length - 1 && index === 0)) ?
-                                                    <div>
+                                                    <div className={styles.content}>
                                                         <section>
                                                             <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
                                                             {
@@ -253,25 +275,27 @@ export default function Home() {
                                                                         slider.slidePrev()
                                                                     }}/>
                                                             }
-
                                                         </section>
                                                         <p>
-                                                            <ReadMoreReact min={65} ideal={105} max={165} text={item.content}/>
+                                                            <ReadMoreReact min={65} ideal={105} max={165} text={item.content || ''}/>
                                                         </p>
-                                                        <InView threshold={0}>
-                                                            {
-                                                                ({ref, inView}) => (
-                                                                    <motion.div className={styles.titleM}
-                                                                                ref={ref}
-                                                                                initial={{opacity: 0}}
-                                                                                animate={inView ? {opacity: 1} : {opacity: 0}}
-                                                                                transition={{duration: 0.7}}>
-                                                                        {item.title}
-                                                                    </motion.div>)
-                                                            }
-                                                        </InView>
                                                         {
-                                                            device !== 0 && <NextBack
+                                                            device === 0 && <InView threshold={0}>
+                                                                {
+                                                                    ({ref, inView}) => (
+                                                                        <motion.div className={styles.titleM}
+                                                                                    ref={ref}
+                                                                                    initial={{opacity: 0}}
+                                                                                    animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                                    transition={{duration: 0.7}}>
+                                                                            {item.title}
+                                                                        </motion.div>)
+                                                                }
+                                                            </InView>
+                                                        }
+                                                        {
+                                                            device !== 0 &&
+                                                            <NextBack
                                                                 theme={'light'}
                                                                 onNext={() => {
                                                                     slider.slideNext()

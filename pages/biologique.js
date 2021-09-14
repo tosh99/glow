@@ -32,15 +32,18 @@ const methodologies = [
 const buy_br = [
     {
         title: 'For Face',
-        img_url: 'face.png'
+        img_url: 'face.png',
+        img_mobile_url: 'face_mobile.png'
     },
     {
         title: 'For Hair',
-        img_url: 'hair.png'
+        img_url: 'hair.png',
+        img_mobile_url: 'hair_mobile.png'
     },
     {
         title: 'Initialisation Stage',
-        img_url: 'hair.png'
+        img_url: '3.png',
+        img_mobile_url: '3_mobile.png'
     }
 ];
 const carousel_content = [
@@ -68,7 +71,7 @@ const content = 'Biologique Recherche products have been accredited for their ef
 
 export default function Biologique() {
     const [current_slide, set_current_slide] = useState(0);
-    const [slider, setslider] = useState({});
+    const [slider, set_slider] = useState({});
 
     const [device, set_device] = useState(2);
 
@@ -179,6 +182,9 @@ export default function Biologique() {
                         centeredSlides={true}
                         loop={true}
                         spaceBetween={100}
+                        onInit={(ev) => {
+                            set_slider(ev)
+                        }}
                         onSlideChange={(ev) => {
                             if (ev.activeIndex === 6) {
                                 set_current_slide(0)
@@ -220,7 +226,7 @@ export default function Biologique() {
                                         />
                                         {
                                             ((current_slide > 0 && index >= current_slide) || (current_slide === 0 && index !== carousel_content.length - 1) || (current_slide === carousel_content.length - 1 && index === 0)) ?
-                                                <div>
+                                                <div className={styles.content}>
                                                     <section>
                                                         <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
                                                         {
@@ -239,18 +245,20 @@ export default function Biologique() {
                                                     <p>
                                                         <ReadMoreReact min={65} ideal={105} max={165} text={item.content}/>
                                                     </p>
-                                                    <InView threshold={0}>
-                                                        {
-                                                            ({ref, inView}) => (
-                                                                <motion.div className={styles.titleM}
-                                                                            ref={ref}
-                                                                            initial={{opacity: 0}}
-                                                                            animate={inView ? {opacity: 1} : {opacity: 0}}
-                                                                            transition={{duration: 0.7}}>
-                                                                    {item.title}
-                                                                </motion.div>)
-                                                        }
-                                                    </InView>
+                                                    {
+                                                        device === 0 && <InView threshold={0}>
+                                                            {
+                                                                ({ref, inView}) => (
+                                                                    <motion.div className={styles.titleM}
+                                                                                ref={ref}
+                                                                                initial={{opacity: 0}}
+                                                                                animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                                transition={{duration: 0.7}}>
+                                                                        {item.title}
+                                                                    </motion.div>)
+                                                            }
+                                                        </InView>
+                                                    }
                                                     {
                                                         device !== 0 && <NextBack
                                                             theme={'light'}
@@ -292,19 +300,22 @@ export default function Biologique() {
 
                 <Swiper
                     slidesPerView={'auto'}
+                    spaceBetween={20}
                     loop={true}>
                     {
                         buy_br.map((item, index) => {
                             return (<SwiperSlide>
                                     <div className={styles.buyBr}>
                                         <header>{item.title}</header>
-                                        <img src={'/images/biologue/buy/' + item.img_url}/>
+                                        <img src={'/images/biologue/buy/' + (device === 0 ? item.img_mobile_url : item.img_url)}/>
                                     </div>
                                 </SwiperSlide>
                             )
                         })
                     }
                 </Swiper>
+
+                <header className={styles.enquire}>ENQUIRE</header>
             </div>
         </div>
 

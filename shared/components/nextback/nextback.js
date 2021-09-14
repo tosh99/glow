@@ -7,7 +7,7 @@ export default function NextBack({onNext, onBack, theme = 'dark',
 
 
     return (<Fragment>
-        <div className={styles.nextback}>
+        <section className={styles.nextback}>
             {
                 theme === 'dark' &&
                 <Fragment>
@@ -22,6 +22,6 @@ export default function NextBack({onNext, onBack, theme = 'dark',
                     <img className={prevClass} id={nextId} src={'/icons/common/next_light.svg'} onClick={onNext}/>
                 </Fragment>
             }
-        </div>
+        </section>
     </Fragment>)
 }

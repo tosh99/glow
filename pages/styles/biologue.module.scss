@@ -220,7 +220,6 @@
     }
 
     .buyBr {
-        margin-right: 20px;
         width: 100%;
 
         img {
@@ -235,6 +234,28 @@
         }
     }
 
+    .enquire {
+        font-family: HattonMedium, sans-serif;
+        font-size: 24px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-top: 58px;
+        cursor: pointer;
+    }
+
+}
+
+.sliders {
+    .slide {
+        .title {
+            left: -150px;
+        }
+
+
+        .prevImg {
+            right: 70px;
+        }
+    }
 }
 
 @media only screen and (max-width: 1280px) {
@@ -400,6 +421,14 @@
 
             img {
                 width: 100%;
+            }
+        }
+
+        .buyBr {
+            width: 100vw;
+
+            img {
+                width: calc(100% - 70px);
             }
         }
     }
