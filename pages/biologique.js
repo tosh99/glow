@@ -165,7 +165,7 @@ export default function Biologique() {
 
         <div className={styles.slidersOuter}>
             <div className={styles.sliders}>
-                <div className={styles.content}>
+                <div className={styles.contentDesc}>
                     <p className={styles.title}>
                         Their most sought
                         after aesthetic services, exclusively at Glow

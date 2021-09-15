@@ -248,7 +248,7 @@
 .sliders {
     padding: 128px 0;
 
-    .content {
+    .contentDesc {
         display: flex;
         justify-content: space-between;
         color: white;
@@ -286,7 +286,6 @@
         .title {
             left: -150px;
         }
-
 
         .prevImg {
             right: 70px;
@@ -470,7 +469,9 @@
     }
 
     .sliders {
-        .content {
+        padding: 50px 0;
+
+        .contentDesc {
             flex-direction: column;
             padding: 0 35px;
             margin-bottom: 50px;
