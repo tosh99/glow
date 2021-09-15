@@ -214,6 +214,20 @@ export default function Biologique() {
                                                 }
                                             </InView>
                                         }
+                                        {
+                                            device === 0 && <InView threshold={0}>
+                                                {
+                                                    ({ref, inView}) => (
+                                                        <motion.div className={styles.titleM}
+                                                                    ref={ref}
+                                                                    initial={{opacity: 0}}
+                                                                    animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                    transition={{duration: 0.7}}>
+                                                            {item.title}
+                                                        </motion.div>)
+                                                }
+                                            </InView>
+                                        }
                                         <img
                                             className={
                                                 "grayscale " + styles.bannerImg + ' '
@@ -227,10 +241,9 @@ export default function Biologique() {
                                         {
                                             ((current_slide > 0 && index >= current_slide) || (current_slide === 0 && index !== carousel_content.length - 1) || (current_slide === carousel_content.length - 1 && index === 0)) ?
                                                 <div className={styles.content}>
-                                                    <section>
-                                                        <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
-                                                        {
-                                                            device === 0 &&
+                                                    {
+                                                        device === 0 &&
+                                                        <section>
                                                             <NextBack
                                                                 theme={'light'}
                                                                 onNext={() => {
@@ -239,26 +252,13 @@ export default function Biologique() {
                                                                 onBack={() => {
                                                                     slider.slidePrev()
                                                                 }}/>
-                                                        }
-
-                                                    </section>
-                                                    <p>
-                                                        <ReadMoreReact min={65} ideal={105} max={165} text={item.content}/>
-                                                    </p>
-                                                    {
-                                                        device === 0 && <InView threshold={0}>
-                                                            {
-                                                                ({ref, inView}) => (
-                                                                    <motion.div className={styles.titleM}
-                                                                                ref={ref}
-                                                                                initial={{opacity: 0}}
-                                                                                animate={inView ? {opacity: 1} : {opacity: 0}}
-                                                                                transition={{duration: 0.7}}>
-                                                                        {item.title}
-                                                                    </motion.div>)
-                                                            }
-                                                        </InView>
+                                                        </section>
                                                     }
+                                                    <p>
+                                                        {item.content}
+                                                        {/*<ReadMoreReact min={65} ideal={105} max={165} text={item.content}/>*/}
+                                                    </p>
+                                                    <header>Discover mORE</header>
                                                     {
                                                         device !== 0 && <NextBack
                                                             theme={'light'}

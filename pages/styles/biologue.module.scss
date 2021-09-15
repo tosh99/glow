@@ -1,4 +1,5 @@
 @import 'index.module.scss';
+@import 'products.module.scss';
 
 .skinCareOuter {
     background: rgba(238, 234, 221, 0.9);;
@@ -283,12 +284,22 @@
     }
 
     .slide {
+        justify-content: flex-start;
+        min-width: 800px;
+
         .title {
             left: -150px;
         }
 
         .prevImg {
             right: 70px;
+        }
+
+        .content {
+
+            header {
+                font-size: 20px;
+            }
         }
     }
 }
@@ -313,7 +324,7 @@
 
         h1 {
             position: relative;
-            margin-bottom: 35px;
+            margin-bottom: 20px;
             font-size: 80px;
             line-height: 80px;
         }
@@ -407,11 +418,11 @@
             header {
                 font-family: SaolRegular, sans-serif;
                 font-size: 24px;
-                margin-bottom: 0;
+                margin-bottom: 10px;
             }
 
             h2 {
-                font-size: 48px;
+                font-size: 60px;
                 line-height: 110%;
                 letter-spacing: 0.1em;
                 margin-bottom: 35px;
@@ -470,11 +481,12 @@
 
     .sliders {
         padding: 50px 0;
+        border-top: 1px solid #444444;
 
         .contentDesc {
             flex-direction: column;
             padding: 0 35px;
-            margin-bottom: 50px;
+            margin-bottom: 0;
 
             .title, .desc {
                 padding: 0;
@@ -484,6 +496,10 @@
             .title {
                 margin-bottom: 35px;
                 font-size: 60px;
+            }
+
+            .desc {
+                margin-bottom: 35px;
             }
         }
     }

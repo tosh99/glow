@@ -20,6 +20,9 @@
 
             header {
                 display: none;
+                font-family: HattonRegular, sans-serif;
+                font-size: 14px;
+                text-transform: uppercase;
             }
         }
 
@@ -168,7 +171,7 @@
 
                     .clHeader {
                         width: 100%;
-                        margin-bottom: 20px;
+                        margin-bottom: 10px;
 
                         img {
                             display: block;
@@ -198,6 +201,7 @@
 @media only screen and (max-width: 648px) {
     .footer {
         padding: 50px 0 0 0 !important;
+        padding-top: 20px !important;
 
         .footerTop {
             flex-direction: column;

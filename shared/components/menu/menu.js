@@ -18,31 +18,43 @@ export default function Menu({close}) {
     }
 
     return (<Fragment>
+
         <div className={styles.menu}>
-            <div className={styles.menuTop}>
-                <img className={styles.logo} src={'/icons/header/logo.svg'} onClick={navigateHome}/>
-                <img className={styles.close} src={'/icons/header/close.svg'} onClick={close}/>
-            </div>
-            <div className={styles.menuContent}>
-                <Link href="/services">
-                    <header>Services</header>
-                </Link>
-                <Link href="/products">
-                    <header>Products</header>
-                </Link>
-                <Link href="/theedit">
-                    <header>The Edit</header>
-                </Link>
-                <Link href="/biologique">
-                    <header>Biologique Recherche</header>
-                </Link>
-                <Link href="/about">
-                    <header>About</header>
-                </Link>
-            </div>
-            <div className={styles.menuBottom}>
-                <p>make AN appointment</p>
-            </div>
+            <InView threshold={0.5}>
+                {
+                    ({ref, inView}) => (
+                        <motion.div className={"outer " + ' ' + styles.servicesOuter}
+                                    ref={ref}
+                                    initial={{opacity: 0}}
+                                    animate={inView ? {opacity: 1} : {opacity: 0}}
+                                    transition={{duration: 1}}>
+                            <div className={styles.menuTop}>
+                                <img className={styles.logo} src={'/icons/header/logo.svg'} onClick={navigateHome}/>
+                                <img className={styles.close} src={'/icons/header/close.svg'} onClick={close}/>
+                            </div>
+                            <div className={styles.menuContent}>
+                                <Link href="/services">
+                                    <header>Services</header>
+                                </Link>
+                                <Link href="/products">
+                                    <header>Products</header>
+                                </Link>
+                                <Link href="/theedit">
+                                    <header>The Edit</header>
+                                </Link>
+                                <Link href="/biologique">
+                                    <header>Biologique Recherche</header>
+                                </Link>
+                                <Link href="/about">
+                                    <header>About</header>
+                                </Link>
+                            </div>
+                            <div className={styles.menuBottom}>
+                                <p>make AN appointment</p>
+                            </div>
+                        </motion.div>)
+                }
+            </InView>
         </div>
     </Fragment>)
 }

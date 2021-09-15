@@ -2,7 +2,6 @@ import styles from './styles/index.module.scss'
 import {Fragment, useEffect, useState} from "react";
 import {motion} from "framer-motion"
 import {InView} from 'react-intersection-observer';
-import Ourclinic from "../shared/sections/ourclinic/ourclinic";
 import HomePageHeader from "../shared/components/home-page-header/home-page-header";
 import NextBack from "../shared/components/nextback/nextback";
 import Footer from "../shared/components/footer/footer";
@@ -17,7 +16,6 @@ SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 
 export default function Home() {
     const [current_slide, set_current_slide] = useState(0);
-    const [device, set_device] = useState(2);
 
     const [is_menu_visible, set_is_menu_visible] = useState(false);
 
@@ -49,7 +47,7 @@ export default function Home() {
         console.log(current_slide)
     }, [current_slide])
 
-
+    const [device, set_device] = useState(2);
     useEffect(() => {
         if (screen.width <= 648) {
             set_device(0)
@@ -375,7 +373,7 @@ export default function Home() {
                                         <p>She has consulted with many people over the course of years and has distinguished herself as an advocate for wholesome rejuvenation.
                                             With an established and ever-growing
                                             clientbase she has extended her platform to a larger audience and opened doors to Glow, a contemporary space for skin indulgence.</p>
-                                        <header>read more</header>
+                                        {/*<header>read more</header>*/}
                                     </div>
                                 </div>
 

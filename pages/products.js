@@ -1,5 +1,5 @@
 import styles from './styles/products.module.scss'
-import {Fragment, useState} from "react";
+import {Fragment, useEffect, useState} from "react";
 import {motion} from "framer-motion"
 import {InView} from 'react-intersection-observer';
 import NextBack from "../shared/components/nextback/nextback";
@@ -126,6 +126,14 @@ export default function Products() {
     ];
 
 
+    const [device, set_device] = useState(2);
+    useEffect(() => {
+        if (screen.width <= 648) {
+            set_device(0)
+        }
+    }, [])
+
+
     return (<Fragment>
         <Head>
             <title>Products</title>
@@ -176,18 +184,18 @@ export default function Products() {
                         }}/>
                     </div>
                     <div className={styles.bodyContent}>
-                        <p>
-                            {
-                                body_content.map((item, index) => {
-                                    return <>
-                                        {
-                                            index === current_body_slide && <ReadMoreReact min={10} ideal={135} max={505} text={item.desc}/>
-                                        }
-                                    </>
-                                })
-                            }
-                        </p>
-                        {/*<p>{body_content[current_body_slide].desc}</p>*/}
+                        {/*<p>*/}
+                        {/*    {*/}
+                        {/*        body_content.map((item, index) => {*/}
+                        {/*            return <>*/}
+                        {/*                {*/}
+                        {/*                    index === current_body_slide && <ReadMoreReact min={10} ideal={135} max={505} text={item.desc}/>*/}
+                        {/*                }*/}
+                        {/*            </>*/}
+                        {/*        })*/}
+                        {/*    }*/}
+                        {/*</p>*/}
+                        <p>{body_content[current_body_slide].desc}</p>
                     </div>
                     <header className={styles.shopBody}>Shop {body_content[current_body_slide].shop}</header>
                 </div>
@@ -266,6 +274,9 @@ export default function Products() {
                 <Swiper slidesPerView={'auto'}
                         centeredSlides={true}
                         loop={true}
+                        onInit={(ev) => {
+                            set_products_alternate_swiper(ev)
+                        }}
                         spaceBetween={100}
                         onSlideChange={(ev) => {
                             if (ev.activeIndex === 16) {
@@ -309,7 +320,20 @@ export default function Products() {
                                         {/*<img className={"grayscale " + (current_products_alternate_slide === index ? styles.banner : '')} src={'/images/products/alternate-products/' + (index) + '.png'}/>*/}
                                         {
                                             ((current_products_alternate_slide > 0 && index >= current_products_alternate_slide) || (current_products_alternate_slide === 0 && index !== products_alternate_content.length - 1) || (current_products_alternate_slide === products_alternate_content.length - 1 && index === 0)) ?
-                                                <div>
+                                                <div className={styles.content}>
+                                                    <section>
+                                                        <h3>&nbsp;</h3>
+                                                        {
+                                                            device === 0 && <NextBack
+                                                                theme={'light'}
+                                                                onNext={() => {
+                                                                    products_alternate_swiper.slideNext()
+                                                                }}
+                                                                onBack={() => {
+                                                                    products_alternate_swiper.slidePrev()
+                                                                }}/>
+                                                        }
+                                                    </section>
                                                     <InView threshold={0}>
                                                         {
                                                             ({ref, inView}) => (
@@ -323,7 +347,16 @@ export default function Products() {
                                                         }
                                                     </InView>
                                                     <header>ENQUIRE</header>
-                                                    <NextBack theme={'light'}/>
+                                                    {
+                                                        device !== 0 && <NextBack
+                                                            theme={'light'}
+                                                            onNext={() => {
+                                                                products_alternate_swiper.slideNext()
+                                                            }}
+                                                            onBack={() => {
+                                                                products_alternate_swiper.slidePrev()
+                                                            }}/>
+                                                    }
                                                 </div> : <div></div>
                                         }
                                     </div>

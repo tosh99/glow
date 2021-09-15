@@ -183,7 +183,7 @@
             margin-top: -75px;
         }
 
-        div {
+        .content {
             justify-content: flex-end;
             margin-bottom: 50px;
 
@@ -330,6 +330,7 @@
             .bodyContent {
                 h1 {
                     font-size: 80px;
+                    margin-bottom: 20px;
 
                     br {
                         display: none;
@@ -362,6 +363,12 @@
                 h1 {
                     margin-bottom: 50px;
                 }
+
+                p {
+                    font-size: 20px;
+                    line-height: 148%;
+                    letter-spacing: 0.03em;
+                }
             }
 
             .nextBack {
@@ -388,8 +395,8 @@
             margin-bottom: 20px;
 
             h2 {
-                margin-bottom: 20px;
-                font-size: 22px;
+                margin-bottom: 40px;
+                font-size: 18px;
             }
         }
 
@@ -429,14 +436,16 @@
         .slide {
             .titleM {
                 font-size: 65px;
+                margin-bottom: 35px;
             }
 
-            div {
+            .content {
                 justify-content: flex-end;
-                margin-bottom: 50px;
+                margin-bottom: 0;
 
                 header {
-                    font-size: 18px;
+                    font-size: 20px;
+                    margin-bottom: 0;
                 }
             }
         }
