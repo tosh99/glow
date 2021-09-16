@@ -55,9 +55,7 @@ export default function Ourclinic() {
                             </div>
                             <div className={styles.vuMap}>
                                 <Swiper slidesPerView={1}
-                                        autoplay={{
-                                            delay: 2500,
-                                        }}
+                                        speed={1800}
                                         onInit={(ev) => {
                                             set_clinic_swiper(ev)
                                         }}

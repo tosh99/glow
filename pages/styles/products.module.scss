@@ -175,17 +175,24 @@
     border-bottom: 1px solid #444444;
 
     .slide {
-        min-width: 850px;
+        min-width: 800px;
 
         .title {
             font-size: 100px;
             letter-spacing: 0.09em;
             margin-top: -75px;
+            left: -200px;
+        }
+
+        .prevImg {
+            right: 100px;
         }
 
         .content {
             justify-content: flex-end;
             margin-bottom: 50px;
+            min-width: 200px;
+            max-width: 200px;
 
             header {
                 font-family: HattonMedium, sans-serif;
@@ -442,6 +449,8 @@
             .content {
                 justify-content: flex-end;
                 margin-bottom: 0;
+                min-width: unset;
+                max-width: unset;
 
                 header {
                     font-size: 20px;

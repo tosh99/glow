@@ -72,6 +72,7 @@ const content = 'Biologique Recherche products have been accredited for their ef
 export default function Biologique() {
     const [current_slide, set_current_slide] = useState(0);
     const [slider, set_slider] = useState({});
+    const [methodology_slider, set_methodology_slider] = useState({});
 
     const [device, set_device] = useState(2);
 
@@ -137,13 +138,29 @@ export default function Biologique() {
             <Swiper
                 slidesPerView={1}
                 spaceBetween={50}
+                speed={2500}
+                onInit={(ev) => {
+                    set_methodology_slider(ev)
+                }}
                 loop={true}>
                 {
                     methodologies.map((item, index) => {
                         return (<SwiperSlide>
                                 <div className={styles.methodology}>
                                     <div className={styles.metLeft}>
-                                        <header>Step - 0{index + 1}</header>
+                                        <div className={styles.title}>
+                                            <header>Step - 0{index + 1}</header>
+                                            <div className={styles.mrArrow}>
+                                                <NextBack
+                                                    theme={'light'}
+                                                    onNext={() => {
+                                                        methodology_slider.slideNext()
+                                                    }}
+                                                    onBack={() => {
+                                                        methodology_slider.slidePrev()
+                                                    }}/>
+                                            </div>
+                                        </div>
                                         <h2>{item.title}</h2>
                                         {/*<p>{item.desc}</p>*/}
 
@@ -181,11 +198,13 @@ export default function Biologique() {
                 <Swiper slidesPerView={'auto'}
                         centeredSlides={true}
                         loop={true}
+                        speed={1800}
                         spaceBetween={100}
                         onInit={(ev) => {
                             set_slider(ev)
                         }}
                         onSlideChange={(ev) => {
+
                             if (ev.activeIndex === 6) {
                                 set_current_slide(0)
                             } else if (ev.activeIndex - 3 === -1) {

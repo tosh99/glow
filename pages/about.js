@@ -38,120 +38,111 @@ export default function About() {
 
 
     return (<Fragment>
-        <PageHeader title={'About Glow'}/>
-        <div className={"outer " + styles.advocacyOuter}>
-            <div className={"inner " + styles.advocacy}>
-                <header>Our Skincare Advocacy</header>
-                <p>Glow is a comprehensive skincare experience centre backed by the medical knowledge of Dr. Varshini Reddy,
-                    your skincare specialist. Her advocacy is based on utilising the best of clinical knowledge along with skin
-                    therapies for a holistic rejuvenation. </p>
-                <p>
-                    At Glow, we offer a range of clinically proven products and hyper-personalised procedures for an indulgent
-                    experience that delivers immediate and lasting results for your skin, beauty and total wellness.
-                </p>
+            <PageHeader title={'About Glow'}/>
+            <div className={"outer " + styles.advocacyOuter}>
+                <div className={"inner " + styles.advocacy}>
+                    <header>Our Skincare Advocacy</header>
+                    <p>Glow is a comprehensive skincare experience centre backed by the medical knowledge of Dr. Varshini Reddy,
+                        your skincare specialist. Her advocacy is based on utilising the best of clinical knowledge along with skin
+                        therapies for a holistic rejuvenation. </p>
+                    <p>
+                        At Glow, we offer a range of clinically proven products and hyper-personalised procedures for an indulgent
+                        experience that delivers immediate and lasting results for your skin, beauty and total wellness.
+                    </p>
+                </div>
             </div>
-        </div>
 
 
-        <InView threshold={0.25} triggerOnce={true}>
-            {
-                ({ref, inView}) => (
-                    <motion.div className={"outer " + ' ' + styles.journeyOuter}
-                                ref={ref}
-                                initial={{opacity: 0}}
-                                animate={inView ? {opacity: 1} : {opacity: 0}}
-                                transition={{duration: 0.8}}>
-                        <div className={"inner " + styles.journey}>
-                            <div className={styles.joTop}>
-                                <h2>Your skin is <br/> ever-evolving, so <br/> should your skincare routine.</h2>
-                                <img src={'/images/home/varshini.png'}/>
-                            </div>
-                            <div className={styles.joBottom}>
-                                <div className={styles.jobTitle}>
-                                    <header className={styles.name}>dr. Varshini reddy</header>
-                                    <header className={styles.desig}>MD Dermatology</header>
-                                </div>
-                                <div className={styles.jobContent}>
-                                    <p>At Glow, we wanted to promote skin, beauty and wellness as ideologies that go hand-in-hand. Having studied MD
-                                        Dermatology and been around the globe to learn about new-age technologies in the world of skincare, Dr.
-                                        Varshini Reddy wanted to bring the best of those to India. Her journey has been exciting and full of new
-                                        learnings which took her from being a skincare enthusiast to a practicing dermatologist.</p>
-                                    <p>She has consulted with many people over the course of years and has distinguished herself as an advocate for wholesome rejuvenation.
-                                        With an established and ever-growing
-                                        clientbase she has extended her platform to a larger audience and opened doors to Glow, a contemporary space for skin indulgence.</p>
-                                    <header>read more</header>
-                                </div>
-                            </div>
-
+            <div className={"outer " + styles.journeyOuter} id={"varshini"}>
+                <div className={"inner " + styles.journey}>
+                    <div className={styles.joTop}>
+                        <h2>Your skin is <br/> ever-evolving, so <br/> should your skincare routine.</h2>
+                        <img src={'/images/home/varshini.png'}/>
+                    </div>
+                    <div className={styles.joBottom}>
+                        <div className={styles.jobTitle}>
+                            <header className={styles.name}>dr. Varshini reddy</header>
+                            <header className={styles.desig}>MD Dermatology</header>
                         </div>
-                    </motion.div>)
-            }
-        </InView>
-
-        <Ourclinic/>
-
-        <InView threshold={0.25} triggerOnce={true}>
-            {
-                ({ref, inView}) => (
-                    <motion.div className={"outer " + ' ' + styles.clientTestimonialsOuter}
-                                ref={ref}
-                                initial={{opacity: 0}}
-                                animate={inView ? {opacity: 1} : {opacity: 0}}
-                                transition={{duration: 0.8}}>
-                        <div className={"inner " + styles.clientTestimonials}>
-                            <div className={styles.ctHeader}>
-                                <h2>Client Testimonials</h2>
-                                <NextBack onNext={() => {
-                                    testimonial_swiper.slideNext()
-                                }} onBack={() => {
-                                    testimonial_swiper.slidePrev()
-                                }}/>
-                            </div>
+                        <div className={styles.jobContent}>
+                            <p>At Glow, we wanted to promote skin, beauty and wellness as ideologies that go hand-in-hand. Having studied MD
+                                Dermatology and been around the globe to learn about new-age technologies in the world of skincare, Dr.
+                                Varshini Reddy wanted to bring the best of those to India. Her journey has been exciting and full of new
+                                learnings which took her from being a skincare enthusiast to a practicing dermatologist.</p>
+                            <p>She has consulted with many people over the course of years and has distinguished herself as an advocate for wholesome rejuvenation.
+                                With an established and ever-growing
+                                clientbase she has extended her platform to a larger audience and opened doors to Glow, a contemporary space for skin indulgence.</p>
+                            <header>read more</header>
                         </div>
+                    </div>
+                </div>
+            </div>
 
-                        <Swiper slidesPerView={2}
-                                breakpoints={{
-                                    200: {
-                                        slidesPerView: 1,
-                                    },
-                                    648: {
-                                        slidesPerView: 2,
-                                    }
-                                }}
-                                speed={2000}
-                                loop={true}
-                                onInit={(ev) => {
-                                    set_testimonial_swiper(ev)
-                                }}
-                                onSlideChange={(ev) => {
-                                    if (ev.activeIndex - 1 === 5) {
-                                        // set_current_body_slide(0)
-                                    } else {
-                                        // set_current_body_slide(ev.activeIndex - 1)
-                                    }
-                                }}>
-                            {
-                                testimonials.map((item, index) => {
-                                    return (<SwiperSlide>
-                                            <div className={styles.ctContent}>
-                                                <header>{item.title}</header>
-                                                <p className={styles.date}>{item.date}</p>
+            <Ourclinic/>
 
-                                                <div className={styles.desc}>
-                                                    <ReadMoreReact min={125} ideal={405} max={655} text={item.desc}/>
+            <InView threshold={0.25} triggerOnce={true}>
+                {
+                    ({ref, inView}) => (
+                        <motion.div className={"outer " + ' ' + styles.clientTestimonialsOuter}
+                                    ref={ref}
+                                    initial={{opacity: 0}}
+                                    animate={inView ? {opacity: 1} : {opacity: 0}}
+                                    transition={{duration: 0.8}}>
+                            <div className={"inner " + styles.clientTestimonials}>
+                                <div className={styles.ctHeader}>
+                                    <h2>Client Testimonials</h2>
+                                    <NextBack onNext={() => {
+                                        testimonial_swiper.slideNext()
+                                    }} onBack={() => {
+                                        testimonial_swiper.slidePrev()
+                                    }}/>
+                                </div>
+                            </div>
+
+                            <Swiper slidesPerView={2}
+                                    breakpoints={{
+                                        200: {
+                                            slidesPerView: 1,
+                                        },
+                                        648: {
+                                            slidesPerView: 2,
+                                        }
+                                    }}
+                                    speed={1800}
+                                    loop={true}
+                                    onInit={(ev) => {
+                                        set_testimonial_swiper(ev)
+                                    }}
+                                    onSlideChange={(ev) => {
+                                        if (ev.activeIndex - 1 === 5) {
+                                            // set_current_body_slide(0)
+                                        } else {
+                                            // set_current_body_slide(ev.activeIndex - 1)
+                                        }
+                                    }}>
+                                {
+                                    testimonials.map((item, index) => {
+                                        return (<SwiperSlide>
+                                                <div className={styles.ctContent}>
+                                                    <header>{item.title}</header>
+                                                    <p className={styles.date}>{item.date}</p>
+
+                                                    <div className={styles.desc}>
+                                                        <ReadMoreReact min={125} ideal={405} max={655} text={item.desc}/>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </SwiperSlide>
-                                    )
-                                })
-                            }
-                        </Swiper>
-                    </motion.div>)
-            }
-        </InView>
+                                            </SwiperSlide>
+                                        )
+                                    })
+                                }
+                            </Swiper>
+                        </motion.div>)
+                }
+            </InView>
 
 
-        <Footer/>
+            <Footer/>
 
-    </Fragment>)
+        </Fragment>
+    )
 }

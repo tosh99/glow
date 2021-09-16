@@ -105,6 +105,11 @@ export default function Products() {
                 'Recherche',
         },
         {
+            title: 'P50 pigm400\n' +
+                'Biologique \n' +
+                'Recherche',
+        },
+        {
             title: 'Isdin \n' +
                 'fotoprotector \n' +
                 'fusion water ',
@@ -139,24 +144,25 @@ export default function Products() {
             <title>Products</title>
         </Head>
         <PageHeader title={'Products'}/>
-        <div className={"outer " + styles.bodyOuter}>
+        <div className={"outer " + styles.bodyOuter} id={'yourcare'}>
             <div className={"inner " + styles.body}>
                 <div className={styles.bLeft}>
                     <div className={styles.bodyContent}>
                         <h1 dangerouslySetInnerHTML={{__html: body_content[current_body_slide].title}}/>
                         <p>{body_content[current_body_slide].desc}</p>
                     </div>
-                    <header className={styles.shopBody}>Shop {body_content[current_body_slide].shop}</header>
+                    <header className={styles.shopBody}>ENQUIRE</header>
                 </div>
                 <div className={styles.bRight}>
                     <Swiper slidesPerView={1}
                             loop={true}
                             effect={'fade'}
-                            speed={2000}
+                            speed={1500}
                             onInit={(ev) => {
                                 set_body_swiper(ev)
                             }}
                             onSlideChange={(ev) => {
+                                window.scrollTo(0, document.getElementById('yourcare').offsetTop);
                                 if (ev.activeIndex === 6) {
                                     set_current_body_slide(0)
                                 } else if (ev.activeIndex - 1 === -1) {
@@ -277,14 +283,15 @@ export default function Products() {
                         onInit={(ev) => {
                             set_products_alternate_swiper(ev)
                         }}
-                        spaceBetween={100}
+                        speed={1800}
+                        spaceBetween={60}
                         onSlideChange={(ev) => {
-                            if (ev.activeIndex === 16) {
+                            if (ev.activeIndex === 18) {
                                 set_current_products_alternate_slide(0)
-                            } else if (ev.activeIndex - 8 === -1) {
-                                set_current_products_alternate_slide(7)
+                            } else if (ev.activeIndex - 9 === -1) {
+                                set_current_products_alternate_slide(8)
                             } else {
-                                set_current_products_alternate_slide(ev.activeIndex - 8)
+                                set_current_products_alternate_slide(ev.activeIndex - 9)
                             }
 
                         }}>
@@ -322,7 +329,6 @@ export default function Products() {
                                             ((current_products_alternate_slide > 0 && index >= current_products_alternate_slide) || (current_products_alternate_slide === 0 && index !== products_alternate_content.length - 1) || (current_products_alternate_slide === products_alternate_content.length - 1 && index === 0)) ?
                                                 <div className={styles.content}>
                                                     <section>
-                                                        <h3>&nbsp;</h3>
                                                         {
                                                             device === 0 && <NextBack
                                                                 theme={'light'}

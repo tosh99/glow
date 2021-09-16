@@ -151,6 +151,12 @@
         padding: 100px 100px 100px 0;
         height: 900px;
 
+        .title {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
         header {
             font-family: SaolRegular, sans-serif;
             font-size: 32px;
@@ -181,6 +187,7 @@
     .metRight {
         width: 50%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
@@ -305,6 +312,98 @@
 }
 
 @media only screen and (max-width: 1280px) {
+    .skinCare {
+        padding: 50px 0;
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 80px;
+            line-height: 80px;
+        }
+
+        .img {
+            .imgLeft {
+                margin-right: 0;
+                font-family: TelegrafRegular, sans-serif;
+                line-height: 150%;
+            }
+
+            .imgRight {
+                div {
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                p {
+                    max-width: 663px;
+                    font-size: 18px;
+                    margin-bottom: 60px;
+                    font-family: TelegrafRegular, sans-serif;
+                    line-height: 150%;
+                }
+
+                .reju {
+                    font-family: SaolRegularItalic, sans-serif;
+                    line-height: 151.8%;
+                    letter-spacing: 2px;
+                }
+            }
+
+
+        }
+    }
+
+    .shopMyShelfie {
+        padding: 50px 0;
+        flex-direction: column;
+
+        .smLeft {
+            min-width: unset;
+
+            h2 {
+                font-size: 64px;
+                margin-bottom: 35px;
+            }
+        }
+    }
+
+    .threeStageOuter {
+
+        .threeStage {
+            padding: 50px 35px 50px;
+
+            header {
+                font-size: 91px;
+                line-height: 108px;
+                margin-right: 20px;
+            }
+
+            h1 {
+                font-size: 60px;
+                line-height: 110%;
+                letter-spacing: 0.11em;
+            }
+        }
+
+    }
+
+    .methodology {
+        padding: 0 50px;
+
+        .metLeft {
+            padding: 50px 15px 50px 0;
+        }
+
+        .metRight {
+            width: 100%;
+
+            img {
+                width: 80%;
+            }
+        }
+    }
+
     .currentFavourites {
         padding: 100px 0;
 

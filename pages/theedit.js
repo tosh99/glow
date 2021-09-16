@@ -74,6 +74,7 @@ export default function TheEdit() {
                         <div className={styles.postRight}>
                             <Swiper slidesPerView={1}
                                     loop={true}
+                                    speed={1800}
                                     onInit={(ev) => {
                                         post.swiper = ev;
                                         set_render(prev => prev + 1)

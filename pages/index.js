@@ -197,6 +197,7 @@ export default function Home() {
                             onInit={(ev) => {
                                 set_slider(ev)
                             }}
+                            speed={1800}
                             spaceBetween={100}
                             onSlideChange={(ev) => {
                                 if (ev.activeIndex === 10) {
@@ -373,7 +374,9 @@ export default function Home() {
                                         <p>She has consulted with many people over the course of years and has distinguished herself as an advocate for wholesome rejuvenation.
                                             With an established and ever-growing
                                             clientbase she has extended her platform to a larger audience and opened doors to Glow, a contemporary space for skin indulgence.</p>
-                                        {/*<header>read more</header>*/}
+                                        <a href={"/about/#varshini"}>
+                                            <header>read more</header>
+                                        </a>
                                     </div>
                                 </div>
 
