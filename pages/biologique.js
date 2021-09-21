@@ -15,10 +15,15 @@ SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 const methodologies = [
     {
         title: 'ASSESSMENT STAGE',
-        desc: 'The Biologique Recherche Expert conducts a thorough dermo-cosmetic diagnosis to determine your skin instant. This diagnosis is carried out using the Skin Instant© Lab system and includes a visual analysis, a questionnaire, and the taking of measurements, to allow a treatment protocol to be devised that precisely matches your needs. The sophisticated technique of VisioLab© gives even more finely tuned results, thanks to a high definition image and scientific analysis of your face. Their latest addition to technological assessment systems is  \n' +
-            'My Beauty DNA, which analyses your skin for 14 markers relating to ageing, sensitivity to sunlight and environmental factors, and your cutaneous profile, giving an overview of your genetic predisposition.\n' +
-            '\n' +
-            'Glow is the first space in India to offer these high-tech skin analysis systems.\n'
+        desc: 'The Biologique Recherche Expert conducts a thorough dermo-cosmetic diagnosis to determine your skin instant. This diagnosis is carried out using the ' +
+            '<span>Skin Instant©</span> Lab system and includes a visual analysis, ' +
+            'a questionnaire, and the taking of measurements, to allow a treatment protocol to be devised that precisely matches your needs.' +
+            ' The sophisticated technique of <span>VisioLab©</span> gives even more finely tuned results, thanks to a high definition image and scientific analysis ' +
+            'of your face. Their latest addition to technological assessment systems is ' +
+            'My Beauty DNA, which analyses your skin for 14 markers relating to ageing, sensitivity to sunlight and environmental factors, ' +
+            'and your cutaneous profile, giving an overview of your genetic predisposition.' +
+            '<br><br>' +
+            '<span>Glow is the first space in India to offer these high-tech skin analysis systems.</span>'
     },
     {
         title: 'Initialisation Stage',
@@ -41,7 +46,7 @@ const buy_br = [
         img_mobile_url: 'hair_mobile.png'
     },
     {
-        title: 'Initialisation Stage',
+        title: 'For Body',
         img_url: '3.png',
         img_mobile_url: '3_mobile.png'
     }
@@ -73,6 +78,8 @@ export default function Biologique() {
     const [current_slide, set_current_slide] = useState(0);
     const [slider, set_slider] = useState({});
     const [methodology_slider, set_methodology_slider] = useState({});
+
+    const [buy_br_swiper, set_buy_br_swiper] = useState({});
 
     const [device, set_device] = useState(2);
 
@@ -106,7 +113,6 @@ export default function Biologique() {
                 </div>
             </div>
         </div>
-
 
         <div className={"outer " + styles.shopMyShelfieOuter}>
             <div className={"inner " + styles.shopMyShelfie}>
@@ -142,7 +148,7 @@ export default function Biologique() {
                 onInit={(ev) => {
                     set_methodology_slider(ev)
                 }}
-                loop={true}>
+                >
                 {
                     methodologies.map((item, index) => {
                         return (<SwiperSlide>
@@ -162,10 +168,8 @@ export default function Biologique() {
                                             </div>
                                         </div>
                                         <h2>{item.title}</h2>
-                                        {/*<p>{item.desc}</p>*/}
-
-                                        <div className={styles.desc}>
-                                            <ReadMoreReact min={150} ideal={220} max={250} text={item.desc}/>
+                                        <div className={styles.mlDesc} dangerouslySetInnerHTML={{__html: item.desc}}>
+                                            {/*<ReadMoreReact min={150} ideal={220} max={250} text={item.desc}/>*/}
                                         </div>
                                     </div>
                                     <div className={styles.metRight}>
@@ -184,8 +188,10 @@ export default function Biologique() {
             <div className={styles.sliders}>
                 <div className={styles.contentDesc}>
                     <p className={styles.title}>
-                        Their most sought
-                        after aesthetic services, exclusively at Glow
+                        Their most sought <br/>
+                        after aesthetic <br/>
+                        services, exclusively at<br/>
+                        Glow
                     </p>
                     <div className={styles.desc}>
                         <p>Glow is the first dermatological centre to offer the entire Biological Recherche menu that is only available in their Ambassade in Paris.</p>
@@ -277,7 +283,7 @@ export default function Biologique() {
                                                         {item.content}
                                                         {/*<ReadMoreReact min={65} ideal={105} max={165} text={item.content}/>*/}
                                                     </p>
-                                                    <header>Discover mORE</header>
+                                                    <header>ENQUIRE</header>
                                                     {
                                                         device !== 0 && <NextBack
                                                             theme={'light'}
@@ -320,7 +326,10 @@ export default function Biologique() {
                 <Swiper
                     slidesPerView={'auto'}
                     spaceBetween={20}
-                    loop={true}>
+                    onInit={(ev) => {
+                        set_buy_br_swiper(ev)
+                    }}
+                >
                     {
                         buy_br.map((item, index) => {
                             return (<SwiperSlide>
@@ -333,6 +342,13 @@ export default function Biologique() {
                         })
                     }
                 </Swiper>
+                <NextBack
+                    onBack={() => {
+                        buy_br_swiper.slidePrev()
+                    }}
+                    onNext={() => {
+                        buy_br_swiper.slideNext()
+                    }}/>
 
                 <header className={styles.enquire}>ENQUIRE</header>
             </div>

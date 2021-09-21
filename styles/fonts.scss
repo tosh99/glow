@@ -97,6 +97,12 @@ p {
 }
 
 @font-face {
+    font-family: 'SaolLightItalic';
+    font-display: swap;
+    src: local('SaolRegularItalic'), url("/fonts/SaolLightItalic.otf") format('opentype');
+}
+
+@font-face {
     font-family: 'TelegrafUltraLight';
     font-display: swap;
     src: local('TelegrafUltraLight'), url("/fonts/TelegrafUltraLight.otf") format('opentype');

@@ -75,6 +75,19 @@
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: #FFFFFF;
+            cursor: pointer;
+
+            header {
+                transition: 0.3s;
+
+            }
+        }
+
+        .vuaRight {
+            header:hover {
+                opacity: 0.5;
+                transition: 0.3s;
+            }
         }
     }
 }

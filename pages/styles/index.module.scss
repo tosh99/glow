@@ -247,6 +247,7 @@
                 .item {
                     margin-bottom: 16px;
                     cursor: pointer;
+                    width: fit-content;
                 }
 
                 .item:hover {
@@ -257,7 +258,7 @@
             }
         }
 
-        .title {
+        .title, pre {
             position: absolute;
             width: 600px;
             font-family: EmpireBold, sans-serif;

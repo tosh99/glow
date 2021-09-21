@@ -1,25 +1,58 @@
 import styles from "./nextback.module.scss";
-import {Fragment} from "react";
+import {Fragment, useEffect} from "react";
 import {constants} from "../../../styles/constants";
 
-export default function NextBack({onNext, onBack, theme = 'dark',
-                                     prevId = 'pid', nextId = 'nId', prevClass = 'pid', nextClass = 'nId'}) {
+export default function NextBack({
+                                     onNext,
+                                     onBack,
+                                     theme = 'dark',
+                                     prevDisabled,
+                                     nextDisabled
+                                 }) {
 
+
+    useEffect(() => {
+        console.log(prevDisabled)
+    }, [prevDisabled])
 
     return (<Fragment>
         <section className={styles.nextback}>
             {
                 theme === 'dark' &&
                 <Fragment>
-                    <img className={prevClass} id={prevId} src={'/icons/common/back.svg'} onClick={onBack}/>
-                    <img className={prevClass} id={nextId} src={'/icons/common/next.svg'} onClick={onNext}/>
+                    {
+                        prevDisabled &&
+                        <img className={styles.disabled} src={'/icons/common/back_disabled.svg'}/>
+                    }
+                    {
+                        !prevDisabled &&
+                        <img src={'/icons/common/back.svg'} onClick={onBack}/>
+                    }
+                    {
+                        nextDisabled &&
+                        <img className={styles.disabled} src={'/icons/common/next_disabled.svg'}/>
+                    }
+                    {
+                        !nextDisabled &&
+                        <img src={'/icons/common/next.svg'} onClick={onNext}/>
+                    }
                 </Fragment>
             }
             {
                 theme === 'light' &&
                 <Fragment>
-                    <img className={prevClass} id={prevId} src={'/icons/common/back_light.svg'} onClick={onBack}/>
-                    <img className={prevClass} id={nextId} src={'/icons/common/next_light.svg'} onClick={onNext}/>
+                    {
+                        prevDisabled && <img className={styles.disabled} src={'/icons/common/back_light_disabled.svg'}/>
+                    }
+                    {
+                        !prevDisabled && <img src={'/icons/common/back_light.svg'} onClick={onBack}/>
+                    }
+                    {
+                        nextDisabled && <img className={styles.disabled} src={'/icons/common/next_light_disabled.svg'}/>
+                    }
+                    {
+                        !nextDisabled && <img src={'/icons/common/next_light.svg'} onClick={onNext}/>
+                    }
                 </Fragment>
             }
         </section>

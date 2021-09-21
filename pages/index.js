@@ -13,6 +13,20 @@ import ReadMoreReact from "read-more-react";
 import Head from "next/head";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
+const strip_items = [
+    {
+        title: 'Body'
+    },
+    {
+        title: 'Hair'
+    },
+    {
+        title: 'Wellness'
+    },
+    {
+        title: 'Beauty'
+    }
+]
 
 export default function Home() {
     const [current_slide, set_current_slide] = useState(0);
@@ -43,8 +57,9 @@ export default function Home() {
         }
     ];
 
+
     useEffect(() => {
-        console.log(current_slide)
+
     }, [current_slide])
 
     const [device, set_device] = useState(2);
@@ -84,7 +99,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <Strip/>
+            <Strip items={strip_items}/>
 
             <InView threshold={0.25} triggerOnce={true}>
                 {
@@ -238,10 +253,13 @@ export default function Home() {
                                                             is_menu_visible && <div className={styles.menuItems}>
                                                                 {
                                                                     carousel_content.map((citem, cindex) => {
-                                                                        return <header onClick={() => {
-                                                                            set_current_slide(cindex);
-                                                                            slider.slideTo(cindex + 5);
-                                                                        }} className={styles.item}>{citem.title}</header>
+                                                                        return <header
+                                                                            onClick={(ev) => {
+                                                                                ev.stopPropagation();
+                                                                                set_current_slide(cindex);
+                                                                                slider.slideTo(cindex + 5);
+                                                                            }}
+                                                                            className={styles.item}>{citem.title}</header>
                                                                     })
                                                                 }
                                                             </div>
@@ -267,6 +285,8 @@ export default function Home() {
                                                             {
                                                                 device === 0 && <NextBack
                                                                     theme={'light'}
+                                                                    prevDisabled={current_slide === 0}
+                                                                    nextDisabled={current_slide === carousel_content.length - 1}
                                                                     onNext={() => {
                                                                         slider.slideNext()
                                                                     }}
@@ -276,7 +296,12 @@ export default function Home() {
                                                             }
                                                         </section>
                                                         <p>
-                                                            <ReadMoreReact min={65} ideal={105} max={165} text={item.content || ''}/>
+                                                            {
+                                                                device === 0 && <ReadMoreReact min={65} ideal={105} max={165} text={item.content || ''}/>
+                                                            }
+                                                            {
+                                                                device !== 0 && item.content
+                                                            }
                                                         </p>
                                                         {
                                                             device === 0 && <InView threshold={0}>
@@ -296,6 +321,8 @@ export default function Home() {
                                                             device !== 0 &&
                                                             <NextBack
                                                                 theme={'light'}
+                                                                prevDisabled={index === 0}
+                                                                nextDisabled={index === carousel_content.length - 1}
                                                                 onNext={() => {
                                                                     slider.slideNext()
                                                                 }}

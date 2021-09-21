@@ -30,6 +30,7 @@
 
     .menuContent {
         display: flex;
+        align-items: flex-end;
         flex-direction: column;
         padding: 45px 35px;
 
@@ -45,10 +46,12 @@
 
     .menuBottom {
         display: flex;
+        align-items: flex-end;
         flex-direction: column;
         padding: 20px 35px;
         position: absolute;
         bottom: 75px;
+        width: 100%;
 
         p {
             font-family: HattonRegular, sans-serif;
@@ -60,3 +63,14 @@
     }
 }
 
+@media only screen and (max-width: 648px) {
+    .menu {
+        .menuContent {
+            align-items: flex-start;
+        }
+
+        .menuBottom {
+            align-items: flex-start;
+        }
+    }
+}

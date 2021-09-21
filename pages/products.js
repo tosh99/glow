@@ -9,8 +9,23 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from 'swiper/core';
 import Footer from "../shared/components/footer/footer";
 import ReadMoreReact from "read-more-react";
+import Strip from "../shared/sections/strip/strip";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
+const strip_items = [
+    {
+        title: 'Body'
+    },
+    {
+        title: 'Hair'
+    },
+    {
+        title: 'Wellness'
+    },
+    {
+        title: 'Beauty'
+    }
+]
 
 export default function Products() {
     // Body Settings
@@ -21,26 +36,96 @@ export default function Products() {
             title: 'Good for <br/>' + 'Glow',
             desc: 'A range of hand-picked brands for the best of body care products that are made with clean, active ingredients and are result-driven. Taking care of your body is equally rewarding.',
             shop: 'Body',
+            strip_items: [
+                {
+                    title: 'Lotion'
+                },
+                {
+                    title: 'Wash'
+                },
+                {
+                    title: 'Serums'
+                },
+                {
+                    title: 'Sunscreens'
+                }
+            ]
         },
         {
             title: 'Get set <br/>' + 'Glow',
             desc: 'Give your hair care routine a bump onto the next level. Whether it is finding the right products for your hair type and concern or adding some lovely serums for that extra bounce, we’ve curated an array of products for each and every one of your needs.',
-            shop: 'Body',
+            shop: 'Hair',
+            strip_items: [
+                {
+                    title: 'Shampoo'
+                },
+                {
+                    title: 'Conditioners'
+                },
+                {
+                    title: 'Serums'
+                },
+                {
+                    title: 'Masks'
+                }
+            ]
         },
         {
             title: 'You <br/>' + 'Glow',
             desc: 'Whether you’re a beginner or a skincare enthusiast, we have something for you all. Choose from our repertoire of curated skincare products that have been praised and given a cult status for their new-age formulations, therapies and lasting skincare benefits. A healthy glow awaits you.',
-            shop: 'Body',
+            shop: 'Skincare ',
+            strip_items: [
+                {
+                    title: 'Cleansers'
+                },
+                {
+                    title: 'Toners'
+                },
+                {
+                    title: 'Moisturizer'
+                },
+                {
+                    title: 'Exfoliatior'
+                }
+            ]
         },
         {
             title: 'Glow From <br/>' + 'Within',
             desc: 'At Glow, we promote overall well-being for healthy skin and hair. Find supplements that come recommended for a glow that’s from within.',
-            shop: 'Body',
+            shop: 'Supplements',
+            strip_items: [
+                {
+                    title: 'Vitamin C'
+                },
+                {
+                    title: 'Biotin'
+                },
+                {
+                    title: 'Collagen'
+                },
+                {
+                    title: 'Oral Sunscreen'
+                }
+            ]
         },
         {
             title: 'At home <br/>' + 'Glow',
             desc: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.',
-            shop: 'Body',
+            shop: 'Tools',
+            strip_items: [
+                {
+                    title: 'LED light'
+                },
+                {
+                    title: 'Gua Sha'
+                },
+                {
+                    title: 'Cryosticks'
+                },
+                {
+                    title: 'Microcurrent'
+                }
+            ]
         },
     ];
 
@@ -87,7 +172,8 @@ export default function Products() {
         {
             title: 'Sesderma \n' +
                 'Azelac \n' +
-                'Ru Liposomal Serum',
+                'Ru Liposomal \n' +
+                'Serum',
         },
         {
             title: 'iS Clinical\n' +
@@ -154,6 +240,7 @@ export default function Products() {
                     <header className={styles.shopBody}>ENQUIRE</header>
                 </div>
                 <div className={styles.bRight}>
+                    <header className={styles.sectionTitle}>{body_content[current_body_slide].shop}</header>
                     <Swiper slidesPerView={1}
                             loop={true}
                             effect={'fade'}
@@ -190,23 +277,14 @@ export default function Products() {
                         }}/>
                     </div>
                     <div className={styles.bodyContent}>
-                        {/*<p>*/}
-                        {/*    {*/}
-                        {/*        body_content.map((item, index) => {*/}
-                        {/*            return <>*/}
-                        {/*                {*/}
-                        {/*                    index === current_body_slide && <ReadMoreReact min={10} ideal={135} max={505} text={item.desc}/>*/}
-                        {/*                }*/}
-                        {/*            </>*/}
-                        {/*        })*/}
-                        {/*    }*/}
-                        {/*</p>*/}
                         <p>{body_content[current_body_slide].desc}</p>
                     </div>
                     <header className={styles.shopBody}>Shop {body_content[current_body_slide].shop}</header>
                 </div>
             </div>
         </div>
+
+        <Strip items={body_content[current_body_slide].strip_items}/>
 
         <div className={"outer " + styles.productDescOuter}>
             <div className={"inner " + styles.productDesc}>
@@ -256,6 +334,7 @@ export default function Products() {
                         })
                     }
                 </Swiper>
+                <header className={styles.enquire}>ENQUIRE</header>
             </div>
         </div>
 
@@ -269,9 +348,8 @@ export default function Products() {
                         These are a few of my current favourites, some of which are staples in my routine and some new ones you would
                         be happy to discover. Shop these curated products and refresh your skincare shelf.
                     </p>
-                    <header>enquire</header>
+                    <header>xoxo</header>
                 </div>
-
             </div>
         </div>
 
@@ -304,13 +382,13 @@ export default function Products() {
                                             <InView threshold={0}>
                                                 {
                                                     ({ref, inView}) => (
-                                                        <motion.div className={styles.title}
+                                                        <motion.pre className={styles.title}
                                                                     ref={ref}
                                                                     initial={{opacity: 0}}
                                                                     animate={inView ? {opacity: 1} : {opacity: 0}}
                                                                     transition={{duration: 0.7}}>
                                                             {item.title}
-                                                        </motion.div>)
+                                                        </motion.pre>)
                                                 }
                                             </InView>
                                         }

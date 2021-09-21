@@ -3,23 +3,7 @@ import {useState} from "react";
 import Marquee from "react-fast-marquee";
 
 
-const items = [
-    {
-        title: 'Body'
-    },
-    {
-        title: 'Hair'
-    },
-    {
-        title: 'Wellness'
-    },
-    {
-        title: 'Beauty'
-    }
-]
-
-
-export default function Strip() {
+export default function Strip({items = []}) {
     return <div className={"outer " + styles.stripOuter}>
         <div className={"inner " + styles.strips}>
             <Marquee gradient={false} speed={40} pauseOnHover={true} pauseOnClick={true}>

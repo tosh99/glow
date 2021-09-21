@@ -47,6 +47,19 @@
     .bRight {
         width: 100%;
         max-width: 742px;
+        position: relative;
+
+        .sectionTitle {
+            position: absolute;
+            top: -60px;
+            font-family: TelegrafRegular, sans-serif;
+            font-size: 32px;
+            line-height: 101.1%;
+            text-align: right;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            width: 100%;
+        }
 
         .slide {
             img {
@@ -115,6 +128,15 @@
         }
     }
 
+    .enquire {
+        font-family: HattonMedium, sans-serif;
+        font-size: 24px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-top: 70px;
+        cursor: pointer;
+    }
+
 }
 
 .shopMyShelfieOuter {
@@ -122,7 +144,7 @@
 }
 
 .shopMyShelfie {
-    padding: 209px 0 181px 0;
+    padding: 128px 0 128px 0;
     display: flex;
 
     .smLeft {
@@ -145,7 +167,7 @@
         width: 100%;
 
         p {
-            margin-bottom: 40px;
+            margin-bottom: 10px;
             font-family: TelegrafRegular, sans-serif;
             font-size: 20px;
             line-height: 150%;
@@ -153,7 +175,7 @@
         }
 
         header {
-            font-family: HattonMedium, sans-serif;
+            font-family: TelegrafRegular, sans-serif;
             font-size: 24px;
             line-height: 155.5%;
             letter-spacing: 0.12em;

@@ -151,6 +151,10 @@
         padding: 100px 100px 100px 0;
         height: 900px;
 
+        .mrArrow {
+            margin-top: 10px;
+        }
+
         .title {
             display: flex;
             justify-content: space-between;
@@ -176,11 +180,17 @@
             margin-bottom: 35px;
         }
 
-        .desc {
+        .mlDesc {
             line-height: 150%;
             letter-spacing: 0.05em;
             color: #FFFFFF;
             font-family: TelegrafRegular, sans-serif;
+
+            span {
+                font-family: SaolLightItalic, sans-serif;
+                letter-spacing: 0.10em;
+                font-size: 18px;
+            }
         }
     }
 
@@ -241,16 +251,6 @@
             margin-bottom: 25px;
         }
     }
-
-    .enquire {
-        font-family: HattonMedium, sans-serif;
-        font-size: 24px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin-top: 58px;
-        cursor: pointer;
-    }
-
 }
 
 .sliders {
@@ -278,9 +278,11 @@
             width: calc(50% - 20px);
 
             p:first-of-type {
-                font-family: SaolRegularItalic, sans-serif;
-                margin-bottom: 20px;
+                font-family: SaolLightItalic, sans-serif;
+                margin-bottom: 30px;
                 line-height: 30px;
+                font-size: 26px;
+                letter-spacing: 0.13em;
             }
 
             p:last-of-type {
@@ -303,9 +305,18 @@
         }
 
         .content {
+            min-width: 210px;
+            max-width: 210px;
 
             header {
                 font-size: 20px;
+            }
+
+            p {
+                font-family: SaolLightItalic, sans-serif;
+                letter-spacing: 0.05em;
+                font-size: 18px;
+                line-height: 150%;
             }
         }
     }
@@ -601,5 +612,13 @@
                 margin-bottom: 35px;
             }
         }
+
+        .slide {
+            .content {
+                max-width: unset;
+                min-width: unset;
+            }
+        }
+
     }
 }

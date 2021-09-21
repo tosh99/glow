@@ -55,7 +55,6 @@ export default function Footer() {
                                 is_visible.legal && <>
                                     <header className={styles.item}>Terms of Use</header>
                                     <header className={styles.item}>Privacy Policy</header>
-                                    <header className={styles.item}>Services</header>
                                 </>
                             }
                         </div>
@@ -76,10 +75,9 @@ export default function Footer() {
                                         Router.push('/about')
                                     }}>About
                                     </header>
-                                    <header className={styles.item}>Blog</header>
                                     <header className={styles.item} onClick={() => {
-                                        Router.push('/services')
-                                    }}>Services
+                                        Router.push('/theedit')
+                                    }}>Blog
                                     </header>
                                 </>
                             }
@@ -133,7 +131,6 @@ export default function Footer() {
         <div className={"outer " + ' ' + styles.footerBaseOuter}>
             <div className={"inner " + styles.footer}>
                 <div className={styles.footerBase}>
-                    <header>Language</header>
                     <header>Copyright &copy; 2021 All Rights Reserved</header>
                 </div>
             </div>

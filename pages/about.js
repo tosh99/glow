@@ -35,6 +35,7 @@ const testimonials = [
 export default function About() {
     const [testimonial_swiper, set_testimonial_swiper] = useState({});
     const [current_slide, set_current_slide] = useState(0);
+    const [showMore, set_showMore] = useState(false);
 
 
     return (<Fragment>
@@ -65,14 +66,30 @@ export default function About() {
                             <header className={styles.desig}>MD Dermatology</header>
                         </div>
                         <div className={styles.jobContent}>
-                            <p>At Glow, we wanted to promote skin, beauty and wellness as ideologies that go hand-in-hand. Having studied MD
+                            <p> At Glow, we wanted to promote skin, beauty and wellness as ideologies that go hand-in-hand. Having studied MD
                                 Dermatology and been around the globe to learn about new-age technologies in the world of skincare, Dr.
                                 Varshini Reddy wanted to bring the best of those to India. Her journey has been exciting and full of new
-                                learnings which took her from being a skincare enthusiast to a practicing dermatologist.</p>
-                            <p>She has consulted with many people over the course of years and has distinguished herself as an advocate for wholesome rejuvenation.
-                                With an established and ever-growing
-                                clientbase she has extended her platform to a larger audience and opened doors to Glow, a contemporary space for skin indulgence.</p>
-                            <header>read more</header>
+                                learnings which took her from being a skincare enthusiast to a practicing dermatologist.
+                                <br/><br/>
+                                She has consulted with many people over the course of years and has distinguished herself as an advocate for wholesome rejuvenation. With an established and ever-growing clientbase she has extended her
+                                platform to a larger audience and opened doors to Glow, a contemporary space for skin indulgence.
+                                <br/><br/>
+                                {
+                                    showMore && <>
+                                        With our boutique studios set up in Hyderabad and Chennai, Dr. Varshini specialises in prescriptive treatments that are hyper-personalised. Providing opportunities to enhance your beauty regime by
+                                        making
+                                        available, globally revered brands and technologies. Featuring some of the most sought-after facials to some of the best technologically assisted services, Glow is your one stop shop for all things
+                                        skincare,
+                                        beauty and wellness.
+                                        <br/><br/>
+                                        May it be the services we offer or the products we have curated, everything caters to your total well-being.
+                                    </>
+                                }
+                            </p>
+                            {
+                                !showMore && <header onClick={()=>{set_showMore(true)}}>read more</header>
+                            }
+
                         </div>
                     </div>
                 </div>
@@ -98,6 +115,7 @@ export default function About() {
                                     }}/>
                                 </div>
                             </div>
+
 
                             <Swiper slidesPerView={2}
                                     breakpoints={{

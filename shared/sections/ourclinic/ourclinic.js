@@ -46,10 +46,15 @@ export default function Ourclinic() {
 
                         <div className={"inner " + styles.visitUs}>
                             <div className={styles.vuHeader}>
-                                <h2>our Clinic</h2>
-                                <NextBack theme={'light'} onBack={() => {
-                                    clinic_swiper.slidePrev()
-                                }} onNext={() => {
+                                <h2>our Clinics</h2>
+                                <NextBack
+                                    theme={'light'}
+                                    prevDisabled={current_slide === 0}
+                                    nextDisabled={current_slide === 1}
+                                    onBack={() => {
+                                        clinic_swiper.slidePrev()
+                                    }}
+                                    onNext={() => {
                                     clinic_swiper.slideNext()
                                 }}/>
                             </div>
