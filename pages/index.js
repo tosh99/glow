@@ -15,16 +15,24 @@ import Head from "next/head";
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 const strip_items = [
     {
-        title: 'Body'
+        title: 'Body',
+        url: '/products#body'
     },
     {
-        title: 'Hair'
+        title: 'Hair',
+        url: '/products#hair'
     },
     {
-        title: 'Wellness'
+        title: 'Skincare',
+        url: '/products#skincare'
     },
     {
-        title: 'Beauty'
+        title: 'Supplements',
+        url: '/products#supplements'
+    },
+    {
+        title: 'Tools',
+        url: '/products#tools'
     }
 ]
 
@@ -59,8 +67,13 @@ export default function Home() {
 
 
     useEffect(() => {
+        console.log(document.getElementById('banner'))
+        document.getElementById('banner').addEventListener("scroll", (ev) => {
+            console.log(ev)
+        })
 
-    }, [current_slide])
+
+    }, [])
 
     const [device, set_device] = useState(2);
     useEffect(() => {
@@ -72,6 +85,7 @@ export default function Home() {
     const gotoShop = () => {
 
     }
+
 
     return (
         <Fragment>
@@ -85,10 +99,10 @@ export default function Home() {
                     <div className={styles.img}>
                         <div>&nbsp;</div>
                         <div className={styles.imgRight}>
-                            <div>
+                            <div id='banner'>
                                 <img src={'/images/home/banner.gif'}/>
                             </div>
-                            <p>Your skin changes with age, diet, weather, lifestyle choices and your state of mind. At every turning point, you need to check in with your skin.
+                            <p id='bannerText'>Your skin changes with age, diet, weather, lifestyle choices and your state of mind. At every turning point, you need to check in with your skin.
                                 At Glow, we don’t categorise you into a skin type. We consult with you to get to know your skin and then proceed with a personalised service.
                             </p>
                             <p className={styles.reju}>
@@ -125,8 +139,9 @@ export default function Home() {
                                             At Glow, we help you shine that spell-binding light.
                                         </p>
                                     </div>
-
-                                    <header>read more</header>
+                                    <a href={'/about'}>
+                                        <header>read more</header>
+                                    </a>
                                 </div>
                             </div>
                         </motion.div>
@@ -158,7 +173,9 @@ export default function Home() {
                                 </div>
                                 <div className={styles.scBottom}>
                                     <img src={'/images/home/sayhello.png'}/>
-                                    <header>make AN appointment</header>
+                                    <a href={'/about'}>
+                                        <header>make an appointment</header>
+                                    </a>
                                 </div>
                             </div>
                         </motion.div>)
@@ -189,7 +206,9 @@ export default function Home() {
                                         </p>
                                     </div>
 
-                                    <header>discover more</header>
+                                    <a href={'/services'}>
+                                        <header>discover more</header>
+                                    </a>
                                 </div>
                             </div>
                         </motion.div>)
@@ -365,8 +384,9 @@ export default function Home() {
                                         </p>
 
                                     </div>
-
-                                    <header>find articles</header>
+                                    <a href={'/theedit'}>
+                                        <header>find articles</header>
+                                    </a>
                                 </div>
                             </div>
                         </motion.div>)

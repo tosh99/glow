@@ -5,10 +5,6 @@ import {constants} from "../styles/constants";
 import Router from 'next/router'
 
 export default function Home() {
-    const notifyMe = () => {
-        // Router.push('');
-    }
-
     return (
         <div className={styles.page}>
             <PageHeader title={'Services'} bg={'transparent'}/>
@@ -18,7 +14,9 @@ export default function Home() {
                     <h1>Coming Soon!</h1>
                     <h2>Glow is a skincare wonderland with services designed for your upkeep and indulgence.
                         We are currently curating our services menu so do check back.</h2>
-                    <button onClick={notifyMe}>NOTIFY ME</button>
+                    <a href={'https://wa.me/'} target={'_blank'}>
+                        <button>MESSAGES</button>
+                    </a>
                 </div>
             </div>
         </div>

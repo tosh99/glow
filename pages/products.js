@@ -216,6 +216,36 @@ export default function Products() {
         }
     ];
 
+    useEffect(() => {
+        if (body_swiper && body_swiper.height) {
+            let hash = window.location.hash;
+            if (hash) {
+                hash = hash.replace('#', '');
+                if (hash === 'body') {
+                    set_current_body_slide(0)
+                    body_swiper.slideTo(1);
+                }
+                if (hash === 'hair') {
+                    set_current_body_slide(1)
+                    body_swiper.slideTo(2);
+                }
+                if (hash === 'skincare') {
+                    set_current_body_slide(2)
+                    body_swiper.slideTo(3);
+                }
+                if (hash === 'supplements') {
+                    set_current_body_slide(3)
+                    body_swiper.slideTo(4);
+                }
+                if (hash === 'tools') {
+                    set_current_body_slide(4)
+                    body_swiper.slideTo(5);
+                }
+
+            }
+        }
+    }, [body_swiper])
+
 
     const [device, set_device] = useState(2);
     useEffect(() => {

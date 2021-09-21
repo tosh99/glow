@@ -12,7 +12,7 @@ export default function NextBack({
 
 
     useEffect(() => {
-        console.log(prevDisabled)
+
     }, [prevDisabled])
 
     return (<Fragment>
