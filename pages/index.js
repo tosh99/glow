@@ -12,6 +12,7 @@ import Visitus from "../shared/sections/visitus/visitus";
 import ReadMoreReact from "read-more-react";
 import Head from "next/head";
 
+
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 const strip_items = [
     {
@@ -65,14 +66,31 @@ export default function Home() {
         }
     ];
 
-
     useEffect(() => {
-        console.log(document.getElementById('banner'))
-        document.getElementById('banner').addEventListener("scroll", (ev) => {
-            console.log(ev)
-        })
+        const ids = ['banner', 'bannerText', 'SkinCarePhilosophy', 'sayHello', 'services', 'sliders', 'edit', 'visitus', 'journey']
+        let id = 0;
 
-
+        // window.addEventListener("wheel", function (e) { // or window.addEventListener("scroll"....
+        //     if (e.wheelDelta >= 0) {
+        //         if (id > 0) {
+        //             if (id - 1 === 0) {
+        //                 window.scrollTo(0, 0)
+        //             } else {
+        //                 document.getElementById(ids[id - 1]).scrollIntoView({behavior: "smooth", block: "start",});
+        //             }
+        //             id -= 1;
+        //         }
+        //
+        //
+        //     } else {
+        //         if (id < ids.length - 1) {
+        //             document.getElementById(ids[id + 1]).scrollIntoView({behavior: "smooth", block: "start",});
+        //             id += 1;
+        //         }
+        //
+        //     }
+        //     console.log(id)
+        // }, false);
     }, [])
 
     const [device, set_device] = useState(2);
@@ -91,6 +109,30 @@ export default function Home() {
         <Fragment>
             <Head>
                 <title>Glow</title>
+                <script src={'https://projects.lukehaas.me/scrollify/script/jquery-1.11.1.js'}/>
+                <script src={'https://projects.lukehaas.me/scrollify/script/jquery.scrollify.js'}/>
+                <script dangerouslySetInnerHTML={{
+                    __html: `
+                    $(document).ready(function (){
+                        console.log($);
+                        console.log($.scrollify())
+                        // $.scrollify({
+                        //     section: ".scrollable-section",
+                        //     before: function () {
+                        //         console.log('syyyyyyyy')
+                        //     },
+                        //     after: function () {
+                        //         console.log('syyyyy')
+                        //     },
+                        //     afterResize: function () {   
+                        //     },
+                        //     afterRender: function () {
+                        //     }
+                        // })
+                    })
+              
+                `
+                }}/>
             </Head>
             <HomePageHeader/>
             <div className={"outer " + styles.skinCareOuter}>
@@ -99,7 +141,7 @@ export default function Home() {
                     <div className={styles.img}>
                         <div>&nbsp;</div>
                         <div className={styles.imgRight}>
-                            <div id='banner'>
+                            <div>
                                 <img src={'/images/home/banner.gif'}/>
                             </div>
                             <p id='bannerText'>Your skin changes with age, diet, weather, lifestyle choices and your state of mind. At every turning point, you need to check in with your skin.
@@ -123,7 +165,7 @@ export default function Home() {
                                     initial={{opacity: 0}}
                                     animate={inView ? {opacity: 1} : {opacity: 0}}
                                     transition={{duration: 0.8}}>
-                            <div className={"inner " + styles.skinCarePhil}>
+                            <div className={"scrollable-section inner " + styles.skinCarePhil} id={'SkinCarePhilosophy'}>
                                 <div className={styles.scLeft}>
                                     <img src={'/images/home/skincare.png'}/>
                                 </div>
@@ -157,7 +199,7 @@ export default function Home() {
                                     initial={{opacity: 0}}
                                     animate={inView ? {opacity: 1} : {opacity: 0}}
                                     transition={{duration: 0.8}}>
-                            <div className={"inner " + styles.sayHello}>
+                            <div className={"inner " + styles.sayHello} id='sayHello'>
                                 <div className={styles.shTop}>
                                     <h2>Say hello to Glow</h2>
                                     <div>
@@ -186,11 +228,12 @@ export default function Home() {
                 {
                     ({ref, inView}) => (
                         <motion.div className={"outer " + ' ' + styles.servicesOuter}
+
                                     ref={ref}
                                     initial={{opacity: 0}}
                                     animate={inView ? {opacity: 1} : {opacity: 0}}
                                     transition={{duration: 0.8}}>
-                            <div className={"inner " + styles.skinCarePhil + ' ' + styles.services}>
+                            <div className={"inner " + styles.skinCarePhil + ' ' + styles.services} id='services'>
                                 <div className={styles.scLeft}>
                                     <img src={'/images/home/services.png'}/>
                                 </div>
@@ -215,7 +258,7 @@ export default function Home() {
                 }
             </InView>
 
-            <div className={styles.slidersOuter}>
+            <div className={styles.slidersOuter} id='sliders'>
                 <div className={styles.sliders}>
                     <p className={styles.desc}>
                         After a lot of deliberation we have curated a
@@ -368,7 +411,7 @@ export default function Home() {
                                     initial={{opacity: 0}}
                                     animate={inView ? {opacity: 1} : {opacity: 0}}
                                     transition={{duration: 0.8}}>
-                            <div className={"inner " + styles.skinCarePhil + ' ' + styles.glowEdit}>
+                            <div className={"inner " + styles.skinCarePhil + ' ' + styles.glowEdit} id='edit'>
                                 <div className={styles.scLeft}>
                                     <img src={'/images/home/glowedit.png'}/>
                                 </div>
@@ -403,7 +446,7 @@ export default function Home() {
                                     initial={{opacity: 0}}
                                     animate={inView ? {opacity: 1} : {opacity: 0}}
                                     transition={{duration: 0.8}}>
-                            <div className={"inner " + styles.journey}>
+                            <div className={"inner " + styles.journey} id='journey'>
                                 <div className={styles.joTop}>
                                     <h2>Shedding Light on Dr.Varshini’s Journey</h2>
                                     <img src={'/images/home/varshini.png'}/>

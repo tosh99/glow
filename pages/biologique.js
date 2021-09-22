@@ -30,7 +30,7 @@ const methodologies = [
         desc: 'This is followed by personalised cleansing and balancing of your epidermis to prepare it for the next stage. Your face is cleansed gently while massaging it and then prepping it using the iconic Lotion P50 and a face mask.'
     },
     {
-        title: '3rd Stage',
+        title: 'Treatment Stage',
         desc: 'This stage incorporates products with the highest concentration of active ingredients, to recondition the epidermis and help enhance its potential for self-regeneration. When they’re applied in line with the Biologique Recherche methodology, they balance, hydrate and revitalise the epidermis as required by each Skin Instant©. The active ingredients take effect gradually, skin quality improves, and the complexion becomes radiant.'
     }
 ]
@@ -72,7 +72,7 @@ const carousel_content = [
 const content = 'Biologique Recherche products have been accredited for their effectiveness and, immediate and lasting results. The Biologique Recherche methodology is based on targeted products with a high concentration of active\n' +
     '                        ingredients. Their products are formulated in a dedicated research and development lab using plant, biomarine and biotechnological extracts at very high concentrations – above 20% in most products. These extracts are\n' +
     '                        derived using the cold pressed method which adds to their potency. Additionally, the entire range of Biologique Recherche products is fragrance free so as to not sensitise your skin.\n' +
-    '                        Invest in a highly personalised and effective skincare regime with the assistance of our Skin Experts at Glow.'
+    '                        <br><br><span>Invest in a highly personalised and effective skincare regime with the assistance of our Skin Experts at Glow.</span>'
 
 export default function Biologique() {
     const [current_slide, set_current_slide] = useState(0);
@@ -148,7 +148,7 @@ export default function Biologique() {
                 onInit={(ev) => {
                     set_methodology_slider(ev)
                 }}
-                >
+            >
                 {
                     methodologies.map((item, index) => {
                         return (<SwiperSlide>
@@ -318,7 +318,11 @@ export default function Biologique() {
                                 min={65}
                                 ideal={355}
                                 max={655}
-                                text={content}/> : content
+                                text={content}/> : ''
+                        }
+                        {
+                            device !== 0 &&
+                            <header dangerouslySetInnerHTML={{__html: content}}/>
                         }
                     </p>
                 </div>

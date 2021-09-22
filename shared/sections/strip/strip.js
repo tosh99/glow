@@ -17,7 +17,7 @@ export default function Strip({items = []}) {
                 {
                     items.map((item, index) => {
                         return <div className={styles.strip}>
-                            <header onClick={() => navigateTo(item)}> {item.title}</header>
+                            <header className={item.url ? styles.navigable : ''} onClick={() => navigateTo(item)}> {item.title}</header>
                             <div className={styles.imgContainer}>
                                 <img src={'/icons/common/star.svg'}/>
                             </div>

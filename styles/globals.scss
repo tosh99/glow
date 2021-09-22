@@ -15,6 +15,8 @@ body {
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    transition: 4s;
 }
 
 a {

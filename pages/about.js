@@ -9,6 +9,7 @@ import NextBack from "../shared/components/nextback/nextback";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, Controller, EffectFade, Navigation, Pagination} from 'swiper/core';
 import ReadMoreReact from "read-more-react";
+import {Head} from "next/document";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller, EffectFade]);
 
@@ -87,7 +88,9 @@ export default function About() {
                                 }
                             </p>
                             {
-                                !showMore && <header onClick={()=>{set_showMore(true)}}>read more</header>
+                                !showMore && <header onClick={() => {
+                                    set_showMore(true)
+                                }}>read more</header>
                             }
 
                         </div>
@@ -108,11 +111,15 @@ export default function About() {
                             <div className={"inner " + styles.clientTestimonials}>
                                 <div className={styles.ctHeader}>
                                     <h2>Client Testimonials</h2>
-                                    <NextBack onNext={() => {
-                                        testimonial_swiper.slideNext()
-                                    }} onBack={() => {
-                                        testimonial_swiper.slidePrev()
-                                    }}/>
+                                    <NextBack
+                                        prevDisabled={current_slide === 0}
+                                        nextDisabled={current_slide === testimonials.length - 2}
+                                        onNext={() => {
+                                            testimonial_swiper.slideNext()
+                                        }}
+                                        onBack={() => {
+                                            testimonial_swiper.slidePrev()
+                                        }}/>
                                 </div>
                             </div>
 
@@ -127,16 +134,11 @@ export default function About() {
                                         }
                                     }}
                                     speed={1800}
-                                    loop={true}
                                     onInit={(ev) => {
                                         set_testimonial_swiper(ev)
                                     }}
                                     onSlideChange={(ev) => {
-                                        if (ev.activeIndex - 1 === 5) {
-                                            // set_current_body_slide(0)
-                                        } else {
-                                            // set_current_body_slide(ev.activeIndex - 1)
-                                        }
+                                        set_current_slide(ev.activeIndex)
                                     }}>
                                 {
                                     testimonials.map((item, index) => {

@@ -44,7 +44,7 @@ export default function Visitus() {
                                 animate={inView ? {opacity: 1} : {opacity: 0}}
                                 transition={{duration: 0.8}}>
 
-                        <div className={"inner " + styles.visitUs}>
+                        <div className={"inner " + styles.visitUs} id={'visitus'}>
                             <div className={styles.vuHeader}>
                                 <h2>Visit Us</h2>
                                 <header onClick={goToAddress}>get direction</header>
