@@ -87,11 +87,16 @@ export default function Visitus() {
                                     </header>
                                 </div>
                                 <div className={styles.vuaRight}>
-                                    <NextBack theme={'light'} onBack={() => {
-                                        clinic_swiper.slidePrev()
-                                    }} onNext={() => {
-                                        clinic_swiper.slideNext()
-                                    }}/>
+                                    <NextBack
+                                        theme={'light'}
+                                        prevDisabled={current_slide === 0}
+                                        nextDisabled={current_slide === 1}
+                                        onBack={() => {
+                                            clinic_swiper.slidePrev()
+                                        }}
+                                        onNext={() => {
+                                            clinic_swiper.slideNext()
+                                        }}/>
                                 </div>
                             </div>
                         </div>
