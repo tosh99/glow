@@ -79,7 +79,10 @@ export default function Visitus() {
                                         {locations[current_slide].address}
                                         <br/><br/>
                                         {locations[current_slide].phone.map((item, index) => {
-                                            return <header className={styles.phone}>{item}</header>
+                                            return <a href={"tel:" + item}>
+                                                <header className={styles.phone}>{item}</header>
+                                                <br/>
+                                            </a>
                                         })}<br/>
                                     </header>
                                 </div>

@@ -88,7 +88,17 @@
                 font-size: 16px;
                 line-height: 123.8%;
                 margin-bottom: 98px;
+
+                header {
+                    transition: 0.4s;
+                }
+
+                header:hover {
+                    color: #757575;
+                    transition: 0.4s;
+                }
             }
+
 
             .appoint {
                 font-family: HattonMedium, sans-serif;
@@ -96,6 +106,13 @@
                 line-height: 123.8%;
                 letter-spacing: 5px;
                 color: #FFFFFF;
+                cursor: pointer;
+                transition: 0.4s;
+            }
+
+            .appoint:hover {
+                color: #757575;
+                transition: 0.4s;
             }
 
         }

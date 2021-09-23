@@ -55,8 +55,8 @@ export default function Ourclinic() {
                                         clinic_swiper.slidePrev()
                                     }}
                                     onNext={() => {
-                                    clinic_swiper.slideNext()
-                                }}/>
+                                        clinic_swiper.slideNext()
+                                    }}/>
                             </div>
                             <div className={styles.vuMap}>
                                 <Swiper slidesPerView={1}
@@ -88,8 +88,11 @@ export default function Ourclinic() {
                                         {locations[current_slide].address}
                                         <br/><br/>
                                         {locations[current_slide].phone.map((item, index) => {
-                                            return <header className={styles.phone}>{item}</header>
-                                        })}<br/>
+                                            return <a href={"tel:" + item}>
+                                                <header className={styles.phone}>{item}</header>
+                                                <br/>
+                                            </a>
+                                        })}
                                     </header>
                                 </div>
                                 <div className={styles.vuaRight}>

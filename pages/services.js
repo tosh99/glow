@@ -14,8 +14,8 @@ export default function Home() {
                     <h1>Coming Soon!</h1>
                     <h2>Glow is a skincare wonderland with services designed for your upkeep and indulgence.
                         We are currently curating our services menu so do check back.</h2>
-                    <a href={'https://wa.me/'} target={'_blank'}>
-                        <button>MESSAGES</button>
+                    <a href={'https://wa.me/9951355555'} target={'_blank'}>
+                        <button>MESSAGE US</button>
                     </a>
                 </div>
             </div>

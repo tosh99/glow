@@ -40,7 +40,9 @@ export default function Footer() {
                             {
                                 is_visible.follow && <>
                                     <header className={styles.item}>Linkedin</header>
-                                    <header className={styles.item}>Instagram</header>
+                                    <a href="https://www.instagram.com/theglow.edit/?hl=en" target="_blank">
+                                        <header className={styles.item}>Instagram</header>
+                                    </a>
                                 </>
                             }
                         </div>
@@ -87,9 +89,13 @@ export default function Footer() {
                 <div className={styles.footerBottom}>
                     <div className={styles.fbLeft}>
                         <div className={styles.address}>
-                            <header>info@glow.clinic</header>
+                            <a href="mailto: info@glow.clinic">
+                                <header>info@glow.clinic</header>
+                            </a>
                             <header>&nbsp;&nbsp;|&nbsp;&nbsp;</header>
-                            <header>www.glow.shop</header>
+                            <a href="www.glow.shop">
+                                <header>www.glow.shop</header>
+                            </a>
                         </div>
                         <div className={styles.appoint}>
                             MAKE AN APPOINTMENT
@@ -106,8 +112,12 @@ export default function Footer() {
                                 Road
                             </header>
                             <header className={styles.item}>
-                                +91 99513 55555
-                                044 4553 5555
+                                <a href={"tel:+919951355555"}>
+                                    +91 99513 55555
+                                </a>
+                                <a href={"tel:04445535555"}>
+                                    044 4553 5555
+                                </a>
                             </header>
                         </div>
                         <div className={styles.column}>
@@ -120,8 +130,12 @@ export default function Footer() {
                                 Road No. 12, Banjarahills
                             </header>
                             <header className={styles.item}>
-                                +91 96772 92429
-                                040 4850 5555
+                                <a href={"tel:+919677292429"}>
+                                    +91 96772 92429
+                                </a>
+                                <a href={"tel:04048505555"}>
+                                    040 4850 5555
+                                </a>
                             </header>
                         </div>
                     </div>
