@@ -11,6 +11,7 @@ import SwiperCore, {Autoplay, Controller, Navigation, Pagination} from 'swiper/c
 import Visitus from "../shared/sections/visitus/visitus";
 import ReadMoreReact from "read-more-react";
 import Head from "next/head";
+import BackToTop from "../shared/components/back-to-top";
 
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
@@ -46,23 +47,28 @@ export default function Home() {
     const carousel_content = [
         {
             title: 'Body',
-            content: 'A range of hand-picked brands for the best of body care products that are made with clean, active ingredients and are result-driven. Taking care of your body is equally rewarding.'
+            content: 'A range of hand-picked brands for the best of body care products that are made with clean, active ingredients and are result-driven. Taking care of your body is equally rewarding.',
+            url: '/products#body'
         },
         {
             title: 'Hair',
-            content: 'Give your hair care routine a bump onto the next level. Whether it is finding the right products for your hair type and concern or adding some lovely serums for that extra bounce, we’ve curated an array of products for each and every one of your needs.'
+            content: 'Give your hair care routine a bump onto the next level. Whether it is finding the right products for your hair type and concern or adding some lovely serums for that extra bounce, we’ve curated an array of products for each and every one of your needs.',
+            url: '/products#hair'
         },
         {
             title: 'Skincare',
-            content: 'Whether you’re a beginner or a skincare enthusiast, we have something for you all. Choose from our repertoire of curated skincare products that have acquired a cult status for their new-age formulations and are targeted towards lasting skincare benefits. A healthy glow awaits you.'
+            content: 'Whether you’re a beginner or a skincare enthusiast, we have something for you all. Choose from our repertoire of curated skincare products that have acquired a cult status for their new-age formulations and are targeted towards lasting skincare benefits. A healthy glow awaits you.',
+            url: '/products#skincare'
         },
         {
             title: 'Supplements',
-            content: 'At Glow, we promote overall well-being for healthy skin and hair. Find supplements that come recommended for a glow that’s from within.'
+            content: 'At Glow, we promote overall well-being for healthy skin and hair. Find supplements that come recommended for a glow that’s from within.',
+            url: '/products#supplements'
         },
         {
             title: 'Tools',
-            content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.'
+            content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.',
+            url: '/products#tools'
         }
     ];
 
@@ -309,7 +315,7 @@ export default function Home() {
                                                             set_is_menu_visible(!is_menu_visible)
                                                         }}>
                                                             <header>Index</header>
-                                                            <img src={'/icons/common/down_white.svg'}/>
+                                                            <img src={'/icons/common/' + (is_menu_visible ? 'up_white.svg' : 'down_white.svg')}/>
                                                         </div>
                                                         {
                                                             is_menu_visible && <div className={styles.menuItems}>
@@ -365,6 +371,9 @@ export default function Home() {
                                                                 device !== 0 && item.content
                                                             }
                                                         </p>
+                                                        <a href={item.url}>
+                                                            <header>Discover More</header>
+                                                        </a>
                                                         {
                                                             device === 0 && <InView threshold={0}>
                                                                 {
@@ -475,6 +484,7 @@ export default function Home() {
                 }
             </InView>
 
+            <BackToTop/>
             <Footer/>
         </Fragment>
     )

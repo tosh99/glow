@@ -1,4 +1,4 @@
-import {Fragment, useState} from "react";
+import {Fragment, useEffect, useState} from "react";
 import styles from "./styles/faq.module.scss";
 import PageHeader from "../shared/components/page-header/page-header";
 import Footer from "../shared/components/footer/footer";
@@ -71,6 +71,9 @@ export default function About() {
     ]);
     const [render, set_render] = useState(1);
 
+    useEffect(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }, [])
 
     return (<Fragment>
             <PageHeader title={'FAQs'}/>

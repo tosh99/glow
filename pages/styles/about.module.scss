@@ -35,7 +35,7 @@
         border-top: 1px solid #000000;
         border-left: 1px solid #000000;
         padding: 90px;
-        min-height: 600px;
+        min-height: 654px;
 
         header {
             font-size: 24px;
@@ -87,9 +87,43 @@
 
 .journey {
     .joTop {
+        .jotLeft {
+            width: 100%;
+            max-width: 690px;
+            border-bottom: 1px solid black;
+
+            .s1 {
+
+            }
+
+            .s2 {
+                font-family: HattonRegular, sans-serif;
+                letter-spacing: 0.05em;
+                font-size: 54px;
+                line-height: 70px;
+            }
+
+            .s3 {
+                font-family: SaolRegular, sans-serif;
+                letter-spacing: 0.1em;
+                font-size: 80px;
+                line-height: 89px;
+            }
+
+            .s4 {
+                font-family: OggRegular, sans-serif;
+                letter-spacing: 0.03em;
+                font-size: 60px;
+                line-height: 66px;
+            }
+        }
+
         h2 {
             font-size: 120px;
             line-height: 120px;
+            border-bottom: none;
+            width: max-content;
+            margin-right: 0;
         }
     }
 }
@@ -151,10 +185,43 @@
 
     .journey {
         .joTop {
-            h2 {
-                font-size: 65px;
-                line-height: 65px;
+            .jotLeft {
+                width: 100%;
+                max-width: 690px;
+                border-bottom: 1px solid black;
+
+                h2 {
+                    font-size: 65px;
+                    line-height: 65px;
+                }
+
+                .s1 {
+
+                }
+
+                .s2 {
+                    font-family: HattonRegular, sans-serif;
+                    letter-spacing: 0.05em;
+                    font-size: 30px;
+                    line-height: 45px;
+                }
+
+                .s3 {
+                    font-family: SaolRegular, sans-serif;
+                    letter-spacing: 0.1em;
+                    font-size: 40px;
+                    line-height: 46px;
+                }
+
+                .s4 {
+                    font-family: OggRegular, sans-serif;
+                    letter-spacing: 0.03em;
+                    font-size: 35px;
+                    line-height: 37px;
+                }
             }
+
+
         }
     }
 }

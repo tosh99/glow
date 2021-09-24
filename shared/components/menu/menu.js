@@ -51,7 +51,13 @@ export default function Menu({close}) {
                             </div>
                             <div className={styles.menuBottom}>
                                 <p>make AN appointment</p>
+                                <div className={styles.menuLast}>
+                                    <Link href="/">
+                                        <header>Home</header>
+                                    </Link>
+                                </div>
                             </div>
+
                         </motion.div>)
                 }
             </InView>

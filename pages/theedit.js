@@ -16,6 +16,9 @@ export default function TheEdit() {
     const [posts, set_posts] = useState([]);
     const [render, set_render] = useState(1);
 
+    useEffect(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }, [])
 
     useEffect(() => {
         axios.get('https://public-api.wordpress.com/rest/v1.1/sites/example.wordpress.com/posts')

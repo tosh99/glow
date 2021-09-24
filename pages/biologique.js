@@ -87,6 +87,8 @@ export default function Biologique() {
         if (screen.width <= 648) {
             set_device(0)
         }
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
     }, [])
 
 
@@ -283,7 +285,9 @@ export default function Biologique() {
                                                         {item.content}
                                                         {/*<ReadMoreReact min={65} ideal={105} max={165} text={item.content}/>*/}
                                                     </p>
-                                                    <header>ENQUIRE</header>
+                                                    <a href="tel:9951355555">
+                                                        <header>ENQUIRE</header>
+                                                    </a>
                                                     {
                                                         device !== 0 && <NextBack
                                                             theme={'light'}
@@ -354,7 +358,9 @@ export default function Biologique() {
                         buy_br_swiper.slideNext()
                     }}/>
 
-                <header className={styles.enquire}>ENQUIRE</header>
+                <a href="tel:9951355555">
+                    <header className={styles.enquire}>ENQUIRE</header>
+                </a>
             </div>
         </div>
 

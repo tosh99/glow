@@ -125,6 +125,7 @@
             font-size: 20px;
             line-height: 131.78%;
             letter-spacing: 0.05em;
+            text-transform: capitalize;
         }
     }
 
@@ -378,6 +379,10 @@
 
         .bRight {
             width: 100%;
+
+            .sectionTitle {
+               display: none;
+            }
 
             .slide {
                 img {

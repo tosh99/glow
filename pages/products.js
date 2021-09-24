@@ -8,7 +8,6 @@ import Head from "next/head";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from 'swiper/core';
 import Footer from "../shared/components/footer/footer";
-import ReadMoreReact from "read-more-react";
 import Strip from "../shared/sections/strip/strip";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
@@ -134,34 +133,34 @@ export default function Products() {
     const [current_favorite_slide, set_current_favorite_slide] = useState(0);
     const favorite_products = [
         {
-            title: 'Lotion P50 BR',
+            title: 'Creme ux acides de fruits',
         },
         {
-            title: 'Warming Honey Cleanser',
+            title: 'IS Clinical Warming Honey Cleanser',
         },
         {
-            title: 'Mitti raw face mask pureearth',
+            title: 'Pureearth - Mitti Raw Honey Face Masque',
         },
         {
-            title: 'Pro heal serum is clinical',
+            title: 'iS Clinical Pro-Heal Serum Advance Plus',
         },
         {
-            title: 'Oligo proteins marines serum',
+            title: 'Oligo proteins marines Biologique Recherche',
         },
         {
-            title: 'Lait vip 02',
+            title: 'LAIT VIP02 Biologique Recherche',
         },
         {
-            title: 'Heliocare mineral tolerance fluid',
+            title: 'Heliocare 360o mineral tolerance fluid',
         },
         {
-            title: 'Biokiss lip balm',
+            title: 'Biokiss - Biologique Recherche',
         },
         {
-            title: 'Creme aux acid de fruits',
+            title: 'Lotion P50 Biologique Recherche',
         },
         {
-            title: 'Masque vip 02',
+            title: 'Masque VIP O2 Biologique Recherche',
         },
     ];
 
@@ -254,6 +253,10 @@ export default function Products() {
         }
     }, [])
 
+    useEffect(() => {
+
+    }, [current_favorite_slide])
+
 
     return (<Fragment>
         <Head>
@@ -267,7 +270,9 @@ export default function Products() {
                         <h1 dangerouslySetInnerHTML={{__html: body_content[current_body_slide].title}}/>
                         <p>{body_content[current_body_slide].desc}</p>
                     </div>
-                    <header className={styles.shopBody}>ENQUIRE</header>
+                    <a href="tel:9951355555">
+                        <header className={styles.shopBody}>ENQUIRE</header>
+                    </a>
                 </div>
                 <div className={styles.bRight}>
                     <header className={styles.sectionTitle}>{body_content[current_body_slide].shop}</header>
@@ -280,6 +285,7 @@ export default function Products() {
                             }}
                             onSlideChange={(ev) => {
                                 window.scrollTo(0, document.getElementById('yourcare').offsetTop);
+                                set_current_body_slide(ev.activeIndex)
                                 if (ev.activeIndex === 6) {
                                     set_current_body_slide(0)
                                 } else if (ev.activeIndex - 1 === -1) {
@@ -332,25 +338,24 @@ export default function Products() {
                 <div className={styles.cfHeader}>
                     <h2>Varshini's Current Favourites</h2>
                     <div>
-                        <NextBack onBack={() => {
-                            favorite_swiper.slidePrev()
-                        }} onNext={() => {
-                            favorite_swiper.slideNext()
-                        }}/>
+                        <NextBack
+                            prevDisabled={current_favorite_slide === 0}
+                            nextDisabled={current_favorite_slide === (favorite_products.length - 2)}
+                            onBack={() => {
+                                favorite_swiper.slidePrev()
+                            }}
+                            onNext={() => {
+                                favorite_swiper.slideNext()
+                            }}/>
                     </div>
                 </div>
                 <Swiper
                     slidesPerView={'auto'}
-                    loop={true}
                     onInit={(ev) => {
                         set_favorite_swiper(ev)
                     }}
                     onSlideChange={(ev) => {
-                        if (ev.activeIndex - 1 === 5) {
-                            set_current_favorite_slide(0)
-                        } else {
-                            set_current_favorite_slide(ev.activeIndex - 1)
-                        }
+                        set_current_favorite_slide(ev.activeIndex)
                     }}>
                     {
                         favorite_products.map((item, index) => {
@@ -364,7 +369,9 @@ export default function Products() {
                         })
                     }
                 </Swiper>
-                <header className={styles.enquire}>ENQUIRE</header>
+                <a href="tel:9951355555">
+                    <header className={styles.enquire}>ENQUIRE</header>
+                </a>
             </div>
         </div>
 
@@ -460,7 +467,9 @@ export default function Products() {
                                                                 </motion.div>)
                                                         }
                                                     </InView>
-                                                    <header>ENQUIRE</header>
+                                                    <a href="tel:9951355555">
+                                                        <header>ENQUIRE</header>
+                                                    </a>
                                                     {
                                                         device !== 0 && <NextBack
                                                             theme={'light'}

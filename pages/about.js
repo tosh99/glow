@@ -7,11 +7,10 @@ import PageHeader from "../shared/components/page-header/page-header";
 import Footer from "../shared/components/footer/footer";
 import NextBack from "../shared/components/nextback/nextback";
 import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperCore, {Autoplay, Controller, EffectFade, Navigation, Pagination} from 'swiper/core';
+import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from 'swiper/core';
 import ReadMoreReact from "read-more-react";
-import {Head} from "next/document";
 
-SwiperCore.use([Autoplay, Pagination, Navigation, Controller, EffectFade]);
+SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 
 const testimonials = [
     {
@@ -38,6 +37,14 @@ export default function About() {
     const [current_slide, set_current_slide] = useState(0);
     const [showMore, set_showMore] = useState(false);
 
+    const [device, set_device] = useState(2);
+    useEffect(() => {
+        if (screen.width <= 648) {
+            set_device(0)
+        }
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }, [])
 
     return (<Fragment>
             <PageHeader title={'About Glow'}/>
@@ -58,7 +65,41 @@ export default function About() {
             <div className={"outer " + styles.journeyOuter} id={"varshini"}>
                 <div className={"inner " + styles.journey}>
                     <div className={styles.joTop}>
-                        <h2>Your skin is <br/> ever-evolving, so <br/> should your skincare routine.</h2>
+                        <div className={styles.jotLeft}>
+                            <Swiper
+                                slidesPerView={1}
+                                autoplay={{
+                                    delay: 2000,
+                                }}
+                                speed={2000}
+                                loop={true}
+                                effect={'fade'}
+                                spaceBetween={100}
+                                fadeEffect={{
+                                    crossFade: true
+                                }}
+                                onInit={(ev) => {
+
+                                }}
+                                onSlideChange={(ev) => {
+
+                                }}>
+                                <SwiperSlide>
+                                    <h2 className={styles.s1}>Your skin is <br/> ever-evolving, so <br/> should your skincare <br/> routine.</h2>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <h2 className={styles.s2}>Offering <br/>revolutionary<br/> products and<br/> services tailored<br/> to your specific<br/> needs.</h2>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <h2 className={styles.s3}>Welcome to<br/> the luxurious <br/>skincare <br/>experience <br/>centre</h2>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <h2 className={styles.s4}>Active ingredients <br/>for Targeted <br/>results<br/> that are <br/>immediate and<br/> lasting.</h2>
+                                </SwiperSlide>
+                            </Swiper>
+                        </div>
+
+
                         <img src={'/images/home/varshini.png'}/>
                     </div>
                     <div className={styles.joBottom}>
@@ -148,7 +189,12 @@ export default function About() {
                                                     <p className={styles.date}>{item.date}</p>
 
                                                     <div className={styles.desc}>
-                                                        <ReadMoreReact min={125} ideal={405} max={655} text={item.desc}/>
+                                                        {
+                                                            device === 0 && <ReadMoreReact min={125} ideal={405} max={655} text={item.desc}/>
+                                                        }
+                                                        {
+                                                            device !== 0 && item.desc
+                                                        }
                                                     </div>
                                                 </div>
                                             </SwiperSlide>

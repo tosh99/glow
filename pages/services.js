@@ -1,10 +1,12 @@
 import styles from './styles/comingsoon.module.scss'
-import {Fragment} from "react";
+import {useEffect} from "react";
 import PageHeader from "../shared/components/page-header/page-header";
-import {constants} from "../styles/constants";
-import Router from 'next/router'
 
 export default function Home() {
+    useEffect(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }, [])
+
     return (
         <div className={styles.page}>
             <PageHeader title={'Services'} bg={'transparent'}/>
