@@ -9,6 +9,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, Controller, Navigation, Pagination} from 'swiper/core';
 import Footer from "../shared/components/footer/footer";
 import ReadMoreReact from 'read-more-react';
+import BackToTop from "../shared/components/back-to-top";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 
@@ -364,6 +365,7 @@ export default function Biologique() {
             </div>
         </div>
 
+                    <BackToTop/>
         <Footer/>
 
     </Fragment>)

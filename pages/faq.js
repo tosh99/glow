@@ -3,6 +3,7 @@ import styles from "./styles/faq.module.scss";
 import PageHeader from "../shared/components/page-header/page-header";
 import Footer from "../shared/components/footer/footer";
 import SwiperCore, {Autoplay, Controller, Navigation, Pagination} from 'swiper/core';
+import BackToTop from "../shared/components/back-to-top";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 
@@ -108,6 +109,7 @@ export default function About() {
                 </div>
             </div>
 
+            <BackToTop/>
             <Footer/>
         </Fragment>
     )

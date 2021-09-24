@@ -9,6 +9,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from 'swiper/core';
 import Footer from "../shared/components/footer/footer";
 import Strip from "../shared/sections/strip/strip";
+import BackToTop from "../shared/components/back-to-top";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 const strip_items = [
@@ -240,7 +241,7 @@ export default function Products() {
                     set_current_body_slide(4)
                     body_swiper.slideTo(5);
                 }
-
+                window.scrollTo(0, 0)
             }
         }
     }, [body_swiper])
@@ -491,6 +492,7 @@ export default function Products() {
             </div>
         </div>
 
+        <BackToTop background={'black'}/>
         <Footer/>
 
     </Fragment>)

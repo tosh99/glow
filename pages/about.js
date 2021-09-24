@@ -9,6 +9,7 @@ import NextBack from "../shared/components/nextback/nextback";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from 'swiper/core';
 import ReadMoreReact from "read-more-react";
+import BackToTop from "../shared/components/back-to-top";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 
@@ -206,7 +207,7 @@ export default function About() {
                 }
             </InView>
 
-
+            <BackToTop/>
             <Footer/>
 
         </Fragment>

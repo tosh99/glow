@@ -39,7 +39,9 @@ export default function Footer() {
                             </div>
                             {
                                 is_visible.follow && <>
-                                    <header className={styles.item}>Linkedin</header>
+                                    <a href="https://www.linkedin.com/company/glow-skin-beauty-wellness" target="_blank">
+                                        <header className={styles.item}>Linkedin</header>
+                                    </a>
                                     <a href="https://www.instagram.com/theglow.edit/?hl=en" target="_blank">
                                         <header className={styles.item}>Instagram</header>
                                     </a>

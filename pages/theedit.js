@@ -7,6 +7,7 @@ import Footer from "../shared/components/footer/footer";
 import axios from "axios";
 import {Swiper, SwiperSlide} from "swiper/react";
 import NextBack from "../shared/components/nextback/nextback";
+import BackToTop from "../shared/components/back-to-top";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 
@@ -21,21 +22,35 @@ export default function TheEdit() {
     }, [])
 
     useEffect(() => {
-        axios.get('https://public-api.wordpress.com/rest/v1.1/sites/example.wordpress.com/posts')
-            .then(function (response) {
-                // handle success
-                const dt = response.data;
-                const posts = dt.posts;
-                set_posts(posts)
+        // axios.get('https://public-api.wordpress.com/rest/v1.1/sites/example.wordpress.com/posts')
+        //     .then(function (response) {
+        //         // handle success
+        //         const dt = response.data;
+        //         const posts = dt.posts;
+        //         set_posts(posts)
+        //
+        //     })
+        //     .catch(function (error) {
+        //         // handle error
+        //         console.log(error);
+        //     })
+        //     .then(function () {
+        //         // always executed
+        //     });
+        set_posts([
+            {
+                title: 'Back <br>' + 'to Basics',
+                desc_1: 'AM Routine',
+                desc_2: 'PM Routine',
+                desc_1_images: ['/am_routine/am_1.png', '/am_routine/am_2.png', '/am_routine/am_3.png', '/am_routine/am_4.png', '/am_routine/am_5.png'],
+                desc_2_images: ['/pm_routine/pm_1.png', '/pm_routine/pm_2.png', '/pm_routine/pm_3.png', '/pm_routine/pm_4.png', '/pm_routine/pm_5.png'],
+                selected: 1
+            }
 
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-            .then(function () {
-                // always executed
-            });
+
+        ])
+
+
     }, [])
 
 
@@ -66,12 +81,18 @@ export default function TheEdit() {
                 return <div className={"outer " + styles.postOuter}>
                     <div className={"inner " + styles.post}>
                         <div className={styles.postLeft}>
-                            <header className={styles.plTitle}>
-                                Back to Basics
+                            <header className={styles.plTitle} dangerouslySetInnerHTML={{__html: post.title}}>
+
                             </header>
                             <div className={styles.plDesc}>
-                                <header>AM Routine</header>
-                                <header>PM Routine</header>
+                                <header className={(post.selected === 1 ? styles.selected : '')} onClick={() => {
+                                    post.selected = 1;
+                                    set_render(prev => prev + 1)
+                                }}> {post.desc_1}</header>
+                                <header className={(post.selected === 2 ? styles.selected : '')} onClick={() => {
+                                    post.selected = 2;
+                                    set_render(prev => prev + 1)
+                                }}>{post.desc_2}</header>
                             </div>
                         </div>
                         <div className={styles.postRight}>
@@ -90,10 +111,10 @@ export default function TheEdit() {
                                         }
                                     }}>
                                 {
-                                    posts.map((item, index) => {
+                                    (post.selected === 1 ? post.desc_1_images : post.desc_2_images).map((imgurl, index) => {
                                         return (<SwiperSlide>
                                                 <div className={styles.prSlide}>
-                                                    <img src={'/images/home/sliders/' + index + '.png'}/>
+                                                    <img src={'/images/theedit/' + imgurl}/>
                                                 </div>
                                             </SwiperSlide>
                                         )
@@ -111,7 +132,7 @@ export default function TheEdit() {
             })
         }
 
-
+            <BackToTop/>
         <Footer/>
 
     </Fragment>)

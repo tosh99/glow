@@ -110,7 +110,6 @@ export default function Home() {
 
     }
 
-
     return (
         <Fragment>
             <Head>

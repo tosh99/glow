@@ -51,7 +51,7 @@
 .post {
     display: flex;
     justify-content: center;
-    height: 951px;
+    height: 100vh;
 
     .postLeft {
         display: flex;
@@ -75,17 +75,14 @@
                 font-family: TelegrafRegular, sans-serif;
                 text-transform: uppercase;
                 line-height: 120%;
-            }
-
-            header:first-of-type {
-                font-size: 25px;
-                letter-spacing: 0.1em;
-                font-weight: bold;
-            }
-
-            header:last-of-type {
                 font-size: 24px;
-                letter-spacing: 0.05em;
+                letter-spacing: 0.1em;
+                cursor: pointer;
+            }
+
+            .selected {
+                font-size: 25px;
+                font-weight: bold;
             }
         }
     }
