@@ -271,7 +271,7 @@ export default function Products() {
                         <h1 dangerouslySetInnerHTML={{__html: body_content[current_body_slide].title}}/>
                         <p>{body_content[current_body_slide].desc}</p>
                     </div>
-                    <a href="tel:9951355555">
+                    <a href="https://wa.me/9951355555">
                         <header className={styles.shopBody}>ENQUIRE</header>
                     </a>
                 </div>
@@ -285,7 +285,7 @@ export default function Products() {
                                 set_body_swiper(ev)
                             }}
                             onSlideChange={(ev) => {
-                                window.scrollTo(0, document.getElementById('yourcare').offsetTop);
+                                window.scrollTo(0, 0);
                                 set_current_body_slide(ev.activeIndex)
                                 if (ev.activeIndex === 6) {
                                     set_current_body_slide(0)
@@ -370,7 +370,7 @@ export default function Products() {
                         })
                     }
                 </Swiper>
-                <a href="tel:9951355555">
+                <a href="https://wa.me/9951355555">
                     <header className={styles.enquire}>ENQUIRE</header>
                 </a>
             </div>
@@ -468,7 +468,7 @@ export default function Products() {
                                                                 </motion.div>)
                                                         }
                                                     </InView>
-                                                    <a href="tel:9951355555">
+                                                    <a href="https://wa.me/9951355555">
                                                         <header>ENQUIRE</header>
                                                     </a>
                                                     {

@@ -12,6 +12,7 @@ import Visitus from "../shared/sections/visitus/visitus";
 import ReadMoreReact from "read-more-react";
 import Head from "next/head";
 import BackToTop from "../shared/components/back-to-top";
+import BookNow from "../shared/components/book-now";
 
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
@@ -114,30 +115,6 @@ export default function Home() {
         <Fragment>
             <Head>
                 <title>Glow</title>
-                <script src={'https://projects.lukehaas.me/scrollify/script/jquery-1.11.1.js'}/>
-                <script src={'https://projects.lukehaas.me/scrollify/script/jquery.scrollify.js'}/>
-                <script dangerouslySetInnerHTML={{
-                    __html: `
-                    $(document).ready(function (){
-                        console.log($);
-                        console.log($.scrollify())
-                        // $.scrollify({
-                        //     section: ".scrollable-section",
-                        //     before: function () {
-                        //         console.log('syyyyyyyy')
-                        //     },
-                        //     after: function () {
-                        //         console.log('syyyyy')
-                        //     },
-                        //     afterResize: function () {   
-                        //     },
-                        //     afterRender: function () {
-                        //     }
-                        // })
-                    })
-              
-                `
-                }}/>
             </Head>
             <HomePageHeader/>
             <div className={"outer " + styles.skinCareOuter}>
@@ -219,7 +196,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className={styles.scBottom}>
-                                    <img src={'/images/home/sayhello.png'}/>
+                                    <img src={'/images/home/sayhello.gif'}/>
                                     <a href={'/about'}>
                                         <header>make an appointment</header>
                                     </a>
@@ -483,6 +460,7 @@ export default function Home() {
                 }
             </InView>
 
+            <BookNow/>
             <BackToTop/>
             <Footer/>
         </Fragment>

@@ -67,37 +67,38 @@ export default function About() {
                 <div className={"inner " + styles.journey}>
                     <div className={styles.joTop}>
                         <div className={styles.jotLeft}>
-                            <Swiper
-                                slidesPerView={1}
-                                autoplay={{
-                                    delay: 2000,
-                                }}
-                                speed={2000}
-                                loop={true}
-                                effect={'fade'}
-                                spaceBetween={100}
-                                fadeEffect={{
-                                    crossFade: true
-                                }}
-                                onInit={(ev) => {
+                            {/*<Swiper*/}
+                            {/*    slidesPerView={1}*/}
+                            {/*    autoplay={{*/}
+                            {/*        delay: 2000,*/}
+                            {/*    }}*/}
+                            {/*    speed={2000}*/}
+                            {/*    loop={true}*/}
+                            {/*    effect={'fade'}*/}
+                            {/*    spaceBetween={100}*/}
+                            {/*    fadeEffect={{*/}
+                            {/*        crossFade: true*/}
+                            {/*    }}*/}
+                            {/*    onInit={(ev) => {*/}
 
-                                }}
-                                onSlideChange={(ev) => {
+                            {/*    }}*/}
+                            {/*    onSlideChange={(ev) => {*/}
 
-                                }}>
-                                <SwiperSlide>
-                                    <h2 className={styles.s1}>Your skin is <br/> ever-evolving, so <br/> should your skincare <br/> routine.</h2>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <h2 className={styles.s2}>Offering <br/>revolutionary<br/> products and<br/> services tailored<br/> to your specific<br/> needs.</h2>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <h2 className={styles.s3}>Welcome to<br/> the luxurious <br/>skincare <br/>experience <br/>centre</h2>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <h2 className={styles.s4}>Active ingredients <br/>for Targeted <br/>results<br/> that are <br/>immediate and<br/> lasting.</h2>
-                                </SwiperSlide>
-                            </Swiper>
+                            {/*    }}>*/}
+                            {/*    <SwiperSlide>*/}
+                            {/*        <h2 className={styles.s1}>Your skin is <br/> ever-evolving, so <br/> should your skincare <br/> routine.</h2>*/}
+                            {/*    </SwiperSlide>*/}
+                            {/*    <SwiperSlide>*/}
+                            {/*        <h2 className={styles.s2}>Offering <br/>revolutionary<br/> products and<br/> services tailored<br/> to your specific<br/> needs.</h2>*/}
+                            {/*    </SwiperSlide>*/}
+                            {/*    <SwiperSlide>*/}
+                            {/*        <h2 className={styles.s3}>Welcome to<br/> the luxurious <br/>skincare <br/>experience <br/>centre</h2>*/}
+                            {/*    </SwiperSlide>*/}
+                            {/*    <SwiperSlide>*/}
+                            {/*        <h2 className={styles.s4}>Active ingredients <br/>for Targeted <br/>results<br/> that are <br/>immediate and<br/> lasting.</h2>*/}
+                            {/*    </SwiperSlide>*/}
+                            {/*</Swiper>*/}
+                            <img src={'/images/about/aboutext.gif'} />
                         </div>
 
 

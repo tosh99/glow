@@ -286,7 +286,7 @@ export default function Biologique() {
                                                         {item.content}
                                                         {/*<ReadMoreReact min={65} ideal={105} max={165} text={item.content}/>*/}
                                                     </p>
-                                                    <a href="tel:9951355555">
+                                                    <a href="https://wa.me/9951355555">
                                                         <header>ENQUIRE</header>
                                                     </a>
                                                     {
@@ -359,7 +359,7 @@ export default function Biologique() {
                         buy_br_swiper.slideNext()
                     }}/>
 
-                <a href="tel:9951355555">
+                <a href="https://wa.me/9951355555">
                     <header className={styles.enquire}>ENQUIRE</header>
                 </a>
             </div>

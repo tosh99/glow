@@ -1,0 +1,24 @@
+.bookNow {
+    position: fixed;
+    right: 40px;
+    top: 50%;
+    cursor: pointer;
+    z-index: 3;
+
+    img {
+        width: 50px;
+    }
+}
+
+@media only screen and (max-width: 648px) {
+    .bookNow {
+        right: 20px;
+        top: unset;
+        bottom: 20px;
+        cursor: pointer;
+
+        img {
+            width: 35px;
+        }
+    }
+}
