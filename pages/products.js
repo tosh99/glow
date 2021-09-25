@@ -10,6 +10,7 @@ import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from 'swiper/c
 import Footer from "../shared/components/footer/footer";
 import Strip from "../shared/sections/strip/strip";
 import BackToTop from "../shared/components/back-to-top";
+import BookNow from "../shared/components/book-now";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 const strip_items = [
@@ -271,7 +272,7 @@ export default function Products() {
                         <h1 dangerouslySetInnerHTML={{__html: body_content[current_body_slide].title}}/>
                         <p>{body_content[current_body_slide].desc}</p>
                     </div>
-                    <a href="https://wa.me/9951355555">
+                    <a href="https://wa.me/9951355555" target="_blank">
                         <header className={styles.shopBody}>ENQUIRE</header>
                     </a>
                 </div>
@@ -370,7 +371,7 @@ export default function Products() {
                         })
                     }
                 </Swiper>
-                <a href="https://wa.me/9951355555">
+                <a href="https://wa.me/9951355555" target="_blank">
                     <header className={styles.enquire}>ENQUIRE</header>
                 </a>
             </div>
@@ -468,7 +469,7 @@ export default function Products() {
                                                                 </motion.div>)
                                                         }
                                                     </InView>
-                                                    <a href="https://wa.me/9951355555">
+                                                    <a href="https://wa.me/9951355555" target="_blank">
                                                         <header>ENQUIRE</header>
                                                     </a>
                                                     {
@@ -492,6 +493,7 @@ export default function Products() {
             </div>
         </div>
 
+        <BookNow/>
         <BackToTop background={'black'}/>
         <Footer/>
 

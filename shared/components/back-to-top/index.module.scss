@@ -1,7 +1,10 @@
 .backtoToTop {
-    padding-bottom: 59px;
+    padding: 30px 0;
     display: flex;
     justify-content: flex-end;
     cursor: pointer;
 
+    img {
+        width: 50px;
+    }
 }

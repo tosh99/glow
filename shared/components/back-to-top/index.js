@@ -10,10 +10,14 @@ export default function BackToTop({background = 'white'}) {
         <div className={"outer"} style={{background: background}}>
             <div className={"inner"}>
                 <section className={styles.backtoToTop} title={'Back To Top'}>
-                    <img src={'/icons/header/backtotop.svg'} onClick={backToTop}/>
+                    {
+                        background === 'white' && <img src={'/icons/header/backtotop.svg'} onClick={backToTop}/>
+                    }
+                    {
+                        background === 'black' && <img src={'/icons/header/backtotop_white.svg'} onClick={backToTop}/>
+                    }
                 </section>
             </div>
         </div>
-
     </Fragment>)
 }

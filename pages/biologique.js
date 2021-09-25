@@ -10,6 +10,7 @@ import SwiperCore, {Autoplay, Controller, Navigation, Pagination} from 'swiper/c
 import Footer from "../shared/components/footer/footer";
 import ReadMoreReact from 'read-more-react';
 import BackToTop from "../shared/components/back-to-top";
+import BookNow from "../shared/components/book-now";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 
@@ -286,7 +287,7 @@ export default function Biologique() {
                                                         {item.content}
                                                         {/*<ReadMoreReact min={65} ideal={105} max={165} text={item.content}/>*/}
                                                     </p>
-                                                    <a href="https://wa.me/9951355555">
+                                                    <a href="https://wa.me/9951355555" target="_blank">
                                                         <header>ENQUIRE</header>
                                                     </a>
                                                     {
@@ -359,13 +360,14 @@ export default function Biologique() {
                         buy_br_swiper.slideNext()
                     }}/>
 
-                <a href="https://wa.me/9951355555">
+                <a href="https://wa.me/9951355555" target="_blank">
                     <header className={styles.enquire}>ENQUIRE</header>
                 </a>
             </div>
         </div>
 
-                    <BackToTop/>
+        <BookNow/>
+        <BackToTop/>
         <Footer/>
 
     </Fragment>)

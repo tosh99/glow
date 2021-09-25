@@ -51,7 +51,7 @@
 .post {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    border-bottom: 1px solid #000000;
 
     .postLeft {
         display: flex;
@@ -90,6 +90,14 @@
     .postRight {
         width: 725px;
         padding: 80px 0;
+
+        .prSlide {
+            margin-bottom: 20px;
+
+            img {
+                width: 100%;
+            }
+        }
 
     }
 }

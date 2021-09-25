@@ -10,6 +10,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from 'swiper/core';
 import ReadMoreReact from "read-more-react";
 import BackToTop from "../shared/components/back-to-top";
+import BookNow from "../shared/components/book-now";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 
@@ -98,7 +99,7 @@ export default function About() {
                             {/*        <h2 className={styles.s4}>Active ingredients <br/>for Targeted <br/>results<br/> that are <br/>immediate and<br/> lasting.</h2>*/}
                             {/*    </SwiperSlide>*/}
                             {/*</Swiper>*/}
-                            <img src={'/images/about/aboutext.gif'} />
+                            <img src={'/images/about/aboutext.gif'}/>
                         </div>
 
 
@@ -208,6 +209,7 @@ export default function About() {
                 }
             </InView>
 
+            <BookNow/>
             <BackToTop/>
             <Footer/>
 

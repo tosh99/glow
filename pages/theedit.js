@@ -42,8 +42,16 @@ export default function TheEdit() {
                 title: 'Back <br>' + 'to Basics',
                 desc_1: 'AM Routine',
                 desc_2: 'PM Routine',
-                desc_1_images: ['/am_routine/am_1.png', '/am_routine/am_2.png', '/am_routine/am_3.png', '/am_routine/am_4.png', '/am_routine/am_5.png'],
-                desc_2_images: ['/pm_routine/pm_1.png', '/pm_routine/pm_2.png', '/pm_routine/pm_3.png', '/pm_routine/pm_4.png', '/pm_routine/pm_5.png'],
+                desc_1_images: ['am_routine/AM-06.png', 'am_routine/AM-07.png', 'am_routine/AM-08.png', 'am_routine/AM-09.png', 'am_routine/AM-10.png', 'am_routine/AM-11.png'],
+                desc_2_images: ['pm_routine/pm_1.png', 'pm_routine/pm_2.png', 'pm_routine/pm_3.png', 'pm_routine/pm_4.png', 'pm_routine/pm_5.png'],
+                selected: 1
+            },
+            {
+                title: 'Back <br>' + 'to Basics',
+                desc_1: 'AM Routine',
+                desc_2: 'PM Routine',
+                desc_1_images: ['am_routine/AM-06.png', 'am_routine/AM-07.png', 'am_routine/AM-08.png', 'am_routine/AM-09.png', 'am_routine/AM-10.png', 'am_routine/AM-11.png'],
+                desc_2_images: ['pm_routine/pm_1.png', 'pm_routine/pm_2.png', 'pm_routine/pm_3.png', 'pm_routine/pm_4.png', 'pm_routine/pm_5.png'],
                 selected: 1
             }
 
@@ -87,10 +95,12 @@ export default function TheEdit() {
                             <div className={styles.plDesc}>
                                 <header className={(post.selected === 1 ? styles.selected : '')} onClick={() => {
                                     post.selected = 1;
+                                    post.swiper.slideTo(1);
                                     set_render(prev => prev + 1)
                                 }}> {post.desc_1}</header>
                                 <header className={(post.selected === 2 ? styles.selected : '')} onClick={() => {
                                     post.selected = 2;
+                                    post.swiper.slideTo(1);
                                     set_render(prev => prev + 1)
                                 }}>{post.desc_2}</header>
                             </div>
@@ -104,11 +114,7 @@ export default function TheEdit() {
                                         set_render(prev => prev + 1)
                                     }}
                                     onSlideChange={(ev) => {
-                                        if (ev.activeIndex - 1 === 5) {
-                                            // set_current_body_slide(0)
-                                        } else {
-                                            // set_current_body_slide(ev.activeIndex - 1)
-                                        }
+
                                     }}>
                                 {
                                     (post.selected === 1 ? post.desc_1_images : post.desc_2_images).map((imgurl, index) => {
@@ -121,18 +127,23 @@ export default function TheEdit() {
                                     })
                                 }
                             </Swiper>
-                            <NextBack onBack={() => {
-                                post.swiper.slidePrev()
-                            }} onNext={() => {
-                                post.swiper.slideNext()
-                            }}/>
+                            <NextBack
+                                onBack={() => {
+                                    console.log(post.swiper)
+                                    post.swiper.slidePrev()
+                                    set_render(prev => prev + 1)
+                                }}
+                                onNext={() => {
+                                    post.swiper.slideNext()
+                                    set_render(prev => prev + 1)
+                                }}/>
                         </div>
                     </div>
                 </div>
             })
         }
 
-            <BackToTop/>
+        <BackToTop/>
         <Footer/>
 
     </Fragment>)
