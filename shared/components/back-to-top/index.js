@@ -8,8 +8,9 @@ export default function BackToTop({background = 'white'}) {
 
     return (<Fragment>
         <div className={"outer"} style={{background: background}}>
-            <div className={"inner"}>
+            <div className={"inner " + styles.inner}>
                 <section className={styles.backtoToTop} title={'Back To Top'}>
+                    <header>Back to Top</header>
                     {
                         background === 'white' && <img src={'/icons/header/backtotop.svg'} onClick={backToTop}/>
                     }

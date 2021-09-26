@@ -7,8 +7,9 @@ export default function BookNow() {
     }
 
     return (<Fragment>
-        <section className={styles.bookNow} title={'Book Now'}>
-            <img src={'/images/booknow/booknow.svg'} onClick={bookNow}/>
+        <section className={styles.bookNow} title='Book Now'>
+            <header>Book An Appointment</header>
+            <img src='/images/booknow/booknow.svg' onClick={bookNow}/>
         </section>
 
     </Fragment>)

@@ -5,6 +5,11 @@
     background-size: cover;
 }
 
+.inner {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 .banner {
     min-height: calc(100vh - 107px);
     display: flex;
@@ -28,14 +33,33 @@
         margin-bottom: 33px;
     }
 
-    h2 {
-        font-family: TelegrafUltraLight;
+    h2, h3 {
+        font-family: TelegrafUltraLight, sans-serif;
         margin-bottom: 52px;
         font-size: 20px;
         line-height: 150%;
         text-align: center;
         letter-spacing: 0.05em;
     }
+
+    h3 {
+        text-transform: uppercase;
+    }
+
+    .address {
+        display: flex;
+        justify-content: center;
+
+        button {
+            margin: 0 10px;
+            font-size: 20px;
+            text-transform: uppercase;
+            font-family: HattonMedium, sans-serif;
+            letter-spacing: 0.05em;
+        }
+    }
+
+
 }
 
 @media only screen and (max-width: 648px) {
@@ -55,6 +79,17 @@
         h2 {
             margin-bottom: 35px;
             font-size: 16px;
+        }
+
+        .address {
+            display: flex;
+            justify-content: center;
+
+            button {
+                margin: 0 5px;
+                font-size: 14px;
+                padding: 5px 10px;
+            }
         }
     }
 }

@@ -42,23 +42,37 @@ export default function TheEdit() {
                 title: 'Back <br>' + 'to Basics',
                 desc_1: 'AM Routine',
                 desc_2: 'PM Routine',
-                desc_1_images: ['am_routine/AM-06.png', 'am_routine/AM-07.png', 'am_routine/AM-08.png', 'am_routine/AM-09.png', 'am_routine/AM-10.png', 'am_routine/AM-11.png'],
-                desc_2_images: ['pm_routine/pm_1.png', 'pm_routine/pm_2.png', 'pm_routine/pm_3.png', 'pm_routine/pm_4.png', 'pm_routine/pm_5.png'],
+                desc_1_images: ['AM Routine/AM-06.png', 'AM Routine/AM-07.png', 'AM Routine/AM-08.png', 'AM Routine/AM-09.png', 'AM Routine/AM-10.png', 'AM Routine/AM-11.png'],
+                desc_2_images: ['Pm Routine/Frame 1.png', 'Pm Routine/Frame 2.png', 'Pm Routine/Frame 3.png', 'Pm Routine/Frame 4.png', 'Pm Routine/Frame 5.png', 'Pm Routine/Frame 6.png', 'Pm Routine/Frame 7.png', 'Pm Routine/Frame 8.png'],
                 selected: 1
             },
             {
-                title: 'Back <br>' + 'to Basics',
-                desc_1: 'AM Routine',
-                desc_2: 'PM Routine',
-                desc_1_images: ['am_routine/AM-06.png', 'am_routine/AM-07.png', 'am_routine/AM-08.png', 'am_routine/AM-09.png', 'am_routine/AM-10.png', 'am_routine/AM-11.png'],
-                desc_2_images: ['pm_routine/pm_1.png', 'pm_routine/pm_2.png', 'pm_routine/pm_3.png', 'pm_routine/pm_4.png', 'pm_routine/pm_5.png'],
+                title: 'Goof for <br>' + 'glow',
+                desc_1: '4 Breathing Exercises',
+                desc_2: 'cleanse beliefs',
+                desc_1_images: ['4 Breathing Exercises/ezgif 1.png', '4 Breathing Exercises/Breathing technique-57.png', '4 Breathing Exercises/Breathing technique-58.png', '4 Breathing Exercises/Breathing technique-59.png', '4 Breathing Exercises/Breathing technique-60.png'],
+                desc_2_images: ['cleanse beliefs/Artboard 40 copy 2 1.png', 'cleanse beliefs/ways to cleanse belief-45.png', 'cleanse beliefs/ways to cleanse belief-47.png', 'cleanse beliefs/ways to cleanse belief-48.png', 'cleanse beliefs/ways to cleanse belief-49.png'],
+                selected: 1
+            },
+             {
+                title: 'Glow <br>' + 'Glossary',
+                desc_1: 'Niacinamide',
+                desc_2: 'Azelaic Acid',
+                desc_1_images: ['Niacinamide/Niacinamide-01.png', 'Niacinamide/Niacinamide-02.png', 'Niacinamide/Niacinamide-03.png', 'Niacinamide/Niacinamide-04.png', 'Niacinamide/Niacinamide-05.png'],
+                desc_2_images: ['Azelaic Acid/Group 718.png', 'Azelaic Acid/Group 717.png', 'Azelaic Acid/Artboard 2 copy.png', 'Azelaic Acid/Artboard 3 copy.png', 'Azelaic Acid/Artboard 4 copy.png'],
+                selected: 1
+            },
+             {
+                title: 'In the <br>' + 'Spotlight',
+                desc_1: 'Sunscreens Part I',
+                desc_2: 'Sunscreens Part II',
+                desc_1_images: ['Sunscreens1/Sunscreen1-42.png', 'Sunscreens1/Sunscreen1-26.png', 'Sunscreens1/Sunscreen1-27.png', 'Sunscreens1/Sunscreen1-28.png', 'Sunscreens1/Sunscreen1-29.png', 'Sunscreens1/Sunscreen1-30.png', 'Sunscreens1/Sunscreen1-31.png', 'Sunscreens1/Sunscreen1-32.png', 'Sunscreens1/Sunscreen1-33.png'],
+                desc_2_images: ['Sunscreen2/sunscreens2-43.png', 'Sunscreen2/pm_2.png', 'Sunscreen2/pm_3.png', 'Sunscreen2/pm_4.png', 'Sunscreen2/pm_5.png'],
                 selected: 1
             }
 
 
         ])
-
-
     }, [])
 
 
@@ -107,7 +121,6 @@ export default function TheEdit() {
                         </div>
                         <div className={styles.postRight}>
                             <Swiper slidesPerView={1}
-                                    loop={true}
                                     speed={1800}
                                     onInit={(ev) => {
                                         post.swiper = ev;

@@ -1,5 +1,6 @@
 .editBannerOuter {
-    background: rgba(238, 234, 221, 0.9);;
+    background: rgba(238, 234, 221, 0.9);
+    border-bottom: 1px solid #000000;
 }
 
 .editBanner {
@@ -44,14 +45,16 @@
 }
 
 .postOuter {
-    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
 
+.postOuter:first-of-type {
+    color: red
 }
 
 .post {
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid #000000;
 
     .postLeft {
         display: flex;
@@ -59,7 +62,7 @@
         justify-content: space-between;
         margin-right: 80px;
         border-right: 1px solid #000000;
-        padding: 80px 0;
+        padding: 80px 60px;
 
         .plTitle {
             width: 362px;
@@ -120,6 +123,10 @@
             .imgLeft {
                 margin-right: 0;
                 margin-bottom: 35px;
+
+                p {
+                    line-height: 153%;
+                }
             }
 
             .imgRight {
@@ -130,7 +137,7 @@
                 }
 
                 p {
-                    max-width: 663px;
+                    max-width: 100%;
                     font-size: 18px;
                     margin-bottom: 60px;
                 }
@@ -160,12 +167,10 @@
             padding: 35px 0;
 
             .plTitle {
-                width: 362px;
-                font-size: 120px;
+                width: 100%;
+                font-size: 64px;
                 line-height: 100%;
-                letter-spacing: 0.1em;
-                text-transform: uppercase;
-                font-family: EmpireBold, sans-serif;
+                margin-bottom: 35px;
             }
 
             .plDesc {
@@ -173,17 +178,13 @@
                     font-family: TelegrafRegular, sans-serif;
                     text-transform: uppercase;
                     line-height: 120%;
-                }
-
-                header:first-of-type {
-                    font-size: 25px;
+                    font-size: 20px;
                     letter-spacing: 0.1em;
-                    font-weight: bold;
                 }
 
-                header:last-of-type {
-                    font-size: 24px;
-                    letter-spacing: 0.05em;
+                .selected {
+                    font-size: 22px;
+                    font-weight: bold;
                 }
             }
         }
