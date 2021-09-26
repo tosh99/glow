@@ -11,6 +11,7 @@ import Footer from "../shared/components/footer/footer";
 import Strip from "../shared/sections/strip/strip";
 import BackToTop from "../shared/components/back-to-top";
 import BookNow from "../shared/components/book-now";
+import Dots from "../shared/components/dots";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 const strip_items = [
@@ -308,11 +309,14 @@ export default function Products() {
                         }
                     </Swiper>
                     <div className={styles.nextBack}>
-                        <NextBack onBack={() => {
-                            body_swiper.slidePrev()
-                        }} onNext={() => {
-                            body_swiper.slideNext()
-                        }}/>
+                        <Dots count={body_content.length} selected={current_body_slide}/>
+                        <NextBack
+                            onBack={() => {
+                                body_swiper.slidePrev()
+                            }}
+                            onNext={() => {
+                                body_swiper.slideNext()
+                            }}/>
                     </div>
                     <div className={styles.bodyContent}>
                         <p>{body_content[current_body_slide].desc}</p>

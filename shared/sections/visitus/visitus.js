@@ -5,6 +5,7 @@ import {Fragment, useEffect, useState} from "react";
 import NextBack from "../../components/nextback/nextback";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, Navigation, Pagination} from 'swiper/core';
+import Dots from "../../components/dots";
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
@@ -32,6 +33,15 @@ export default function Visitus() {
     const goToAddress = () => {
         window.open(locations[current_slide].link);
     }
+
+    const [device, set_device] = useState(2);
+    useEffect(() => {
+        if (screen.width <= 648) {
+            set_device(0)
+        }
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }, [])
 
 
     return (<Fragment>
@@ -76,7 +86,7 @@ export default function Visitus() {
                                 <div className={styles.vuaLeft}>
                                     <h3>{locations[current_slide].title} </h3>
                                     <header>
-                                        <span dangerouslySetInnerHTML={{__html: locations[current_slide].address}} />
+                                        <span dangerouslySetInnerHTML={{__html: locations[current_slide].address}}/>
                                         <br/><br/>
                                         {locations[current_slide].phone.map((item, index) => {
                                             return <a href={"tel:" + item}>
@@ -87,6 +97,9 @@ export default function Visitus() {
                                     </header>
                                 </div>
                                 <div className={styles.vuaRight}>
+                                    <div className={styles.dts}>
+                                        <Dots count={2} selected={current_slide} selectedColor={'white'} bgColor={'#D3D3D37F'}/>
+                                    </div>
                                     <NextBack
                                         theme={'light'}
                                         prevDisabled={current_slide === 0}

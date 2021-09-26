@@ -34,6 +34,16 @@
             color: #757575;
             transition: 0.4s;
         }
+
+        .vuhRight {
+            display: flex;
+            align-items: center;
+
+            .dts {
+                margin-right: 54px;
+            }
+
+        }
     }
 
     .vuMap {
@@ -116,6 +126,15 @@
 
             h2 {
                 font-size: 60px;
+            }
+
+            .vuhRight {
+                margin-bottom: 9px;
+
+                .dts {
+                    display: none;
+                }
+
             }
         }
 

@@ -52,6 +52,7 @@
     .vuAddress {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
 
         .vuaLeft {
             font-family: HattonRegular, sans-serif;
@@ -72,6 +73,15 @@
 
             .phone {
                 margin-bottom: 3px;
+            }
+        }
+
+        .vuaRight {
+            display: flex;
+            align-items: center;
+
+            .dts {
+                margin-right: 54px;
             }
         }
     }
@@ -123,6 +133,10 @@
 
             .vuaRight {
                 padding-top: 10px;
+
+                .dts {
+                    display: none;
+                }
             }
         }
 

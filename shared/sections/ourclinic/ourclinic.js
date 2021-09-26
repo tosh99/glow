@@ -5,6 +5,7 @@ import {Fragment, useEffect, useState} from "react";
 import NextBack from "../../components/nextback/nextback";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, Navigation, Pagination} from 'swiper/core';
+import Dots from "../../components/dots";
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
@@ -47,16 +48,23 @@ export default function Ourclinic() {
                         <div className={"inner " + styles.visitUs}>
                             <div className={styles.vuHeader}>
                                 <h2>our Clinics</h2>
-                                <NextBack
-                                    theme={'light'}
-                                    prevDisabled={current_slide === 0}
-                                    nextDisabled={current_slide === 1}
-                                    onBack={() => {
-                                        clinic_swiper.slidePrev()
-                                    }}
-                                    onNext={() => {
-                                        clinic_swiper.slideNext()
-                                    }}/>
+
+                                <div className={styles.vuhRight}>
+                                    <div className={styles.dts}>
+                                        <Dots count={2} selected={current_slide} selectedColor={'white'} bgColor={'#D3D3D37F'}/>
+                                    </div>
+                                    <NextBack
+                                        theme={'light'}
+                                        prevDisabled={current_slide === 0}
+                                        nextDisabled={current_slide === 1}
+                                        onBack={() => {
+                                            clinic_swiper.slidePrev()
+                                        }}
+                                        onNext={() => {
+                                            clinic_swiper.slideNext()
+                                        }}/>
+                                </div>
+
                             </div>
                             <div className={styles.vuMap}>
                                 <Swiper slidesPerView={1}

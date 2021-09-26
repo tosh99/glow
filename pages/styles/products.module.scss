@@ -74,6 +74,12 @@
         .shopBody {
             display: none;
         }
+
+        .nextBack {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
     }
 }
 
@@ -373,7 +379,7 @@
             width: 100%;
 
             .sectionTitle {
-               display: none;
+                display: none;
             }
 
             .slide {
@@ -398,7 +404,9 @@
             }
 
             .nextBack {
-
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
             }
 
             .shopBody {
