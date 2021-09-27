@@ -54,7 +54,7 @@ export default function TheEdit() {
                 desc_2_images: ['cleanse beliefs/Artboard 40 copy 2 1.png', 'cleanse beliefs/ways to cleanse belief-45.png', 'cleanse beliefs/ways to cleanse belief-47.png', 'cleanse beliefs/ways to cleanse belief-48.png', 'cleanse beliefs/ways to cleanse belief-49.png'],
                 selected: 1
             },
-             {
+            {
                 title: 'Glow <br>' + 'Glossary',
                 desc_1: 'Niacinamide',
                 desc_2: 'Azelaic Acid',
@@ -62,12 +62,12 @@ export default function TheEdit() {
                 desc_2_images: ['Azelaic Acid/Group 718.png', 'Azelaic Acid/Group 717.png', 'Azelaic Acid/Artboard 2 copy.png', 'Azelaic Acid/Artboard 3 copy.png', 'Azelaic Acid/Artboard 4 copy.png'],
                 selected: 1
             },
-             {
+            {
                 title: 'In the <br>' + 'Spotlight',
                 desc_1: 'Sunscreens Part I',
                 desc_2: 'Sunscreens Part II',
-                desc_1_images: ['Sunscreens1/Sunscreen1-42.png', 'Sunscreens1/Sunscreen1-26.png', 'Sunscreens1/Sunscreen1-27.png', 'Sunscreens1/Sunscreen1-28.png', 'Sunscreens1/Sunscreen1-29.png', 'Sunscreens1/Sunscreen1-30.png', 'Sunscreens1/Sunscreen1-31.png', 'Sunscreens1/Sunscreen1-32.png', 'Sunscreens1/Sunscreen1-33.png'],
-                desc_2_images: ['Sunscreen2/sunscreens2-43.png', 'Sunscreen2/pm_2.png', 'Sunscreen2/pm_3.png', 'Sunscreen2/pm_4.png', 'Sunscreen2/pm_5.png'],
+                desc_1_images: ['Sunscreens1/Sunscreen1-42.png', 'Sunscreens1/Sunscreens-26.png', 'Sunscreens1/Sunscreens-27.png', 'Sunscreens1/Sunscreens-28.png', 'Sunscreens1/Sunscreens-29.png', 'Sunscreens1/Sunscreens-30.png', 'Sunscreens1/Sunscreens-31.png', 'Sunscreens1/Sunscreens-32.png', 'Sunscreens1/Sunscreens-33.png'],
+                desc_2_images: ['Sunscreen2/sunscreens2-43.png', 'Sunscreen2/sunscreens2-34.png', 'Sunscreen2/Artboard 6 copy 29.png', 'Sunscreen2/Artboard 6 copy 28.png', 'Sunscreen2/Artboard 6 copy 27.png', 'Sunscreen2/Artboard 6 copy 26.png', 'Sunscreen2/sunscreens2-35.png', 'Sunscreen2/sunscreens2-36.png', 'Sunscreen2/sunscreens2-37.png', 'Sunscreen2/Artboard 6 copy 31.png'],
                 selected: 1
             }
 
@@ -109,12 +109,20 @@ export default function TheEdit() {
                             <div className={styles.plDesc}>
                                 <header className={(post.selected === 1 ? styles.selected : '')} onClick={() => {
                                     post.selected = 1;
-                                    post.swiper.slideTo(1);
+                                    if (post.swiper) {
+                                        post.swiper.slideTo(0)
+                                        set_render(prev => prev + 1)
+                                    }
                                     set_render(prev => prev + 1)
                                 }}> {post.desc_1}</header>
                                 <header className={(post.selected === 2 ? styles.selected : '')} onClick={() => {
                                     post.selected = 2;
-                                    post.swiper.slideTo(1);
+
+                                    if (post.swiper) {
+                                        post.swiper.slideTo(0)
+                                        set_render(prev => prev + 1)
+                                    }
+
                                     set_render(prev => prev + 1)
                                 }}>{post.desc_2}</header>
                             </div>
@@ -142,13 +150,17 @@ export default function TheEdit() {
                             </Swiper>
                             <NextBack
                                 onBack={() => {
-                                    console.log(post.swiper)
-                                    post.swiper.slidePrev()
-                                    set_render(prev => prev + 1)
+                                    if (post.swiper) {
+                                        post.swiper.slidePrev()
+                                        set_render(prev => prev + 1)
+                                    }
+
                                 }}
                                 onNext={() => {
-                                    post.swiper.slideNext()
-                                    set_render(prev => prev + 1)
+                                    if (post.swiper) {
+                                        post.swiper.slideNext()
+                                        set_render(prev => prev + 1)
+                                    }
                                 }}/>
                         </div>
                     </div>
