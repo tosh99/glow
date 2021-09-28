@@ -194,8 +194,9 @@
         .joTop {
             .jotLeft {
                 width: 100%;
-                max-width: 690px;
-                border-bottom: 1px solid black;
+                max-width: unset;
+                border-bottom: none;
+                margin-bottom: 20px;
 
                 h2 {
                     font-size: 65px;
