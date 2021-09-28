@@ -31,6 +31,11 @@ const testimonials = [
         desc: 'It would be an understatement if I said that dr. Varshini has changed my life. I was always always worried about my skin and even after trying so many high brand stuff and spending loads of money, I never got the results I was after. After online consultation with dr. Varshini and starting with all the products and routine suggested, I have the skin of my dreams!! All my major concerns: acne, acne scars, uneven and dull skin tone: everything was taken care of by the products recommended.\n' +
             'The best part about glow clinic is one can have online consultations and dr. Varshini patiently listens to all your worries and explains everything. Makes you understand why a product is to be used. \n' +
             'Thank you doctor for being so patient and kind and helping me have the skin I have always longed for. So lucky to have you!!'
+    },
+    {
+        title: 'Madhuri Reddy',
+        date: 'SEP 09, 2021',
+        desc: 'My experience with Glo Clinic was very unique and wonderful. The ambience of the clinic and is very relaxing and soothing. Dr Varshini is very patient and listened and examined all of my issues before recommending the required treatment which has completely changed my skin.'
     }
 ]
 

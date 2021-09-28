@@ -9,6 +9,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import NextBack from "../shared/components/nextback/nextback";
 import BackToTop from "../shared/components/back-to-top";
 import Dots from "../shared/components/dots";
+import BookNow from "../shared/components/book-now";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 
@@ -49,7 +50,7 @@ export default function TheEdit() {
                 currentslide: 0
             },
             {
-                title: 'Goof for <br>' + 'glow',
+                title: 'Good for <br>' + 'glow',
                 desc_1: '4 Breathing Exercises',
                 desc_2: 'cleanse beliefs',
                 desc_1_images: ['4 Breathing Exercises/ezgif 1.png', '4 Breathing Exercises/Breathing technique-57.png', '4 Breathing Exercises/Breathing technique-58.png', '4 Breathing Exercises/Breathing technique-59.png', '4 Breathing Exercises/Breathing technique-60.png'],
@@ -185,6 +186,7 @@ export default function TheEdit() {
             })
         }
 
+        <BookNow/>
         <BackToTop/>
         <Footer/>
 

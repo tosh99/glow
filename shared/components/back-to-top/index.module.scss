@@ -33,7 +33,6 @@
     }
 }
 
-
 .backtoToTop:hover {
     width: 180px;
     transition: 0.4s;
@@ -49,5 +48,12 @@
 
     header {
         color: white;
+    }
+}
+
+
+@media only screen and (max-width: 648px) {
+    .backtoToTopOuter {
+        display: none;
     }
 }

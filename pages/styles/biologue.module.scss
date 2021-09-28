@@ -192,6 +192,13 @@
                 font-size: 18px;
             }
         }
+
+        .readMore {
+            font-family: OggItalic, sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
     }
 
     .metRight {
@@ -304,6 +311,7 @@
 
         .title {
             left: -150px;
+            bottom: 104px;
         }
 
         .prevImg {
@@ -436,13 +444,14 @@
 
 @media only screen and (max-width: 648px) {
     .skinCare {
-        padding: 50px 0;
+        padding: 50px 35px !important;
 
         h1 {
             position: relative;
             margin-bottom: 20px;
             font-size: 80px;
             line-height: 80px;
+            padding: 0 !important;
         }
 
         .img {

@@ -84,6 +84,7 @@ export default function Biologique() {
     const [buy_br_swiper, set_buy_br_swiper] = useState({});
 
     const [device, set_device] = useState(2);
+    const [render, set_render] = useState(1);
 
     useEffect(() => {
         if (screen.width <= 648) {
@@ -172,9 +173,23 @@ export default function Biologique() {
                                             </div>
                                         </div>
                                         <h2>{item.title}</h2>
-                                        <div className={styles.mlDesc} dangerouslySetInnerHTML={{__html: item.desc}}>
-                                            {/*<ReadMoreReact min={150} ideal={220} max={250} text={item.desc}/>*/}
-                                        </div>
+                                        {
+                                            device !== 0 && <div className={styles.mlDesc} dangerouslySetInnerHTML={{__html: item.desc}}>
+                                            </div>
+                                        }
+                                        {
+                                            device === 0 && <>
+                                                <div className={styles.mlDesc} dangerouslySetInnerHTML={{__html: item.desc.slice(0, item.read_more ? 1800 : 250)}}>
+                                                </div>
+                                                {
+                                                    !item.read_more && <header className={styles.readMore} onClick={() => {
+                                                        item.read_more = true;
+                                                        set_render(prev => prev + 1);
+                                                    }}>Read More
+                                                    </header>
+                                                }
+                                            </>
+                                        }
                                     </div>
                                     <div className={styles.metRight}>
                                         <img src={'/images/biologue/methodology/' + (index + 1) + '.png'}/>

@@ -63,7 +63,6 @@
             line-height: 149.8%;
             letter-spacing: 0.1px;
         }
-
     }
 }
 
@@ -175,6 +174,8 @@
     .clientTestimonialsOuter {
         .ctContent {
             padding: 35px;
+            min-height: 520px;
+            border: none;
         }
     }
 

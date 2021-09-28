@@ -27,6 +27,10 @@ export default function Footer() {
                 <div className={styles.footerTop}>
                     <div className={styles.ftLeft}>
                         <img src={'/icons/header/logo_footer.svg'}/>
+                        <section className={styles.backtoToTop + ' ' + styles.backtoToTopBlack} title={'Back To Top'}>
+                            <header>Back to Top</header>
+                            <img src={'/icons/header/backtotop_white.svg'} onClick={backToTop}/>
+                        </section>
                         {/*<header onClick={backToTop}>Back to Top</header>*/}
                     </div>
                     <div className={styles.ftRight}>

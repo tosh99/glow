@@ -121,7 +121,7 @@ export default function Home() {
                 <div className={"inner " + styles.skinCare}>
                     <h1>Experience a new <br/> kind of skincare <br/> indulgence</h1>
                     <div className={styles.img}>
-                        <div>&nbsp;</div>
+                        <div className={styles.blankSpace}>&nbsp;</div>
                         <div className={styles.imgRight}>
                             <div>
                                 <img src={'/images/home/banner.gif'}/>
@@ -309,6 +309,20 @@ export default function Home() {
                                                             </div>
                                                         }
                                                     </div>
+                                                    {
+                                                        device === 0 && <InView threshold={0}>
+                                                            {
+                                                                ({ref, inView}) => (
+                                                                    <motion.div className={styles.titleM}
+                                                                                ref={ref}
+                                                                                initial={{opacity: 0}}
+                                                                                animate={inView ? {opacity: 1} : {opacity: 0}}
+                                                                                transition={{duration: 0.7}}>
+                                                                        {item.title}
+                                                                    </motion.div>)
+                                                            }
+                                                        </InView>
+                                                    }
                                                 </>
                                             }
                                             <img
@@ -350,20 +364,6 @@ export default function Home() {
                                                         <a href={item.url}>
                                                             <header>Discover More</header>
                                                         </a>
-                                                        {
-                                                            device === 0 && <InView threshold={0}>
-                                                                {
-                                                                    ({ref, inView}) => (
-                                                                        <motion.div className={styles.titleM}
-                                                                                    ref={ref}
-                                                                                    initial={{opacity: 0}}
-                                                                                    animate={inView ? {opacity: 1} : {opacity: 0}}
-                                                                                    transition={{duration: 0.7}}>
-                                                                            {item.title}
-                                                                        </motion.div>)
-                                                                }
-                                                            </InView>
-                                                        }
                                                         {
                                                             device !== 0 &&
                                                             <NextBack

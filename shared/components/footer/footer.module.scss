@@ -24,6 +24,54 @@
                 font-size: 14px;
                 text-transform: uppercase;
             }
+
+            .backtoToTop {
+                cursor: pointer;
+                width: 50px;
+                display: none;
+                align-items: center;
+                justify-content: flex-end;
+                overflow-x: hidden;
+                transition: 0.4s;
+                height: 50px;
+                padding: 0 5px;
+                border-radius: 35px;
+                border: 1px solid;
+
+
+                img {
+                    min-width: 22px;
+                    width: 22px;
+                    margin-right: 7px;
+                }
+
+                header {
+                    display: none;
+                    white-space: nowrap;
+                    padding-right: 15px;
+                    font-family: HattonRegular, sans-serif;
+                    margin-top: 4px;
+                    text-transform: uppercase;
+                }
+            }
+
+            .backtoToTop:hover {
+                width: 180px;
+                transition: 0.4s;
+                border-radius: 35px;
+
+                header {
+                    display: block;
+                }
+            }
+
+            .backtoToTopBlack {
+                border: 1px solid white;
+
+                header {
+                    color: white;
+                }
+            }
         }
 
         .ftRight {
@@ -226,7 +274,7 @@
 
             .ftLeft {
                 margin-bottom: 17px;
-                padding: 0 35px;
+                padding: 0 20px 0 35px;
 
                 header {
                     display: flex;
@@ -234,6 +282,10 @@
 
                 img {
                     width: 60px;
+                }
+
+                .backtoToTop{
+                    display: flex;
                 }
             }
 

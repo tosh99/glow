@@ -98,7 +98,7 @@
         }
 
         header {
-            font-family: OggItalic;
+            font-family: OggItalic, sans-serif;
             font-size: 20px;
             cursor: pointer;
         }
@@ -561,34 +561,47 @@
 
 
 @media only screen and (max-width: 648px) {
-    .skinCare {
-        padding: 50px 0;
+    .skinCareOuter {
+        .skinCare {
+            padding: 0;
 
-        h1 {
-            font-size: 65px;
-            margin-left: 3px;
-            width: 100%;
-            margin-top: -6px;
-        }
+            h1 {
+                font-size: 65px;
+                margin-left: 3px;
+                width: 100%;
+                margin-top: -6px;
+                padding: 35px;
+            }
 
-        .img {
-            margin-bottom: 0;
+            .img {
+                margin-bottom: 0;
 
-            .imgRight {
-                div {
-                    margin-bottom: 50px;
-
-                    img {
-                        width: 100%;
-                    }
+                .blankSpace {
+                    display: none;
                 }
 
-                .reju {
-                    margin-bottom: 0;
+                .imgRight {
+                    div {
+                        margin-bottom: 30px;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    p {
+                        padding: 20px 35px;
+                        margin-bottom: 30px;
+                    }
+
+                    .reju {
+                        margin-bottom: 0;
+                    }
                 }
             }
         }
     }
+
 
     .skinCarePhil {
         flex-direction: column;
