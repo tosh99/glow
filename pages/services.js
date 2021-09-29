@@ -18,10 +18,10 @@ export default function Home() {
                         We are currently curating our services menu so do check back.</h2>
                     <h3>To see what services are available in our clinics in Hyderabad & Chennai, message us on WhatsApp to know more.</h3>
                     <div className={styles.address}>
-                        <a href={'https://wa.me/9677292429'} target={'_blank'}>
+                        <a href={'https://wa.me/9951355555'} target={'_blank'}>
                             <button>Glow Hyderabad</button>
                         </a>
-                        <a href={'https://wa.me/9951355555'} target={'_blank'}>
+                        <a href={'https://wa.me/9160655555'} target={'_blank'}>
                             <button>Glow Chennai</button>
                         </a>
                     </div>
