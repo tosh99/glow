@@ -1,4 +1,4 @@
-@import 'index.module.scss';
+@import 'pages/styles/index.module';
 
 .advocacyOuter {
     background: #EEEADD;
@@ -36,7 +36,7 @@
         border-left: 1px solid #000000;
         padding: 90px;
         border-bottom: 1px solid black;
-        min-height: 660px;
+        min-height: 790px;
         margin-bottom: 50px;
 
         header {
@@ -131,6 +131,12 @@
             margin-right: 0;
         }
     }
+}
+
+.bannerOuter {
+    background: url("../../public/images/about/banner.png") no-repeat;
+    background-size: cover;
+    height: 500px;
 }
 
 @media only screen and (max-width: 1280px) {

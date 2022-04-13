@@ -84,7 +84,6 @@
 }
 
 .productDescOuter {
-    border-bottom: 1px solid black;
 }
 
 .productDesc {
@@ -103,7 +102,7 @@
 }
 
 .currentFavourites {
-    padding: 120px 0 0;
+    padding: 120px 0;
 
     .cfHeader {
         display: flex;
@@ -147,6 +146,7 @@
 }
 
 .shopMyShelfieOuter {
+    border-bottom: 1px solid black;
 
 }
 
@@ -194,6 +194,17 @@
 
 .sliders {
     border-bottom: 1px solid #444444;
+
+    .sliderTitle {
+        font-family: SaolRegular, sans-serif;
+        font-weight: 400;
+        font-size: 54px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: white;
+        margin-bottom: 145px;
+        padding: 0 100px;
+    }
 
     .slide {
         min-width: 800px;

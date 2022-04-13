@@ -1,16 +1,16 @@
 import {Fragment, useEffect, useState} from "react";
-import styles from "./styles/about.module.scss";
+import styles from "./about.module.scss";
 import {InView} from "react-intersection-observer";
 import {motion} from "framer-motion";
-import Ourclinic from "../shared/sections/ourclinic/ourclinic";
-import PageHeader from "../shared/components/page-header/page-header";
-import Footer from "../shared/components/footer/footer";
-import NextBack from "../shared/components/nextback/nextback";
+import Ourclinic from "../../shared/sections/ourclinic/ourclinic";
+import PageHeader from "../../shared/components/page-header/page-header";
+import Footer from "../../shared/components/footer/footer";
+import NextBack from "../../shared/components/nextback/nextback";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from 'swiper/core';
 import ReadMoreReact from "read-more-react";
-import BackToTop from "../shared/components/back-to-top";
-import BookNow from "../shared/components/book-now";
+import BackToTop from "../../shared/components/back-to-top";
+import BookNow from "../../shared/components/book-now";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 
@@ -28,14 +28,22 @@ const testimonials = [
     {
         title: 'Shilpa nagral',
         date: 'APR 26, 2021',
-        desc: 'It would be an understatement if I said that dr. Varshini has changed my life. I was always always worried about my skin and even after trying so many high brand stuff and spending loads of money, I never got the results I was after. After online consultation with dr. Varshini and starting with all the products and routine suggested, I have the skin of my dreams!! All my major concerns: acne, acne scars, uneven and dull skin tone: everything was taken care of by the products recommended.\n' +
-            'The best part about glow clinic is one can have online consultations and dr. Varshini patiently listens to all your worries and explains everything. Makes you understand why a product is to be used. \n' +
-            'Thank you doctor for being so patient and kind and helping me have the skin I have always longed for. So lucky to have you!!'
+        desc: 'It would be an understatement if I said that Dr. Varshini has changed my life. I was always always worried about my skin and even after trying so many high brand stuff and spending loads of money, I never got the results I was after. After online consultation with Dr. Varshini and starting with all the products and routine suggested, I have the skin of my dreams!! All my major concerns : acne, acne scars, uneven and dull skin tone; everything was taken care of by the products recommended. The best part about Glow Clinic is one can have online consultations and Dr. Varshini patiently listens to all your worries and explains everything. Makes you understand why a product is to be used. Thank you doctor for being so patient and kind and helping me have the skin I have always longed for. So lucky to have you!!'
+    },
+    {
+        title: 'Komal agarwal',
+        date: 'APR 26, 2021',
+        desc: 'So, for me skin care was only about a good night cream!! Thank you to Glow for changing my entire perspective. I learnt to layer all my products make a proper skin care regime and this has really really changed my skin for much better and everything online (which is so amazing) .Thank you Dr. Varshini for being the most patient doctor. You always made sure to clear all my doubts and suggesting the best!! I am looking forward to seeing you in person and literally waiting to start with your treatments. Lots of love'
     },
     {
         title: 'Madhuri Reddy',
         date: 'SEP 09, 2021',
         desc: 'My experience with Glo Clinic was very unique and wonderful. The ambience of the clinic and is very relaxing and soothing. Dr Varshini is very patient and listened and examined all of my issues before recommending the required treatment which has completely changed my skin.'
+    },
+    {
+        title: 'Akila Raju',
+        date: 'SEP 09, 2021',
+        desc: '’ve been going to Dr. Varshini for my skincare needs from before she opened Glow. There’s no better ambassador for what a solid and consistent skincare routine can do for you than Dr. Varshini herself :blush:.Before I started on my BR journey with Glow - I used to hide under layers of makeup. I would change my skincare routine every few weeks based on a random Instagram post by some beauty editor, influencer or magazine list. It was when my skin had a bad reaction to one of my these experiments that I decided I needed to completely overhaul my approach.I now own a drawer full of foundations that I barely use. Today my skin is at a place where I don’t feel the need to use makeup on a daily basis. It’s even, glowy and hydrated.I see Dr. Varshini regularly and she takes the time to listen to my concerns and gives me a simple skincare regimen that’s easy to follow. She patiently takes me through how to use each product.I’m glad Hyderabad has a state of the art full service skincare clinic and I’m excited to try the many treatments Glow has to offer.'
     }
 ]
 
@@ -121,14 +129,17 @@ export default function About() {
                                 Varshini Reddy wanted to bring the best of those to India. Her journey has been exciting and full of new
                                 learnings which took her from being a skincare enthusiast to a practicing dermatologist.
                                 <br/><br/>
-                                She has consulted with many people over the course of years and has distinguished herself as an advocate for wholesome rejuvenation. With an established and ever-growing clientbase she has extended her
+                                She has consulted with many people over the course of years and has distinguished herself as an advocate for wholesome rejuvenation. With an established and ever-growing clientbase she has
+                                extended her
                                 platform to a larger audience and opened doors to Glow, a contemporary space for skin indulgence.
                                 <br/><br/>
                                 {
                                     showMore && <>
-                                        With our boutique studios set up in Hyderabad and Chennai, Dr. Varshini specialises in prescriptive treatments that are hyper-personalised. Providing opportunities to enhance your beauty regime by
+                                        With our boutique studios set up in Hyderabad and Chennai, Dr. Varshini specialises in prescriptive treatments that are hyper-personalised. Providing opportunities to enhance your
+                                        beauty regime by
                                         making
-                                        available, globally revered brands and technologies. Featuring some of the most sought-after facials to some of the best technologically assisted services, Glow is your one stop shop for all things
+                                        available, globally revered brands and technologies. Featuring some of the most sought-after facials to some of the best technologically assisted services, Glow is your one stop
+                                        shop for all things
                                         skincare,
                                         beauty and wellness.
                                         <br/><br/>
@@ -147,7 +158,9 @@ export default function About() {
                 </div>
             </div>
 
-            <Ourclinic/>
+
+            <div className={"outer " + styles.bannerOuter}>
+            </div>
 
             <InView threshold={0.25} triggerOnce={true}>
                 {
@@ -194,7 +207,7 @@ export default function About() {
                                         return (<SwiperSlide>
                                                 <div className={styles.ctContent}>
                                                     <header>{item.title}</header>
-                                                    <p className={styles.date}>{item.date}</p>
+                                                    {/*<p className={styles.date}>{item.date}</p>*/}
 
                                                     <div className={styles.desc}>
                                                         {
@@ -213,6 +226,8 @@ export default function About() {
                         </motion.div>)
                 }
             </InView>
+
+            <Ourclinic/>
 
             <BookNow/>
             <BackToTop/>

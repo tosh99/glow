@@ -70,6 +70,11 @@ export default function Home() {
             title: 'Tools',
             content: 'For at-home facials and upkeep, we have a range of some of the most innovative technology that will work on a deeper level for that glow from within. Prep, prime and polish your skin with these must-try tools. Starting from easy-to-use to high-tech devices, we have a variety of tools that will enhance your at home beauty regime.',
             url: '/products#tools'
+        },
+        {
+            title: 'Wellness',
+            content: 'Start your journey towards self-care with a few suggestions from Dr. Varshini’s favourite ways to unwind, sit back and relax. We all need some pampering and pick-me-ups along the way.',
+            url: '/products#wellness'
         }
     ];
 
@@ -244,7 +249,8 @@ export default function Home() {
                 <div className={styles.sliders}>
                     <p className={styles.desc}>
                         After a lot of deliberation we have curated a
-                        wide range of products that are available to you 24 x 7 on our online boutique <span onClick={gotoShop}>glow.shop</span>. You can also purchase them in-store with the assistance of our skincare experts or
+                        wide range of products that are available to you 24 x 7 on our online boutique <span onClick={gotoShop}>glow.shop</span>. You can also purchase them in-store with the assistance of our skincare
+                        experts or
                         even place an order for curbside pick-up. These products are tried and tested cult favourites and made
                         with innovative formulations to offer you an everlasting glow and help you on your skincare, beauty and wellness
                         journey.
@@ -259,13 +265,14 @@ export default function Home() {
                             speed={1800}
                             spaceBetween={100}
                             onSlideChange={(ev) => {
-                                if (ev.activeIndex === 10) {
+                                console.log(ev.activeIndex)
+                                if (ev.activeIndex === 12) {
                                     set_current_slide(0)
 
-                                } else if (ev.activeIndex - 5 === -1) {
-                                    set_current_slide(4)
+                                } else if (ev.activeIndex - 6 === -1) {
+                                    set_current_slide(6)
                                 } else {
-                                    set_current_slide(ev.activeIndex - 5)
+                                    set_current_slide(ev.activeIndex - 6)
                                 }
                             }}>
                         {
@@ -301,7 +308,7 @@ export default function Home() {
                                                                             onClick={(ev) => {
                                                                                 ev.stopPropagation();
                                                                                 set_current_slide(cindex);
-                                                                                slider.slideTo(cindex + 5);
+                                                                                slider.slideTo(cindex + 6);
                                                                             }}
                                                                             className={styles.item}>{citem.title}</header>
                                                                     })

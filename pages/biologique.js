@@ -11,6 +11,7 @@ import Footer from "../shared/components/footer/footer";
 import ReadMoreReact from 'read-more-react';
 import BackToTop from "../shared/components/back-to-top";
 import BookNow from "../shared/components/book-now";
+import Link from "next/link";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 
@@ -21,9 +22,7 @@ const methodologies = [
             '<span>Skin Instant©</span> Lab system and includes a visual analysis, ' +
             'a questionnaire, and the taking of measurements, to allow a treatment protocol to be devised that precisely matches your needs.' +
             ' The sophisticated technique of <span>VisioLab©</span> gives even more finely tuned results, thanks to a high definition image and scientific analysis ' +
-            'of your face. Their latest addition to technological assessment systems is ' +
-            'My Beauty DNA, which analyses your skin for 14 markers relating to ageing, sensitivity to sunlight and environmental factors, ' +
-            'and your cutaneous profile, giving an overview of your genetic predisposition.' +
+            'of your face.' +
             '<br><br>' +
             '<span>Glow is the first space in India to offer these high-tech skin analysis systems.</span>'
     },
@@ -38,34 +37,31 @@ const methodologies = [
 ]
 const buy_br = [
     {
-        title: 'For Face',
+        title: 'Face',
         img_url: 'face.png',
-        img_mobile_url: 'face_mobile.png'
     },
     {
-        title: 'For Hair',
+        title: 'Hair',
         img_url: 'hair.png',
-        img_mobile_url: 'hair_mobile.png'
     },
     {
-        title: 'For Body',
-        img_url: '3.png',
-        img_mobile_url: '3_mobile.png'
+        title: 'Body',
+        img_url: 'body.png',
     }
 ];
 const carousel_content = [
     {
-        title: 'For bODY',
+        title: 'bODY',
         content: 'Biologique Recherche body treatments are tailored to your needs for a relaxing massage or body sculpting using high-tech tools.',
         imgurl: 'body.png'
     },
     {
-        title: 'FOR FACE',
+        title: 'FACE',
         content: 'Biologique Recherche facials are hyper personalised and devised for that forever glow and a sculpted visage.',
         imgurl: 'face.png'
     },
     {
-        title: 'FOR SCALP',
+        title: 'HAIR',
         content: 'Biologique Recherche procedures for the scalp are highly effective for rejuvenated hair that is shiny and strong, and a healthy scalp.',
         imgurl: 'scalp.png'
     },
@@ -106,7 +102,8 @@ export default function Biologique() {
                 <h1>Biologique Recherche x Glow</h1>
                 <div className={styles.img}>
                     <div className={styles.imgLeft}>
-                        <p>One of our goals at Glow is to associate with brands that identify with our ideology of clean, targeted and result-oriented skincare therapies. We are proud to have partnered with Biologique Recherche — the
+                        <p>One of our goals at Glow is to associate with brands that identify with our ideology of clean, targeted and result-oriented skincare therapies. We are proud to have partnered with Biologique
+                            Recherche — the
                             leading dermo-cosmetic skincare brand born in Paris, France and reputed across the globe for their technologically advanced approach to skincare.
                         </p>
                     </div>
@@ -129,7 +126,8 @@ export default function Biologique() {
                         Their consummate savoir-faire and visionary approach underpin the brand’s reputation for effectiveness and outstanding products.
                     </p>
                     <p>
-                        In 1992 Biologique Recherche set up its Ambasade in the heart of Paris, on the historic Champs Elysées. Even after all these years they stay true to their personalised methodology and products while preserving the
+                        In 1992 Biologique Recherche set up its Ambasade in the heart of Paris, on the historic Champs Elysées. Even after all these years they stay true to their personalised methodology and products
+                        while preserving the
                         authenticity and continuing to innovate so that their clients can enjoy an ever-more customised experience
                     </p>
                 </div>
@@ -302,9 +300,9 @@ export default function Biologique() {
                                                         {item.content}
                                                         {/*<ReadMoreReact min={65} ideal={105} max={165} text={item.content}/>*/}
                                                     </p>
-                                                    <a href="https://wa.me/9951355555" target="_blank">
-                                                        <header>ENQUIRE</header>
-                                                    </a>
+                                                    <Link href="/services">
+                                                        <header>Discover</header>
+                                                    </Link>
                                                     {
                                                         device !== 0 && <NextBack
                                                             theme={'light'}
@@ -360,7 +358,7 @@ export default function Biologique() {
                             return (<SwiperSlide>
                                     <div className={styles.buyBr}>
                                         <header>{item.title}</header>
-                                        <img src={'/images/biologue/buy/' + (device === 0 ? item.img_mobile_url : item.img_url)}/>
+                                        <img src={'/images/biologue/buy/' + item.img_url}/>
                                     </div>
                                 </SwiperSlide>
                             )

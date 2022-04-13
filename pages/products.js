@@ -129,6 +129,12 @@ export default function Products() {
                 }
             ]
         },
+        {
+            title: 'Glow-ry <br/>' + 'Days',
+            desc: 'Start your journey towards self-care with a few of our picks to unwind, sit back and relax. These are small additions to your personal spaces that will elevate your moods and cleanse your energy. We all need some pampering and pick-me-ups along the way.',
+            shop: 'Wellness',
+            strip_items: []
+        },
     ];
 
     // Favorite Settings
@@ -139,31 +145,37 @@ export default function Products() {
             title: 'Creme ux acides de fruits',
         },
         {
-            title: 'IS Clinical Warming Honey Cleanser',
+            title: 'Warming Honey Cleanser',
         },
         {
-            title: 'Pureearth - Mitti Raw Honey Face Masque',
+            title: 'Mitti Raw Honey Face Masque',
         },
         {
-            title: 'iS Clinical Pro-Heal Serum Advance Plus',
+            title: 'Pro-Heal Serum Advance Plus',
         },
         {
-            title: 'Oligo proteins marines Biologique Recherche',
+            title: 'Sérum Oligo-Protéines Marines',
         },
         {
-            title: 'LAIT VIP02 Biologique Recherche',
+            title: 'Lait VIP O ',
         },
         {
-            title: 'Heliocare 360o mineral tolerance fluid',
+            title: 'Mineral Tolerance Fluid',
         },
         {
-            title: 'Biokiss - Biologique Recherche',
+            title: 'Biokiss',
         },
         {
-            title: 'Lotion P50 Biologique Recherche',
+            title: 'Lotion P50',
         },
         {
-            title: 'Masque VIP O2 Biologique Recherche',
+            title: 'Masque VIP O ',
+        },
+        {
+            title: 'Azelac RU Serum',
+        },
+        {
+            title: 'Nyumi Gummies',
         },
     ];
 
@@ -172,49 +184,55 @@ export default function Products() {
     const [current_products_alternate_slide, set_current_products_alternate_slide] = useState(0);
     const products_alternate_content = [
         {
-            title: 'Sesderma \n' +
-                'Azelac \n' +
+            title: 'Azelac \n' +
                 'Ru Liposomal \n' +
                 'Serum',
         },
         {
-            title: 'iS Clinical\n' +
-                'Cleansing \n' +
+            title: 'Cleansing \n' +
                 'Complex',
         },
         {
-            title: 'Placenta \n' +
-                'Biologique \n' +
-                'Recherche',
+            title: 'Serum \n' +
+                'Placenta',
         },
         {
-            title: 'Lait vip 02\n' +
-                'Biologique \n' +
-                'Recherche',
+            title: 'Lait vip 02'
         },
         {
-            title: 'P50 pigm400\n' +
-                'Biologique \n' +
-                'Recherche',
+            title: 'Lotion P50\n' +
+                'PIGM 400'
         },
         {
-            title: 'Isdin \n' +
-                'fotoprotector \n' +
+            title: 'fotoprotector \n' +
                 'fusion water ',
         },
         {
-            title: 'FERULAC \n' +
-                'DUBAI LIPS BALM',
-        },
-        {
-            title: 'MASQUE VIVANT\n' +
-                'Biologique Recherche',
+            title: 'MASQUE VIVANT'
         },
         {
             title: 'Crème \n' +
-                'Dermopurifiante \n' +
-                'Biologique \n' +
-                'Recherche'
+                'Dermopurifiante'
+        },
+        {
+            title: 'C Vit \n' +
+                'Serum'
+        },
+        {
+            title: 'Complexe \n' +
+                'Iribiol'
+        },
+        {
+            title: 'Crème \n' +
+                'Iso Placenta'
+        },
+        {
+            title: 'Sensibio H20  \n' +
+                'Micellar Water'
+        },
+        {
+            title: 'What women \n' +
+                'want'
         }
     ];
 
@@ -289,10 +307,10 @@ export default function Products() {
                             onSlideChange={(ev) => {
                                 window.scrollTo(0, 0);
                                 set_current_body_slide(ev.activeIndex)
-                                if (ev.activeIndex === 6) {
+                                if (ev.activeIndex === 7) {
                                     set_current_body_slide(0)
                                 } else if (ev.activeIndex - 1 === -1) {
-                                    set_current_body_slide(4)
+                                    set_current_body_slide(5)
                                 } else {
                                     set_current_body_slide(ev.activeIndex - 1)
                                 }
@@ -339,6 +357,21 @@ export default function Products() {
             </div>
         </div>
 
+        <div className={"outer " + styles.shopMyShelfieOuter}>
+            <div className={"inner " + styles.shopMyShelfie}>
+                <div className={styles.smLeft}>
+                    <h2>Shop my shelfie</h2>
+                </div>
+                <div className={styles.smRight}>
+                    <p> Being a skincare enthusiast myself, I am always on the lookout for new products to add to my repertoire.
+                        These are a few of my current favourites, some of which are staples in my routine and some new ones you would
+                        be happy to discover. Shop these curated products and refresh your skincare shelf.
+                    </p>
+                    <header>xoxo</header>
+                </div>
+            </div>
+        </div>
+
         <div className={"outer " + styles.currentFavouritesOuter}>
             <div className={"inner " + styles.currentFavourites}>
                 <div className={styles.cfHeader}>
@@ -381,23 +414,13 @@ export default function Products() {
             </div>
         </div>
 
-        <div className={"outer " + styles.shopMyShelfieOuter}>
-            <div className={"inner " + styles.shopMyShelfie}>
-                <div className={styles.smLeft}>
-                    <h2>Shop my shelfie</h2>
-                </div>
-                <div className={styles.smRight}>
-                    <p> Being a skincare enthusiast myself, I am always on the lookout for new products to add to my repertoire.
-                        These are a few of my current favourites, some of which are staples in my routine and some new ones you would
-                        be happy to discover. Shop these curated products and refresh your skincare shelf.
-                    </p>
-                    <header>xoxo</header>
-                </div>
-            </div>
-        </div>
 
         <div className={styles.slidersOuter}>
             <div className={styles.sliders}>
+                <h3 className={styles.sliderTitle}>
+                    BESTSELLERS
+                </h3>
+
                 <Swiper slidesPerView={'auto'}
                         centeredSlides={true}
                         loop={true}
@@ -407,12 +430,12 @@ export default function Products() {
                         speed={1800}
                         spaceBetween={60}
                         onSlideChange={(ev) => {
-                            if (ev.activeIndex === 18) {
+                            if (ev.activeIndex === 26) {
                                 set_current_products_alternate_slide(0)
-                            } else if (ev.activeIndex - 9 === -1) {
-                                set_current_products_alternate_slide(8)
+                            } else if (ev.activeIndex - 13 === -1) {
+                                set_current_products_alternate_slide(12)
                             } else {
-                                set_current_products_alternate_slide(ev.activeIndex - 9)
+                                set_current_products_alternate_slide(ev.activeIndex - 13)
                             }
 
                         }}>
