@@ -1,0 +1,241 @@
+@import 'pages/styles/index.module';
+
+.advocacyOuter {
+    background: #EEEADD;
+}
+
+.advocacy {
+    padding-top: 118px;
+    padding-bottom: 139px;
+
+    header {
+        font-family: Poppins, sans-serif;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+
+    p {
+        font-family: SaolRegularItalic, sans-serif;
+        font-size: 32px;
+        line-height: 150%;
+        letter-spacing: 0.02em;
+        margin-bottom: 54px;
+    }
+
+}
+
+.clientTestimonialsOuter {
+    .ctContent {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid #000000;
+        border-left: 1px solid #000000;
+        padding: 90px;
+        border-bottom: 1px solid black;
+        min-height: 790px;
+        margin-bottom: 50px;
+
+        header {
+            font-size: 24px;
+            font-family: HattonMedium, sans-serif;
+            text-transform: uppercase;
+            line-height: 149.8%;
+            letter-spacing: 3px;
+            margin-bottom: 13px;
+        }
+
+        .date {
+            font-family: TelegrafRegular, sans-serif;
+            font-size: 14px;
+            line-height: 101.1%;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 36px;
+        }
+
+        .desc {
+            font-family: TelegrafRegular, sans-serif;
+            font-size: 18px;
+            line-height: 149.8%;
+            letter-spacing: 0.1px;
+        }
+    }
+}
+
+.clientTestimonials {
+    display: flex;
+    flex-direction: column;
+
+    .ctHeader {
+        display: flex;
+        justify-content: space-between;
+        padding: 83px 0;
+
+        h2 {
+            font-family: EmpireBold, sans-serif;
+            font-size: 80px;
+            line-height: 98.1%;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+    }
+
+}
+
+.journey {
+    .joTop {
+        .jotLeft {
+            width: 100%;
+            max-width: 690px;
+            border-bottom: 1px solid black;
+
+            .s1 {
+
+            }
+
+            .s2 {
+                font-family: HattonRegular, sans-serif;
+                letter-spacing: 0.05em;
+                font-size: 54px;
+                line-height: 70px;
+            }
+
+            .s3 {
+                font-family: SaolRegular, sans-serif;
+                letter-spacing: 0.1em;
+                font-size: 80px;
+                line-height: 89px;
+            }
+
+            .s4 {
+                font-family: OggRegular, sans-serif;
+                letter-spacing: 0.03em;
+                font-size: 60px;
+                line-height: 66px;
+            }
+
+            img {
+                max-width: unset;
+            }
+        }
+
+        h2 {
+            font-size: 120px;
+            line-height: 120px;
+            border-bottom: none;
+            width: max-content;
+            margin-right: 0;
+        }
+    }
+}
+
+.bannerOuter {
+    background: url("../../public/images/about/banner.png") no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+@media only screen and (max-width: 1280px) {
+    .advocacy {
+        padding-top: 75px;
+        padding-bottom: 75px;
+
+        p {
+            font-size: 24px;
+            line-height: 35px;
+            letter-spacing: 0.04em;
+        }
+
+    }
+
+    .journey {
+        .joTop {
+            h2 {
+                font-size: 80px;
+                line-height: 80px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 648px) {
+    .advocacy {
+        padding: 50px 0;
+
+        header {
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 167%;
+            margin-bottom: 35px;
+        }
+    }
+
+    .clientTestimonialsOuter {
+        .ctContent {
+            padding: 35px;
+            min-height: 520px;
+            border: none;
+        }
+    }
+
+    .clientTestimonials {
+        .ctHeader {
+            padding: 50px 0;
+            flex-direction: column;
+
+            h2 {
+                margin-bottom: 35px;
+            }
+        }
+    }
+
+    .journey {
+        .joTop {
+            .jotLeft {
+                width: 100%;
+                max-width: unset;
+                border-bottom: none;
+                margin-bottom: 20px;
+
+                h2 {
+                    font-size: 65px;
+                    line-height: 65px;
+                }
+
+                .s1 {
+
+                }
+
+                .s2 {
+                    font-family: HattonRegular, sans-serif;
+                    letter-spacing: 0.05em;
+                    font-size: 30px;
+                    line-height: 45px;
+                }
+
+                .s3 {
+                    font-family: SaolRegular, sans-serif;
+                    letter-spacing: 0.1em;
+                    font-size: 40px;
+                    line-height: 46px;
+                }
+
+                .s4 {
+                    font-family: OggRegular, sans-serif;
+                    letter-spacing: 0.03em;
+                    font-size: 35px;
+                    line-height: 37px;
+                }
+            }
+
+
+        }
+    }
+}

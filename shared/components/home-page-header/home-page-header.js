@@ -16,7 +16,7 @@ export default function HomePageHeader() {
                     <img src={'/icons/header/logo.svg'}/>
                 </div>
                 <div className={styles.hRight}>
-                    <Link href="/services">
+                    <Link href='/services'>
                         <header>Services</header>
                     </Link>
                     <Link href="/products">

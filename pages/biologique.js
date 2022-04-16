@@ -300,7 +300,7 @@ export default function Biologique() {
                                                         {item.content}
                                                         {/*<ReadMoreReact min={65} ideal={105} max={165} text={item.content}/>*/}
                                                     </p>
-                                                    <Link href="/services">
+                                                    <Link href='/services'>
                                                         <header>Discover</header>
                                                     </Link>
                                                     {

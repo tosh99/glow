@@ -1,0 +1,28 @@
+.menuList {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 40px;
+
+    .menuListItem {
+        white-space: nowrap;
+        font-family: HattonRegular, sans-serif;
+        font-size: 16px;
+        line-height: 132.8%;
+        letter-spacing: 0.05em;
+        margin-bottom: 14px;
+        cursor: pointer;
+        transition: 0.1s;
+    }
+
+    .menuListItem:hover {
+        opacity: 0.9;
+        transition: 0.1s;
+    }
+}
+
+.menuListLast {
+    right: 0;
+    text-align: end;
+
+}

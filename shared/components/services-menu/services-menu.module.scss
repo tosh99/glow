@@ -1,0 +1,105 @@
+.menuOuter {
+}
+
+.menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background: #EEEADD;
+
+    .menuContent {
+        display: flex;
+        flex-direction: row;
+        padding: 45px 75px;
+        align-items: center;
+        justify-content: space-between;
+
+        .menuCItem {
+            position: relative;
+
+            .menuCTitle {
+                line-height: 20px;
+                letter-spacing: 0.02em;
+                font-family: HattonRegular, sans-serif;
+                cursor: pointer;
+                font-size: 14px;
+                color: rgba(0, 0, 0, 0.5);
+                transition: 0.1s;
+                width: 100%;
+            }
+
+            .menuCTitle:hover {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 149.8%;
+                transition: 0.1s;
+                color: black;
+            }
+
+            .menuCTitleSelected {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 149.8%;
+                transition: 0.1s;
+                color: black;
+            }
+        }
+
+        .menuCItem:last-of-type {
+            text-align: right;
+        }
+
+
+    }
+
+    .menuBottom {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        padding: 20px 75px;
+        position: absolute;
+        bottom: 75px;
+        width: 100%;
+
+        .locationSelector {
+            display: flex;
+            border: 1px solid #000000;
+            border-radius: 50.5px;
+            overflow: hidden;
+
+            .location {
+                padding: 12px;
+                cursor: pointer;
+            }
+
+            .locationSelected {
+                background: black;
+                color: white;
+                cursor: text;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 648px) {
+    .menu {
+        .menuTop {
+            padding: 20px 35px;
+        }
+
+        .menuContent {
+            padding: 20px 35px;
+            align-items: flex-start;
+        }
+
+        .menuBottom {
+            padding: 20px 35px;
+            align-items: flex-start;
+        }
+    }
+}
