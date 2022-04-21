@@ -5,7 +5,10 @@ import Menu from "../menu/menu";
 import {useRouter} from "next/router";
 import ServicesMenu from "../services-menu/services-menu";
 
-export default function PageHeader({title, bg = 'solid', onMenuClicked = () => {}}) {
+export default function PageHeader({
+                                       title, bg = 'solid', onMenuClicked = () => {
+    }
+                                   }) {
     const [show_menu, set_show_menu] = useState(false)
     const [show_services_menu, set_show_services_menu] = useState(false)
     const router = useRouter()
@@ -21,6 +24,9 @@ export default function PageHeader({title, bg = 'solid', onMenuClicked = () => {
                 <div className={styles.hRight}>
                     <header>{title}</header>
                     <img src={'/icons/header/star.svg'} onClick={() => {
+                        console.log(router.pathname)
+                        console.log(router.pathname.includes('/services'))
+
                         if (router.pathname.includes('/services')) {
                             set_show_services_menu(prev => !prev)
                         } else {
@@ -41,6 +47,7 @@ export default function PageHeader({title, bg = 'solid', onMenuClicked = () => {
         {
             show_services_menu &&
             <ServicesMenu close={() => {
+                console.log('Closed')
                 set_show_services_menu(false)
             }}/>
         }
