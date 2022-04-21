@@ -14,16 +14,22 @@ export default function PageHeader({
     const router = useRouter()
 
     return (<Fragment>
-        <div className={"outer " + ' ' + styles.headerOuter + ' ' + (bg === 'transparent' ? styles.headerOuterTrans : '')}>
+        <div className={"outer " + ' ' + styles.headerOuter + ' ' + (bg === 'transparent' ? styles.headerOuterTrans : '')} onClick={(ev) => {
+            console.log('EV1', ev)
+        }}>
             <div className={"inner " + styles.header}>
                 <div className={styles.hLeft}>
                     <Link href="/">
                         <img src={'/icons/header/back.svg'}/>
                     </Link>
                 </div>
-                <div className={styles.hRight}>
+                <div className={styles.hRight} onClick={(ev) => {
+                    console.log('EV2', ev)
+
+                }}>
                     <header>{title}</header>
-                    <img src={'/icons/header/star.svg'} onClick={() => {
+                    <img src={'/icons/header/star.svg'} onClick={(ev) => {
+                        console.log('EV3', ev)
                         console.log(router.pathname)
                         console.log(router.pathname.includes('/services'))
 
