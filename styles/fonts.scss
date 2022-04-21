@@ -144,6 +144,26 @@ p {
 @font-face {
     font-family: 'TerminaRegular';
     font-display: swap;
-    src: local('TerminaRegular'), url("/fonts/TerminaRegular.ttf") format('opentype');
+    src: local('TerminaRegular'), url("/fonts/TerminaRegular.ttf") format('truetype');
 }
+
+
+@font-face {
+    font-family: 'TeodorTrialRegular';
+    font-display: swap;
+    src: local('TeodorTrialRegular'), url("/fonts/TeodorTRIAL-Medium.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'TeodorTrialLight';
+    font-display: swap;
+    src: local('TeodorTrialLight'), url("/fonts/TeodorTRIAL-Light.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'CanelaRegular';
+    font-display: swap;
+    src: local('CanelaRegular'), url("/fonts/Canela-Regular.ttf") format('truetype');
+}
+
 

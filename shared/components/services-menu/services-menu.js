@@ -5,16 +5,17 @@ import {Fragment, useEffect, useState} from "react";
 import Link from "next/link";
 import PageHeader from "../page-header/page-header";
 import MenuList from "./menu-list/menu-list";
+import Router from "next/router";
 
 const regions = ['HYDERABAD', 'CHENNAI']
 const servicesItemsHyd = [
     {
         title: 'BR Facials',
-        url: '/br-facials',
+        url: '/services/br-facials',
         items: [
             {
                 title: 'SKIN INSTANT  LAB',
-                url: ''
+                url: '#skinInstantLab'
             },
             {
                 title: 'VISIO LAB©',
@@ -68,7 +69,7 @@ const servicesItemsHyd = [
     },
     {
         title: 'Clinical Facials',
-        url: '/clinical-facials',
+        url: '/services/clinical-facials',
         items: [
             {
                 title: 'FIRE  AND  ICE',
@@ -102,7 +103,7 @@ const servicesItemsHyd = [
     },
     {
         title: 'Clinical Peels',
-        url: '/clinical-peels',
+        url: '/services/clinical-peels',
         items: [
             {
                 title: 'DERMAMELAN',
@@ -132,7 +133,7 @@ const servicesItemsHyd = [
     },
     {
         title: 'Glow Tech',
-        url: '/glow-tech',
+        url: '/services/glow-tech',
         items: [
             {
                 title: 'LASER HAIR REDUCTION',
@@ -142,7 +143,7 @@ const servicesItemsHyd = [
     },
     {
         title: 'Hair Treatments',
-        url: '/glow-tech',
+        url: '/services/glow-tech',
         items: [
             {
                 title: 'OXYGENATING  &  STRENGTHENING',
@@ -180,7 +181,7 @@ const servicesItemsHyd = [
     },
     {
         title: 'Injectables',
-        url: '/glow-tech',
+        url: '/services/glow-tech',
         items: [
             {
                 title: 'Dermal Fillers',
@@ -202,7 +203,7 @@ const servicesItemsHyd = [
     },
     {
         title: 'IV INFUSIONS',
-        url: '/glow-tech',
+        url: '/services/glow-tech',
         items: [
             {
                 title: 'HYDRA CLEANSE',
@@ -492,17 +493,25 @@ export default function ServicesMenu({close}) {
                             <div className={styles.menuContent}>
                                 {
                                     (selectedRegion === 0 ? servicesItemsHyd : servicesItemsChennai).map((service, serviceIndex) => {
-                                        return <Link href='/services'>
+                                        return <Link href={service.url}>
                                             <div className={styles.menuCItem}>
-                                                <header className={styles.menuCTitle + ' ' + (index === serviceIndex ? styles.menuCTitleSelected : '')} onMouseEnter={() => {
-                                                    setIndex(serviceIndex)
-                                                }}>{service.title}
+                                                <header
+                                                    className={styles.menuCTitle + ' ' + (index === serviceIndex ? styles.menuCTitleSelected : '')}
+                                                    onMouseEnter={() => {
+                                                        setIndex(serviceIndex)
+                                                    }}>{service.title}
                                                 </header>
                                                 {
                                                     index === serviceIndex &&
-                                                    <MenuList selectedServiceItem={selectedServiceItem} close={() => {
-                                                        setIndex(undefined)
-                                                    }} isEnd={serviceIndex === (selectedRegion === 0 ? servicesItemsHyd : servicesItemsChennai).length - 1}/>
+                                                    <MenuList selectedServiceItem={selectedServiceItem}
+                                                              onClick={(ev) => {
+                                                                  Router.push(selectedServiceItem.url + ev.url)
+                                                                  setIndex(undefined)
+                                                              }}
+                                                              close={() => {
+                                                                  setIndex(undefined)
+                                                              }}
+                                                              isEnd={serviceIndex === (selectedRegion === 0 ? servicesItemsHyd : servicesItemsChennai).length - 1}/>
                                                 }
                                             </div>
                                         </Link>
