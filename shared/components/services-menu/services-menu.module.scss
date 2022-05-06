@@ -14,9 +14,11 @@
     .menuContent {
         display: flex;
         flex-direction: row;
-        padding: 45px 75px;
+        padding: 45px 100px;
         align-items: center;
         justify-content: space-between;
+        max-width: 1440px;
+        margin: auto;
 
         .menuCItem {
             position: relative;

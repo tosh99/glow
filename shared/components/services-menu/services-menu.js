@@ -143,7 +143,7 @@ const servicesItemsHyd = [
     },
     {
         title: 'Hair Treatments',
-        url: '/services/glow-tech',
+        url: '/services/hair-treatments',
         items: [
             {
                 title: 'OXYGENATING  &  STRENGTHENING',
@@ -181,7 +181,7 @@ const servicesItemsHyd = [
     },
     {
         title: 'Injectables',
-        url: '/services/glow-tech',
+        url: '/services/injectables',
         items: [
             {
                 title: 'Dermal Fillers',
@@ -203,7 +203,7 @@ const servicesItemsHyd = [
     },
     {
         title: 'IV INFUSIONS',
-        url: '/services/glow-tech',
+        url: '/services/iv-infusions',
         items: [
             {
                 title: 'HYDRA CLEANSE',
