@@ -239,7 +239,7 @@ const servicesItemsHyd = [
 const servicesItemsChennai = [
     {
         title: 'BR Facials',
-        url: '/br-facials',
+        url: '/services/br-facials',
         items: [
             {
                 title: 'SKIN INSTANT  LAB',

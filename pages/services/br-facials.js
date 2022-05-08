@@ -1,5 +1,5 @@
 import {Fragment, useEffect, useState} from "react";
-import PageHeader from "../../shared/components/page-header/page-header";
+import PageH2 from "../../shared/components/page-header/page-h2";
 import Footer from "../../shared/components/footer/footer";
 import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from 'swiper/core';
 import BackToTop from "../../shared/components/back-to-top";
@@ -15,7 +15,7 @@ export default function BRFacials() {
     }, [])
 
     return (<Fragment>
-            <PageHeader title={'Services'}/>
+            <PageH2 title={'Services'}/>
             <ServicesComponent
                 titleElement={'BIOLOGIQUE RECHERCHE'}
                 srTitle={'SKIN INSTANT© LAB'}
