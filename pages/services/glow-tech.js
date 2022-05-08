@@ -8,16 +8,12 @@ import SwiperCore, {
 import BackToTop from "../../shared/components/back-to-top";
 import BookNow from "../../shared/components/book-now";
 import Footer from "../../shared/components/footer/footer";
-import PageHeader from "../../shared/components/page-header/page-header";
+import PageH2 from "../../shared/components/page-header/page-h2";
 import ServicesComponent from "../../shared/components/pages/services/services";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 
 export default function GlowTech() {
-  const [testimonial_swiper, set_testimonial_swiper] = useState({});
-  const [current_slide, set_current_slide] = useState(0);
-  const [showMore, set_showMore] = useState(false);
-
   const [device, set_device] = useState(2);
   useEffect(() => {
     if (screen.width <= 648) {
@@ -29,7 +25,7 @@ export default function GlowTech() {
 
   return (
     <Fragment>
-      <PageHeader title={"Services"} />
+      <PageH2 title={"Services"} />
       <ServicesComponent
         titleElement={"GLOW TECH"}
         srTitle={"LASER HAIR REDUCTION"}

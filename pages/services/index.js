@@ -1,14 +1,12 @@
-import {useEffect} from "react";
+import { useEffect } from "react";
 import Router from "next/router";
 
 function Services() {
     useEffect(() => {
-        Router.push('/services/br-facials')
-    }, [])
+        Router.push("/services/br-facials");
+    }, []);
 
-    return <>
-
-    </>
+    return <></>;
 }
 
-export default Services
+export default Services;

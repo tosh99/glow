@@ -1,5 +1,4 @@
 .servicesOuter {
-
 }
 
 .services {
@@ -59,9 +58,15 @@
             line-height: 145%;
             border-bottom: 1px solid lightgray;
         }
+
+        .srContentFull {
+            border-bottom: none;
+        }
     }
+}
 
-
+.servicesFull {
+    border-bottom: 1px solid rgb(117, 117, 117);
 }
 
 @media only screen and (max-width: 648px) {

@@ -1,9 +1,9 @@
 import styles from "./services.module.scss";
 
-export default function ServicesComponent({titleElement, bannerUrl, content, srTitle, srDesc, srPurpose}) {
+export default function ServicesComponent({titleElement, bannerUrl, content, srTitle, srDesc, srPurpose, isFullSeparator}) {
     return (
         <div className={"outer " + styles.servicesOuter}>
-            <div className={"inner " + styles.services}>
+            <div className={`inner  + ${styles.services} ${isFullSeparator && styles.servicesFull}`}>
                 {
                     titleElement && <h1 dangerouslySetInnerHTML={{__html: titleElement}}/>
                 }
@@ -20,7 +20,7 @@ export default function ServicesComponent({titleElement, bannerUrl, content, srT
                     {
                         srPurpose && <header className={styles.srPurpose}>{srPurpose}</header>
                     }
-                    <p className={styles.srContent} dangerouslySetInnerHTML={{__html: content}}></p>
+                    <p className={`${styles.srContent} ${isFullSeparator && styles.srContentFull}`} dangerouslySetInnerHTML={{__html: content}}></p>
                 </div>
             </div>
         </div>
