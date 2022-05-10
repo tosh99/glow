@@ -8,562 +8,563 @@ import MenuList from "./menu-list/menu-list";
 import Router from "next/router";
 
 const regions = ["HYDERABAD", "CHENNAI"];
-const servicesItemsHyd = [
-  {
-    title: "BR Facials",
-    url: "/services/br-facials",
-    items: [
-      {
-        title: "SKIN INSTANT  LAB",
-        url: "#skinInstantLab",
-      },
-      {
-        title: "VISIO LAB©",
-        url: "",
-      },
-      {
-        title: "SOIN RESTRUCTURANT ET LISSANT",
-        url: "",
-      },
-      {
-        title: "SOINLIFT C.V.S",
-        url: "",
-      },
-      {
-        title: "SOIN MC 110",
-        url: "",
-      },
-      {
-        title: "SOIN PEELING AUX ACIDES DE FRUITS",
-        url: "",
-      },
-      {
-        title: "SOIN MASQUE EXFOLIANT P50 VISAGE",
-        url: "",
-      },
-      {
-        title: "SOIN BOOSTER VIP O2",
-        url: "",
-      },
-      {
-        title: "DOUBLE BOOSTER ",
-        url: "",
-      },
-      {
-        title: "SOIN SECONDE PEAU",
-        url: "",
-      },
-      {
-        title: "MICRO PUNCTURE LAB ",
-        url: "",
-      },
-      {
-        title: "REMODELLING FACE",
-        url: "",
-      },
-      {
-        title: "PRIVILEGE PASS",
-        url: "",
-      },
-    ],
-  },
-  {
-    title: "Clinical Facials",
-    url: "/services/clinical-facials",
-    items: [
-      {
-        title: "FIRE  AND  ICE",
-        url: "",
-      },
-      {
-        title: "FOAMING  ENZYME",
-        url: "",
-      },
-      {
-        title: "ZO  STIMULATOR  FACIAL ",
-        url: "",
-      },
-      {
-        title: "VAMPIRE  FACIAL",
-        url: "",
-      },
-      {
-        title: "EXPRESS  GLOW",
-        url: "",
-      },
-      {
-        title: "GLASS  SKIN  FACIAL",
-        url: "",
-      },
-      {
-        title: "MIRAPEEL",
-        url: "",
-      },
-    ],
-  },
-  {
-    title: "Clinical Peels",
-    url: "/services/clinical-peels",
-    items: [
-      {
-        title: "DERMAMELAN",
-        url: "",
-      },
-      {
-        title: "COSMELAN",
-        url: "",
-      },
-      {
-        title: "ACNELAN©",
-        url: "",
-      },
-      {
-        title: "FERULAC  DUBAI  LIP  PEEL",
-        url: "",
-      },
-      {
-        title: "CUSTOM  PEELS",
-        url: "",
-      },
-      {
-        title: "BODY PEELS",
-        url: "",
-      },
-    ],
-  },
-  {
-    title: "Glow Tech",
-    url: "/services/glow-tech",
-    items: [
-      {
-        title: "LASER HAIR REDUCTION",
-        url: "",
-      },
-    ],
-  },
-  {
-    title: "Hair Treatments",
-    url: "/services/hair-treatments",
-    items: [
-      {
-        title: "OXYGENATING  &  STRENGTHENING",
-        url: "",
-      },
-      {
-        title: "SEBO - REGULATING",
-        url: "",
-      },
-      {
-        title: "DRY  DANDRUFF  BALANCING",
-        url: "",
-      },
-      {
-        title: "GREASY  DANDRUFF  BALANCING",
-        url: "",
-      },
-      {
-        title: "OXYGENATING  AND  STRENGTHENING  WITH \n" + "MICRO-PUNCTURE",
-        url: "",
-      },
-      {
-        title: "GROWTH  FACTOR  THERAPY",
-        url: "",
-      },
-      {
-        title: "K18",
-        url: "",
-      },
-      {
-        title: "Moroccan Oil Hair Spa",
-        url: "",
-      },
-    ],
-  },
-  {
-    title: "Injectables",
-    url: "/services/injectables",
-    items: [
-      {
-        title: "Dermal Fillers",
-        url: "",
-      },
-      {
-        title: "VOLITE",
-        url: "",
-      },
-      {
-        title: "BOTOX",
-        url: "",
-      },
-      {
-        title: "Prophilo",
-        url: "",
-      },
-    ],
-  },
-  {
-    title: "IV INFUSIONS",
-    url: "/services/iv-infusions",
-    items: [
-      {
-        title: "HYDRA CLEANSE",
-        url: "",
-      },
-      {
-        title: "HELLO HEALTH",
-        url: "",
-      },
-      {
-        title: "BYE HANGOVER",
-        url: "",
-      },
-      {
-        title: "GET SET GLOW",
-        url: "",
-      },
-      {
-        title: "GLUTA GLOW",
-        url: "",
-      },
-      {
-        title: "QUICK BOOST",
-        url: "",
-      },
-      {
-        title: "MYER’S  MAGIC  POTION",
-        url: "",
-      },
-    ],
-  },
+export const servicesItemsHyd = [
+    {
+        title: "BR Facials",
+        url: "/services/br-facials",
+        items: [
+            {
+                title: "SKIN INSTANT LAB",
+                url: "#skinInstantLab",
+            },
+            {
+                title: "VISIO LAB©",
+                url: "#visionLab",
+            },
+            {
+                title: "SOIN RESTRUCTURANT ET LISSANT",
+                url: "#soinRestructurant",
+            },
+            {
+                title: "SOINLIFT C.V.S",
+                url: "#soinLift",
+            },
+            {
+                title: "SOIN MC 110",
+                url: "#soinMC",
+            },
+            {
+                title: "SOIN PEELING AUX ACIDES DE FRUITS",
+                url: "#soinPeeling",
+            },
+            {
+                title: "SOIN MASQUE EXFOLIANT P50 VISAGE",
+                url: "#soinMasque",
+            },
+            {
+                title: "SOIN BOOSTER VIP O2",
+                url: "#soinBooster",
+            },
+            {
+                title: "DOUBLE BOOSTER ",
+                url: "#doubleBooster",
+            },
+            {
+                title: "SOIN SECONDE PEAU",
+                url: "#soinSeconde",
+            },
+            {
+                title: "MICRO PUNCTURE LAB ",
+                url: "#microPuncture",
+            },
+            {
+                title: "REMODELLING FACE",
+                url: "#remodellingFace",
+            },
+            {
+                title: "PRIVILEGE PASS",
+                url: "#privilegePass",
+            },
+        ],
+    },
+    {
+        title: "Clinical Facials",
+        url: "/services/clinical-facials",
+        items: [
+            {
+                title: "FIRE AND ICE",
+                url: "#fireAndIce",
+            },
+            {
+                title: "FOAMING ENZYME",
+                url: "#foamingEnzyme",
+            },
+            {
+                title: "ZO STIMULATOR FACIAL",
+                url: "#zoStimulator",
+            },
+            {
+                title: "VAMPIRE FACIAL",
+                url: "#vampireFacial",
+            },
+            {
+                title: "DIAMOND GLOW",
+                url: "#diamondGlow",
+            },
+            {
+                title: "OXYGLOW",
+                url: "#oxyGlow",
+            },
+            {
+                title: "EXPRESS GLOW",
+                url: "#expressGlow",
+            },
+        ],
+    },
+    {
+        title: "Clinical Peels",
+        url: "/services/clinical-peels",
+        items: [
+            {
+                title: "DERMAMELAN",
+                url: "#darmelan",
+            },
+            {
+                title: "COSMELAN",
+                url: "#cosmelan",
+            },
+            {
+                title: "ACNELAN©",
+                url: "#acnelan",
+            },
+            {
+                title: "FERULAC DUBAI LIP PEEL",
+                url: "feburacDubai",
+            },
+            {
+                title: "CUSTOM PEELS",
+                url: "customPeels",
+            },
+            {
+                title: "BODY PEELS",
+                url: "#bodyPeels",
+            },
+        ],
+    },
+    {
+        title: "Glow Tech",
+        url: "/services/glow-tech",
+        items: [
+            {
+                title: "LASER HAIR REDUCTION",
+                url: "#laserHairReduction",
+            },
+            {
+                title: "SPECTRA LASER TONING",
+                url: "#spectraLaserToning",
+            },
+            {
+                title: "HOLLYWOOD LASER PEEL",
+                url: "#hollywoodLaserPeel",
+            },
+        ],
+    },
+    {
+        title: "Hair Treatments",
+        url: "/services/hair-treatments",
+        items: [
+            {
+                title: "OXYGENATING & STRENGTHENING",
+                url: "#oxygenating",
+            },
+            {
+                title: "SEBO - REGULATING",
+                url: "#sebo",
+            },
+            {
+                title: "DRY DANDRUFF BALANCING",
+                url: "#dryDandruff",
+            },
+            {
+                title: "GREASY DANDRUFF BALANCING",
+                url: "#greasyDandruff",
+            },
+            {
+                title: "OXYGENATING AND STRENGTHENING WITH \n" + "MICRO-PUNCTURE",
+                url: "#oxygenatingMicro",
+            },
+            {
+                title: "GROWTH FACTOR THERAPY",
+                url: "#growthFactor",
+            },
+            {
+                title: "K18",
+                url: "#k18",
+            },
+            {
+                title: "Moroccan Oil Hair Spa",
+                url: "#moroccan",
+            },
+        ],
+    },
+    {
+        title: "Injectables",
+        url: "/services/injectables",
+        items: [
+            {
+                title: "Dermal Fillers",
+                url: "#dermalFillers",
+            },
+            {
+                title: "VOLITE",
+                url: "#volite",
+            },
+            {
+                title: "BOTOX",
+                url: "#botox",
+            },
+            {
+                title: "Prophilo",
+                url: "#prophilo",
+            },
+        ],
+    },
+    {
+        title: "IV INFUSIONS",
+        url: "/services/iv-infusions",
+        items: [
+            {
+                title: "HYDRA CLEANSE",
+                url: "#hydraCleanse",
+            },
+            {
+                title: "HELLO HEALTH",
+                url: "#helloHealth",
+            },
+            {
+                title: "BYE HANGOVER",
+                url: "#byeHangover",
+            },
+            {
+                title: "GET SET GLOW",
+                url: "#getSetGlow",
+            },
+            {
+                title: "GLUTA GLOW",
+                url: "#glutaGlow",
+            },
+            {
+                title: "QUICK BOOST",
+                url: "#quickBoost",
+            },
+            {
+                title: "MYER’S MAGIC POTION",
+                url: "#myersMagic",
+            },
+        ],
+    },
 ];
-const servicesItemsChennai = [
-  {
-    title: "BR Facials",
-    url: "/services/br-facials",
-    items: [
-      {
-        title: "SKIN INSTANT  LAB",
-        url: "",
-      },
-      {
-        title: "VISIO LAB©",
-        url: "",
-      },
-      {
-        title: "SOIN RESTRUCTURANT ET LISSANT",
-        url: "",
-      },
-      {
-        title: "SOINLIFT C.V.S",
-        url: "",
-      },
-      {
-        title: "SOIN MC 110",
-        url: "",
-      },
-      {
-        title: "SOIN PEELING AUX ACIDES DE FRUITS",
-        url: "",
-      },
-      {
-        title: "SOIN MASQUE EXFOLIANT P50 VISAGE",
-        url: "",
-      },
-      {
-        title: "SOIN BOOSTER VIP O2",
-        url: "",
-      },
-      {
-        title: "DOUBLE BOOSTER ",
-        url: "",
-      },
-      {
-        title: "SOIN SECONDE PEAU",
-        url: "",
-      },
-      {
-        title: "MICRO PUNCTURE LAB ",
-        url: "",
-      },
-      {
-        title: "REMODELLING FACE",
-        url: "",
-      },
-      {
-        title: "PRIVILEGE PASS",
-        url: "",
-      },
-    ],
-  },
-  {
-    title: "Clinical Facials",
-    url: "/clinical-facials",
-    items: [
-      {
-        title: "FIRE  AND  ICE",
-        url: "",
-      },
-      {
-        title: "FOAMING  ENZYME",
-        url: "",
-      },
-      {
-        title: "ZO  STIMULATOR  FACIAL ",
-        url: "",
-      },
-      {
-        title: "VAMPIRE  FACIAL",
-        url: "",
-      },
-      {
-        title: "EXPRESS  GLOW",
-        url: "",
-      },
-      {
-        title: "GLASS  SKIN  FACIAL",
-        url: "",
-      },
-      {
-        title: "MIRAPEEL",
-        url: "",
-      },
-    ],
-  },
-  {
-    title: "Clinical Peels",
-    url: "/clinical-peels",
-    items: [
-      {
-        title: "DERMAMELAN",
-        url: "",
-      },
-      {
-        title: "COSMELAN",
-        url: "",
-      },
-      {
-        title: "ACNELAN©",
-        url: "",
-      },
-      {
-        title: "FERULAC  DUBAI  LIP  PEEL",
-        url: "",
-      },
-      {
-        title: "CUSTOM  PEELS",
-        url: "",
-      },
-      {
-        title: "BODY PEELS",
-        url: "",
-      },
-    ],
-  },
-  {
-    title: "Glow Tech",
-    url: "/glow-tech",
-    items: [
-      {
-        title: "LASER HAIR REDUCTION",
-        url: "",
-      },
-    ],
-  },
-  {
-    title: "Hair Treatments",
-    url: "/glow-tech",
-    items: [
-      {
-        title: "OXYGENATING  &  STRENGTHENING",
-        url: "",
-      },
-      {
-        title: "SEBO - REGULATING",
-        url: "",
-      },
-      {
-        title: "DRY  DANDRUFF  BALANCING",
-        url: "",
-      },
-      {
-        title: "GREASY  DANDRUFF  BALANCING",
-        url: "",
-      },
-      {
-        title: "OXYGENATING  AND  STRENGTHENING  WITH \n" + "MICRO-PUNCTURE",
-        url: "",
-      },
-      {
-        title: "GROWTH  FACTOR  THERAPY",
-        url: "",
-      },
-      {
-        title: "K18",
-        url: "",
-      },
-      {
-        title: "Moroccan Oil Hair Spa",
-        url: "",
-      },
-    ],
-  },
-  {
-    title: "Injectables",
-    url: "/glow-tech",
-    items: [
-      {
-        title: "Dermal Fillers",
-        url: "",
-      },
-      {
-        title: "VOLITE",
-        url: "",
-      },
-      {
-        title: "BOTOX",
-        url: "",
-      },
-      {
-        title: "Prophilo",
-        url: "",
-      },
-    ],
-  },
-  {
-    title: "IV INFUSIONS",
-    url: "/glow-tech",
-    items: [
-      {
-        title: "HYDRA CLEANSE",
-        url: "",
-      },
-      {
-        title: "HELLO HEALTH",
-        url: "",
-      },
-      {
-        title: "BYE HANGOVER",
-        url: "",
-      },
-      {
-        title: "GET SET GLOW",
-        url: "",
-      },
-      {
-        title: "GLUTA GLOW",
-        url: "",
-      },
-      {
-        title: "QUICK BOOST",
-        url: "",
-      },
-      {
-        title: "MYER’S  MAGIC  POTION",
-        url: "",
-      },
-    ],
-  },
+export const servicesItemsChennai = [
+    {
+        title: "BR Facials",
+        url: "/services/br-facials",
+        items: [
+            {
+                title: "SKIN INSTANT  LAB",
+                url: "#skinInstantLab",
+            },
+            {
+                title: "VISIO LAB©",
+                url: "#visionLab",
+            },
+            {
+                title: "SOIN RESTRUCTURANT ET LISSANT",
+                url: "#soinRestructurant",
+            },
+            {
+                title: "SOINLIFT C.V.S",
+                url: "#soinLift",
+            },
+            {
+                title: "SOIN MC 110",
+                url: "#soinMC",
+            },
+            {
+                title: "SOIN PEELING AUX ACIDES DE FRUITS",
+                url: "#soinPeeling",
+            },
+            {
+                title: "SOIN MASQUE EXFOLIANT P50 VISAGE",
+                url: "#soinMasque",
+            },
+            {
+                title: "SOIN BOOSTER VIP O2",
+                url: "#soinBooster",
+            },
+            {
+                title: "DOUBLE BOOSTER ",
+                url: "#doubleBooster",
+            },
+            {
+                title: "SOIN SECONDE PEAU",
+                url: "#soinSeconde",
+            },
+            {
+                title: "MICRO PUNCTURE LAB ",
+                url: "#microPuncture",
+            },
+            {
+                title: "REMODELLING FACE",
+                url: "#remodellingFace",
+            },
+            {
+                title: "PRIVILEGE PASS",
+                url: "#privilegePass",
+            },
+        ],
+    },
+    {
+        title: "Clinical Facials",
+        url: "/clinical-facials-chennai",
+        items: [
+            {
+                title: "FIRE AND ICE",
+                url: "#fireAndIce",
+            },
+            {
+                title: "FOAMING ENZYME",
+                url: "#foamingEnzyme",
+            },
+            {
+                title: "ZO STIMULATOR FACIAL ",
+                url: "#zoStimulator",
+            },
+            {
+                title: "VAMPIRE FACIAL",
+                url: "#vampireFacial",
+            },
+            {
+                title: "EXPRESS GLOW",
+                url: "#expressGlow",
+            },
+            {
+                title: "GLASS SKIN FACIAL",
+                url: "#glassSkinFacial",
+            },
+            {
+                title: "MIRAPEEL",
+                url: "#miraPeel",
+            },
+        ],
+    },
+    {
+        title: "Clinical Peels",
+        url: "/clinical-peels",
+        items: [
+            {
+                title: "DERMAMELAN",
+                url: "#darmelan",
+            },
+            {
+                title: "COSMELAN",
+                url: "#cosmelan",
+            },
+            {
+                title: "ACNELAN©",
+                url: "#acnelan",
+            },
+            {
+                title: "FERULAC DUBAI LIP PEEL",
+                url: "feburacDubai",
+            },
+            {
+                title: "CUSTOM PEELS",
+                url: "customPeels",
+            },
+            {
+                title: "BODY PEELS",
+                url: "#bodyPeels",
+            },
+        ],
+    },
+    {
+        title: "Glow Tech",
+        url: "/glow-tech",
+        items: [
+            {
+                title: "LASER HAIR REDUCTION",
+                url: "#laserHairReduction",
+            },
+        ],
+    },
+    {
+        title: "Hair Treatments",
+        url: "/glow-tech",
+        items: [
+            {
+                title: "OXYGENATING  &  STRENGTHENING",
+                url: "",
+            },
+            {
+                title: "SEBO - REGULATING",
+                url: "",
+            },
+            {
+                title: "DRY  DANDRUFF  BALANCING",
+                url: "",
+            },
+            {
+                title: "GREASY  DANDRUFF  BALANCING",
+                url: "",
+            },
+            {
+                title: "OXYGENATING  AND  STRENGTHENING  WITH \n" + "MICRO-PUNCTURE",
+                url: "",
+            },
+            {
+                title: "GROWTH  FACTOR  THERAPY",
+                url: "",
+            },
+            {
+                title: "K18",
+                url: "",
+            },
+            {
+                title: "Moroccan Oil Hair Spa",
+                url: "",
+            },
+        ],
+    },
+    {
+        title: "Injectables",
+        url: "/services/injectables",
+        items: [
+            {
+                title: "Dermal Fillers",
+                url: "#dermalFillers",
+            },
+            {
+                title: "VOLITE",
+                url: "#volite",
+            },
+            {
+                title: "BOTOX",
+                url: "#botox",
+            },
+            {
+                title: "Prophilo",
+                url: "#prophilo",
+            },
+        ],
+    },
+    {
+        title: "IV INFUSIONS",
+        url: "/services/iv-infusions",
+        items: [
+            {
+                title: "HYDRA CLEANSE",
+                url: "#hydraCleanse",
+            },
+            {
+                title: "HELLO HEALTH",
+                url: "#helloHealth",
+            },
+            {
+                title: "BYE HANGOVER",
+                url: "#byeHangover",
+            },
+            {
+                title: "GET SET GLOW",
+                url: "#getSetGlow",
+            },
+            {
+                title: "GLUTA GLOW",
+                url: "#glutaGlow",
+            },
+            {
+                title: "QUICK BOOST",
+                url: "#quickBoost",
+            },
+            {
+                title: "MYER’S MAGIC POTION",
+                url: "#myersMagic",
+            },
+        ],
+    },
 ];
 
 export default function ServicesMenu({ close }) {
-  const [index, setIndex] = useState(0);
-  const [selectedServiceItem, setSelectedServiceItem] = useState({ items: [] });
-  const [selectedRegion, setSelectedRegion] = useState(0);
+    const [index, setIndex] = useState(0);
+    const [selectedServiceItem, setSelectedServiceItem] = useState({ items: [] });
+    const [selectedRegion, setSelectedRegion] = useState(0);
 
-  useEffect(() => {
-    if (typeof index === "number") {
-      setSelectedServiceItem(
-        (selectedRegion === 0 ? servicesItemsHyd : servicesItemsChennai)[index]
-      );
-    }
-  }, [index, selectedRegion]);
+    useEffect(() => {
+        if (typeof index === "number") {
+            setSelectedServiceItem((selectedRegion === 0 ? servicesItemsHyd : servicesItemsChennai)[index]);
+        }
+    }, [index, selectedRegion]);
 
-  return (
-    <Fragment>
-      <div className={styles.menu}>
-        <InView threshold={0.5}>
-          {({ ref, inView }) => (
-            <motion.div
-              className={"outer " + " " + styles.servicesOuter}
-              ref={ref}
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 1 }}
-            >
-              <PageHeader title={"Services"} onMenuClicked={close} />
-              <div className={styles.menuContent}>
-                {(selectedRegion === 0
-                  ? servicesItemsHyd
-                  : servicesItemsChennai
-                ).map((service, serviceIndex) => {
-                  return (
-                    <Link href={service.url}>
-                      <div className={styles.menuCItem}>
-                        <header
-                          className={
-                            styles.menuCTitle +
-                            " " +
-                            (index === serviceIndex
-                              ? styles.menuCTitleSelected
-                              : "")
-                          }
-                          onMouseEnter={() => {
-                            setIndex(serviceIndex);
-                          }}
+    return (
+        <Fragment>
+            <div className={styles.menu}>
+                <InView threshold={0.5}>
+                    {({ ref, inView }) => (
+                        <motion.div
+                            className={"outer " + " " + styles.servicesOuter}
+                            ref={ref}
+                            initial={{ opacity: 0 }}
+                            animate={inView ? { opacity: 1 } : { opacity: 0 }}
+                            transition={{ duration: 1 }}
                         >
-                          {service.title}
-                        </header>
-                        {index === serviceIndex && (
-                          <MenuList
-                            selectedServiceItem={selectedServiceItem}
-                            onClick={(ev) => {
-                              Router.push(selectedServiceItem.url + ev.url);
-                              setIndex(undefined);
-                            }}
-                            close={() => {
-                              setIndex(undefined);
-                            }}
-                            isEnd={
-                              serviceIndex ===
-                              (selectedRegion === 0
-                                ? servicesItemsHyd
-                                : servicesItemsChennai
-                              ).length -
-                                1
-                            }
-                          />
-                        )}
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-              <div className={styles.menuBottom}>
-                <div className={styles.locationSelector}>
-                  {regions.map((region, regionIndex) => {
-                    return (
-                      <div
-                        onClick={() => {
-                          setSelectedRegion(regionIndex);
-                        }}
-                        className={
-                          styles.location +
-                          " " +
-                          (regionIndex === selectedRegion
-                            ? styles.locationSelected
-                            : "")
-                        }
-                      >
-                        <header>{region}</header>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </InView>
-      </div>
-    </Fragment>
-  );
+                            <PageHeader title={"Services"} onMenuClicked={close} />
+                            <div className={styles.menuContent}>
+                                {(selectedRegion === 0 ? servicesItemsHyd : servicesItemsChennai).map(
+                                    (service, serviceIndex) => {
+                                        return (
+                                            <div className={styles.menuCItem}>
+                                                <header
+                                                    className={
+                                                        styles.menuCTitle +
+                                                        " " +
+                                                        (index === serviceIndex ? styles.menuCTitleSelected : "")
+                                                    }
+                                                    onMouseEnter={() => {
+                                                        setIndex(serviceIndex);
+                                                    }}
+                                                >
+                                                    {service.title}
+                                                </header>
+                                                {index === serviceIndex && (
+                                                    <MenuList
+                                                        selectedServiceItem={selectedServiceItem}
+                                                        onClick={(ev) => {
+                                                            console.log(selectedServiceItem.url + ev.url);
+                                                            close();
+                                                            Router.push(selectedServiceItem.url + ev.url);
+                                                            // setIndex(undefined);
+                                                        }}
+                                                        close={() => {
+                                                            setIndex(undefined);
+                                                        }}
+                                                        isEnd={
+                                                            serviceIndex ===
+                                                            (selectedRegion === 0
+                                                                ? servicesItemsHyd
+                                                                : servicesItemsChennai
+                                                            ).length -
+                                                                1
+                                                        }
+                                                    />
+                                                )}
+                                            </div>
+                                        );
+                                    }
+                                )}
+                            </div>
+                            <div className={styles.menuBottom}>
+                                <div className={styles.locationSelector}>
+                                    {regions.map((region, regionIndex) => {
+                                        return (
+                                            <div
+                                                onClick={() => {
+                                                    setSelectedRegion(regionIndex);
+                                                }}
+                                                className={
+                                                    styles.location +
+                                                    " " +
+                                                    (regionIndex === selectedRegion ? styles.locationSelected : "")
+                                                }
+                                            >
+                                                <header>{region}</header>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        </motion.div>
+                    )}
+                </InView>
+            </div>
+        </Fragment>
+    );
 }
