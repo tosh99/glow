@@ -1,7 +1,7 @@
-@import 'index.module.scss';
+@import "index.module.scss";
 
 .bodyOuter {
-    background: #EEEADD;
+    background: #eeeadd;
 }
 
 .body {
@@ -98,7 +98,6 @@
 }
 
 .currentFavouritesOuter {
-
 }
 
 .currentFavourites {
@@ -114,7 +113,6 @@
             letter-spacing: 0.05em;
             text-transform: uppercase;
         }
-
     }
 
     .cfSlide {
@@ -126,11 +124,16 @@
         }
 
         header {
-            font-family: TelegrafRegular, sans-serif;
+            font-family: SaolRegular, sans-serif;
             font-size: 20px;
-            line-height: 131.78%;
-            letter-spacing: 0.05em;
+            line-height: 145.69%;
+            letter-spacing: 0.06em;
             text-transform: capitalize;
+
+            span {
+                font-size: 10px;
+                margin-left: 0px;
+            }
         }
     }
 
@@ -142,12 +145,10 @@
         margin-top: 70px;
         cursor: pointer;
     }
-
 }
 
 .shopMyShelfieOuter {
     border-bottom: 1px solid black;
-
 }
 
 .shopMyShelfie {
@@ -158,7 +159,6 @@
         width: 100%;
         max-width: 540px;
         margin-right: 50px;
-
 
         h2 {
             font-family: EmpireBold, sans-serif;
@@ -189,7 +189,6 @@
             text-transform: uppercase;
         }
     }
-
 }
 
 .sliders {
@@ -233,7 +232,7 @@
                 line-height: 143%;
                 letter-spacing: 0.1em;
                 text-transform: uppercase;
-                color: #C4C4C4;
+                color: #c4c4c4;
             }
         }
     }
@@ -295,9 +294,7 @@
             margin-bottom: 70px;
 
             h2 {
-
             }
-
         }
 
         .cfSlide {
@@ -312,9 +309,10 @@
                 font-size: 20px;
                 line-height: 131.78%;
                 letter-spacing: 0.05em;
+                display: flex;
+                align-items: flex-end;
             }
         }
-
     }
 
     .shopMyShelfie {
@@ -349,12 +347,9 @@
                 letter-spacing: 0.12em;
                 text-transform: uppercase;
             }
-
-
         }
     }
 }
-
 
 @media only screen and (max-width: 648px) {
     .body {
@@ -425,7 +420,6 @@
                 margin-top: 35px;
             }
         }
-
     }
 
     .productDesc {
@@ -481,6 +475,12 @@
     }
 
     .sliders {
+        .sliderTitle {
+            font-size: 46px;
+            letter-spacing: 0.03em;
+            margin-bottom: 50px;
+            padding: 0 35px;
+        }
         .slide {
             .titleM {
                 font-size: 65px;

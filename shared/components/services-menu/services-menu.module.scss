@@ -9,7 +9,7 @@
     width: 100%;
     height: 100vh;
     top: 0;
-    background: #EEEADD;
+    background: #eeeadd;
 
     .menuContent {
         display: flex;
@@ -19,6 +19,7 @@
         justify-content: space-between;
         max-width: 1440px;
         margin: auto;
+        height: 0;
 
         .menuCItem {
             position: relative;
@@ -28,17 +29,15 @@
                 letter-spacing: 0.02em;
                 font-family: HattonRegular, sans-serif;
                 cursor: pointer;
-                font-size: 14px;
+                font-size: 18px;
                 color: rgba(0, 0, 0, 0.5);
-                transition: 0.1s;
+                transition: 0.2s;
                 width: 100%;
+                text-transform: uppercase;
             }
 
             .menuCTitle:hover {
-                font-weight: 500;
-                font-size: 18px;
-                line-height: 149.8%;
-                transition: 0.1s;
+                transition: 0.2s;
                 color: black;
             }
 
@@ -54,8 +53,6 @@
         .menuCItem:last-of-type {
             text-align: right;
         }
-
-
     }
 
     .menuBottom {
@@ -74,8 +71,11 @@
             overflow: hidden;
 
             .location {
-                padding: 12px;
+                padding: 12px 35px;
                 cursor: pointer;
+                font-family: EmpireBold, sans-serif;
+                font-size: 45px;
+                letter-spacing: 2.5px;
             }
 
             .locationSelected {
@@ -85,7 +85,6 @@
             }
         }
     }
-
 }
 
 @media only screen and (max-width: 648px) {

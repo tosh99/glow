@@ -19,11 +19,11 @@ export default function ServicesComponent({
                     {bannerUrl && <img title={titleElement} alt={titleElement} src={bannerUrl} />}
                     {srTitle && <header className={styles.srTitle}>{srTitle}</header>}
                     {srDesc && <header className={styles.srDesc}>{srDesc}</header>}
-                    {srPurpose && <header className={styles.srPurpose}>{srPurpose}</header>}
                     <p
                         className={`${styles.srContent} ${(isFullSeparator || isDarkBg) && styles.srContentFull}`}
                         dangerouslySetInnerHTML={{ __html: content }}
                     ></p>
+                    {srPurpose && <header className={styles.srPurpose}>{srPurpose}</header>}
                 </div>
             </div>
         </div>

@@ -365,13 +365,13 @@ export default function Biologique() {
                         })
                     }
                 </Swiper>
-                <NextBack
+                {/* <NextBack
                     onBack={() => {
                         buy_br_swiper.slidePrev()
                     }}
                     onNext={() => {
                         buy_br_swiper.slideNext()
-                    }}/>
+                    }}/> */}
 
                 <a href="https://wa.me/9951355555" target="_blank">
                     <header className={styles.enquire}>ENQUIRE</header>

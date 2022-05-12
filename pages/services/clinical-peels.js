@@ -44,7 +44,7 @@ export default function GlowTech() {
             <ServicesComponent
                 srTitle={"ACNELAN©"}
                 id={"acnelan"}
-                srDesc={"We re commend 3 sessions for optimum results."}
+                srPurpose={"We re commend 3 sessions for optimum results."}
                 content={
                     "The Acnelan Peel is an intensive clinical treatment for acne-prone and seborrheic skin. It targets the triggers of acne and prevents recurrence and can be used in mild to severe acne. Effective in reducing active acne lesions, preventing the formation of new acne lesions, and maintaining a healthy skin balance. Formulated with active ingredients it fights acne on a deeper level. "
                 }

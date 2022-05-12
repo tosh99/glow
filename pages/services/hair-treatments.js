@@ -21,7 +21,6 @@ export default function BRFacials() {
                 titleElement={"Hair Treatments"}
                 srTitle={"OXYGENATING & STRENGTHENING"}
                 id={"oxygenating"}
-                srDesc={"20 min"}
                 bannerUrl={`/images/services/hair-treatments/banner.png`}
                 content={
                     "A procedure to oxygenate and fortify your hair. Providing anti-pollution hair care for dull, dry and damaged hair by eliminating the polluting particles on the scalp and hair lengths. The Oxygenating Complex helps stimulate cell respiration by replenishing cells whose oxygen content has become depleted. Vitalises dry and weakened capillary fibres, regains hair strength and glossy shine."
@@ -58,7 +57,7 @@ export default function BRFacials() {
             <ServicesComponent
                 srTitle={"GROWTH FACTOR THERAPY"}
                 id={"growthFactor"}
-                srDesc={"We re commend  3 sessions for optimum results."}
+                srPurpose={"We re commend  3 sessions for optimum results."}
                 content={
                     "Ideal for hair concerns where you’re experiencing thinning, hair fall and loss of density or want to take preventative measures for dull, dry and damaged hair with weakened capillary fibres. This procedure includes an initial blood draw, followed by running the blood through a centrifuge to isolate the growth factors. You'll then receive these isolated growth factors through injection into your scalp. These growth factors fortify hair follicles, stimulate new growth and rejuvenate dormant hair follicles. It additionally helps with improved scalp health, hair thickness and strength, lending itself to prevention of hair fall."
                 }

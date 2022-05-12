@@ -65,6 +65,10 @@ export const servicesItemsHyd = [
                 title: "PRIVILEGE PASS",
                 url: "#privilegePass",
             },
+            {
+                title: "ADD ONS",
+                url: "#addOns",
+            },
         ],
     },
     {
@@ -301,11 +305,15 @@ export const servicesItemsChennai = [
                 title: "PRIVILEGE PASS",
                 url: "#privilegePass",
             },
+            {
+                title: "ADD ONS",
+                url: "#addOns",
+            },
         ],
     },
     {
         title: "Clinical Facials",
-        url: "/clinical-facials-chennai",
+        url: "/services/clinical-facials-chennai",
         items: [
             {
                 title: "FIRE AND ICE",
@@ -339,7 +347,7 @@ export const servicesItemsChennai = [
     },
     {
         title: "Clinical Peels",
-        url: "/clinical-peels",
+        url: "/services/clinical-peels",
         items: [
             {
                 title: "DERMAMELAN",
@@ -369,7 +377,7 @@ export const servicesItemsChennai = [
     },
     {
         title: "Glow Tech",
-        url: "/glow-tech",
+        url: "/services/glow-tech-chennai",
         items: [
             {
                 title: "LASER HAIR REDUCTION",
@@ -379,7 +387,7 @@ export const servicesItemsChennai = [
     },
     {
         title: "Hair Treatments",
-        url: "/glow-tech",
+        url: "/services/hair-treatments",
         items: [
             {
                 title: "OXYGENATING  &  STRENGTHENING",

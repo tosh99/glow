@@ -157,7 +157,7 @@ export default function Products() {
             title: 'Sérum Oligo-Protéines Marines',
         },
         {
-            title: 'Lait VIP O ',
+            title: 'Lait VIP O<span>2</span>',
         },
         {
             title: 'Mineral Tolerance Fluid',
@@ -169,7 +169,7 @@ export default function Products() {
             title: 'Lotion P50',
         },
         {
-            title: 'Masque VIP O ',
+            title: 'Masque VIP O<span>2</span>',
         },
         {
             title: 'Azelac RU Serum',
@@ -401,7 +401,7 @@ export default function Products() {
                             return (<SwiperSlide>
                                     <div className={styles.cfSlide}>
                                         <img src={'/images/products/fav/' + (index) + '.png'}/>
-                                        <header>{item.title}</header>
+                                        <header dangerouslySetInnerHTML={{__html:item.title}}></header>
                                     </div>
                                 </SwiperSlide>
                             )
