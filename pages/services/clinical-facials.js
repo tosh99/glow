@@ -4,7 +4,7 @@ import BackToTop from "../../shared/components/back-to-top";
 import BookNow from "../../shared/components/book-now";
 import Footer from "../../shared/components/footer/footer";
 import ServicesComponent from "../../shared/components/pages/services/services";
-import PageH2 from "../../shared/components/page-header/page-h2";
+import Services from "./index";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 
@@ -20,7 +20,7 @@ export default function GlowTech() {
 
     return (
         <Fragment>
-            <PageH2 title={"Services"} />
+            <Services title={"Services"} />
             <ServicesComponent
                 titleElement={"IS CLINICAL"}
                 id={'fireAndIce'}

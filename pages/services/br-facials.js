@@ -1,10 +1,10 @@
 import { Fragment, useEffect, useState } from "react";
-import PageH2 from "../../shared/components/page-header/page-h2";
 import Footer from "../../shared/components/footer/footer";
 import SwiperCore, { Autoplay, EffectFade, Navigation, Pagination } from "swiper/core";
 import BackToTop from "../../shared/components/back-to-top";
 import BookNow from "../../shared/components/book-now";
 import ServicesComponent from "../../shared/components/pages/services/services";
+import Services from "./index";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 
@@ -16,7 +16,7 @@ export default function BRFacials() {
 
     return (
         <Fragment>
-            <PageH2 bg={"dark"} />
+            <Services title={"Services"} />
             <ServicesComponent
                 isDarkBg={true}
                 titleElement={"BIOLOGIQUE RECHERCHE"}

@@ -4,7 +4,7 @@ import BackToTop from "../../shared/components/back-to-top";
 import BookNow from "../../shared/components/book-now";
 import Footer from "../../shared/components/footer/footer";
 import ServicesComponent from "../../shared/components/pages/services/services";
-import PageH2 from "../../shared/components/page-header/page-h2";
+import Services from "./index";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 
@@ -20,7 +20,7 @@ export default function GlowTech() {
 
     return (
         <Fragment>
-            <PageH2 title={"Services"} />
+            <Services title={"Services"} />
             <ServicesComponent
                 titleElement={"IS CLINICAL"}
                 id={"fireAndIce"}
@@ -79,7 +79,12 @@ export default function GlowTech() {
                 srTitle={"MIRAPEEL"}
                 id={"miraPeel"}
                 content={
-                    "MIRApeel TM is an advanced aesthetic treatment device with serum infused dermabrasion, micro-channelling, microcurrent and LED therapy for face, neck and décolleté. It is the most effective, most comprehensive skin therapy modality to help you with minimising pores, reducing acne, fine lines, wrinkles and hyperpigmentation. MIRApeel TM combines wet abrasion and the use of micro-needling in one effective and non-invasive treatment. The treatment is done via a five-step process. The first step involves gentle cupping therapy for lymphatic drainage. The second step involves microdermabrasion or gentle exfoliation of the outer layers. The third step uses microneedles that are rolled across the skin along with a flow of customised serums. This is followed by a full spectrum LED light therapy which helps reduce acne, reduces inflammation and promotes anti-aging. Lastly followed with the application of a bio-cellulose face mask that keeps the skin moist. What is even more extraordinary about the MIRApeel TM is the use of 4 customised serums for detoxifying, exfoliating, moisturising and nourishing the skin from within."
+                    "MIRApeel TM is an advanced aesthetic treatment device with serum infused dermabrasion, micro-channelling, microcurrent and LED therapy for face, neck and décolleté. It is the most effective, most comprehensive skin therapy modality to help you with minimising pores, reducing acne, fine lines, wrinkles and hyperpigmentation. MIRApeel TM combines wet abrasion and the use of micro-needling in one effective and non-invasive treatment. The treatment is done via a five-step process. The first step involves gentle cupping therapy for lymphatic drainage. The second step involves microdermabrasion or gentle exfoliation of the outer layers. The third step uses microneedles that are rolled across the skin along with a flow of customised serums. This is followed by a full spectrum LED light therapy which helps reduce acne, reduces inflammation and promotes anti-aging. Lastly followed with the application of a bio-cellulose face mask that keeps the skin moist. What is even more extraordinary about the MIRApeel TM is the use of 4 customised serums for detoxifying, exfoliating, moisturising and nourishing the skin from within. " +
+                    "<br><br>Full Facial" +
+                    "<br><br>MIRAroller + Microcurrent\n" +
+                    "<br><br>MIRAbrazor + Microcurrent\n" +
+                    "<br><br>MIRAroller\n" +
+                    "<br><br>MIRAbrazor"
                 }
             />
 

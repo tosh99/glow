@@ -161,9 +161,27 @@ p {
 }
 
 @font-face {
+    font-family: 'TeodorTrialLightItalic';
+    font-display: swap;
+    src: local('TeodorTrialLightItalic'), url("/fonts/TeodorTRIAL-LightItalic.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'TeodorTrialMediumItalic';
+    font-display: swap;
+    src: local('TeodorTrialMediumItalic'), url("/fonts/TeodorTRIAL-MediumItalic.otf") format('opentype');
+}
+
+@font-face {
     font-family: 'CanelaRegular';
     font-display: swap;
     src: local('CanelaRegular'), url("/fonts/Canela-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'CanelaMedium';
+    font-display: swap;
+    src: local('CanelaMedium'), url("/fonts/Canela-Medium.ttf") format('truetype');
 }
 
 

@@ -3,8 +3,8 @@ import SwiperCore, { Autoplay, EffectFade, Navigation, Pagination } from "swiper
 import BackToTop from "../../shared/components/back-to-top";
 import BookNow from "../../shared/components/book-now";
 import Footer from "../../shared/components/footer/footer";
-import PageH2 from "../../shared/components/page-header/page-h2";
 import ServicesComponent from "../../shared/components/pages/services/services";
+import Services from "./index";
 
 SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 
@@ -16,7 +16,7 @@ export default function BRFacials() {
 
     return (
         <Fragment>
-            <PageH2 title={"Services"} />
+            <Services title={"Services"} />
             <ServicesComponent
                 titleElement={"Hair Treatments"}
                 srTitle={"OXYGENATING & STRENGTHENING"}

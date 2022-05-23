@@ -425,7 +425,7 @@ export const servicesItemsChennai = [
     },
     {
         title: "Injectables",
-        url: "/services/injectables",
+        url: "/services/injectables-chennai",
         items: [
             {
                 title: "Dermal Fillers",
