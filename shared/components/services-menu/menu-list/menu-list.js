@@ -1,4 +1,4 @@
-import {Fragment} from "react";
+import {Fragment, useEffect} from "react";
 import styles from "./menu-list.module.scss";
 
 
@@ -6,9 +6,9 @@ export default function MenuList({
                                      close, selectedServiceItem, isEnd = false, onClick = () => {
     }
                                  }) {
-    const redirect = () => {
-
-    }
+    useEffect(()=>{
+        console.log(selectedServiceItem)
+    }, [selectedServiceItem])
 
     return (<Fragment>
         <div className={styles.menuList + ' ' + (isEnd ? styles.menuListLast : '')} onMouseLeave={() => {

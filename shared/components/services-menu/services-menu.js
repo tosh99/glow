@@ -1,7 +1,7 @@
-import { InView } from "react-intersection-observer";
-import { motion } from "framer-motion";
+import {InView} from "react-intersection-observer";
+import {motion} from "framer-motion";
 import styles from "./services-menu.module.scss";
-import { Fragment, useEffect, useState } from "react";
+import {Fragment, useEffect, useState} from "react";
 import Link from "next/link";
 import PageHeader from "../page-header/page-header";
 import MenuList from "./menu-list/menu-list";
@@ -481,66 +481,93 @@ export const servicesItemsChennai = [
     },
 ];
 
-export default function ServicesMenu({ close }) {
+export default function ServicesMenu({close}) {
     const [index, setIndex] = useState(0);
-    const [selectedServiceItem, setSelectedServiceItem] = useState({ items: [] });
-    const [selectedRegion, setSelectedRegion] = useState(0);
+    const [selectedServiceItem, setSelectedServiceItem] = useState({items: []});
+    const [selectedRegion, setSelectedRegion] = useState(servicesItemsHyd);
+    const [selectedRegionIndex, setSelectedRegionIndex] = useState(0);
+
+    const [device, set_device] = useState(2);
 
     useEffect(() => {
-        if (typeof index === "number") {
-            setSelectedServiceItem((selectedRegion === 0 ? servicesItemsHyd : servicesItemsChennai)[index]);
+        if (screen.width <= 648) {
+            set_device(0)
         }
-    }, [index, selectedRegion]);
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }, [])
 
     return (
         <Fragment>
             <div className={styles.menu}>
                 <InView threshold={0.5}>
-                    {({ ref, inView }) => (
+                    {({ref, inView}) => (
                         <motion.div
                             className={"outer " + " " + styles.servicesOuter}
                             ref={ref}
-                            initial={{ opacity: 0 }}
-                            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                            transition={{ duration: 1 }}
+                            initial={{opacity: 0}}
+                            animate={inView ? {opacity: 1} : {opacity: 0}}
+                            transition={{duration: 1}}
                         >
-                            <PageHeader title={"Services"} onMenuClicked={close} />
+                            <PageHeader title={"Services"} onMenuClicked={close}/>
                             <div className={styles.menuContent}>
-                                {(selectedRegion === 0 ? servicesItemsHyd : servicesItemsChennai).map(
+                                {selectedRegion.map(
                                     (service, serviceIndex) => {
                                         return (
-                                            <div className={styles.menuCItem}>
+                                            <div className={styles.menuCItem} onClick={() => {
+
+                                                let index = 0;
+                                                for (const region of selectedRegion) {
+                                                    if (index !== serviceIndex) {
+                                                        region.isDisplayed = false;
+                                                    }
+                                                    index += 1
+                                                }
+
+                                                service.isDisplayed = !service.isDisplayed;
+                                                setSelectedServiceItem(service);
+                                                setIndex(prev => prev + 1)
+                                            }}>
                                                 <header
                                                     className={
                                                         styles.menuCTitle +
                                                         " " +
-                                                        (index === serviceIndex ? styles.menuCTitleSelected : "")
+                                                        (service.isDisplayed ? styles.menuCTitleSelected : "")
                                                     }
                                                     onMouseEnter={() => {
-                                                        setIndex(serviceIndex);
+                                                        if (device !== 0) {
+                                                            let index = 0;
+                                                            for (const region of selectedRegion) {
+                                                                if (index !== serviceIndex) {
+                                                                    region.isDisplayed = false;
+                                                                }
+                                                                index += 1
+                                                            }
+
+                                                            service.isDisplayed = !service.isDisplayed;
+                                                            setSelectedServiceItem(service);
+                                                            setIndex(prev => prev + 1)
+                                                        }
                                                     }}
                                                 >
                                                     {service.title}
+                                                    <img src={"/icons/common/down.svg"}
+                                                    />
                                                 </header>
-                                                {index === serviceIndex && (
+                                                {service.isDisplayed && (
                                                     <MenuList
                                                         selectedServiceItem={selectedServiceItem}
                                                         onClick={(ev) => {
-                                                            console.log(selectedServiceItem.url + ev.url);
                                                             close();
                                                             Router.push(selectedServiceItem.url + ev.url);
                                                             // setIndex(undefined);
                                                         }}
                                                         close={() => {
-                                                            setIndex(undefined);
+                                                            service.isDisplayed = false;
+                                                            setIndex(prev => prev + 1)
                                                         }}
                                                         isEnd={
-                                                            serviceIndex ===
-                                                            (selectedRegion === 0
-                                                                ? servicesItemsHyd
-                                                                : servicesItemsChennai
-                                                            ).length -
-                                                                1
+                                                            serviceIndex === selectedRegion.length - 1
                                                         }
                                                     />
                                                 )}
@@ -555,12 +582,19 @@ export default function ServicesMenu({ close }) {
                                         return (
                                             <div
                                                 onClick={() => {
-                                                    setSelectedRegion(regionIndex);
+                                                    if (regionIndex === 0) {
+                                                        setSelectedRegion(servicesItemsHyd);
+                                                        setIndex(prev => prev + 1)
+                                                    } else {
+                                                        setSelectedRegion(servicesItemsChennai);
+                                                        setIndex(prev => prev + 1)
+                                                    }
+                                                    setSelectedRegionIndex(regionIndex);
                                                 }}
                                                 className={
                                                     styles.location +
                                                     " " +
-                                                    (regionIndex === selectedRegion ? styles.locationSelected : "")
+                                                    (regionIndex === selectedRegionIndex ? styles.locationSelected : "")
                                                 }
                                             >
                                                 <header>{region}</header>

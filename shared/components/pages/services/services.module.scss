@@ -102,6 +102,62 @@
         h1 {
             position: relative;
             left: 0;
+            font-size: 55px;
+            line-height: 100%;
+            margin-bottom: 20px;
+        }
+
+        .servicesRight {
+            max-width: 100%;
+
+            img {
+                margin-bottom: 30px;
+            }
+
+            .srTitle {
+                font-size: 18px;
+            }
+
+            .srDesc {
+                font-size: 14px;
+                margin-top: 6px;
+            }
+
+            .srPurpose {
+                font-size: 20px;
+                margin-top: -30px;
+                margin-bottom: 30px;
+            }
+
+            .srContent {
+                font-size: 16px;
+                padding-bottom: 35px;
+                margin-top: 0;
+
+                article {
+                    font-size: 18px;
+                }
+
+                p {
+                    font-size: 20px;
+                    line-height: 132.8%;
+                    margin-bottom: 9px;
+                    margin-top: 16px;
+                    letter-spacing: 2px;
+                }
+
+                h5 {
+                    font-size: 18px;
+                    line-height: 237.3%;
+                    text-align: left;
+                    letter-spacing: 1px;
+                }
+
+                h6 {
+                    font-size: 14px;
+                    line-height: 132.8%;
+                }
+            }
         }
     }
 }
