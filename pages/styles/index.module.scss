@@ -317,7 +317,6 @@
                 }
             }
 
-
             p {
                 margin-bottom: 60px;
                 font-family: TelegrafRegular, sans-serif;
@@ -369,7 +368,6 @@
 .journeyOuter {
 
 }
-
 
 .journey {
     padding: 140px 0;
@@ -567,7 +565,7 @@
             padding: 0;
 
             h1 {
-                font-size: 65px;
+                font-size: 64px;
                 margin-left: 3px;
                 width: 100%;
                 margin-top: -6px;
@@ -592,17 +590,16 @@
 
                     p {
                         padding: 20px 35px;
-                        margin-bottom: 30px;
+                        margin-bottom: 0;
                     }
 
                     .reju {
-                        margin-bottom: 0;
+                        margin-bottom: 30px;
                     }
                 }
             }
         }
     }
-
 
     .skinCarePhil {
         flex-direction: column;
@@ -616,6 +613,10 @@
         .scRight {
             width: 100%;
             min-height: 380px;
+
+            p {
+                margin-bottom: 25px;
+            }
         }
     }
 
@@ -637,6 +638,18 @@
                 width: 100%;
             }
         }
+
+        .scBottom {
+            img {
+                margin-bottom: 35px;
+            }
+
+            a {
+                header {
+                    text-align: center;
+                }
+            }
+        }
     }
 
     .services {
@@ -644,11 +657,16 @@
             h2 {
                 font-size: 80px;
             }
+
+            a {
+                margin-top: 20px;
+            }
         }
     }
 
     .sliders {
         padding: 50px 0;
+        padding-bottom: 20px;
 
         .desc {
             margin-bottom: 80px;
@@ -661,6 +679,10 @@
             padding: 0 35px;
             width: 100vw;
             min-width: unset !important;
+
+            .menu {
+                width: 110px;
+            }
 
             .title {
                 display: none;
@@ -699,12 +721,20 @@
                     align-items: center;
                     justify-content: space-between;
                     margin-bottom: 28px;
+
+                    h3 {
+                        font-size: 18px;
+                    }
                 }
 
                 p {
                     height: auto;
                     margin-bottom: 35px;
                     font-size: 18px;
+                }
+
+                header {
+                    margin-bottom: 0;
                 }
             }
         }
@@ -719,7 +749,7 @@
             margin-bottom: 35px;
 
             h2 {
-                font-size: 80px;
+                font-size: 64px;
                 line-height: 107.6%;
                 letter-spacing: 0.11em;
                 padding-bottom: 35px;

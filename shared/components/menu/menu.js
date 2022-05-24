@@ -36,9 +36,9 @@ export default function Menu({close}) {
                                 <Link href="/products">
                                     <header>Products</header>
                                 </Link>
-                                <Link href="/theedit">
-                                    <header>The Edit</header>
-                                </Link>
+                                {/*<Link href="/theedit">*/}
+                                {/*    <header>The Edit</header>*/}
+                                {/*</Link>*/}
                                 <Link href="/biologique">
                                     <header>Biologique Recherche</header>
                                 </Link>
@@ -50,7 +50,7 @@ export default function Menu({close}) {
                                 <p>make AN appointment</p>
                                 <div className={styles.menuLast}>
                                     <Link href="/">
-                                        <header>Home</header>
+                                        <header>HOME</header>
                                     </Link>
                                 </div>
                             </div>

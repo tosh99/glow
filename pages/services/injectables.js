@@ -24,7 +24,7 @@ export default function GlowTech() {
             <ServicesComponent
                 titleElement={"DERMAL FILLERS"}
                 id={"dermalFillers"}
-                bannerUrl={`/images/services/injectables/banner.png`}
+                bannerUrl={`/images/services/injectables/banner-chennai.png`}
                 content={
                     "We have innovative injectable treatments designed to improve skin quality by replacing skin’s lost volume and replenishing its moisture content. It's formulated with skin conditioning hyaluronic  acid gel that is injected into the middle layers of the dermis across many sites to nourish it from the inside out. It hydrates the skin, because of the high water-binding capacity of hyaluronic acid,increases elasticity " +
                     "by stimulating collagen production and smoothes the skin by reducing the appearance of fine lines. Suitable for your cheeks, under eye, lips, chin, jawline augmentation and nasolabial folds." +

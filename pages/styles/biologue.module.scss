@@ -449,8 +449,8 @@
         h1 {
             position: relative;
             margin-bottom: 20px;
-            font-size: 80px;
-            line-height: 80px;
+            font-size: 64px;
+            line-height: 100%;
             padding: 0 !important;
         }
 
@@ -504,6 +504,12 @@
                 margin-bottom: 35px;
             }
         }
+
+        .smRight {
+            p {
+                margin-bottom: 16px;
+            }
+        }
     }
 
     .threeStageOuter {
@@ -529,7 +535,7 @@
     .methodology {
         display: flex;
         flex-direction: column;
-        border-bottom: 1px solid #444444;
+        border-bottom: none;
         padding: 0 35px 50px;
 
         .metLeft {
@@ -538,19 +544,20 @@
             flex-direction: column;
             border-right: none;
             padding: 50px 0;
+            padding-bottom: 0;
             height: auto;
 
             header {
                 font-family: SaolRegular, sans-serif;
                 font-size: 24px;
-                margin-bottom: 10px;
+                margin-bottom: 35px;
             }
 
             h2 {
-                font-size: 60px;
+                font-size: 56px;
                 line-height: 110%;
                 letter-spacing: 0.1em;
-                margin-bottom: 35px;
+                margin-bottom: 25px;
             }
 
             p {
@@ -567,42 +574,6 @@
         }
     }
 
-    .currentFavourites {
-        padding: 50px 0;
-
-        .cfHeader {
-            flex-direction: column;
-
-            .title {
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 35px;
-                font-size: 80px;
-                line-height: 107.6%;
-            }
-
-            .desc {
-                width: 100%;
-            }
-
-        }
-
-        .cfSlide {
-            margin-right: 0;
-
-            img {
-                width: 100%;
-            }
-        }
-
-        .buyBr {
-            width: 100vw;
-
-            img {
-                width: calc(100% - 70px);
-            }
-        }
-    }
 
     .sliders {
         padding: 50px 0;
@@ -629,6 +600,11 @@
         }
 
         .slide {
+
+            .titleM {
+                font-size: 98px;
+            }
+
             .content {
                 max-width: unset;
                 min-width: unset;
@@ -636,4 +612,50 @@
         }
 
     }
+
+    .currentFavourites {
+        padding: 50px 0;
+
+        .cfHeader {
+            flex-direction: column;
+
+            .title {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 0;
+                font-size: 80px;
+                line-height: 107.6%;
+            }
+
+            .desc {
+                width: 100%;
+
+                div {
+                    margin-top: 45px;
+                }
+            }
+
+        }
+
+        .cfSlide {
+            margin-right: 0;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .buyBr {
+            width: 100vw;
+
+            header {
+                font-size: 35px;
+            }
+
+            img {
+                width: calc(100% - 70px);
+            }
+        }
+    }
+
 }

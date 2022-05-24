@@ -124,7 +124,7 @@
         }
 
         header {
-            font-family: SaolRegular, sans-serif;
+            font-family: SaolDisplayRegular, sans-serif;
             font-size: 20px;
             line-height: 145.69%;
             letter-spacing: 0.06em;
@@ -356,6 +356,10 @@
         flex-direction: column;
         padding: 50px 0;
 
+        .shopBody {
+            font-size: 20px;
+        }
+
         .bLeft {
             margin-right: 0;
             width: 100%;
@@ -424,6 +428,7 @@
 
     .productDesc {
         padding: 50px 0;
+        border-bottom: 1px solid #c7c7c7;
     }
 
     .currentFavourites {
@@ -455,6 +460,10 @@
                 font-size: 16px;
             }
         }
+
+        .enquire {
+            margin-top: 20px;
+        }
     }
 
     .shopMyShelfie {
@@ -475,16 +484,23 @@
     }
 
     .sliders {
+        padding-bottom: 50px;
+
         .sliderTitle {
-            font-size: 46px;
+            font-size: 34px;
             letter-spacing: 0.03em;
-            margin-bottom: 50px;
+            margin-bottom: 35px;
             padding: 0 35px;
         }
+
         .slide {
             .titleM {
                 font-size: 65px;
                 margin-bottom: 35px;
+            }
+
+            .bannerImg {
+                margin-bottom: 40px;
             }
 
             .content {

@@ -183,7 +183,7 @@ export default function Biologique() {
                                                     !item.read_more && <header className={styles.readMore} onClick={() => {
                                                         item.read_more = true;
                                                         set_render(prev => prev + 1);
-                                                    }}>Read More
+                                                    }}>read more
                                                     </header>
                                                 }
                                             </>

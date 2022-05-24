@@ -36,10 +36,6 @@ export default function PageHeader({ title, bg = "solid", onMenuClicked = () => 
                         <img
                             src={"/icons/header/star.svg"}
                             onClick={(ev) => {
-                                console.log("EV3", ev);
-                                console.log(router.pathname);
-                                console.log(router.pathname.includes("/services"));
-
                                 if (router.pathname.includes("/services")) {
                                     set_show_services_menu((prev) => !prev);
                                 } else {

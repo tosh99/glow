@@ -46,7 +46,7 @@ export default function Footer() {
                                     <a href="https://www.linkedin.com/company/glow-skin-beauty-wellness" target="_blank">
                                         <header className={styles.item}>Linkedin</header>
                                     </a>
-                                    <a href="https://www.instagram.com/theglow.edit/?hl=en" target="_blank">
+                                    <a href="https://www.instagram.com/theglow.clinic" target="_blank">
                                         <header className={styles.item}>Instagram</header>
                                     </a>
                                 </>
@@ -83,10 +83,10 @@ export default function Footer() {
                                         Router.push('/about')
                                     }}>About
                                     </header>
-                                    <header className={styles.item} onClick={() => {
-                                        Router.push('/theedit')
-                                    }}>Blog
-                                    </header>
+                                    {/*<header className={styles.item} onClick={() => {*/}
+                                    {/*    Router.push('/theedit')*/}
+                                    {/*}}>Blog*/}
+                                    {/*</header>*/}
                                 </>
                             }
                         </div>

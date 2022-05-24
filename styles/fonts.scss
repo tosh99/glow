@@ -69,6 +69,11 @@ p {
     src: local('OggRegular'), url("/fonts/OggRegular.otf") format('opentype');
 }
 
+@font-face {
+    font-family: 'SaolDisplayRegular';
+    font-display: swap;
+    src: local('SaolDisplayRegular'), url("/fonts/SaolDisplay-Regular.otf") format('opentype');
+}
 
 @font-face {
     font-family: 'SaolRegular';

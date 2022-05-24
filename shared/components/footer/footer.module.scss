@@ -230,6 +230,18 @@
     .footer {
 
         .footerTop {
+            .ftLeft {
+                .backtoToTop {
+                    justify-content: center;
+
+                    img {
+                        width: 16px;
+                        min-width: 16px;
+                        margin-right: 0;
+                    }
+                }
+            }
+
             .ftRight {
 
                 .column {
@@ -267,8 +279,9 @@
 
 @media only screen and (max-width: 648px) {
     .footer {
-        padding: 50px 0 0 0 !important;
-        padding-top: 20px !important;
+        padding: 50px 0 !important;
+        padding-bottom: 0 !important;
+
 
         .footerTop {
             flex-direction: column;
@@ -286,7 +299,7 @@
                     width: 60px;
                 }
 
-                .backtoToTop{
+                .backtoToTop {
                     display: flex;
                 }
             }
@@ -295,7 +308,7 @@
                 flex-direction: column;
                 justify-content: unset;
                 padding: 45px 35px 0;
-                border-top: 0.3px solid #444444;
+                border-top: none;
 
                 .column {
                     margin-left: 0;

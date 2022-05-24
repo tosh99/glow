@@ -24,6 +24,7 @@
 
         .close {
             width: 20px;
+            cursor: pointer;
         }
     }
 
@@ -53,11 +54,11 @@
         width: 100%;
 
         p {
-            font-family: HattonRegular, sans-serif;
+            font-family: HattonMedium, sans-serif;
             line-height: 155.5%;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            font-size: 21px;
+            font-size: 26px;
             cursor: pointer;
         }
 
@@ -84,16 +85,29 @@
     .menu {
         .menuTop {
             padding: 20px 35px;
+
+            .logo {
+                width: 90px;
+            }
         }
 
         .menuContent {
-            padding: 20px 35px;
+            padding: 45px 35px;
             align-items: flex-start;
         }
 
         .menuBottom {
             padding: 20px 35px;
             align-items: flex-start;
+            bottom: 25px;
+
+            p {
+                font-size: 22px;
+            }
+
+            .menuLast {
+                margin-top: 50px;
+            }
         }
     }
 }

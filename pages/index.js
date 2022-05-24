@@ -78,33 +78,6 @@ export default function Home() {
         }
     ];
 
-    useEffect(() => {
-        const ids = ['banner', 'bannerText', 'SkinCarePhilosophy', 'sayHello', 'services', 'sliders', 'edit', 'visitus', 'journey']
-        let id = 0;
-
-        // window.addEventListener("wheel", function (e) { // or window.addEventListener("scroll"....
-        //     if (e.wheelDelta >= 0) {
-        //         if (id > 0) {
-        //             if (id - 1 === 0) {
-        //                 window.scrollTo(0, 0)
-        //             } else {
-        //                 document.getElementById(ids[id - 1]).scrollIntoView({behavior: "smooth", block: "start",});
-        //             }
-        //             id -= 1;
-        //         }
-        //
-        //
-        //     } else {
-        //         if (id < ids.length - 1) {
-        //             document.getElementById(ids[id + 1]).scrollIntoView({behavior: "smooth", block: "start",});
-        //             id += 1;
-        //         }
-        //
-        //     }
-        //     console.log(id)
-        // }, false);
-    }, [])
-
     const [device, set_device] = useState(2);
     useEffect(() => {
         if (screen.width <= 648) {

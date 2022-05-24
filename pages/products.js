@@ -348,10 +348,14 @@ export default function Products() {
 
         <div className={"outer " + styles.productDescOuter}>
             <div className={"inner " + styles.productDesc}>
-                <p>After a lot of deliberation we have curated a wide range of products that are available to you 24 x 7 on our
-                    online boutique glow.shop. You can also purchase them in-store with the assistance of our skincare experts or
-                    even place an order for curbside pick-up. These products are tried and tested cult favourites and made with
-                    innovative formulations to offer you an everlasting glow and help you on your skincare, beauty and wellness
+                <p>After a lot of deliberation we have curated a wide range of products that are available to you 24 x 7
+                    on our
+                    online boutique glow.shop. You can also purchase them in-store with the assistance of our skincare
+                    experts or
+                    even place an order for curbside pick-up. These products are tried and tested cult favourites and
+                    made with
+                    innovative formulations to offer you an everlasting glow and help you on your skincare, beauty and
+                    wellness
                     journey
                 </p>
             </div>
@@ -360,11 +364,13 @@ export default function Products() {
         <div className={"outer " + styles.shopMyShelfieOuter}>
             <div className={"inner " + styles.shopMyShelfie}>
                 <div className={styles.smLeft}>
-                    <h2>Shop my shelfie</h2>
+                    <h2>Shop {device === 0 && <br/>} my shelfie</h2>
                 </div>
                 <div className={styles.smRight}>
-                    <p> Being a skincare enthusiast myself, I am always on the lookout for new products to add to my repertoire.
-                        These are a few of my current favourites, some of which are staples in my routine and some new ones you would
+                    <p> Being a skincare enthusiast myself, I am always on the lookout for new products to add to my
+                        repertoire.
+                        These are a few of my current favourites, some of which are staples in my routine and some new
+                        ones you would
                         be happy to discover. Shop these curated products and refresh your skincare shelf.
                     </p>
                     <header>xoxo</header>
@@ -401,7 +407,7 @@ export default function Products() {
                             return (<SwiperSlide>
                                     <div className={styles.cfSlide}>
                                         <img src={'/images/products/fav/' + (index) + '.png'}/>
-                                        <header dangerouslySetInnerHTML={{__html:item.title}}></header>
+                                        <header dangerouslySetInnerHTML={{__html: item.title}}></header>
                                     </div>
                                 </SwiperSlide>
                             )
