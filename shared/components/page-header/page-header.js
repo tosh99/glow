@@ -17,7 +17,7 @@ export default function PageHeader({ title, bg = "solid", onMenuClicked = () => 
                     "outer " + " " + styles.headerOuter + " " + (bg === "transparent" ? styles.headerOuterTrans : "")
                 }
                 onClick={(ev) => {
-                    console.log("EV1", ev);
+
                 }}
             >
                 <div className={"inner " + styles.header}>
@@ -29,7 +29,7 @@ export default function PageHeader({ title, bg = "solid", onMenuClicked = () => 
                     <div
                         className={styles.hRight}
                         onClick={(ev) => {
-                            console.log("EV2", ev);
+
                         }}
                     >
                         <header>{title}</header>
@@ -58,7 +58,6 @@ export default function PageHeader({ title, bg = "solid", onMenuClicked = () => 
             {show_services_menu && (
                 <ServicesMenu
                     close={() => {
-                        console.log("Closed");
                         set_show_services_menu(false);
                     }}
                 />

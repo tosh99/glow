@@ -143,9 +143,6 @@ export default function TheEdit() {
                                         set_render(prev => prev + 1)
                                     }}
                                     onSlideChange={(ev) => {
-                                        console.log(ev.activeIndex)
-                                        console.log(post.desc_1_images.length)
-
                                         post.currentslide = ev.activeIndex;
                                         set_render(prev => prev + 1)
                                     }}>

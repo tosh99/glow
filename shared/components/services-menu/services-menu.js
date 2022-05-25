@@ -2,10 +2,9 @@ import {InView} from "react-intersection-observer";
 import {motion} from "framer-motion";
 import styles from "./services-menu.module.scss";
 import {Fragment, useEffect, useState} from "react";
-import Link from "next/link";
 import PageHeader from "../page-header/page-header";
 import MenuList from "./menu-list/menu-list";
-import Router from "next/router";
+import Router, {useRouter} from "next/router";
 
 const regions = ["HYDERABAD", "CHENNAI"];
 export const servicesItemsHyd = [
@@ -486,7 +485,9 @@ export default function ServicesMenu({close}) {
     const [selectedServiceItem, setSelectedServiceItem] = useState({items: []});
     const [selectedRegion, setSelectedRegion] = useState(servicesItemsHyd);
     const [selectedRegionIndex, setSelectedRegionIndex] = useState(0);
+    const router = useRouter();
 
+    const [isBasePath, setIsBasePath] = useState(false);
     const [device, set_device] = useState(2);
 
     useEffect(() => {
@@ -495,6 +496,13 @@ export default function ServicesMenu({close}) {
         }
 
         window.scrollTo({top: 0, behavior: 'smooth'});
+
+
+        const path = router.pathname;
+        const baseIdentifier = path.split("/").filter(item => item);
+        if (baseIdentifier.length === 1) {
+            setIsBasePath(true);
+        }
     }, [])
 
     return (
@@ -509,52 +517,66 @@ export default function ServicesMenu({close}) {
                             animate={inView ? {opacity: 1} : {opacity: 0}}
                             transition={{duration: 1}}
                         >
-                            <PageHeader title={"Services"} onMenuClicked={close}/>
+                            <PageHeader title={"Services"} onMenuClicked={() => {
+                                if (isBasePath) {
+                                    Router.push('/');
+                                } else {
+                                    close();
+                                }
+                            }}/>
                             <div className={styles.menuContent}>
                                 {selectedRegion.map(
-                                    (service, serviceIndex) => {
+                                    (region, regionIndex) => {
                                         return (
                                             <div className={styles.menuCItem} onClick={() => {
-
                                                 let index = 0;
-                                                for (const region of selectedRegion) {
-                                                    if (index !== serviceIndex) {
+                                                const regions = [...selectedRegion]
+                                                for (const region of regions) {
+                                                    if (index !== regionIndex) {
                                                         region.isDisplayed = false;
+                                                    } else {
+                                                        region.isDisplayed = !region.isDisplayed
+                                                        setSelectedServiceItem({...region});
+
                                                     }
                                                     index += 1
                                                 }
 
-                                                service.isDisplayed = !service.isDisplayed;
-                                                setSelectedServiceItem(service);
+                                                setSelectedRegion([...regions])
                                                 setIndex(prev => prev + 1)
                                             }}>
                                                 <header
                                                     className={
                                                         styles.menuCTitle +
                                                         " " +
-                                                        (service.isDisplayed ? styles.menuCTitleSelected : "")
+                                                        (region.isDisplayed ? styles.menuCTitleSelected : "")
                                                     }
                                                     onMouseEnter={() => {
                                                         if (device !== 0) {
                                                             let index = 0;
                                                             for (const region of selectedRegion) {
-                                                                if (index !== serviceIndex) {
+                                                                if (index !== regionIndex) {
                                                                     region.isDisplayed = false;
                                                                 }
                                                                 index += 1
                                                             }
 
-                                                            service.isDisplayed = !service.isDisplayed;
-                                                            setSelectedServiceItem(service);
+                                                            region.isDisplayed = !region.isDisplayed;
+                                                            if (region.isDisplayed) {
+                                                                setSelectedServiceItem(region);
+                                                            } else {
+                                                                setSelectedServiceItem(null)
+                                                            }
                                                             setIndex(prev => prev + 1)
                                                         }
                                                     }}
                                                 >
-                                                    {service.title}
-                                                    <img src={"/icons/common/down.svg"}
+                                                    {region.title}
+                                                    <img
+                                                        src={`/icons/common/${region.isDisplayed ? 'up' : 'down'}.svg`}
                                                     />
                                                 </header>
-                                                {service.isDisplayed && (
+                                                {region.isDisplayed && (
                                                     <MenuList
                                                         selectedServiceItem={selectedServiceItem}
                                                         onClick={(ev) => {
@@ -563,11 +585,11 @@ export default function ServicesMenu({close}) {
                                                             // setIndex(undefined);
                                                         }}
                                                         close={() => {
-                                                            service.isDisplayed = false;
+                                                            region.isDisplayed = false;
                                                             setIndex(prev => prev + 1)
                                                         }}
                                                         isEnd={
-                                                            serviceIndex === selectedRegion.length - 1
+                                                            regionIndex === selectedRegion.length - 1
                                                         }
                                                     />
                                                 )}

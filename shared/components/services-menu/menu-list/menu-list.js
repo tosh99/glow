@@ -1,4 +1,4 @@
-import {Fragment, useEffect} from "react";
+import {Fragment, useEffect, useState} from "react";
 import styles from "./menu-list.module.scss";
 
 
@@ -6,8 +6,11 @@ export default function MenuList({
                                      close, selectedServiceItem, isEnd = false, onClick = () => {
     }
                                  }) {
-    useEffect(()=>{
-        console.log(selectedServiceItem)
+
+    const [render, setRender] = useState(0)
+
+    useEffect(() => {
+        setRender(prev => prev + 1)
     }, [selectedServiceItem])
 
     return (<Fragment>
