@@ -12,17 +12,17 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const locations = [
     {
+        title: 'Hyderabad',
+        address: '1st & 2nd Floor, Plot No. 73,<br> Vemireddy Enclave,Road No. 12,<br> Banjarahills',
+        phone: ['+91 96772 92429', '04048505555'],
+        link: 'https://www.google.com/maps/place/Glow+-+Skin+%7C+Beauty+%7C+Wellness/@17.4400203,78.3947969,12z/data=!4m9!1m2!2m1!1sglow+clinic+hyderabad!3m5!1s0x3bcb973c9c19eee9:0x9db4ce07389c05a8!8m2!3d17.4077161!4d78.4429068!15sChVnbG93IGNsaW5pYyBoeWRlcmFiYWSSARBza2luX2NhcmVfY2xpbmlj'
+    },
+    {
         title: 'Chennai',
         address: '3rd Floor, Door No. 3, <br> Khader Nawaz Khan Road',
         phone: ['+91 99513 55555', '044 4553 5555'],
         link: 'https://www.google.com/maps/place/Glow+-+Skin+%7C+Beauty+%7C+Wellness/@12.9749069,80.1315287,12z/data=!4m9!1m2!2m1!1sglow+clinic+chennai!3m5!1s0x3a52672c0d216887:0xe945533f4203fde4!8m2!3d13.0608313!4d80.2513894!15sChNnbG93IGNsaW5pYyBjaGVubmFpWhUiE2dsb3cgY2xpbmljIGNoZW5uYWmSARBza2luX2NhcmVfY2xpbmljmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU5oYkc5cE1XSkJFQUU',
     },
-    {
-        title: 'Hyderabad',
-        address: '1st & 2nd Floor, Plot No. 73,<br> Vemireddy Enclave,Road No. 12,<br> Banjarahills',
-        phone: ['+91 96772 92429', '04048505555'],
-        link: 'https://www.google.com/maps/place/Glow+-+Skin+%7C+Beauty+%7C+Wellness/@17.4400203,78.3947969,12z/data=!4m9!1m2!2m1!1sglow+clinic+hyderabad!3m5!1s0x3bcb973c9c19eee9:0x9db4ce07389c05a8!8m2!3d17.4077161!4d78.4429068!15sChVnbG93IGNsaW5pYyBoeWRlcmFiYWSSARBza2luX2NhcmVfY2xpbmlj'
-    }
 ]
 
 export default function Visitus() {
@@ -70,13 +70,15 @@ export default function Visitus() {
                                     <SwiperSlide>
                                         <div onClick={goToAddress}>
                                             <img className={styles.imgDesktop} src={'/images/locations/chennai.png'}/>
-                                            <img className={styles.imgMob} src={'/images/locations/chennai_mobile.png'}/>
+                                            <img className={styles.imgMob}
+                                                 src={'/images/locations/chennai_mobile.png'}/>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div onClick={goToAddress}>
                                             <img className={styles.imgDesktop} src={'/images/locations/hyderabad.png'}/>
-                                            <img className={styles.imgMob} src={'/images/locations/hyderabad_mobile.png'}/>
+                                            <img className={styles.imgMob}
+                                                 src={'/images/locations/hyderabad_mobile.png'}/>
                                         </div>
                                     </SwiperSlide>
                                 </Swiper>
@@ -97,7 +99,8 @@ export default function Visitus() {
                                 </div>
                                 <div className={styles.vuaRight}>
                                     <div className={styles.dts}>
-                                        <Dots count={2} selected={current_slide} selectedColor={'white'} bgColor={'#D3D3D37F'}/>
+                                        <Dots count={2} selected={current_slide} selectedColor={'white'}
+                                              bgColor={'#D3D3D37F'}/>
                                     </div>
                                     <NextBack
                                         theme={'light'}

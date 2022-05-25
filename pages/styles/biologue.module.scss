@@ -351,6 +351,10 @@
                 margin-right: 0;
                 font-family: TelegrafRegular, sans-serif;
                 line-height: 150%;
+
+                p {
+                    margin-right: 50px;
+                }
             }
 
             .imgRight {
@@ -375,12 +379,11 @@
                 }
             }
 
-
         }
     }
 
     .shopMyShelfie {
-        padding: 50px 0;
+        padding: 100px 0;
         flex-direction: column;
 
         .smLeft {

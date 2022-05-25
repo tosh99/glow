@@ -81,6 +81,27 @@
 
 }
 
+@media only screen and (max-width: 1280px) {
+    .menu {
+        .menuTop {
+            padding: 20px 50px;
+
+            .logo {
+                width: 130px;
+            }
+        }
+
+        .menuContent {
+            padding: 45px 50px;
+        }
+
+        .menuBottom {
+            padding: 20px 50px;
+        }
+    }
+
+}
+
 @media only screen and (max-width: 648px) {
     .menu {
         .menuTop {

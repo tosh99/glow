@@ -141,27 +141,45 @@
 
 @media only screen and (max-width: 1280px) {
     .advocacy {
-        padding-top: 75px;
-        padding-bottom: 75px;
+        padding: 75px 0;
+
+        header {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
 
         p {
             font-size: 24px;
             line-height: 35px;
             letter-spacing: 0.04em;
+            margin-bottom: 20px;
+        }
+
+        p:last-of-type {
+            margin-bottom: 0;
         }
 
     }
 
     .journey {
         .joTop {
-            h2 {
-                font-size: 80px;
-                line-height: 80px;
+            .jotLeft {
+                margin-right: 50px;
+
+                img {
+                    width: 80%;
+                }
+            }
+
+            img {
+                width: 40%;
             }
         }
 
         .joBottom {
             .jobContent {
+                width: 40%;
+
                 header {
                     margin-top: 10px;
                 }
@@ -239,9 +257,9 @@
             min-height: 520px;
             border: none;
 
-            .desc{
-                div{
-                    div{
+            .desc {
+                div {
+                    div {
                         margin-top: 50px;
                     }
                 }
