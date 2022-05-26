@@ -1,5 +1,3 @@
-import {InView} from "react-intersection-observer";
-import {motion} from "framer-motion";
 import styles from "./footer.module.scss";
 import {Fragment, useEffect, useState} from "react";
 import Router from "next/router";
@@ -43,7 +41,8 @@ export default function Footer() {
                             </div>
                             {
                                 is_visible.follow && <>
-                                    <a href="https://www.linkedin.com/company/glow-skin-beauty-wellness" target="_blank">
+                                    <a href="https://www.linkedin.com/company/glow-skin-beauty-wellness"
+                                       target="_blank">
                                         <header className={styles.item}>Linkedin</header>
                                     </a>
                                     <a href="https://www.instagram.com/theglow.clinic" target="_blank">
@@ -83,10 +82,14 @@ export default function Footer() {
                                         Router.push('/about')
                                     }}>About
                                     </header>
-                                    {/*<header className={styles.item} onClick={() => {*/}
-                                    {/*    Router.push('/theedit')*/}
-                                    {/*}}>Blog*/}
-                                    {/*</header>*/}
+                                    <header className={styles.item} onClick={() => {
+                                        Router.push('/tnc')
+                                    }}>Terms and Conditions
+                                    </header>
+                                    <header className={styles.item} onClick={() => {
+                                        Router.push('/privacy-policy')
+                                    }}>Privacy Policy
+                                    </header>
                                 </>
                             }
                         </div>

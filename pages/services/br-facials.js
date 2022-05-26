@@ -1,6 +1,6 @@
-import { Fragment, useEffect, useState } from "react";
+import {Fragment, useEffect, useState} from "react";
 import Footer from "../../shared/components/footer/footer";
-import SwiperCore, { Autoplay, EffectFade, Navigation, Pagination } from "swiper/core";
+import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from "swiper/core";
 import BackToTop from "../../shared/components/back-to-top";
 import BookNow from "../../shared/components/book-now";
 import ServicesComponent from "../../shared/components/pages/services/services";
@@ -11,12 +11,12 @@ SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 export default function BRFacials() {
     const [device, set_device] = useState(2);
     useEffect(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({top: 0, behavior: "smooth"});
     }, []);
 
     return (
         <Fragment>
-            <Services title={"Services"} />
+            <Services title={"Services"}/>
             <ServicesComponent
                 isDarkBg={true}
                 titleElement={"BIOLOGIQUE RECHERCHE"}
@@ -55,7 +55,7 @@ export default function BRFacials() {
                 id={"soinRestructurant"}
                 srDesc={"90 min"}
                 content={
-                    "<p>For replumped and hydrated skin</p>Designed for the quintessential city skin; it targets reactive, stressed and traumatised skin. An excellent anti-stress treatment that reduces the marks of time by hydrating, protecting and smoothing. A reconditioning procedure to contour and sculpt the face with an immediate replumping effect, designed for all Skin Instants. It has a draining action,\n" +
+                    "<span>For replumped and hydrated skin</span>Designed for the quintessential city skin; it targets reactive, stressed and traumatised skin. An excellent anti-stress treatment that reduces the marks of time by hydrating, protecting and smoothing. A reconditioning procedure to contour and sculpt the face with an immediate replumping effect, designed for all Skin Instants. It has a draining action,\n" +
                     "leaving the skin of your face, neck and cleavage smoothed and toned."
                 }
             />
@@ -64,7 +64,7 @@ export default function BRFacials() {
                 id={"soinLift"}
                 srDesc={"90 min"}
                 content={
-                    "<p>For firmer and more toned skin</p>An exfoliating and lifting protocol combined with shaping techniques, designed for mature Skin Instants. Using the Jacquet-Leroy massage technique of unique vibrational movements and a gentle pinching technique performed around connective tissue to stimulate elastin and collagen whilst lifting and defining facial contours. The ultimate anti-ageing facial that will leave your skin smooth, refined and toned."
+                    "<span>For firmer and more toned skin</span>An exfoliating and lifting protocol combined with shaping techniques, designed for mature Skin Instants. Using the Jacquet-Leroy massage technique of unique vibrational movements and a gentle pinching technique performed around connective tissue to stimulate elastin and collagen whilst lifting and defining facial contours. The ultimate anti-ageing facial that will leave your skin smooth, refined and toned."
                 }
             />
             <ServicesComponent
@@ -72,7 +72,7 @@ export default function BRFacials() {
                 srDesc={"60 min"}
                 id={"soinMC"}
                 content={
-                    "<p>For minimising wrinkles</p>The MC 110 plumping procedure is particularly beneficial for anyone noticing a loss of volume and elasticity in the face or people seeking fuller skin. Using facial techniques that reduce wrinkles and fine lines dramatically, designed for lackluster Skin Instants . It leaves the skin on your face, neck and cleavage toned and redefines the oval of your face. Skin feels smoother, clearer and brighter."
+                    "<span>For minimising wrinkles</span>The MC 110 plumping procedure is particularly beneficial for anyone noticing a loss of volume and elasticity in the face or people seeking fuller skin. Using facial techniques that reduce wrinkles and fine lines dramatically, designed for lackluster Skin Instants . It leaves the skin on your face, neck and cleavage toned and redefines the oval of your face. Skin feels smoother, clearer and brighter."
                 }
             />
             <ServicesComponent
@@ -80,7 +80,7 @@ export default function BRFacials() {
                 srDesc={"60 min"}
                 id={"soinPeeling"}
                 content={
-                    "<p>For refined skin texture</p>Rich in AHA, BHA and PHA, it exfoliates the epidermis to remove dead cells from the surface and to promote cell regeneration. A clinical procedure that smooths uneven areas\n" +
+                    "<span>For refined skin texture</span>Rich in AHA, BHA and PHA, it exfoliates the epidermis to remove dead cells from the surface and to promote cell regeneration. A clinical procedure that smooths uneven areas\n" +
                     "on the skin such as acne scars, blemishes and dark spots. Recommended for lackluster and thick Skin Instants. It leaves the skin smoothed, radiant and refined. Leaves your skin feeling visibly brighter and dewy."
                 }
             />
@@ -89,7 +89,7 @@ export default function BRFacials() {
                 srDesc={"60 min"}
                 id={"soinMasque"}
                 content={
-                    "<p>For deeply purified skin</p>The smoothing, unifying booster is formulated to help prevent premature aging of the skin, work on hyper-pigmentation and brighten the complexion. An exfoliating and regenerating protocol for keratinized Skin Instants and skin with an irregular micro-profile or textured skin. It evens out skin tone, leaving your face smooth and glowing."
+                    "<span>For deeply purified skin</span>The smoothing, unifying booster is formulated to help prevent premature aging of the skin, work on hyper-pigmentation and brighten the complexion. An exfoliating and regenerating protocol for keratinized Skin Instants and skin with an irregular micro-profile or textured skin. It evens out skin tone, leaving your face smooth and glowing."
                 }
             />
             <ServicesComponent
@@ -97,7 +97,7 @@ export default function BRFacials() {
                 srDesc={"60 min"}
                 id={"soinBooster"}
                 content={
-                    "<p>For brighter skin</p>A treatment to detoxify and stimulate the epidermis and reoxygenate skin tissue, for dull Skin Instants asphyxiated by city pollution. This balancing facial is perfect for those who want refreshed and rejuvenated skin. A luxurious and balancing oxygen facial that features\n" +
+                    "<span>For brighter skin</span>A treatment to detoxify and stimulate the epidermis and reoxygenate skin tissue, for dull Skin Instants asphyxiated by city pollution. This balancing facial is perfect for those who want refreshed and rejuvenated skin. A luxurious and balancing oxygen facial that features\n" +
                     "a perfect combination of micro-exfoliation, oxygenation, and bio-energy massages to leave you with healthy, revitalized, and glowing skin. It helps boost collagen production, detoxify the skin, accelerate cellular turnover, all while providing vital moisture. Your complexion is incredibly revitalized, skin is more luminous and radiant . "
                 }
             />
@@ -106,7 +106,7 @@ export default function BRFacials() {
                 srDesc={"120 min"}
                 id={"doubleBooster"}
                 content={
-                    "<p>For lifted and smoothed skin</p>After conducting a thorough analysis of your Skin Instants our Skin Expert will prescribe\n" +
+                    "<span>For lifted and smoothed skin</span>After conducting a thorough analysis of your Skin Instants our Skin Expert will prescribe\n" +
                     "a combination of two of the above facials that will give your visage twice the boost. An exfoliating and reconditioning procedure that works on a deeper level for skin that is lifted, sculpted, even-toned and smoothed. Using advanced techniques to make sure results last longer."
                 }
             />
@@ -115,9 +115,18 @@ export default function BRFacials() {
                 srDesc={"60 min"}
                 id={"soinSeconde"}
                 content={
-                    "<p>For youthful skin</p>A world’s first in professional aesthetic care, this regenerating and lifting treatment features an electrospun mask with 80% pharmaceutical-grade hyaluronic acid and is designed for altered Skin Instants. It is an incredible regenerating treatment that is a revolutionary alternative to invasive facial fillers. Sterile electrospun hyaluronic acid skin patches are custom fitted to your unique trouble areas and massaged carefully with serum until absorbed, creating an effective anti-wrinkle treatment with instant results. This treatment was specifically designed with the needs of maturing skin in mind. This anti-wrinkle treatment results in a plumper and more hydrated skin instantly." +
+                    "<span>For youthful skin</span>A world’s first in professional aesthetic care, this regenerating and lifting treatment features an electrospun mask with 80% pharmaceutical-grade hyaluronic acid and is designed for altered Skin Instants. It is an incredible regenerating treatment that is a revolutionary alternative to invasive facial fillers. Sterile electrospun hyaluronic acid skin patches are custom fitted to your unique trouble areas and massaged carefully with serum until absorbed, creating an effective anti-wrinkle treatment with instant results. This treatment was specifically designed with the needs of maturing skin in mind. This anti-wrinkle treatment results in a plumper and more hydrated skin instantly." +
                     "<br><br>SINGLE BOOSTER + SOIN SECONDE PEAU" +
                     "<br>DOUBLE BOOSTER + SOIN SECONDE PEAU"
+                }
+            />
+
+            <ServicesComponent
+                srTitle={"SOIN TRIPLE LIFT FACIAL"}
+                srDesc={"120 min"}
+                id={"soinTriple"}
+                content={
+                    "<span>For lifted skin</span>The ultimate toning and firming treatment for saggy Skin Instants© that lack structure and tone. This anti-aging facial treatment boosts your skin’s cellular metabolism, gently exfoliates, and hydrates to give your skin a more even tone and rejuvenated glow. By addressing one of the biggest causes of skin aging – loss of volume and elasticity over time — with our revolutionary Le Soin Lissant, Le Lift, and Remodeling Face Machine, this innovative anti-aging facial treatment restores facial volume and diminishes facial hollows, improves elasticity, and creates contours around the cheeks and jawline. The innovative Triple Lift Facial is the complete treatment to redefine and plump facial volume."
                 }
             />
             <ServicesComponent
@@ -125,7 +134,7 @@ export default function BRFacials() {
                 srDesc={"60 mins"}
                 id={"microPuncture"}
                 content={
-                    "<p>For radiant and youthful skin </p>An intensive treatment that activates collagen production through intra-epidermal micro-stimulation and helps combat premature signs of skin aging. It helps remodel the deeper dermal layer for increased regeneration, resurfacing and firmness. The obtained effects are the stimulation of intra-dermal collagen production and increased penetration of Cocktail d’Actifs Regenerants vitamins and growth factor serum. This intensive treatment helps fight against signs of premature skin aging and results in a firmer, plumper skin, reduces the appearance of scars, fine lines and wrinkles and refines skin texture. Skin is better moisturised and regains its elasticity and smoothness. The complexion is more radiant and even, sagging skin feels denser, restructured and stretched."
+                    "<span>For radiant and youthful skin </span>An intensive treatment that activates collagen production through intra-epidermal micro-stimulation and helps combat premature signs of skin aging. It helps remodel the deeper dermal layer for increased regeneration, resurfacing and firmness. The obtained effects are the stimulation of intra-dermal collagen production and increased penetration of Cocktail d’Actifs Regenerants vitamins and growth factor serum. This intensive treatment helps fight against signs of premature skin aging and results in a firmer, plumper skin, reduces the appearance of scars, fine lines and wrinkles and refines skin texture. Skin is better moisturised and regains its elasticity and smoothness. The complexion is more radiant and even, sagging skin feels denser, restructured and stretched."
                 }
             />
             <ServicesComponent
@@ -134,10 +143,32 @@ export default function BRFacials() {
                 id={"remodellingFace"}
                 isFullSeparator={true}
                 content={
-                    "<p>For lifted and sculpted look</p>Get brighter looking eyes, more pronounced cheekbones, fewer visible wrinkles and a clearly defined facial contour with Biologique Recherche’s innovative face sculpting, Remodeling Facial Machine. This state-of-the-art anti-aging\n" +
+                    "<span>For lifted and sculpted look</span>Get brighter looking eyes, more pronounced cheekbones, fewer visible wrinkles and a clearly defined facial contour with Biologique Recherche’s innovative face sculpting, Remodeling Facial Machine. This state-of-the-art anti-aging\n" +
                     "treatment uses a bio-electro stimulation through this combination of microcurrents — galvanic current, medium and high frequencies, for immediate and long-lasting results. This sculpting facial utilizes microcurrents to increase the skin’s absorption of active ingredients in the serums and products we apply to your face. The low and medium frequency currents tone and re-shape your face while the high-frequency currents regenerate and rejuvenate your skin. " +
                     "<br><br>SINGLE BOOSTER + REMODELLING FACE©" +
                     "<br>DOUBLE BOOSTER + REMODELLING FACE©"
+                }
+            />
+            <ServicesComponent
+                srTitle={"MENTONNIERE CHIN STRAP"}
+                srDesc={"60 mins"}
+                id={"chinStrap"}
+                content={
+                    "The bio-electrotherapy machine uses the same technology but with an attachment targeted at the treatment of double chin, jowls and slackened neck that helps correct lower face sagging. It is a beneficial add on to your facial for a contoured and lifted look."
+                }
+            />
+            <ServicesComponent
+                srTitle={"PEN"}
+                id={"pen"}
+                content={
+                    "The pen is an attachment that offers the precision needed to treat furrows & wrinkles. It is a beneficial add on to the Remodelling facial that fights against the premature signs of ageing and corrects deeper and finer lines."
+                }
+            />
+            <ServicesComponent
+                srTitle={"OXYGENATING TREATMENT"}
+                id={"oxyTreatment"}
+                content={
+                    "Oxygenating treatment cleans and purifies the skin making it appear brighter and younger. It helps the serums and ingredients penetrate into the skin to energise it and give the face a lifted look. It improves the texture of the surface and allows better skin oxygenation, giving you a captivating radiance."
                 }
             />
             <ServicesComponent
@@ -164,12 +195,17 @@ export default function BRFacials() {
                     "<h5>Patches Defatigants</h5>" +
                     "<h5>Soin Biovecteur Marin</h5>" +
                     "<h5>Masque Collagene Caviar</h5>" +
-                    "<h5>Masque Biologique Feerie Face</h5>"
+                    "<h5>Masque Biologique Feerie Face</h5>" +
+                    "<h5>Platysma</h5>" +
+                    "<h5>Smoothing Mask</h5>" +
+                    "<h5>Brightening Mask</h5>" +
+                    "<h5>Renewal Mask</h5>" +
+                    "<h5>Marine Mask</h5>"
                 }
             />
-            <BookNow />
-            <BackToTop />
-            <Footer />
+            <BookNow/>
+            <BackToTop/>
+            <Footer/>
         </Fragment>
     );
 }

@@ -53,12 +53,28 @@ export const servicesItemsHyd = [
                 url: "#soinSeconde",
             },
             {
+                title: "SOIN TRIPLE LIFT FACIAL",
+                url: "#soinTriple",
+            },
+            {
                 title: "MICRO PUNCTURE LAB ",
                 url: "#microPuncture",
             },
             {
                 title: "REMODELLING FACE",
                 url: "#remodellingFace",
+            },
+            {
+                title: "Mentonniere Chin Strap",
+                url: "#chinStrap",
+            },
+            {
+                title: "PEN",
+                url: "#pen",
+            },
+            {
+                title: "Oxygenating Treatment",
+                url: "#oxyTreatment",
             },
             {
                 title: "PRIVILEGE PASS",
@@ -293,12 +309,32 @@ export const servicesItemsChennai = [
                 url: "#soinSeconde",
             },
             {
+                title: "SOIN TRIPLE LIFT FACIAL",
+                url: "#soinTriple",
+            },
+            {
                 title: "MICRO PUNCTURE LAB ",
                 url: "#microPuncture",
             },
             {
                 title: "REMODELLING FACE",
                 url: "#remodellingFace",
+            },
+            {
+                title: "Mentonniere Chin Strap",
+                url: "#chinStrap",
+            },
+            {
+                title: "PEN",
+                url: "#pen",
+            },
+            {
+                title: "Oxygenating Treatment",
+                url: "#oxyTreatment",
+            },
+            {
+                title: "PRIVILEGE PASS",
+                url: "#privilegePass",
             },
             {
                 title: "PRIVILEGE PASS",
