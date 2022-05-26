@@ -80,7 +80,7 @@ export default function Home() {
 
     const [device, set_device] = useState(2);
     useEffect(() => {
-        if (screen.width <= 648) {
+        if (screen.width <= 1280) {
             set_device(0)
         }
     }, [])

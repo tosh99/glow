@@ -463,7 +463,7 @@
                     margin-bottom: 50px;
 
                     img {
-                        width: 100% ;
+                        width: 100%;
                     }
                 }
 
@@ -514,19 +514,77 @@
     }
 
     .sliders {
-        padding: 100px 0;
+        padding: 50px 0;
+        padding-bottom: 20px;
+
+        .desc {
+            margin-bottom: 80px;
+            font-size: 18px;
+        }
 
         .slide {
-            .title {
-                //display: none;
+            flex-direction: column;
+            margin-right: 0;
+            padding: 0 35px;
+            width: 100vw;
+            min-width: unset !important;
+
+            .menu {
+                width: 110px;
             }
 
-            .titleM {
+            .title {
+                display: none;
+            }
+
+            .titleM, pre {
                 display: block;
                 font-family: EmpireBold, sans-serif;
-                font-size: 80px;
+                font-size: 100px;
                 text-transform: uppercase;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
+                letter-spacing: 0.03em;
+            }
+
+            .bannerImg {
+                margin-right: 0;
+                margin-bottom: 20px;
+                width: 50%;
+            }
+
+            .banner {
+                margin-left: 0;
+            }
+
+            .prevImg {
+                position: relative;
+                right: 0;
+            }
+
+            .content {
+                width: 100%;
+                max-width: 100%;
+
+                section {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 28px;
+
+                    h3 {
+                        font-size: 18px;
+                    }
+                }
+
+                p {
+                    height: auto;
+                    margin-bottom: 35px;
+                    font-size: 18px;
+                }
+
+                header {
+                    margin-bottom: 0;
+                }
             }
         }
     }
