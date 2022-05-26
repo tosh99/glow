@@ -166,6 +166,18 @@ export const servicesItemsHyd = [
                 title: "HOLLYWOOD LASER PEEL",
                 url: "#hollywoodLaserPeel",
             },
+            {
+                title: "Morpheus8",
+                url: "#morpheus8",
+            },
+            {
+                title: "Morpheus8 Body",
+                url: "#morpheus8body",
+            },
+            {
+                title: "Forma",
+                url: "#forma",
+            },
         ],
     },
     {
@@ -417,6 +429,22 @@ export const servicesItemsChennai = [
             {
                 title: "LASER HAIR REDUCTION",
                 url: "#laserHairReduction",
+            },
+            {
+                title: "Morpheus8",
+                url: "#morpheus8",
+            },
+            {
+                title: "Morpheus8 Body",
+                url: "#morpheus8body",
+            },
+            {
+                title: "Forma",
+                url: "#forma",
+            },
+            {
+                title: "Lumecca Photofacial",
+                url: "#lumecca",
             },
         ],
     },
