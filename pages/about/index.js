@@ -230,7 +230,7 @@ export default function About() {
             <Ourclinic/>
 
             <BookNow/>
-            <BackToTop/>
+            <BackToTop background={'black'}/>
             <Footer/>
 
         </Fragment>

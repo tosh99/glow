@@ -60,8 +60,14 @@ export default function Footer() {
                             </div>
                             {
                                 is_visible.legal && <>
-                                    <header className={styles.item}>Terms of Use</header>
-                                    <header className={styles.item}>Privacy Policy</header>
+                                    <header className={styles.item} onClick={() => {
+                                        Router.push('/tnc')
+                                    }}>Terms of Use
+                                    </header>
+                                    <header className={styles.item} onClick={() => {
+                                        Router.push('/privacy-policy')
+                                    }}>Privacy Policy
+                                    </header>
                                 </>
                             }
                         </div>
@@ -81,14 +87,6 @@ export default function Footer() {
                                     <header className={styles.item} onClick={() => {
                                         Router.push('/about')
                                     }}>About
-                                    </header>
-                                    <header className={styles.item} onClick={() => {
-                                        Router.push('/tnc')
-                                    }}>Terms and Conditions
-                                    </header>
-                                    <header className={styles.item} onClick={() => {
-                                        Router.push('/privacy-policy')
-                                    }}>Privacy Policy
                                     </header>
                                 </>
                             }
@@ -113,24 +111,6 @@ export default function Footer() {
                     <div className={styles.fbRight}>
                         <div className={styles.column}>
                             <header className={styles.clHeader}>
-                                chennai
-                            </header>
-                            <header className={styles.item}>
-                                3rd Floor, Door No. 3
-                                Khader Nawaz Khan
-                                Road
-                            </header>
-                            <header className={styles.item}>
-                                <a href={"tel:+919951355555"}>
-                                    +91 99513 55555
-                                </a>
-                                <a href={"tel:04445535555"}>
-                                    044 4553 5555
-                                </a>
-                            </header>
-                        </div>
-                        <div className={styles.column}>
-                            <header className={styles.clHeader}>
                                 Hyderabad
                             </header>
                             <header className={styles.item}>
@@ -139,11 +119,29 @@ export default function Footer() {
                                 Road No. 12, Banjarahills
                             </header>
                             <header className={styles.item}>
-                                <a href={"tel:+919677292429"}>
-                                    +91 96772 92429
+                                <a href={"tel:+919951355555"}>
+                                    +91 99513 55555
                                 </a>
                                 <a href={"tel:04048505555"}>
                                     040 4850 5555
+                                </a>
+                            </header>
+                        </div>
+                        <div className={styles.column}>
+                            <header className={styles.clHeader}>
+                                chennai
+                            </header>
+                            <header className={styles.item}>
+                                3rd Floor, Door No. 3
+                                Khader Nawaz Khan
+                                Road
+                            </header>
+                            <header className={styles.item}>
+                                <a href={"tel:+919160655555"}>
+                                    +91 91606 55555
+                                </a>
+                                <a href={"tel:04445535555"}>
+                                    044 4553 5555
                                 </a>
                             </header>
                         </div>

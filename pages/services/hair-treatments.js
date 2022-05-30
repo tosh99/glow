@@ -11,7 +11,7 @@ SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
 export default function BRFacials() {
     const [device, set_device] = useState(2);
     useEffect(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+
     }, []);
 
     return (
@@ -57,13 +57,13 @@ export default function BRFacials() {
             <ServicesComponent
                 srTitle={"GROWTH FACTOR THERAPY"}
                 id={"growthFactor"}
-                srPurpose={"We re commend  3 sessions for optimum results."}
+                srPurpose={"We recommend 3 sessions for optimum results."}
                 content={
                     "Ideal for hair concerns where you’re experiencing thinning, hair fall and loss of density or want to take preventative measures for dull, dry and damaged hair with weakened capillary fibres. This procedure includes an initial blood draw, followed by running the blood through a centrifuge to isolate the growth factors. You'll then receive these isolated growth factors through injection into your scalp. These growth factors fortify hair follicles, stimulate new growth and rejuvenate dormant hair follicles. It additionally helps with improved scalp health, hair thickness and strength, lending itself to prevention of hair fall."
                 }
             />
             <ServicesComponent
-                srTitle={"K18"}
+                srTitle={"K18 PEPTIDE TREATMENT"}
                 id={"k18"}
                 content={
                     "Travelling into the innermost layers of hair to reach the core polypeptide chains (keratin chains), the revolutionary K18Peptide™ is a bioactive peptide that is just the right size and makeup to fit in and reconnect broken chains. With just one treatment session your hair will be restored to 91% of its original strength and 94% of its original elasticity. This treatment involves a pre-treatment professional molecular repair hair mist that strengthens hair for the chemical treatment and a professional molecular repair hair mask that is clinically proven to repair and reverse damage caused by chemical services and thermal styling. Ideal for hair that has been visibly damaged from salon treatments or exposure to environmental stressors."

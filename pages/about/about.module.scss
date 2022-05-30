@@ -36,7 +36,7 @@
         border-left: 1px solid #000000;
         padding: 90px;
         border-bottom: 1px solid black;
-        min-height: 790px;
+        min-height: 580px;
         margin-bottom: 50px;
 
         header {
@@ -247,7 +247,17 @@
                 }
             }
 
+            img {
+                width: 100%;
+            }
 
+
+        }
+
+        .joBottom {
+            .jobContent {
+                width: 100%;
+            }
         }
     }
 

@@ -1,5 +1,5 @@
-import { Fragment, useEffect, useState } from "react";
-import SwiperCore, { Autoplay, EffectFade, Navigation, Pagination } from "swiper/core";
+import {Fragment, useEffect, useState} from "react";
+import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from "swiper/core";
 import BackToTop from "../../shared/components/back-to-top";
 import BookNow from "../../shared/components/book-now";
 import Footer from "../../shared/components/footer/footer";
@@ -14,13 +14,11 @@ export default function GlowTech() {
         if (screen.width <= 648) {
             set_device(0);
         }
-
-        window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
 
     return (
         <Fragment>
-            <Services title={"Services"} />
+            <Services title={"Services"}/>
             <ServicesComponent
                 titleElement={"IS CLINICAL"}
                 id={"fireAndIce"}
@@ -88,9 +86,9 @@ export default function GlowTech() {
                 }
             />
 
-            <BookNow />
-            <BackToTop />
-            <Footer />
+            <BookNow/>
+            <BackToTop/>
+            <Footer/>
         </Fragment>
     );
 }

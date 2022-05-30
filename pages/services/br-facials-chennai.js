@@ -190,7 +190,7 @@ export default function BRFacials() {
                 content={
                     "<h5>Cold Mask.</h5>" +
                     "<h5>Algae Jelly Mask</h5>" +
-                    "<h5>Oxydome</h5>" +
+                    "<h5>LED Therapy</h5>" +
                     "<h5>Masque Pigm400</h5>" +
                     "<h5>Patches Defatigants</h5>" +
                     "<h5>Soin Biovecteur Marin</h5>" +

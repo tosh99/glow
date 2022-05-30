@@ -339,13 +339,15 @@
 
 
             .fbRight {
-                flex-direction: column;
                 padding: 0 35px;
+                flex-direction: row;
+                justify-content: space-between;
 
                 .column {
                     align-items: flex-start;
                     margin-left: 0;
                     margin-bottom: 60px;
+                    width: calc(50% - 20px);
 
                     .item {
                         text-align: left;

@@ -14,8 +14,6 @@ export default function GlowTech() {
         if (screen.width <= 648) {
             set_device(0);
         }
-
-        window.scrollTo({top: 0, behavior: "smooth"});
     }, []);
 
     return (

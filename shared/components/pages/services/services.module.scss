@@ -2,7 +2,7 @@
 }
 
 .services {
-    padding-top: 55px;
+    padding-top: 35px;
     display: flex;
     justify-content: flex-end;
 
@@ -40,7 +40,7 @@
             font-family: OggItalic, sans-serif;
             font-size: 16px;
             line-height: 132.8%;
-            margin-top: 16px;
+            margin-top: 4px;
         }
 
         .srPurpose {
@@ -71,6 +71,13 @@
                 margin-bottom: 9px;
                 margin-top: 16px;
                 letter-spacing: 2px;
+            }
+
+            h4 {
+                font-family: TelegrafRegular, sans-serif;
+                font-size: 20px;
+                line-height: 132.8%;
+                letter-spacing: 1px;
             }
 
             h5 {
@@ -121,6 +128,7 @@
             .srDesc {
                 font-size: 14px;
                 margin-top: 6px;
+                margin-bottom: 35px;
             }
 
             .srPurpose {
@@ -144,6 +152,12 @@
                     margin-bottom: 9px;
                     margin-top: 16px;
                     letter-spacing: 2px;
+                }
+
+
+                h4 {
+                    font-size: 14px;
+                    letter-spacing: 0.8px;
                 }
 
                 h5 {

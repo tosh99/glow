@@ -8,7 +8,7 @@ import ServicesMenu, {
 } from "../../shared/components/services-menu/services-menu";
 import {useEffect} from "react";
 
-export default function Services({bg = "transparent"}) {
+export default function Services({bg = "transparent", is_root = false}) {
     const [show_services_menu, set_show_services_menu] = useState(false);
     const router = useRouter();
 
@@ -20,6 +20,7 @@ export default function Services({bg = "transparent"}) {
         const baseIdentifier = path.split("/").filter(item => item);
         if (baseIdentifier.length === 1) {
             set_show_services_menu(true);
+            is_root = true
         }
 
         let selectedServiceItem = servicesItemsHyd;
@@ -47,7 +48,7 @@ export default function Services({bg = "transparent"}) {
             >
                 <div className={"inner " + styles.header}>
                     <div className={styles.hLeft}>
-                        <Link href="/">
+                        <Link href={is_root ? '/' : '/services'}>
                             <img src={"/icons/header/back.svg"}/>
                         </Link>
                     </div>

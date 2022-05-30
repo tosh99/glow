@@ -1,5 +1,5 @@
-import { Fragment, useEffect, useState } from "react";
-import SwiperCore, { Autoplay, EffectFade, Navigation, Pagination } from "swiper/core";
+import {Fragment, useEffect, useState} from "react";
+import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from "swiper/core";
 import BackToTop from "../../shared/components/back-to-top";
 import BookNow from "../../shared/components/book-now";
 import Footer from "../../shared/components/footer/footer";
@@ -14,13 +14,11 @@ export default function GlowTech() {
         if (screen.width <= 648) {
             set_device(0);
         }
-
-        window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
 
     return (
         <Fragment>
-            <Services title={"Services"} />
+            <Services title={"Services"}/>
             <ServicesComponent
                 titleElement={"PEELS"}
                 id={"darmelan"}
@@ -52,7 +50,7 @@ export default function GlowTech() {
 
             <ServicesComponent
                 srTitle={"FERULAC DUBAI LIP PEEL"}
-                id={"feburacDubai"}
+                id={"ferulacDubai"}
                 content={
                     "This chemical lip peel is ideal to treat hyperpigmentation and lip photoaging. It is formulated with moisturizing, antioxidant and depigmenting actives, which unify the tone, hydrate in depth and provide an intense natural luminosity. This peel uses a unique system to deliver natural ingredients deep into the lips through nanotechnology."
                 }
@@ -74,9 +72,9 @@ export default function GlowTech() {
                 }
             />
 
-            <BookNow />
-            <BackToTop />
-            <Footer />
+            <BookNow/>
+            <BackToTop/>
+            <Footer/>
         </Fragment>
     );
 }

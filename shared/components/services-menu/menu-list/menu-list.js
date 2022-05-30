@@ -3,7 +3,7 @@ import styles from "./menu-list.module.scss";
 
 
 export default function MenuList({
-                                     close, selectedServiceItem, isEnd = false, onClick = () => {
+                                     onMouseEnter, onMouseLeave, selectedServiceItem, isEnd = false, onClick = () => {
     }
                                  }) {
 
@@ -14,8 +14,10 @@ export default function MenuList({
     }, [selectedServiceItem])
 
     return (<Fragment>
-        <div className={styles.menuList + ' ' + (isEnd ? styles.menuListLast : '')} onMouseLeave={() => {
-            close()
+        <div className={styles.menuList + ' ' + (isEnd ? styles.menuListLast : '')} onMouseEnter={() => {
+            onMouseEnter();
+        }} onMouseLeave={() => {
+            onMouseLeave();
         }}>
             {
                 selectedServiceItem && selectedServiceItem.items.map(service => {

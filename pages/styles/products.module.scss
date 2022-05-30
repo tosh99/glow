@@ -137,13 +137,17 @@
         }
     }
 
-    .enquire {
-        font-family: HattonMedium, sans-serif;
-        font-size: 24px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin-top: 70px;
-        cursor: pointer;
+    .enquireSection {
+        display: flex;
+
+        .enquire {
+            font-family: HattonMedium, sans-serif;
+            font-size: 24px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-top: 70px;
+            cursor: pointer;
+        }
     }
 }
 
@@ -480,8 +484,14 @@
             }
         }
 
-        .enquire {
-            margin-top: 20px;
+        .enquireSection {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .enquire {
+                margin-top: 20px;
+            }
         }
     }
 
@@ -514,6 +524,7 @@
 
         .slide {
             .titleM {
+                white-space: normal;
                 font-size: 65px;
                 margin-bottom: 35px;
 

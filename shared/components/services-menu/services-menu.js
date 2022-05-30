@@ -64,22 +64,22 @@ export const servicesItemsHyd = [
                 title: "REMODELLING FACE",
                 url: "#remodellingFace",
             },
-            {
-                title: "Mentonniere Chin Strap",
-                url: "#chinStrap",
-            },
-            {
-                title: "PEN",
-                url: "#pen",
-            },
-            {
-                title: "Oxygenating Treatment",
-                url: "#oxyTreatment",
-            },
-            {
-                title: "PRIVILEGE PASS",
-                url: "#privilegePass",
-            },
+            // {
+            //     title: "Mentonniere Chin Strap",
+            //     url: "#chinStrap",
+            // },
+            // {
+            //     title: "PEN",
+            //     url: "#pen",
+            // },
+            // {
+            //     title: "Oxygenating Treatment",
+            //     url: "#oxyTreatment",
+            // },
+            // {
+            //     title: "PRIVILEGE PASS",
+            //     url: "#privilegePass",
+            // },
             {
                 title: "ADD ONS",
                 url: "#addOns",
@@ -138,11 +138,11 @@ export const servicesItemsHyd = [
             },
             {
                 title: "FERULAC DUBAI LIP PEEL",
-                url: "feburacDubai",
+                url: "#ferulacDubai",
             },
             {
                 title: "CUSTOM PEELS",
-                url: "customPeels",
+                url: "#customPeels",
             },
             {
                 title: "BODY PEELS",
@@ -278,7 +278,7 @@ export const servicesItemsHyd = [
 export const servicesItemsChennai = [
     {
         title: "BR Facials",
-        url: "/services/br-facials",
+        url: "/services/br-facials-chennai",
         items: [
             {
                 title: "SKIN INSTANT  LAB",
@@ -332,22 +332,22 @@ export const servicesItemsChennai = [
                 title: "REMODELLING FACE",
                 url: "#remodellingFace",
             },
-            {
-                title: "Mentonniere Chin Strap",
-                url: "#chinStrap",
-            },
-            {
-                title: "PEN",
-                url: "#pen",
-            },
-            {
-                title: "Oxygenating Treatment",
-                url: "#oxyTreatment",
-            },
-            {
-                title: "PRIVILEGE PASS",
-                url: "#privilegePass",
-            },
+            // {
+            //     title: "Mentonniere Chin Strap",
+            //     url: "#chinStrap",
+            // },
+            // {
+            //     title: "PEN",
+            //     url: "#pen",
+            // },
+            // {
+            //     title: "Oxygenating Treatment",
+            //     url: "#oxyTreatment",
+            // },
+            // {
+            //     title: "PRIVILEGE PASS",
+            //     url: "#privilegePass",
+            // },
             {
                 title: "PRIVILEGE PASS",
                 url: "#privilegePass",
@@ -410,11 +410,11 @@ export const servicesItemsChennai = [
             },
             {
                 title: "FERULAC DUBAI LIP PEEL",
-                url: "feburacDubai",
+                url: "#ferulacDubai",
             },
             {
                 title: "CUSTOM PEELS",
-                url: "customPeels",
+                url: "#customPeels",
             },
             {
                 title: "BODY PEELS",
@@ -559,9 +559,6 @@ export default function ServicesMenu({close}) {
             set_device(0)
         }
 
-        window.scrollTo({top: 0, behavior: 'smooth'});
-
-
         const path = router.pathname;
         const baseIdentifier = path.split("/").filter(item => item);
         if (baseIdentifier.length === 1) {
@@ -572,126 +569,124 @@ export default function ServicesMenu({close}) {
     return (
         <Fragment>
             <div className={styles.menu}>
-                <InView threshold={0.5}>
-                    {({ref, inView}) => (
-                        <motion.div
-                            className={"outer " + " " + styles.servicesOuter}
-                            ref={ref}
-                            initial={{opacity: 0}}
-                            animate={inView ? {opacity: 1} : {opacity: 0}}
-                            transition={{duration: 1}}
-                        >
-                            <PageHeader title={"Services"} onMenuClicked={() => {
-                                if (isBasePath) {
-                                    Router.push('/');
-                                } else {
-                                    close();
-                                }
-                            }}/>
-                            <div className={styles.menuContent}>
-                                {selectedRegion.map(
-                                    (region, regionIndex) => {
-                                        return (
-                                            <div className={styles.menuCItem} onClick={() => {
-                                                let index = 0;
-                                                const regions = [...selectedRegion]
-                                                for (const region of regions) {
-                                                    if (index !== regionIndex) {
-                                                        region.isDisplayed = false;
-                                                    } else {
-                                                        region.isDisplayed = !region.isDisplayed
-                                                        setSelectedServiceItem({...region});
+                <div
+                    className={"outer " + " " + styles.servicesOuter}
+                >
+                    <PageHeader title={"Services"} onMenuClicked={() => {
+                        if (isBasePath) {
+                            Router.push('/');
+                        } else {
+                            close();
+                        }
+                    }}/>
+                    <div className={styles.menuContent}>
+                        {selectedRegion.map(
+                            (region, regionIndex) => {
+                                return (
+                                    <div className={styles.menuCItem} onClick={() => {
+                                        let index = 0;
+                                        const regions = [...selectedRegion]
+                                        for (const region of regions) {
+                                            if (index !== regionIndex) {
+                                                region.isDisplayed = false;
+                                            } else {
+                                                region.isDisplayed = !region.isDisplayed
+                                                setSelectedServiceItem({...region});
 
-                                                    }
-                                                    index += 1
+                                            }
+                                            index += 1
+                                        }
+
+                                        setSelectedRegion([...regions])
+                                        setIndex(prev => prev + 1)
+                                    }}>
+                                        <header
+                                            className={
+                                                styles.menuCTitle +
+                                                " " +
+                                                (region.isDisplayed ? styles.menuCTitleSelected : "")
+                                            }
+                                            onClick={() => {
+                                                if (device !== 0) {
+                                                    Router.push(region.url)
                                                 }
-
-                                                setSelectedRegion([...regions])
-                                                setIndex(prev => prev + 1)
-                                            }}>
-                                                <header
-                                                    className={
-                                                        styles.menuCTitle +
-                                                        " " +
-                                                        (region.isDisplayed ? styles.menuCTitleSelected : "")
-                                                    }
-                                                    onMouseEnter={() => {
-                                                        if (device !== 0) {
-                                                            let index = 0;
-                                                            for (const region of selectedRegion) {
-                                                                if (index !== regionIndex) {
-                                                                    region.isDisplayed = false;
-                                                                }
-                                                                index += 1
-                                                            }
-
-                                                            region.isDisplayed = !region.isDisplayed;
-                                                            if (region.isDisplayed) {
-                                                                setSelectedServiceItem(region);
-                                                            } else {
-                                                                setSelectedServiceItem(null)
-                                                            }
-                                                            setIndex(prev => prev + 1)
-                                                        }
-                                                    }}
-                                                >
-                                                    {region.title}
-                                                    <img
-                                                        src={`/icons/common/${region.isDisplayed ? 'up' : 'down'}.svg`}
-                                                    />
-                                                </header>
-                                                {region.isDisplayed && (
-                                                    <MenuList
-                                                        selectedServiceItem={selectedServiceItem}
-                                                        onClick={(ev) => {
-                                                            close();
-                                                            Router.push(selectedServiceItem.url + ev.url);
-                                                            // setIndex(undefined);
-                                                        }}
-                                                        close={() => {
+                                            }}
+                                            onMouseOver={() => {
+                                                if (device !== 0) {
+                                                    let index = 0;
+                                                    for (const region of selectedRegion) {
+                                                        if (index !== regionIndex) {
                                                             region.isDisplayed = false;
-                                                            setIndex(prev => prev + 1)
-                                                        }}
-                                                        isEnd={
-                                                            regionIndex === selectedRegion.length - 1
                                                         }
-                                                    />
-                                                )}
-                                            </div>
-                                        );
-                                    }
-                                )}
-                            </div>
-                            <div className={styles.menuBottom}>
-                                <div className={styles.locationSelector}>
-                                    {regions.map((region, regionIndex) => {
-                                        return (
-                                            <div
-                                                onClick={() => {
-                                                    if (regionIndex === 0) {
-                                                        setSelectedRegion(servicesItemsHyd);
-                                                        setIndex(prev => prev + 1)
-                                                    } else {
-                                                        setSelectedRegion(servicesItemsChennai);
-                                                        setIndex(prev => prev + 1)
+                                                        index += 1
                                                     }
-                                                    setSelectedRegionIndex(regionIndex);
-                                                }}
-                                                className={
-                                                    styles.location +
-                                                    " " +
-                                                    (regionIndex === selectedRegionIndex ? styles.locationSelected : "")
+
+                                                    region.isDisplayed = true;
+                                                    if (region.isDisplayed) {
+                                                        setSelectedServiceItem(region);
+                                                    } else {
+                                                        setSelectedServiceItem(null)
+                                                    }
+                                                    setIndex(prev => prev + 1)
                                                 }
-                                            >
-                                                <header>{region}</header>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            </div>
-                        </motion.div>
-                    )}
-                </InView>
+                                            }}
+                                        >
+                                            {region.title}
+                                            <img
+                                                src={`/icons/common/${region.isDisplayed ? 'up' : 'down'}.svg`}
+                                            />
+                                        </header>
+                                        {region.isDisplayed && (
+                                            <MenuList
+                                                selectedServiceItem={selectedServiceItem}
+                                                onClick={(ev) => {
+                                                    close();
+                                                    Router.push(selectedServiceItem.url + ev.url);
+                                                }}
+                                                onMouseEnter={() => {
+                                                    region.isDisplayed = true;
+                                                }}
+                                                onMouseLeave={() => {
+                                                    setIndex(prev => prev + 1)
+                                                }}
+                                                isEnd={
+                                                    regionIndex === selectedRegion.length - 1
+                                                }
+                                            />
+                                        )}
+                                    </div>
+                                );
+                            }
+                        )}
+                    </div>
+                    <div className={styles.menuBottom}>
+                        <div className={styles.locationSelector}>
+                            {regions.map((region, regionIndex) => {
+                                return (
+                                    <div
+                                        onClick={() => {
+                                            if (regionIndex === 0) {
+                                                setSelectedRegion(servicesItemsHyd);
+                                                setIndex(prev => prev + 1)
+                                            } else {
+                                                setSelectedRegion(servicesItemsChennai);
+                                                setIndex(prev => prev + 1)
+                                            }
+                                            setSelectedRegionIndex(regionIndex);
+                                        }}
+                                        className={
+                                            styles.location +
+                                            " " +
+                                            (regionIndex === selectedRegionIndex ? styles.locationSelected : "")
+                                        }
+                                    >
+                                        <header>{region}</header>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
             </div>
         </Fragment>
     );

@@ -1,5 +1,5 @@
-import { Fragment, useEffect, useState } from "react";
-import SwiperCore, { Autoplay, EffectFade, Navigation, Pagination } from "swiper/core";
+import {Fragment, useEffect, useState} from "react";
+import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from "swiper/core";
 import BackToTop from "../../shared/components/back-to-top";
 import BookNow from "../../shared/components/book-now";
 import Footer from "../../shared/components/footer/footer";
@@ -14,13 +14,11 @@ export default function GlowTech() {
         if (screen.width <= 648) {
             set_device(0);
         }
-
-        window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
 
     return (
         <Fragment>
-            <Services title={"Services"} />
+            <Services title={"Services"}/>
             <ServicesComponent
                 titleElement={"IS CLINICAL"}
                 id={'fireAndIce'}
@@ -83,9 +81,9 @@ export default function GlowTech() {
                     "A quick 30 - 40 minutes facial that involves a 3 step process of cleansing, exfoliating and masking for that instant glow. This facial has been designed keeping in mind your busy schedule. Whether it is a last minute rejuvenation before a big day or a bi-weekly upkeep that you can fit into your day’s events, this facial is the right choice for you. We start with a therapeutic massage to prepare your skin for a deep cleanse. This is followed by exfoliation using a customised peel and the swift application of a hydrojelly algae mask. The mask is customised to your skin’s needs for hydration, brightening or plumping."
                 }
             />
-            <BookNow />
-            <BackToTop />
-            <Footer />
+            <BookNow/>
+            <BackToTop/>
+            <Footer/>
         </Fragment>
     );
 }
