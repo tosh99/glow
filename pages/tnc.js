@@ -97,7 +97,7 @@ export default function Tnc() {
 
 
                     <h2>3. RESTRICTION TO THE COPY OF INTELLECTUAL PROPERTY</h2>
-                    <p>The ______, ________, ________ name and logo and all related product and service names, design
+                    <p>The name and logo and all related product and service names, design
                         marks and slogans are the trademarks, logos or service marks (hereinafter referred to as
                         "Marks") of GLOW SKIN BEAUTY WELLNESS. All other Marks provided on the Site are the property of
                         their respective companies. No trademark or service mark license is granted in connection with
