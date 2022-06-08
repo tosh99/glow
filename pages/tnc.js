@@ -47,24 +47,24 @@ export default function Tnc() {
 
                     <h2>Website Terms of Service</h2>
                     <ol>
-                        <li>1. General Conditions Pertaining to Accounts</li>
-                        <li>2. Accuracy, Completeness and Timeliness of Information</li>
-                        <li>3. Restriction to the copy of Intellectual Property</li>
-                        <li>4. User Comments, Feedback & Other Submissions</li>
-                        <li>5. Warranty Disclaimer</li>
-                        <li>6. Third-Party Links and Privacy</li>
-                        <li>7. Online protection of Minors</li>
-                        <li>8. Personal Information</li>
-                        <li>9. Errors, Inaccuracies and Omissions</li>
-                        <li>10. Prohibited Uses</li>
-                        <li>11. Limitation of Liability</li>
-                        <li>12. Indemnification</li>
-                        <li>13. Severability</li>
-                        <li>14. Right to Termination, Modification and Suspension of Website</li>
-                        <li>15. Arbitration and Waiver</li>
-                        <li>16. Governing Law and Jurisdiction</li>
-                        <li>17. Changes to Terms of Service</li>
-                        <li>18. Entire Agreement</li>
+                        <li>General Conditions Pertaining to Accounts</li>
+                        <li>Accuracy, Completeness and Timeliness of Information</li>
+                        <li>Restriction to the copy of Intellectual Property</li>
+                        <li>User Comments, Feedback & Other Submissions</li>
+                        <li>Warranty Disclaimer</li>
+                        <li>Third-Party Links and Privacy</li>
+                        <li>Online protection of Minors</li>
+                        <li>Personal Information</li>
+                        <li>Errors, Inaccuracies and Omissions</li>
+                        <li>Prohibited Uses</li>
+                        <li>Limitation of Liability</li>
+                        <li>Indemnification</li>
+                        <li>Severability</li>
+                        <li>Right to Termination, Modification and Suspension of Website</li>
+                        <li>Arbitration and Waiver</li>
+                        <li>Governing Law and Jurisdiction</li>
+                        <li>Changes to Terms of Service</li>
+                        <li>Entire Agreement</li>
                     </ol>
 
 
