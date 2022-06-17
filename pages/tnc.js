@@ -22,28 +22,7 @@ export default function Tnc() {
             <div className={"outer"}>
                 <div className={"inner " + styles.privacyPolicy}>
                     <h1>TERMS AND CONDITIONS FOR GLOW SKIN BEAUTY WELLNESS</h1>
-                    <p>This website is operated by GLOW SKIN BEAUTY WELLNESS. Throughout the site, the terms “we”, “us”
-                        and “our” refer to GLOW SKIN BEAUTY WELLNESS. GLOW SKIN BEAUTY WELLNESS offers this website,
-                        including all information, tools and services available from this site to you, the user,
-                        conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
-                        By visiting our site and/ or purchasing something from us, you engage in our “Service” and agree
-                        to be bound by the following terms and conditions (“Terms of Service”). These Terms of Service
-                        apply to all users of the site, including without limitation users who are browsers, vendors,
-                        customers, merchants, and/ or contributors of content. <br/> <br/>
 
-                        1. Please read these Terms of service carefully before you start using the Website. These Terms
-                        ofservice are also incorporated by reference into our Privacy Policy and Customer Terms of Use.
-                        UPON ACCEPTANCE OF THIS AGREEMENT YOU WAIVE YOUR RIGHT OF CLASS ACTION OR ANY SUIT AGAINST THE
-                        COMPANY, AND DISPUTES CAN ONLY BE RESOLVED BY AND UNDER THE ARBITRATION ACT OF 1996, AND ALSO
-                        LIMITS THE REMEDIES THAT ARE AVAILABLE TO YOU IN AN EVENT OF SUCH DISPUTE <br/> <br/>
-
-                        2. Acceptance of these Terms of Service
-                        UPON THE ENTRY OF YOU OR USAGE OF THIS WEBSITE BY YOU, IT IS TO BE UNDERSTOOD THAT YOU AGREE AND
-                        ARE BOUND BY THE TERMS AND CONDITIONS, IT DOES NOT DEPEND ON THE FACT OF YOUR REGISTERATION OR
-                        NOT, THESE TERMS OF SERVICE APPLIES TO ALL VISITORS, USERS, VENDORS, CUSTOMERS, MERCHANTS AND
-                        OTHERS WHO ACCESS THIS WEBSITE. <br/> <br/>
-
-                    </p>
 
                     <h2>Website Terms of Service</h2>
                     <ol>
@@ -65,20 +44,78 @@ export default function Tnc() {
                         <li>Governing Law and Jurisdiction</li>
                         <li>Changes to Terms of Service</li>
                         <li>Entire Agreement</li>
+                        <li>Cancellations, Returns and Refunds</li>
+                        <li>Mode of Payment</li>
+                        <li>Shipping and Delivery</li>
+                        <li>Limited License</li>
+                        <li>Site Security</li>
+                        <li>General</li>
                     </ol>
 
+                    <h2>1. ACCEPTANCE OF TERMS OF USE</h2>
+                    <p>Please read the following terms and conditions as these terms of use (&quot;Terms&quot;)
+                        constitute a
+                        legally binding agreement between you and the Company regarding your use of the Site and
+                        any services offered by the Company including but not limited to delivery of content via the
+                        Site, any mobile or internet connected device or otherwise (the &quot;the Service&quot;). THESE
+                        TERMS OF SERVICE APPLIES TO ALL VISITORS, USERS, VENDORS, CUSTOMERS,
+                        MERCHANTS AND OTHERS WHO ACCESS THIS WEBSITE and does not depend on
+                        the registration of an account. <br/><br/>
 
-                    <h2>1. WEBSITE TERMS OF USAGE</h2>
-                    <p>By agreeing to these Terms of Service, you represent that you are at least the age of majority in
-                        your state or province of residence, or that you are the age of majority in your state or
-                        province of residence and you have given us your consent to allow any of your minor dependents
-                        to use this site. <br/><br/>
-                        You may not use our products for any illegal or unauthorized purpose nor may you, in the use of
-                        the Service, violate any laws in your jurisdiction (including but not limited to copyright
-                        laws).You must not transmit any worms or viruses or any code of a destructive nature.
-                        A breach or violation of any of the Terms will result in an immediate termination of Services we
-                        provide.
+                        This website is operated by GLOW SKIN BEAUTY WELLNESS. Throughout the site, the
+                        terms “we”, “us” and “our” refer to GLOW SKIN BEAUTY WELLNESS. GLOW SKIN
+                        BEAUTY WELLNESS offers this website, including all information, tools and services
+                        available from this site to you, the user, conditioned upon your acceptance of all terms,
+                        conditions, policies and notices stated here. For the purpose of these terms and conditions
+                        (“Terms of Use”) and the Privacy Policy, Shipping Policy and Cancellation, Refund and
+                        Return Policy (together &quot;Policies&quot;) available on the Site and other terms and
+                        conditions as
+                        available across the Site, wherever the context so requires &quot;You&quot;, “Your”, “Yourself”
+                        and/or
+                        &quot;User&quot; shall mean any natural or legal person who is visiting the Site (whether
+                        registered
+                        with the Site or not). <br/><br/>
+
+                        This Site is directed to be used only by adults i.e., persons who are above the age of 18 years.
+                        The Site is not intended or designed to attract or be otherwise used by any person under the
+                        age of 18 years or by any other person who is not competent to enter into contract in
+                        accordance with the Indian Contract Act, 1872. By using the Site, You confirm that You are
+                        either 18 years of age or more and/or are otherwise competent to contract (as understood
+                        under the Indian Contract Act, 1872). If You are under 18 years of age or otherwise
+                        incompetent to contract (as understood under the applicable law) then You should not make a
+                        purchase on the Site and should not use the Site.<br/><br/>
+
+                        By visiting our site and/ or purchasing something from us, you engage in our “Service” and
+                        agree to be bound by the following terms and conditions (“Terms of Service”). Your use of
+                        the Site, services, and products available on the website are governed by these Terms of Use
+                        (as amended from time to time), and the Policies and other terms and conditions as available
+
+                        across the Site (as may be amended from time to time), which are deemed to be incorporated
+                        herein by way of reference and shall be considered as part of these Terms of Use. Hence, a
+                        reference to Terms of Use shall be considered to include a reference to the Policies and any
+                        other terms and conditions available across the Site. These Terms of Service apply to all users
+                        of the site, including without limitation users who are browsers, vendors, customers,
+                        merchants, and/ or contributors of content. By accessing, browsing, or using the Site, You are
+                        acknowledging, that You have read, understood, and agree, without limitation or
+                        qualification, to be bound by these Terms of Use. If You do not understand or do not agree to
+                        any of the terms enumerated in the Terms of Use, please do not use the Site. You are
+                        responsible for ensuring that Your access to this Site and material available on or through it
+                        are legal in each jurisdiction, in or through which You access or view the Site or such
+                        material.<br/><br/>
+
+                        GLOW SKIN BEAUTY WELLNESS reserves the right to change the particulars contained
+                        in the Terms of Use from time to time and at any time, without notice to its users and in its
+                        sole discretion. If GLOW SKIN BEAUTY WELLNESS decides to change the Terms of Use,
+                        it will post the new version of the Terms of Use on the Site and update the date specified
+                        hereinabove. Any change or modification to the Terms of Use will be effective immediately
+                        from the date of such upload of the Terms of Use and Policies on the Site. Your continued
+                        use of the Site following the modifications to the Terms of Use and Policies constitutes Your
+                        acceptance (without limitation or qualification) of the modified Terms of Use and Policies.
+                        For this reason, You should frequently review these Terms of Use and, understand the Terms
+                        of Use that apply to Your use of the Site and Our products and Services.
+
                     </p>
+
 
                     <h2>2. ACCURACY, COMPLETENESS AND TIMELINESS OF INFORMATION</h2>
                     <p>We reserve the right to refuse any order you place with us. We may, in our sole discretion, limit
@@ -131,7 +168,6 @@ export default function Tnc() {
                         licensed by GLOW SKIN BEAUTY WELLNESS, any of its affiliates or by third parties who have
                         licensed their materials to GLOW SKIN BEAUTY WELLNESS and are protected by Indian copyright laws
                         and international treaties.
-
                     </p>
 
                     <h2>4. USER COMMENTS, FEEDBACK AND OTHER SUBMISSIONS</h2>
@@ -264,8 +300,18 @@ export default function Tnc() {
 
 
                     <h2>10. PERSONAL INFORMATION</h2>
-                    <p>Your submission of personal information through the store is governed by our Privacy Policy. View
-                        our Privacy Policy.</p>
+                    <p>For information about the Company&#39;s policies and practices regarding the collection and use
+                        of your personally identifiable information, please read the Privacy Policy as available on the
+
+                        Site. The Privacy Policy is incorporated by reference and made part of these Terms. Thus, by
+                        agreeing to these Terms, you agree that your presence on the Site and use of the Services are
+                        governed by the Company’s Privacy Policy in effect at the time of your use. The Company
+                        reserves the right to disclose any information that is required to be shared, disclosed or made
+                        available to any governmental, administrative, regulatory or judicial authority under any law
+                        or regulation applicable to the Company. The Company can further disclose your name, street
+                        address, city, state, zip code, country, phone number, email, as it in its sole discretion
+                        believes necessary or appropriate in connection with an investigation of fraud, intellectual
+                        property infringement, piracy, or other unlawful activity.</p>
 
 
                     <h2>11. INDEMNIFICATION</h2>
@@ -319,9 +365,9 @@ export default function Tnc() {
                         shall be held in Hyderabad.</p>
 
                     <h2>15. GOVERNING LAW AND JURISDICTION</h2>
-                    <p>The Terms of Use and the Policies shall be construed in accordance with the app and/or website
-                        APPLICABLE laws of India. For proceedings arising therein the Courts at Hyderabad shall have
-                        exclusive jurisdiction.</p>
+                    <p>The Terms of Use and the Policies shall be construed in accordance with the app and/or
+                        website applicable laws of India. For proceedings arising therein shall referred to
+                        arbitration.</p>
 
 
                     <h2>16. CHANGES TO TERMS OF SERVICE</h2>
@@ -334,12 +380,94 @@ export default function Tnc() {
                         and enforceability of any remaining condition.</p>
 
                     <h2>17. ENTIRE AGREEMENT</h2>
-                    <p>These Terms of Use and the other agreements referred to herein constitute the sole and entire
-                        agreement between you and GLOW SKIN BEAUTY WELLNESS with respect to the Website and supersede
-                        all prior and contemporaneous understandings, agreements, representations and warranties, both
-                        written and oral, with respect to the Website.</p>
+                    <p>If any part of these Terms of Use is determined to be invalid or unenforceable pursuant to
+                        applicable law including, but not limited to, the warranty disclaimers and liability limitations
+                        set forth above, then the invalid or unenforceable provision will be deemed to be superseded by
+                        a valid, enforceable provision that most closely matches the intent of the original provision
+                        and
+                        the remainder of the Terms of Use shall continue to be in effect. Unless otherwise specified
+                        herein, these Terms of Use constitutes the entire agreement between you and GLOW SKIN
+                        BEAUTY WELLNESS with respect to the Site/services and it supersedes all prior or
+                        contemporaneous communications and proposals, whether electronic, oral or written. GLOW
+                        SKIN BEAUTY WELLNESS’s failure to act with respect to a breach by you or others does
+                        not waive its right to act with respect to the breach or subsequent and similar breaches.</p>
+
+                    <h2>18. CANCELLATIONS, RETURNS AND REFUNDS</h2>
+                    <p>Please refer to our Cancellation, Refunds and Returns Policy provided on our Site.</p>
+
+                    <h2>19. MODE OF PAYMENT</h2>
+                    <p>Payments for the products available on the Site may be made in the following ways:
+                    </p>
+                    <ul>
+                        <li>Payments can be made by Credit Cards, Debit Cards, Net Banking, Wallets, e-Gift
+                            cards, and reward points.
+                        </li>
+                        <li>Credit card, Debit Card and Net Banking payment options are instant payment options
+                            and recommended to ensure faster processing of your order.
+                        </li>
+                        <li>Cash On Delivery option is not available for orders outside India</li>
+                    </ul>
+
+                    <h2>20. CANCELLATIONS, RETURNS AND REFUNDS</h2>
+                    <p>Please refer to our Shipping and Delivery Policy provided on our Site, as amended from time to
+                        time.</p>
 
 
+                    <h2>21. LIMITED LICENSE</h2>
+                    <p>GLOW SKIN BEAUTY WELLNESS grants you limited, non-exclusive, non-transferable,
+                        non-sublicensable license to access, and make personal and non-commercial use of the Site. All
+
+                        rights not expressly granted to you in these Terms of Use, are reserved and retained by the Site
+                        and its affiliates. GLOW SKIN BEAUTY WELLNESS reserves the right, at any time, without
+                        notice, and at its sole discretion, to terminate your license to use the Site and to block and
+                        prevent your future access the Site.</p>
+
+
+                    <h2>22. SITE SECURTY</h2>
+                    <p>You are prohibited from violating or attempting to violate the security of the Website,
+                        including, without limitation,<br/><br/>
+                        a. accessing data not intended for you or logging onto a server or an account which you
+                        are not authorized to access;<br/>
+                        b. attempting to probe, scan or test the vulnerability of a system or network or to breach
+                        security or authentication measures without proper authorization;<br/>
+                        c. attempting to interfere with service to any other user, host or network, including,
+                        without limitation, via means of submitting a virus to the Site, overloading,
+                        &quot;flooding,&quot; &quot;spamming,&quot; &quot;mail bombing&quot; or &quot;crashing&quot;
+                        <br/>
+                        d. sending unsolicited email, including promotions and/or advertising of products or
+                        services; or<br/>
+                        e. forging any header or any part of the header information in any email or newsgroup
+                        posting. Violations of system or network security may result in civil or criminal
+                        liability<br/>
+                        f. threatens the unity, integrity, defence, security or sovereignty of India, public order or
+                        causes incitement to the commission of any cognizable offence or prevents
+                        investigation of any offence.<br/></p>
+
+                    <h2>GENERAL</h2>
+                    <p>You acknowledge and hereby agree to these Terms and Conditions and that it constitute the
+                        complete and exclusive agreement between us concerning your use of the Site, and supersede
+                        and govern all prior proposals, agreements, or other communications. We reserve the right, in
+                        our sole discretion, to change/ alter/ modify these Terms and Conditions at any time by posting
+                        the changes on the Site. Any changes are effective immediately upon posting to the Site. Your
+                        continued use of the Site thereafter constitutes your agreement to all such changed Terms and
+                        Conditions. We may, with or without prior notice, terminate any of the rights granted by these
+
+                        Terms and Conditions. You shall comply immediately with any termination or other notice,
+                        including, as applicable, by ceasing all use of the Site. ANY BREACH OR VIOLATION OF
+                        ANY OF THE TERMS WILL RESULT IN IMMEDIATE TERMINATION OF SERVICES
+                        PROVIDED BY GLOW SKIN BEAUTY WELLNESS. <br/><br/>
+                        Nothing contained in these Terms and Conditions shall be construed as creating any agency,
+                        partnership, affiliation, joint venture or other form of joint enterprise between us. Our
+                        failure to
+                        require your performance of any provision hereof shall not affect our full right to require such
+                        performance at any time thereafter, nor shall our waiver of a breach of any provision hereof be
+                        taken or held to be a waiver of the provision itself. In the event that any provision of these
+                        Terms and Conditions shall be unenforceable or invalid under any applicable law or be so held
+                        by any court decision, such unenforceability or invalidity shall not render these Terms and
+                        Conditions unenforceable or invalid as a whole but these Terms and Conditions shall be
+                        modified, to the extent possible, by the adjudicating entity to most fully reflect the original
+                        intent of the parties as reflected in the original provision. The headings in the Terms and
+                        Conditions are for convenience only and shall not be used in its interpretation.</p>
                 </div>
             </div>
 
