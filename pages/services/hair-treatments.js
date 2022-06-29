@@ -1,5 +1,5 @@
-import { Fragment, useEffect, useState } from "react";
-import SwiperCore, { Autoplay, EffectFade, Navigation, Pagination } from "swiper/core";
+import {Fragment, useEffect, useState} from "react";
+import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from "swiper/core";
 import BackToTop from "../../shared/components/back-to-top";
 import BookNow from "../../shared/components/book-now";
 import Footer from "../../shared/components/footer/footer";
@@ -16,7 +16,7 @@ export default function BRFacials() {
 
     return (
         <Fragment>
-            <Services title={"Services"} />
+            <Services title={"Services"}/>
             <ServicesComponent
                 titleElement={"Hair Treatments"}
                 srTitle={"OXYGENATING & STRENGTHENING"}
@@ -57,16 +57,15 @@ export default function BRFacials() {
             <ServicesComponent
                 srTitle={"GROWTH FACTOR THERAPY"}
                 id={"growthFactor"}
-                srPurpose={"We recommend 3 sessions for optimum results."}
                 content={
-                    "Ideal for hair concerns where you’re experiencing thinning, hair fall and loss of density or want to take preventative measures for dull, dry and damaged hair with weakened capillary fibres. This procedure includes an initial blood draw, followed by running the blood through a centrifuge to isolate the growth factors. You'll then receive these isolated growth factors through injection into your scalp. These growth factors fortify hair follicles, stimulate new growth and rejuvenate dormant hair follicles. It additionally helps with improved scalp health, hair thickness and strength, lending itself to prevention of hair fall."
+                    "Ideal for hair concerns where you’re experiencing thinning, hair fall and loss of density or want to take preventative measures for dull, dry and damaged hair with weakened capillary fibres. This procedure includes an initial blood draw, followed by running the blood through a centrifuge to isolate the growth factors. You'll then receive these isolated growth factors through injection into your scalp. These growth factors fortify hair follicles, stimulate new growth and rejuvenate dormant hair follicles. It additionally helps with improved scalp health, hair thickness and strength, lending itself to prevention of hair fall. <br/><br/>  <section>We recommend  3 sessions for optimum results.</section>"
                 }
             />
             <ServicesComponent
                 srTitle={"K18 PEPTIDE TREATMENT"}
                 id={"k18"}
                 content={
-                    "Travelling into the innermost layers of hair to reach the core polypeptide chains (keratin chains), the revolutionary K18Peptide™ is a bioactive peptide that is just the right size and makeup to fit in and reconnect broken chains. With just one treatment session your hair will be restored to 91% of its original strength and 94% of its original elasticity. This treatment involves a pre-treatment professional molecular repair hair mist that strengthens hair for the chemical treatment and a professional molecular repair hair mask that is clinically proven to repair and reverse damage caused by chemical services and thermal styling. Ideal for hair that has been visibly damaged from salon treatments or exposure to environmental stressors."
+                    "Travelling into the innermost layers of hair to reach the core polypeptide chains (keratin chains), the revolutionary K18Peptide™ is a bioactive peptide that is just the right size and makeup to fit in and reconnect broken chains. With just one treatment session your hair will be restored to 91% of its original strength and 94% of its original elasticity. This treatment involves a pre-treatment professional molecular repair hair mist that strengthens hair for the chemical treatment and a professional molecular repair hair mask that is clinically proven to repair and reverse damage caused by chemical services and thermal styling. Ideal for hair that has been visibly damaged from salon treatments or exposure to environmental stressors. "
                 }
             />
             <ServicesComponent
@@ -76,9 +75,9 @@ export default function BRFacials() {
                     "Get the silky, shiny and healthy hair you've always wanted. Moroccan Oil Hair treatment products pioneered oil-infused hair care and brought everyone to notice the many benefits of argan oil. Infused with antioxidant-rich argan oil and shine-boosting vitamins, this completely transformative hair treatment repairs damaged hair, boosts shine, prevents split ends, controls frizziness  and even reduces the occurrence of dandruff — leaving you with nourished, shiny, and smooth hair. With the 4 step treatment of shampoo, conditioner, hair mask and scalp massage, this is the ultimate pampering ritual for your tresses."
                 }
             />
-            <BookNow />
-            <BackToTop />
-            <Footer />
+            <BookNow/>
+            <BackToTop/>
+            <Footer/>
         </Fragment>
     );
 }

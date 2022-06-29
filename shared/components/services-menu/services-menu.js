@@ -235,8 +235,8 @@ export const servicesItemsHyd = [
                 url: "#botox",
             },
             {
-                title: "Prophilo",
-                url: "#prophilo",
+                title: "Profhilo",
+                url: "#profhilo",
             },
         ],
     },
@@ -503,8 +503,8 @@ export const servicesItemsChennai = [
                 url: "#botox",
             },
             {
-                title: "Prophilo",
-                url: "#prophilo",
+                title: "Profhilo",
+                url: "#profhilo",
             },
         ],
     },

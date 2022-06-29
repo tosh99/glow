@@ -53,8 +53,8 @@ export default function GlowTech() {
                 }
             />
             <ServicesComponent
-                srTitle={"PROPHILO"}
-                id={"prophilo"}
+                srTitle={"PROFHILO"}
+                id={"profhilo"}
                 content={
                     "Profhilo is an injectable, stabilised Hyaluronic Acid based product, designed to remodel multi-layer skin tissue. It is an anti-aging product that treats the source of ageing and not only the ageing symptoms. Having the highest Hyaluronic Acid concentration of 32 mg / ml and biological activation with multi-level 3D followability it reduces the number of treatment sessions, number of injections sites and downtime.  This clinically tested skin tissue enhancer remodels 3 main types of tissues — Collagen, Elastin and Adipocytes (fat cells) by stimulating fibroblast cells, activating keratinocytes and, preserving and encouraging the viability of adipocytes"
                 }

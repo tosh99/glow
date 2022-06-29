@@ -142,7 +142,7 @@ export default function Products() {
     const [current_favorite_slide, set_current_favorite_slide] = useState(0);
     const favorite_products = [
         {
-            title: 'Creme ux acides de fruits',
+            title: 'Creme aux acides de fruits',
         },
         {
             title: 'Warming Honey Cleanser',
