@@ -38,7 +38,7 @@ const testimonials = [
     {
         title: 'Madhuri Reddy',
         date: 'SEP 09, 2021',
-        desc: 'My experience with Glo Clinic was very unique and wonderful. The ambience of the clinic and is very relaxing and soothing. Dr Varshini is very patient and listened and examined all of my issues before recommending the required treatment which has completely changed my skin.'
+        desc: 'My experience with Glow Clinic was very unique and wonderful. The ambience of the clinic and is very relaxing and soothing. Dr Varshini is very patient and listened and examined all of my issues before recommending the required treatment which has completely changed my skin.'
     },
     {
         title: 'Akila Raju',
@@ -116,7 +116,7 @@ export default function About() {
                         </div>
 
 
-                        <img src={'/images/home/varshini.png'}/>
+                        <img src={'/images/home/varshini.JPG'}/>
                     </div>
                     <div className={styles.joBottom}>
                         <div className={styles.jobTitle}>

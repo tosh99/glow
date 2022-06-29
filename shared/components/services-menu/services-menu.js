@@ -25,7 +25,7 @@ export const servicesItemsHyd = [
                 url: "#soinRestructurant",
             },
             {
-                title: "SOINLIFT C.V.S",
+                title: "SOIN LIFT C.V.S",
                 url: "#soinLift",
             },
             {
@@ -209,7 +209,7 @@ export const servicesItemsHyd = [
                 url: "#growthFactor",
             },
             {
-                title: "K18",
+                title: "K18 PEPTIDE TREATMENT",
                 url: "#k18",
             },
             {
@@ -293,7 +293,7 @@ export const servicesItemsChennai = [
                 url: "#soinRestructurant",
             },
             {
-                title: "SOINLIFT C.V.S",
+                title: "SOIN LIFT C.V.S",
                 url: "#soinLift",
             },
             {
@@ -453,36 +453,36 @@ export const servicesItemsChennai = [
         url: "/services/hair-treatments",
         items: [
             {
-                title: "OXYGENATING  &  STRENGTHENING",
-                url: "",
+                title: "OXYGENATING & STRENGTHENING",
+                url: "#oxygenating",
             },
             {
                 title: "SEBO - REGULATING",
-                url: "",
+                url: "#sebo",
             },
             {
-                title: "DRY  DANDRUFF  BALANCING",
-                url: "",
+                title: "DRY DANDRUFF BALANCING",
+                url: "#dryDandruff",
             },
             {
-                title: "GREASY  DANDRUFF  BALANCING",
-                url: "",
+                title: "GREASY DANDRUFF BALANCING",
+                url: "#greasyDandruff",
             },
             {
-                title: "OXYGENATING  AND  STRENGTHENING  WITH \n" + "MICRO-PUNCTURE",
-                url: "",
+                title: "OXYGENATING AND STRENGTHENING WITH \n" + "MICRO-PUNCTURE",
+                url: "#oxygenatingMicro",
             },
             {
-                title: "GROWTH  FACTOR  THERAPY",
-                url: "",
+                title: "GROWTH FACTOR THERAPY",
+                url: "#growthFactor",
             },
             {
-                title: "K18",
-                url: "",
+                title: "K18 PEPTIDE TREATMENT",
+                url: "#k18",
             },
             {
                 title: "Moroccan Oil Hair Spa",
-                url: "",
+                url: "#moroccan",
             },
         ],
     },

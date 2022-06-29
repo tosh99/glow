@@ -487,7 +487,7 @@ export default function Home() {
                             <div className={"inner " + styles.journey} id='journey'>
                                 <div className={styles.joTop}>
                                     <h2>Shedding Light on Dr.Varshini’s Journey</h2>
-                                    <img src={'/images/home/varshini.png'}/>
+                                    <img src={'/images/home/varshini.JPG'}/>
                                 </div>
                                 <div className={styles.joBottom}>
                                     <div className={styles.jobTitle}>

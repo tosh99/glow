@@ -139,7 +139,6 @@ export default function BRFacials() {
             />
             <ServicesComponent
                 srTitle={"REMODELLING FACE©"}
-                srDesc={"60 mins"}
                 id={"remodellingFace"}
                 isFullSeparator={true}
                 content={
