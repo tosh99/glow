@@ -17,7 +17,11 @@ export default function ServicesComponent({
                 {titleElement && <h1 dangerouslySetInnerHTML={{ __html: titleElement }} />}
                 <div className={styles.servicesRight}>
                     {bannerUrl && <img title={titleElement} alt={titleElement} src={bannerUrl} />}
-                    {srTitle && <header className={styles.srTitle}>{srTitle}</header>}
+                    {/*{srTitle && <header className={styles.srTitle}>{srTitle}</header>}*/}
+                     <header
+                        className={`${styles.srTitle}`}
+                        dangerouslySetInnerHTML={{ __html: srTitle }}
+                    ></header>
                     {srDesc && <header className={styles.srDesc}>{srDesc}</header>}
                     <p
                         className={`${styles.srContent} ${(isFullSeparator || isDarkBg) && styles.srContentFull}`}

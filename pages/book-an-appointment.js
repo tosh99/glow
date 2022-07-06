@@ -8,15 +8,16 @@ export default function Home() {
     }, [])
 
     const [bookAppointment, setBookAppointment] = useState({
-        is_clinic: true
+        is_clinic: true,
+        is_hyderabad: true
     })
 
     return (
         <div className={styles.page}>
-            <PageHeader title={'Book An Appointment'} bg={'transparent'}/>
+            <PageHeader title={'Make Appointment'} bg={'transparent'}/>
             <div className={"outer " + styles.banner}>
                 <div className={"inner " + styles.inner}>
-                    <h1>Book an Appointment</h1>
+                    <h1>Make Appointment</h1>
                     <div className={styles.inputGroup}>
                         <input placeholder={'FIRST NAME'}/>
                         <input placeholder={'LAST NAME'}/>
@@ -38,6 +39,19 @@ export default function Home() {
                             <header className={!bookAppointment.is_clinic ? styles.selected : ''} onClick={() => {
                                 setBookAppointment(prev => ({...prev, is_clinic: false}))
                             }}>VIRTUAL
+                            </header>
+                        </div>
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <input placeholder={'LOCATION'}/>
+                        <div className={styles.selector}>
+                            <header className={bookAppointment.is_hyderabad ? styles.selected : ''} onClick={() => {
+                                setBookAppointment(prev => ({...prev, is_hyderabad: true}))
+                            }}>HYDERABAD
+                            </header>
+                            <header className={!bookAppointment.is_hyderabad ? styles.selected : ''} onClick={() => {
+                                setBookAppointment(prev => ({...prev, is_hyderabad: false}))
+                            }}>CHENNAI
                             </header>
                         </div>
                     </div>

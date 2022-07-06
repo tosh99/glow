@@ -11,7 +11,7 @@ SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
 export default function About() {
     const [faqs, set_faqs] = useState([
         {
-            title: "How do I book an appointment ?",
+            title: "How do I make an appointment ?",
             desc: "You can make an appointment through our website for both Hyderabad & Chennai or you can call us on the respective numbers for Hyderabad – 9951355555 & Chennai – 9160655555 to make an appointment over the phone.",
         },
         {

@@ -22,10 +22,10 @@ export default function GlowTech() {
             <ServicesComponent
                 titleElement={"IV Infusions"}
                 id={"hydraCleanse"}
-                srTitle={"HYDRA CLEANSE"}
+                srTitle={"HYDRA CLEANSE <p>Rs 4000</p>"}
                 bannerUrl={`/images/services/iv-infusions/banner.png`}
                 content={
-                    "Whether it’s air quality, poor diet or even a fast-paced lifestyle, your body is constantly bombarded by environmental stressors. Hydra Cleanse is our signature drip that boosts natural energy levels and immune system by re-hydrating cells, and is great for when you’re feeling fatigue or your skin is feeling dull or dehydrated. " +
+                    "Whether it’s air quality, poor diet or even a fast-paced lifestyle, your body is constantly bombarded by environmental stressors. Hydra Cleanse is our signature drip that boosts hydration levels and cleanses the system by re-hydrating cells, and is great for when you’re feeling fatigue or your skin is feeling dull or dehydrated. " +
                     "<br><br><h6>Purpose : Hydration</h6>"
                 }
             />
