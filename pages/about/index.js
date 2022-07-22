@@ -44,6 +44,13 @@ const testimonials = [
         title: 'Akila Raju',
         date: 'SEP 09, 2021',
         desc: 'I’ve been going to Dr. Varshini for my skincare needs from before she opened Glow. There’s no better ambassador for what a solid and consistent skincare routine can do for you than Dr. Varshini herself :blush:.Before I started on my BR journey with Glow - I used to hide under layers of makeup. I would change my skincare routine every few weeks based on a random Instagram post by some beauty editor, influencer or magazine list. It was when my skin had a bad reaction to one of my these experiments that I decided I needed to completely overhaul my approach.I now own a drawer full of foundations that I barely use. Today my skin is at a place where I don’t feel the need to use makeup on a daily basis. It’s even, glowy and hydrated.I see Dr. Varshini regularly and she takes the time to listen to my concerns and gives me a simple skincare regimen that’s easy to follow. She patiently takes me through how to use each product.I’m glad Hyderabad has a state of the art full service skincare clinic and I’m excited to try the many treatments Glow has to offer.'
+    },
+    {
+        title: 'Srishti Tokas',
+        date: 'Jun 09, 2022',
+        desc: 'Dear doctor Varshini, \n' +
+            'The last few years of consulting you has been such a lovely journey. Firstly a big thankyou for brining my most loved Biologique Recherche to India. You’ve been a true guiding light when it comes to helping me sort out my skin woes with your patience, skill and expertise. I love how the team at Glow clinic reflect your very humble nature and attend to their clients with so much care. Thankyou doc for helping me achieve healthy skin one routine at a time. You the best! \n' +
+            'Srishti'
     }
 ]
 
@@ -66,11 +73,14 @@ export default function About() {
             <div className={"outer " + styles.advocacyOuter}>
                 <div className={"inner " + styles.advocacy}>
                     <header>Our Skincare Advocacy</header>
-                    <p>Glow is a comprehensive skincare experience centre backed by the medical knowledge of Dr. Varshini Reddy,
-                        your skincare specialist. Her advocacy is based on utilising the best of clinical knowledge along with skin
+                    <p>Glow is a comprehensive skincare experience centre backed by the medical knowledge of Dr.
+                        Varshini Reddy,
+                        your skincare specialist. Her advocacy is based on utilising the best of clinical knowledge
+                        along with skin
                         therapies for a holistic rejuvenation. </p>
                     <p>
-                        At Glow, we offer a range of clinically proven products and hyper-personalised procedures for an indulgent
+                        At Glow, we offer a range of clinically proven products and hyper-personalised procedures for an
+                        indulgent
                         experience that delivers immediate and lasting results for your skin, beauty and total wellness.
                     </p>
                 </div>
@@ -124,26 +134,37 @@ export default function About() {
                             <header className={styles.desig}>MD Dermatology</header>
                         </div>
                         <div className={styles.jobContent}>
-                            <p> At Glow, we wanted to promote skin, beauty and wellness as ideologies that go hand-in-hand. Having studied MD
-                                Dermatology and been around the globe to learn about new-age technologies in the world of skincare, Dr.
-                                Varshini Reddy wanted to bring the best of those to India. Her journey has been exciting and full of new
+                            <p> At Glow, we wanted to promote skin, beauty and wellness as ideologies that go
+                                hand-in-hand. Having studied MD
+                                Dermatology and been around the globe to learn about new-age technologies in the world
+                                of skincare, Dr.
+                                Varshini Reddy wanted to bring the best of those to India. Her journey has been exciting
+                                and full of new
                                 learnings which took her from being a skincare enthusiast to a practicing dermatologist.
                                 <br/><br/>
-                                She has consulted with many people over the course of years and has distinguished herself as an advocate for wholesome rejuvenation. With an established and ever-growing clientbase she has
+                                She has consulted with many people over the course of years and has distinguished
+                                herself as an advocate for wholesome rejuvenation. With an established and ever-growing
+                                clientbase she has
                                 extended her
-                                platform to a larger audience and opened doors to Glow, a contemporary space for skin indulgence.
+                                platform to a larger audience and opened doors to Glow, a contemporary space for skin
+                                indulgence.
                                 <br/><br/>
                                 {
                                     showMore && <>
-                                        With our boutique studios set up in Hyderabad and Chennai, Dr. Varshini specialises in prescriptive treatments that are hyper-personalised. Providing opportunities to enhance your
+                                        With our boutique studios set up in Hyderabad and Chennai, Dr. Varshini specialises
+                                        in prescriptive treatments that are hyper-personalised. Providing opportunities to
+                                        enhance your
                                         beauty regime by
                                         making
-                                        available, globally revered brands and technologies. Featuring some of the most sought-after facials to some of the best technologically assisted services, Glow is your one stop
+                                        available, globally revered brands and technologies. Featuring some of the most
+                                        sought-after facials to some of the best technologically assisted services, Glow is
+                                        your one stop
                                         shop for all things
                                         skincare,
                                         beauty and wellness.
                                         <br/><br/>
-                                        May it be the services we offer or the products we have curated, everything caters to your total well-being.
+                                        May it be the services we offer or the products we have curated, everything caters
+                                        to your total well-being.
                                     </>
                                 }
                             </p>
@@ -211,7 +232,9 @@ export default function About() {
 
                                                     <div className={styles.desc}>
                                                         {
-                                                            device === 0 && <ReadMoreReact min={125} ideal={405} max={655} text={item.desc}/>
+                                                            device === 0 &&
+                                                            <ReadMoreReact min={125} ideal={405} max={655}
+                                                                           text={item.desc}/>
                                                         }
                                                         {
                                                             device !== 0 && item.desc
