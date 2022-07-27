@@ -16,15 +16,15 @@ export default function HomePageHeader() {
                     <img src={'/icons/header/logo.svg'}/>
                 </div>
                 <div className={styles.hRight}>
-                    <Link href="/services">
+                    <Link href='/services'>
                         <header>Services</header>
                     </Link>
                     <Link href="/products">
                         <header>Products</header>
                     </Link>
-                    <Link href="/theedit">
-                        <header>The Edit</header>
-                    </Link>
+                    {/*<Link href="/theedit">*/}
+                    {/*    <header>The Edit</header>*/}
+                    {/*</Link>*/}
                     <Link href="/biologique">
                         <header>Biologique Recherche</header>
                     </Link>

@@ -8,9 +8,9 @@ function MyApp({Component, pageProps}) {
             <title>Products</title>
         </Head>
 
-        <TransitionLayout>
+        {/*<TransitionLayout>*/}
             <Component {...pageProps} />
-        </TransitionLayout>
+        {/*</TransitionLayout>*/}
     </>
 }
 

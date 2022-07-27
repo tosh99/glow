@@ -1,0 +1,148 @@
+.menuOuter {
+}
+
+.menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background: #eeeadd;
+
+    .menuContent {
+        display: flex;
+        flex-direction: row;
+        padding: 45px 100px;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1440px;
+        margin: auto;
+        height: 0;
+
+        .menuCItem {
+            position: relative;
+
+            .menuCTitle {
+                line-height: 20px;
+                letter-spacing: 0.02em;
+                font-family: CanelaMedium, sans-serif;
+                font-weight: 500;
+                cursor: pointer;
+                font-size: 14px;
+                color: rgba(0, 0, 0, 0.5);
+                transition: 0.2s;
+                width: 100%;
+                text-transform: uppercase;
+                display: flex;
+                justify-content: space-between;
+
+                img {
+                    display: none;
+                }
+            }
+
+            .menuCTitle:hover {
+                transition: 0.2s;
+                color: black;
+            }
+
+            .menuCTitleSelected {
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 149.8%;
+                transition: 0.1s;
+                color: black;
+            }
+        }
+
+        .menuCItem:last-of-type {
+            text-align: right;
+        }
+    }
+
+    .menuBottom {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        padding: 20px 75px;
+        position: absolute;
+        bottom: 75px;
+        width: 100%;
+
+        .locationSelector {
+            display: flex;
+            border: 1px solid #000000;
+            border-radius: 50.5px;
+            overflow: hidden;
+
+            .location {
+                padding: 12px 35px;
+                cursor: pointer;
+                font-family: EmpireBold, sans-serif;
+                font-size: 45px;
+                letter-spacing: 2.5px;
+            }
+
+            .locationSelected {
+                background: black;
+                color: white;
+                cursor: text;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1280px) {
+    .menu {
+        .menuTop {
+            padding: 20px 35px;
+        }
+
+        .menuContent {
+            padding: 20px 0;
+            flex-direction: column;
+            align-items: flex-start;
+            height: calc(100vh - 200px);
+            overflow-y: auto;
+            justify-content: flex-start;
+
+            .menuCItem {
+                padding: 18px 35px;
+                border-bottom: 1px solid #d0d0d0;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                .menuCTitle {
+                    img {
+                        display: block;
+                        width: 15px;
+                    }
+                }
+            }
+
+            .menuCItem:last-of-type {
+                text-align: left;
+            }
+
+        }
+
+        .menuBottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 20px 35px;
+            align-items: flex-start;
+            bottom: 75px;
+
+            .locationSelector {
+                .location {
+                    font-size: 36px;
+                }
+            }
+        }
+    }
+}

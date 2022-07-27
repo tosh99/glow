@@ -1,0 +1,138 @@
+@import 'styles/vars.scss';
+
+.page {
+    background: url("../../public/images/bookanappointment/banner.png") no-repeat;
+    background-size: cover;
+}
+
+.inner {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+.banner {
+    min-height: calc(100vh - 107px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    img {
+        margin-bottom: 67px;
+    }
+
+    h1 {
+        font-family: EmpireBold, sans-serif;
+        font-size: 73px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #222222;
+        margin-bottom: 33px;
+    }
+}
+
+.inputGroup, .inputGroupFull {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    input {
+        width: calc(50% - 5px);
+        border: 1px solid #000000;
+        border-radius: 100px;
+        background: transparent;
+        font-size: 20px;
+        letter-spacing: 0.05em;
+        color: #868686;
+        padding: 20px 30px;
+        font-family: HattonRegular, sans-serif;
+    }
+
+    .selector {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: calc(50% - 5px);
+        border: 1px solid #000000;
+        border-radius: 100px;
+        background: transparent;
+
+        header {
+            height: 100%;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            line-height: 25px;
+            font-family: HattonRegular, sans-serif;
+            cursor: pointer;
+        }
+
+        .selected {
+            background: #000000;
+            border: 1px solid #000000;
+            border-radius: 100px;
+            color: white;
+            cursor: text;
+        }
+    }
+}
+
+.inputGroupFull {
+    input {
+        width: 100%;
+    }
+
+    textarea {
+        width: 100%;
+        border: 1px solid #000000;
+        border-radius: 20px;
+        background: transparent;
+        font-size: 20px;
+        letter-spacing: 0.05em;
+        color: #868686;
+        padding: 20px 30px;
+        font-family: HattonRegular, sans-serif;
+        height: 190px;
+    }
+}
+
+@media only screen and (max-width: 648px) {
+    .banner {
+
+        img {
+            margin-bottom: 35px;
+            width: 80px;
+        }
+
+        h1 {
+            font-size: 80px;
+            line-height: 80px;
+            margin-bottom: 33px;
+        }
+
+        h2 {
+            margin-bottom: 35px;
+            font-size: 16px;
+        }
+
+        .address {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            button {
+                font-size: 14px;
+                padding: 13px 10px;
+                min-width: 273px;
+                margin: 0 5px 15px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}

@@ -69,6 +69,11 @@ p {
     src: local('OggRegular'), url("/fonts/OggRegular.otf") format('opentype');
 }
 
+@font-face {
+    font-family: 'SaolDisplayRegular';
+    font-display: swap;
+    src: local('SaolDisplayRegular'), url("/fonts/SaolDisplay-Regular.otf") format('opentype');
+}
 
 @font-face {
     font-family: 'SaolRegular';
@@ -144,6 +149,44 @@ p {
 @font-face {
     font-family: 'TerminaRegular';
     font-display: swap;
-    src: local('TerminaRegular'), url("/fonts/TerminaRegular.ttf") format('opentype');
+    src: local('TerminaRegular'), url("/fonts/TerminaRegular.ttf") format('truetype');
 }
+
+
+@font-face {
+    font-family: 'TeodorTrialRegular';
+    font-display: swap;
+    src: local('TeodorTrialRegular'), url("/fonts/TeodorTRIAL-Medium.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'TeodorTrialLight';
+    font-display: swap;
+    src: local('TeodorTrialLight'), url("/fonts/TeodorTRIAL-Light.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'TeodorTrialLightItalic';
+    font-display: swap;
+    src: local('TeodorTrialLightItalic'), url("/fonts/TeodorTRIAL-LightItalic.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'TeodorTrialMediumItalic';
+    font-display: swap;
+    src: local('TeodorTrialMediumItalic'), url("/fonts/TeodorTRIAL-MediumItalic.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'CanelaRegular';
+    font-display: swap;
+    src: local('CanelaRegular'), url("/fonts/Canela-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'CanelaMedium';
+    font-display: swap;
+    src: local('CanelaMedium'), url("/fonts/Canela-Medium.ttf") format('truetype');
+}
+
 

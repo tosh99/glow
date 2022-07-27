@@ -17,7 +17,6 @@ export default function TransitionLayout({children}) {
     return (<div
             onTransitionEnd={() => {
                 if (transitionStage === "fadeOut") {
-                    console.log("fading out");
                     setDisplayChildren(children);
                     setTransitionStage("fadeIn");
                 }

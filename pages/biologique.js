@@ -102,9 +102,12 @@ export default function Biologique() {
                 <h1>Biologique Recherche x Glow</h1>
                 <div className={styles.img}>
                     <div className={styles.imgLeft}>
-                        <p>One of our goals at Glow is to associate with brands that identify with our ideology of clean, targeted and result-oriented skincare therapies. We are proud to have partnered with Biologique
+                        <p>One of our goals at Glow is to associate with brands that identify with our ideology of
+                            clean, targeted and result-oriented skincare therapies. We are proud to have partnered with
+                            Biologique
                             Recherche — the
-                            leading dermo-cosmetic skincare brand born in Paris, France and reputed across the globe for their technologically advanced approach to skincare.
+                            leading dermo-cosmetic skincare brand born in Paris, France and reputed across the globe for
+                            their technologically advanced approach to skincare.
                         </p>
                     </div>
                     <div className={styles.imgRight}>
@@ -122,13 +125,18 @@ export default function Biologique() {
                     <h2>The Birth of <br/> Hyper-Personalisation</h2>
                 </div>
                 <div className={styles.smRight}>
-                    <p> Founded in the late 1970s by a family of artisanal skincare experts, Biologique Recherche came about through the passion of biologist and physiotherapist duo Yvan and Josette Allouche.
-                        Their consummate savoir-faire and visionary approach underpin the brand’s reputation for effectiveness and outstanding products.
+                    <p> Founded in the late 1970s by a family of artisanal skincare experts, Biologique Recherche came
+                        about through the passion of biologist and physiotherapist duo Yvan and Josette Allouche.
+                        Their consummate savoir-faire and visionary approach underpin the brand’s reputation for
+                        effectiveness and outstanding products.
                     </p>
                     <p>
-                        In 1992 Biologique Recherche set up its Ambasade in the heart of Paris, on the historic Champs Elysées. Even after all these years they stay true to their personalised methodology and products
+                        In 1992 Biologique Recherche set up its Ambasade in the heart of Paris, on the historic Champs
+                        Elysées. Even after all these years they stay true to their personalised methodology and
+                        products
                         while preserving the
-                        authenticity and continuing to innovate so that their clients can enjoy an ever-more customised experience
+                        authenticity and continuing to innovate so that their clients can enjoy an ever-more customised
+                        experience
                     </p>
                 </div>
 
@@ -172,18 +180,20 @@ export default function Biologique() {
                                         </div>
                                         <h2>{item.title}</h2>
                                         {
-                                            device !== 0 && <div className={styles.mlDesc} dangerouslySetInnerHTML={{__html: item.desc}}>
+                                            device !== 0 && <div className={styles.mlDesc}
+                                                                 dangerouslySetInnerHTML={{__html: item.desc}}>
                                             </div>
                                         }
                                         {
                                             device === 0 && <>
-                                                <div className={styles.mlDesc} dangerouslySetInnerHTML={{__html: item.desc.slice(0, item.read_more ? 1800 : 250)}}>
+                                                <div className={styles.mlDesc}
+                                                     dangerouslySetInnerHTML={{__html: item.desc.slice(0, item.read_more ? 1800 : 250)}}>
                                                 </div>
                                                 {
                                                     !item.read_more && <header className={styles.readMore} onClick={() => {
                                                         item.read_more = true;
                                                         set_render(prev => prev + 1);
-                                                    }}>Read More
+                                                    }}>read more
                                                     </header>
                                                 }
                                             </>
@@ -211,10 +221,14 @@ export default function Biologique() {
                         Glow
                     </p>
                     <div className={styles.desc}>
-                        <p>Glow is the first dermatological centre to offer the entire Biological Recherche menu that is only available in their Ambassade in Paris.</p>
-                        <p>Each skincare protocol is devised specifically in response to a personalised dermo-cosmetic diagnosis. All Biologique
-                            Recherche’s personalised treatments – whether for the face, body or scalp – are executed with the
-                            same rigor and methodology. Get these critically acclaimed services at our clinics in Hyderabad and Chennai, now.</p>
+                        <p>Glow is the first dermatological centre to offer the entire Biological Recherche menu that is
+                            only available in their Ambassade in Paris.</p>
+                        <p>Each skincare protocol is devised specifically in response to a personalised dermo-cosmetic
+                            diagnosis. All Biologique
+                            Recherche’s personalised treatments – whether for the face, body or scalp – are executed
+                            with the
+                            same rigor and methodology. Get these critically acclaimed services at our clinics in
+                            Hyderabad and Chennai, now.</p>
                     </div>
                 </div>
 
@@ -300,7 +314,7 @@ export default function Biologique() {
                                                         {item.content}
                                                         {/*<ReadMoreReact min={65} ideal={105} max={165} text={item.content}/>*/}
                                                     </p>
-                                                    <Link href="/services">
+                                                    <Link href='/services'>
                                                         <header>Discover</header>
                                                     </Link>
                                                     {
@@ -365,17 +379,22 @@ export default function Biologique() {
                         })
                     }
                 </Swiper>
-                <NextBack
-                    onBack={() => {
-                        buy_br_swiper.slidePrev()
-                    }}
-                    onNext={() => {
-                        buy_br_swiper.slideNext()
-                    }}/>
 
-                <a href="https://wa.me/9951355555" target="_blank">
-                    <header className={styles.enquire}>ENQUIRE</header>
-                </a>
+
+                <div className={styles.enquireSection}>
+                    <a href="https://wa.me/9951355555" target="_blank">
+                        <header className={styles.enquire}>ENQUIRE</header>
+                    </a>
+                    {
+                        device === 0 && <NextBack
+                            onBack={() => {
+                                buy_br_swiper.slidePrev()
+                            }}
+                            onNext={() => {
+                                buy_br_swiper.slideNext()
+                            }}/>
+                    }
+                </div>
             </div>
         </div>
 

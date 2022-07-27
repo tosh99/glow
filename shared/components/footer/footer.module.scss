@@ -147,7 +147,6 @@
                 }
             }
 
-
             .appoint {
                 font-family: HattonMedium, sans-serif;
                 font-size: 20px;
@@ -194,6 +193,8 @@
                     margin-bottom: 19px;
                     color: #FFFFFF;
                     text-align: right;
+                    display: flex;
+                    flex-direction: column;
 
                 }
 
@@ -226,22 +227,42 @@
 
 @media only screen and (max-width: 1024px) {
     .footer {
+        padding: 0;
+        padding-top: 50px;
 
         .footerTop {
-            .ftRight {
+            .ftLeft {
+                align-items: flex-start;
 
+                .backtoToTop {
+                    justify-content: center;
+
+                    img {
+                        width: 16px;
+                        min-width: 16px;
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .ftRight {
                 .column {
                     margin-left: 45px;
                     margin-bottom: 20px;
 
                     .clHeader {
                         width: 100%;
-                        margin-bottom: 10px;
+                        margin-bottom: 20px;
 
                         img {
                             display: block;
                             width: 10px;
+                            margin-left: 20px;
                         }
+                    }
+
+                    .item {
+                        margin-bottom: 15px;
                     }
                 }
 
@@ -249,8 +270,17 @@
         }
 
         .footerBottom {
+            .fbLeft {
+                .appoint {
+                    white-space: nowrap;
+                    font-size: 18px;
+                    line-height: 123.8%;
+                    letter-spacing: 5px;
+                }
+            }
+
             .fbRight {
-                flex-direction: column;
+                flex-direction: row;
 
                 .column {
                     margin-bottom: 10px;
@@ -265,8 +295,9 @@
 
 @media only screen and (max-width: 648px) {
     .footer {
-        padding: 50px 0 0 0 !important;
-        padding-top: 20px !important;
+        padding: 50px 0 !important;
+        padding-bottom: 0 !important;
+
 
         .footerTop {
             flex-direction: column;
@@ -284,7 +315,7 @@
                     width: 60px;
                 }
 
-                .backtoToTop{
+                .backtoToTop {
                     display: flex;
                 }
             }
@@ -293,7 +324,7 @@
                 flex-direction: column;
                 justify-content: unset;
                 padding: 45px 35px 0;
-                border-top: 0.3px solid #444444;
+                border-top: none;
 
                 .column {
                     margin-left: 0;
@@ -308,13 +339,15 @@
 
 
             .fbRight {
-                flex-direction: column;
                 padding: 0 35px;
+                flex-direction: row;
+                justify-content: space-between;
 
                 .column {
                     align-items: flex-start;
                     margin-left: 0;
                     margin-bottom: 60px;
+                    width: calc(50% - 20px);
 
                     .item {
                         text-align: left;

@@ -1,0 +1,188 @@
+.servicesOuter {
+}
+
+.services {
+    padding-top: 35px;
+    display: flex;
+    justify-content: flex-end;
+
+    h1 {
+        position: absolute;
+        font-family: EmpireBold, sans-serif;
+        text-transform: uppercase;
+        font-size: 123px;
+        line-height: 126px;
+        letter-spacing: 0.1em;
+        left: 100px;
+        max-width: 325px;
+    }
+
+    .servicesRight {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 862px;
+        border-bottom: 1px solid lightgray;
+
+        img {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        .srTitle {
+            font-size: 24px;
+            line-height: 132.8%;
+            letter-spacing: 0.2px;
+            font-family: CanelaMedium, sans-serif;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .srDesc {
+            font-family: OggItalic, sans-serif;
+            font-size: 16px;
+            line-height: 132.8%;
+            margin-top: 4px;
+        }
+
+        .srPurpose {
+            font-family: SaolRegularItalic, sans-serif;
+            font-size: 20px;
+            line-height: 132.8%;
+            margin-top: -45px;
+            margin-bottom: 45px;
+        }
+
+        .srContent {
+            width: 100%;
+            font-size: 20px;
+            padding-bottom: 55px;
+            font-family: TeodorTrialLight, sans-serif;
+            line-height: 145%;
+            margin-top: 39px;
+
+            article {
+                font-family: TelegrafRegular, sans-serif;
+                font-size: 18px;
+            }
+
+            span {
+                font-family: SaolRegularItalic, sans-serif;
+                font-size: 20px;
+                line-height: 132.8%;
+                margin-bottom: 9px;
+                margin-top: 16px;
+                letter-spacing: 2px;
+            }
+
+            section {
+                font-family: OggItalic, sans-serif;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 132.8%;
+                letter-spacing: 1px;
+            }
+
+            h4 {
+                font-family: TelegrafRegular, sans-serif;
+                font-size: 20px;
+                line-height: 132.8%;
+                letter-spacing: 1px;
+            }
+
+            h5 {
+                font-family: TeodorTrialLight, sans-serif;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 237.3%;
+                text-align: right;
+                letter-spacing: 1px;
+            }
+
+            h6 {
+                font-family: TeodorTrialLightItalic, sans-serif;
+                font-size: 20px;
+                line-height: 132.8%;
+            }
+        }
+    }
+}
+
+.servicesFull {
+    border-bottom: 1px solid rgb(117, 117, 117);
+}
+
+@media only screen and (max-width: 648px) {
+    .services {
+        flex-direction: column;
+
+        h1 {
+            position: relative;
+            left: 0;
+            font-size: 55px;
+            line-height: 100%;
+            margin-bottom: 20px;
+        }
+
+        .servicesRight {
+            max-width: 100%;
+
+            img {
+                margin-bottom: 30px;
+            }
+
+            .srTitle {
+                font-size: 18px;
+            }
+
+            .srDesc {
+                font-size: 14px;
+                margin-top: 6px;
+                margin-bottom: 35px;
+            }
+
+            .srPurpose {
+                font-size: 20px;
+                margin-top: -30px;
+                margin-bottom: 30px;
+            }
+
+            .srContent {
+                font-size: 16px;
+                padding-bottom: 35px;
+                margin-top: 0;
+
+                article {
+                    font-size: 18px;
+                }
+
+                p {
+                    font-size: 20px;
+                    line-height: 132.8%;
+                    margin-bottom: 9px;
+                    margin-top: 16px;
+                    letter-spacing: 2px;
+                }
+
+
+                h4 {
+                    font-size: 14px;
+                    letter-spacing: 0.8px;
+                }
+
+                h5 {
+                    font-size: 18px;
+                    line-height: 237.3%;
+                    text-align: left;
+                    letter-spacing: 1px;
+                }
+
+                h6 {
+                    font-size: 14px;
+                    line-height: 132.8%;
+                }
+            }
+        }
+    }
+}

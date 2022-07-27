@@ -78,42 +78,41 @@ export default function Home() {
         }
     ];
 
-    useEffect(() => {
-        const ids = ['banner', 'bannerText', 'SkinCarePhilosophy', 'sayHello', 'services', 'sliders', 'edit', 'visitus', 'journey']
-        let id = 0;
-
-        // window.addEventListener("wheel", function (e) { // or window.addEventListener("scroll"....
-        //     if (e.wheelDelta >= 0) {
-        //         if (id > 0) {
-        //             if (id - 1 === 0) {
-        //                 window.scrollTo(0, 0)
-        //             } else {
-        //                 document.getElementById(ids[id - 1]).scrollIntoView({behavior: "smooth", block: "start",});
-        //             }
-        //             id -= 1;
-        //         }
-        //
-        //
-        //     } else {
-        //         if (id < ids.length - 1) {
-        //             document.getElementById(ids[id + 1]).scrollIntoView({behavior: "smooth", block: "start",});
-        //             id += 1;
-        //         }
-        //
-        //     }
-        //     console.log(id)
-        // }, false);
-    }, [])
-
     const [device, set_device] = useState(2);
     useEffect(() => {
-        if (screen.width <= 648) {
+        if (screen.width <= 1280) {
             set_device(0)
         }
     }, [])
 
     const gotoShop = () => {
 
+    }
+
+    function Menu() {
+        return <div className={styles.menu}>
+            <div className={styles.menuTitle} onClick={() => {
+                set_is_menu_visible(!is_menu_visible)
+            }}>
+                <header>Index</header>
+                <img src={'/icons/common/' + (is_menu_visible ? 'up_white.svg' : 'down_white.svg')}/>
+            </div>
+            {
+                is_menu_visible && <div className={styles.menuItems}>
+                    {
+                        carousel_content.map((citem, cindex) => {
+                            return <header
+                                onClick={(ev) => {
+                                    ev.stopPropagation();
+                                    set_current_slide(cindex);
+                                    slider.slideTo(cindex + 6);
+                                }}
+                                className={styles.item}>{citem.title}</header>
+                        })
+                    }
+                </div>
+            }
+        </div>
     }
 
     return (
@@ -131,11 +130,14 @@ export default function Home() {
                             <div>
                                 <img src={'/images/home/banner.gif'}/>
                             </div>
-                            <p id='bannerText'>Your skin changes with age, diet, weather, lifestyle choices and your state of mind. At every turning point, you need to check in with your skin.
-                                At Glow, we don’t categorise you into a skin type. We consult with you to get to know your skin and then proceed with a personalised service.
+                            <p id='bannerText'>Your skin changes with age, diet, weather, lifestyle choices and your
+                                state of mind. At every turning point, you need to check in with your skin.
+                                At Glow, we don’t categorise you into a skin type. We consult with you to get to know
+                                your skin and then proceed with a personalised service.
                             </p>
                             <p className={styles.reju}>
-                                Welcome to Glow, the skincare wonderland. Step in and tell us what you’d like to do today.
+                                Welcome to Glow, the skincare wonderland. Step in and tell us what you’d like to do
+                                today.
                             </p>
                         </div>
                     </div>
@@ -152,19 +154,24 @@ export default function Home() {
                                     initial={{opacity: 0}}
                                     animate={inView ? {opacity: 1} : {opacity: 0}}
                                     transition={{duration: 0.8}}>
-                            <div className={"scrollable-section inner " + styles.skinCarePhil} id={'SkinCarePhilosophy'}>
+                            <div className={"scrollable-section inner " + styles.skinCarePhil}
+                                 id={'SkinCarePhilosophy'}>
                                 <div className={styles.scLeft}>
                                     <img src={'/images/home/skincare.png'}/>
                                 </div>
                                 <div className={styles.scRight}>
                                     <div>
                                         <h2>Our <br/> skincare philosophy</h2>
-                                        <p>Bringing forth a new concept of fusing clinical beauty with skin therapy, Dr. Varshini Reddy has
-                                            distinguished herself as a skincare specialist. Her belief is that the foundation of your beauty lies at the heart
-                                            of healthy skin and hair. Fostering healthy habits, checking in regularly with your dermatologist,
+                                        <p>Bringing forth a new concept of fusing clinical beauty with skin therapy, Dr.
+                                            Varshini Reddy has
+                                            distinguished herself as a skincare specialist. Her belief is that the
+                                            foundation of your beauty lies at the heart
+                                            of healthy skin and hair. Fostering healthy habits, checking in regularly
+                                            with your dermatologist,
                                             upkeep and indulgence are the pillars of Glow’s skincare philosophy. </p>
                                         <p className={styles.identity}>The identity you’re building.
-                                            The choices you’re making. The confidence you’re exuding. The love you’re sharing. It’s contagious.
+                                            The choices you’re making. The confidence you’re exuding. The love you’re
+                                            sharing. It’s contagious.
                                             At Glow, we help you shine that spell-binding light.
                                         </p>
                                     </div>
@@ -191,13 +198,17 @@ export default function Home() {
                                     <h2>Say hello to Glow</h2>
                                     <div>
                                         <p>With our boutique skin studios set up in Hyderabad and Chennai,
-                                            we have fostered an ever-growing client list of skincare enthusiasts from around the globe.
+                                            we have fostered an ever-growing client list of skincare enthusiasts from
+                                            around the globe.
                                             Taking private consultations in our studio set-ups and
                                             virtually, we are happy to provide result-oriented products, world-class
-                                            facilities and the latest in aesthetic technologies. Make an appointment to get your skin update
+                                            facilities and the latest in aesthetic technologies. Make an appointment to
+                                            get your skin update
                                             and to understand your skin health with
                                             Dr. Varshini Reddy.</p>
-                                        <header className={styles.selfcare}>Afterall selfcare is an expression of self-love.</header>
+                                        <header className={styles.selfcare}>Afterall selfcare is an expression of
+                                            self-love.
+                                        </header>
                                     </div>
                                 </div>
                                 <div className={styles.scBottom}>
@@ -227,12 +238,16 @@ export default function Home() {
                                 <div className={styles.scRight}>
                                     <div>
                                         <h2>Services at Glow</h2>
-                                        <p>Our approach to skincare is oriented towards immediate and lasting results using technologically advanced therapies for
-                                            better skin health. We have curated a menu of exclusive services that are recommended
-                                            upon doing a thorough clinical analysis of your skin instant and tailored to provide you an everlasting and healthy glow.
+                                        <p>Our approach to skincare is oriented towards immediate and lasting results
+                                            using technologically advanced therapies for
+                                            better skin health. We have curated a menu of exclusive services that are
+                                            recommended
+                                            upon doing a thorough clinical analysis of your skin instant and tailored to
+                                            provide you an everlasting and healthy glow.
                                         </p>
                                         <p className={styles.identity}>
-                                            Both the services and space are designed to transport you to a state of tranquility.
+                                            Both the services and space are designed to transport you to a state of
+                                            tranquility.
                                         </p>
                                     </div>
 
@@ -249,10 +264,14 @@ export default function Home() {
                 <div className={styles.sliders}>
                     <p className={styles.desc}>
                         After a lot of deliberation we have curated a
-                        wide range of products that are available to you 24 x 7 on our online boutique <span onClick={gotoShop}>glow.shop</span>. You can also purchase them in-store with the assistance of our skincare
+                        wide range of products that are available to you 24 x 7 on our online boutique <span
+                        onClick={gotoShop}>glow.shop</span>. You can also purchase them in-store with the assistance of
+                        our skincare
                         experts or
-                        even place an order for curbside pick-up. These products are tried and tested cult favourites and made
-                        with innovative formulations to offer you an everlasting glow and help you on your skincare, beauty and wellness
+                        even place an order for curbside pick-up. These products are tried and tested cult favourites
+                        and made
+                        with innovative formulations to offer you an everlasting glow and help you on your skincare,
+                        beauty and wellness
                         journey.
                     </p>
 
@@ -265,7 +284,6 @@ export default function Home() {
                             speed={1800}
                             spaceBetween={100}
                             onSlideChange={(ev) => {
-                                console.log(ev.activeIndex)
                                 if (ev.activeIndex === 12) {
                                     set_current_slide(0)
 
@@ -280,56 +298,24 @@ export default function Home() {
                                 return (<SwiperSlide>
                                         <div className={styles.slide}>
                                             {
-                                                current_slide === index && <>
-                                                    <InView threshold={0}>
-                                                        {
-                                                            ({ref, inView}) => (
-                                                                <motion.div className={styles.title}
-                                                                            ref={ref}
-                                                                            initial={{opacity: 0}}
-                                                                            animate={inView ? {opacity: 1} : {opacity: 0}}
-                                                                            transition={{duration: 0.7}}>
-                                                                    {item.title}
-                                                                </motion.div>)
-                                                        }
-                                                    </InView>
-                                                    <div className={styles.menu}>
-                                                        <div className={styles.menuTitle} onClick={() => {
-                                                            set_is_menu_visible(!is_menu_visible)
-                                                        }}>
-                                                            <header>Index</header>
-                                                            <img src={'/icons/common/' + (is_menu_visible ? 'up_white.svg' : 'down_white.svg')}/>
-                                                        </div>
-                                                        {
-                                                            is_menu_visible && <div className={styles.menuItems}>
-                                                                {
-                                                                    carousel_content.map((citem, cindex) => {
-                                                                        return <header
-                                                                            onClick={(ev) => {
-                                                                                ev.stopPropagation();
-                                                                                set_current_slide(cindex);
-                                                                                slider.slideTo(cindex + 6);
-                                                                            }}
-                                                                            className={styles.item}>{citem.title}</header>
-                                                                    })
-                                                                }
-                                                            </div>
-                                                        }
+                                                device === 0 && <>
+                                                    <Menu/>
+                                                    <div className={styles.titleM}>
+                                                        {item.title}
                                                     </div>
+                                                </>
+                                            }
+                                            {
+                                                current_slide === index && <>
                                                     {
-                                                        device === 0 && <InView threshold={0}>
-                                                            {
-                                                                ({ref, inView}) => (
-                                                                    <motion.div className={styles.titleM}
-                                                                                ref={ref}
-                                                                                initial={{opacity: 0}}
-                                                                                animate={inView ? {opacity: 1} : {opacity: 0}}
-                                                                                transition={{duration: 0.7}}>
-                                                                        {item.title}
-                                                                    </motion.div>)
-                                                            }
-                                                        </InView>
+                                                        device !== 0 && <>
+                                                            <div className={styles.title}>
+                                                                {item.title}
+                                                            </div>
+                                                            <Menu/>
+                                                        </>
                                                     }
+
                                                 </>
                                             }
                                             <img
@@ -343,10 +329,62 @@ export default function Home() {
                                                 src={'/images/home/sliders/' + (index) + '.png'}
                                             />
                                             {
-                                                ((current_slide > 0 && index >= current_slide) || (current_slide === 0 && index !== carousel_content.length - 1) || (current_slide === carousel_content.length - 1 && index === 0)) ?
+                                                device !== 0 && <>
+                                                    {
+                                                        ((current_slide > 0 && index >= current_slide) || (current_slide === 0 && index !== carousel_content.length - 1) || (current_slide === carousel_content.length - 1 && index === 0)) ?
+                                                            <div className={styles.content}>
+                                                                <section>
+                                                                    <h3>0{index + 1} / <span>0{carousel_content.length}</span>
+                                                                    </h3>
+                                                                    {
+                                                                        device === 0 && <NextBack
+                                                                            theme={'light'}
+                                                                            prevDisabled={current_slide === 0}
+                                                                            nextDisabled={current_slide === carousel_content.length - 1}
+                                                                            onNext={() => {
+                                                                                slider.slideNext()
+                                                                            }}
+                                                                            onBack={() => {
+                                                                                slider.slidePrev()
+                                                                            }}/>
+                                                                    }
+                                                                </section>
+                                                                <p>
+                                                                    {
+                                                                        device === 0 &&
+                                                                        <ReadMoreReact min={65} ideal={105} max={165}
+                                                                                       text={item.content || ''}/>
+                                                                    }
+                                                                    {
+                                                                        device !== 0 && item.content
+                                                                    }
+                                                                </p>
+                                                                <a href={item.url}>
+                                                                    <header>Discover More</header>
+                                                                </a>
+                                                                {
+                                                                    device !== 0 &&
+                                                                    <NextBack
+                                                                        theme={'light'}
+                                                                        prevDisabled={index === 0}
+                                                                        nextDisabled={index === carousel_content.length - 1}
+                                                                        onNext={() => {
+                                                                            slider.slideNext()
+                                                                        }}
+                                                                        onBack={() => {
+                                                                            slider.slidePrev()
+                                                                        }}/>
+                                                                }
+                                                            </div> : <div>&nbsp;</div>
+                                                    }
+                                                </>
+                                            }
+                                            {
+                                                device === 0 && <>
                                                     <div className={styles.content}>
                                                         <section>
-                                                            <h3>0{index + 1} / <span>0{carousel_content.length}</span></h3>
+                                                            <h3>0{index + 1} / <span>0{carousel_content.length}</span>
+                                                            </h3>
                                                             {
                                                                 device === 0 && <NextBack
                                                                     theme={'light'}
@@ -362,7 +400,9 @@ export default function Home() {
                                                         </section>
                                                         <p>
                                                             {
-                                                                device === 0 && <ReadMoreReact min={65} ideal={105} max={165} text={item.content || ''}/>
+                                                                device === 0 &&
+                                                                <ReadMoreReact min={65} ideal={105} max={165}
+                                                                               text={item.content || ''}/>
                                                             }
                                                             {
                                                                 device !== 0 && item.content
@@ -384,8 +424,10 @@ export default function Home() {
                                                                     slider.slidePrev()
                                                                 }}/>
                                                         }
-                                                    </div> : <div>&nbsp;</div>
+                                                    </div>
+                                                </>
                                             }
+
                                         </div>
                                     </SwiperSlide>
                                 )
@@ -410,11 +452,15 @@ export default function Home() {
                                 <div className={styles.scRight}>
                                     <div>
                                         <h2>The <br/>Glow Edit</h2>
-                                        <p>Dr. Varshini Reddy started Glow as a skincare destination that could serve as a clinic, medispa and a rest stop for you to
-                                            indulge in some self-care. Apart from being a dermatologist, she is also a skincare
+                                        <p>Dr. Varshini Reddy started Glow as a skincare destination that could serve as
+                                            a clinic, medispa and a rest stop for you to
+                                            indulge in some self-care. Apart from being a dermatologist, she is also a
+                                            skincare
                                             enthusiast who is here to share all her clinical know-how and experience.
-                                            Let's cover our bases with all the basic information everyone just assumes you know. At Glow, we want to enlighten you so
-                                            you can make an informed decision. A Holy-Glow-Grail to guide you on your journey to
+                                            Let's cover our bases with all the basic information everyone just assumes
+                                            you know. At Glow, we want to enlighten you so
+                                            you can make an informed decision. A Holy-Glow-Grail to guide you on your
+                                            journey to
                                             clinical skincare, beauty and wellness.
                                         </p>
 
@@ -441,7 +487,7 @@ export default function Home() {
                             <div className={"inner " + styles.journey} id='journey'>
                                 <div className={styles.joTop}>
                                     <h2>Shedding Light on Dr.Varshini’s Journey</h2>
-                                    <img src={'/images/home/varshini.png'}/>
+                                    <img src={'/images/home/varshini.JPG'}/>
                                 </div>
                                 <div className={styles.joBottom}>
                                     <div className={styles.jobTitle}>
@@ -449,13 +495,19 @@ export default function Home() {
                                         <header className={styles.desig}>MD Dermatology</header>
                                     </div>
                                     <div className={styles.jobContent}>
-                                        <p>At Glow, we wanted to promote skin, beauty and wellness as ideologies that go hand-in-hand. Having studied MD
-                                            Dermatology and been around the globe to learn about new-age technologies in the world of skincare, Dr.
-                                            Varshini Reddy wanted to bring the best of those to India. Her journey has been exciting and full of new
-                                            learnings which took her from being a skincare enthusiast to a practicing dermatologist.</p>
-                                        <p>She has consulted with many people over the course of years and has distinguished herself as an advocate for wholesome rejuvenation.
+                                        <p>At Glow, we wanted to promote skin, beauty and wellness as ideologies that go
+                                            hand-in-hand. Having studied MD
+                                            Dermatology and been around the globe to learn about new-age technologies in
+                                            the world of skincare, Dr.
+                                            Varshini Reddy wanted to bring the best of those to India. Her journey has
+                                            been exciting and full of new
+                                            learnings which took her from being a skincare enthusiast to a practicing
+                                            dermatologist.</p>
+                                        <p>She has consulted with many people over the course of years and has
+                                            distinguished herself as an advocate for wholesome rejuvenation.
                                             With an established and ever-growing
-                                            clientbase she has extended her platform to a larger audience and opened doors to Glow, a contemporary space for skin indulgence.</p>
+                                            clientbase she has extended her platform to a larger audience and opened
+                                            doors to Glow, a contemporary space for skin indulgence.</p>
                                         <a href={"/about/#varshini"}>
                                             <header>read more</header>
                                         </a>

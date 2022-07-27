@@ -13,6 +13,7 @@
     h1 {
         position: absolute;
         font-family: EmpireBold, sans-serif;
+        font-weight: 400;
         text-transform: uppercase;
         font-size: 160px;
         line-height: 110%;
@@ -317,7 +318,6 @@
                 }
             }
 
-
             p {
                 margin-bottom: 60px;
                 font-family: TelegrafRegular, sans-serif;
@@ -369,8 +369,6 @@
 .journeyOuter {
 
 }
-
-
 
 .journey {
     padding: 140px 0;
@@ -464,6 +462,10 @@
             .imgRight {
                 div {
                     margin-bottom: 50px;
+
+                    img {
+                        width: 100%;
+                    }
                 }
 
                 .reju {
@@ -513,19 +515,77 @@
     }
 
     .sliders {
-        padding: 100px 0;
+        padding: 50px 0;
+        padding-bottom: 20px;
+
+        .desc {
+            margin-bottom: 80px;
+            font-size: 18px;
+        }
 
         .slide {
+            flex-direction: column;
+            margin-right: 0;
+            padding: 0 35px;
+            width: 100vw;
+            min-width: unset !important;
+
+            .menu {
+                width: 110px;
+            }
+
             .title {
                 display: none;
             }
 
-            .titleM {
+            .titleM, pre {
                 display: block;
                 font-family: EmpireBold, sans-serif;
-                font-size: 80px;
+                font-size: 100px;
                 text-transform: uppercase;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
+                letter-spacing: 0.03em;
+            }
+
+            .bannerImg {
+                margin-right: 0;
+                margin-bottom: 20px;
+                width: 50%;
+            }
+
+            .banner {
+                margin-left: 0;
+            }
+
+            .prevImg {
+                position: relative;
+                right: 0;
+            }
+
+            .content {
+                width: 100%;
+                max-width: 100%;
+
+                section {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 28px;
+
+                    h3 {
+                        font-size: 18px;
+                    }
+                }
+
+                p {
+                    height: auto;
+                    margin-bottom: 35px;
+                    font-size: 18px;
+                }
+
+                header {
+                    margin-bottom: 0;
+                }
             }
         }
     }
@@ -568,7 +628,7 @@
             padding: 0;
 
             h1 {
-                font-size: 65px;
+                font-size: 64px;
                 margin-left: 3px;
                 width: 100%;
                 margin-top: -6px;
@@ -593,17 +653,16 @@
 
                     p {
                         padding: 20px 35px;
-                        margin-bottom: 30px;
+                        margin-bottom: 0;
                     }
 
                     .reju {
-                        margin-bottom: 0;
+                        margin-bottom: 30px;
                     }
                 }
             }
         }
     }
-
 
     .skinCarePhil {
         flex-direction: column;
@@ -617,6 +676,10 @@
         .scRight {
             width: 100%;
             min-height: 380px;
+
+            p {
+                margin-bottom: 25px;
+            }
         }
     }
 
@@ -638,6 +701,18 @@
                 width: 100%;
             }
         }
+
+        .scBottom {
+            img {
+                margin-bottom: 35px;
+            }
+
+            a {
+                header {
+                    text-align: center;
+                }
+            }
+        }
     }
 
     .services {
@@ -645,11 +720,16 @@
             h2 {
                 font-size: 80px;
             }
+
+            a {
+                margin-top: 20px;
+            }
         }
     }
 
     .sliders {
         padding: 50px 0;
+        padding-bottom: 20px;
 
         .desc {
             margin-bottom: 80px;
@@ -663,11 +743,15 @@
             width: 100vw;
             min-width: unset !important;
 
+            .menu {
+                width: 110px;
+            }
+
             .title {
                 display: none;
             }
 
-            .titleM {
+            .titleM, pre {
                 display: block;
                 font-family: EmpireBold, sans-serif;
                 font-size: 100px;
@@ -686,6 +770,11 @@
                 margin-left: 0;
             }
 
+            .prevImg {
+                position: relative;
+                right: 0;
+            }
+
             .content {
                 width: 100%;
                 max-width: 100%;
@@ -695,12 +784,20 @@
                     align-items: center;
                     justify-content: space-between;
                     margin-bottom: 28px;
+
+                    h3 {
+                        font-size: 18px;
+                    }
                 }
 
                 p {
                     height: auto;
                     margin-bottom: 35px;
                     font-size: 18px;
+                }
+
+                header {
+                    margin-bottom: 0;
                 }
             }
         }
@@ -715,7 +812,7 @@
             margin-bottom: 35px;
 
             h2 {
-                font-size: 80px;
+                font-size: 64px;
                 line-height: 107.6%;
                 letter-spacing: 0.11em;
                 padding-bottom: 35px;

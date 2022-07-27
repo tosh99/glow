@@ -3,12 +3,9 @@ import {motion} from "framer-motion";
 import styles from "./menu.module.scss";
 import {Fragment} from "react";
 import Link from "next/link";
-import {constants} from "../../../styles/constants";
 import Router from "next/router";
 
 export default function Menu({close}) {
-
-
     const getPageName = () => {
 
     }
@@ -33,15 +30,15 @@ export default function Menu({close}) {
                                 <img className={styles.close} src={'/icons/header/close.svg'} onClick={close}/>
                             </div>
                             <div className={styles.menuContent}>
-                                <Link href="/services">
+                                <Link href='/services'>
                                     <header>Services</header>
                                 </Link>
                                 <Link href="/products">
                                     <header>Products</header>
                                 </Link>
-                                <Link href="/theedit">
-                                    <header>The Edit</header>
-                                </Link>
+                                {/*<Link href="/theedit">*/}
+                                {/*    <header>The Edit</header>*/}
+                                {/*</Link>*/}
                                 <Link href="/biologique">
                                     <header>Biologique Recherche</header>
                                 </Link>
@@ -53,7 +50,7 @@ export default function Menu({close}) {
                                 <p>make AN appointment</p>
                                 <div className={styles.menuLast}>
                                     <Link href="/">
-                                        <header>Home</header>
+                                        <header>HOME</header>
                                     </Link>
                                 </div>
                             </div>

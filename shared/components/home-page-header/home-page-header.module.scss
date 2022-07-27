@@ -16,7 +16,7 @@
     .hRight {
         display: flex;
         justify-content: space-between;
-        max-width: 958px;
+        max-width: 788px;
         width: 100%;
 
         header {
@@ -27,7 +27,7 @@
         }
 
         p {
-            margin-left: 86px;
+            margin-left: 48px;
             letter-spacing: 0.05em;
             text-transform: uppercase;
             font-family: HattonMedium, sans-serif;
@@ -40,14 +40,14 @@
     }
 }
 
-@media only screen and (max-width: 648px) {
+@media only screen and (max-width: 1280px) {
     .header {
         padding: 20px 35px;
 
         .hLeft {
             img {
                 cursor: pointer;
-                width: 47px;
+                width: 130px;
             }
         }
 
@@ -63,6 +63,29 @@
             }
         }
     }
+}
 
+@media only screen and (max-width: 648px) {
+    .header {
+        padding: 20px 35px;
 
+        .hLeft {
+            img {
+                cursor: pointer;
+                width: 90px;
+            }
+        }
+
+        .hRight {
+            display: none;
+        }
+
+        .hRightMob {
+            display: flex;
+
+            img {
+                width: 20px;
+            }
+        }
+    }
 }
