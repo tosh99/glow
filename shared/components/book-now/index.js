@@ -4,7 +4,8 @@ import Router from "next/router";
 
 export default function BookNow() {
     const bookNow = () => {
-        Router.push('/book-an-appointment')
+        // Router.push('/book-an-appointment')
+        window.open('https://api.whatsapp.com/send?phone=9951355555')
     }
 
 

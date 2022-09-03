@@ -15,8 +15,8 @@
 
     .hRight {
         display: flex;
-        justify-content: space-between;
-        max-width: 788px;
+        justify-content: flex-end;
+        //max-width: 788px;
         width: 100%;
 
         header {
@@ -24,6 +24,7 @@
             letter-spacing: 0.02em;
             font-family: HattonMedium, serif;
             cursor: pointer;
+            margin-left: 30px;
         }
 
         p {

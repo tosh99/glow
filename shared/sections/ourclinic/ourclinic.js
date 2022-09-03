@@ -35,6 +35,11 @@ export default function Ourclinic() {
     }
 
 
+    const bookNow = () => {
+        // Router.push('/book-an-appointment')
+        window.open('https://api.whatsapp.com/send?phone=9951355555')
+    }
+
     return (<Fragment>
         <InView threshold={0.25} triggerOnce={true}>
             {
@@ -51,7 +56,8 @@ export default function Ourclinic() {
 
                                 <div className={styles.vuhRight}>
                                     <div className={styles.dts}>
-                                        <Dots count={2} selected={current_slide} selectedColor={'white'} bgColor={'#D3D3D37F'}/>
+                                        <Dots count={2} selected={current_slide} selectedColor={'white'}
+                                              bgColor={'#D3D3D37F'}/>
                                     </div>
                                     <NextBack
                                         theme={'light'}
@@ -78,13 +84,15 @@ export default function Ourclinic() {
                                     <SwiperSlide>
                                         <div>
                                             <img className={styles.imgDesktop} src={'/images/locations/chennai.png'}/>
-                                            <img className={styles.imgMob} src={'/images/locations/chennai_mobile.png'}/>
+                                            <img className={styles.imgMob}
+                                                 src={'/images/locations/chennai_mobile.png'}/>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div>
                                             <img className={styles.imgDesktop} src={'/images/locations/hyderabad.png'}/>
-                                            <img className={styles.imgMob} src={'/images/locations/hyderabad_mobile.png'}/>
+                                            <img className={styles.imgMob}
+                                                 src={'/images/locations/hyderabad_mobile.png'}/>
                                         </div>
                                     </SwiperSlide>
                                 </Swiper>
@@ -104,7 +112,7 @@ export default function Ourclinic() {
                                     </header>
                                 </div>
                                 <div className={styles.vuaRight}>
-                                    <header>Make an Appointment</header>
+                                    <header onClick={bookNow}>Make an Appointment</header>
                                 </div>
                             </div>
                         </div>

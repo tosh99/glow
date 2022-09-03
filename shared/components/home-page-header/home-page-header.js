@@ -1,13 +1,15 @@
-import {InView} from "react-intersection-observer";
-import {motion} from "framer-motion";
 import styles from "./home-page-header.module.scss";
 import {Fragment, useState} from "react";
 import Link from "next/link";
-import {constants} from "../../../styles/constants";
 import Menu from "../menu/menu";
 
 export default function HomePageHeader() {
     const [show_menu, set_show_menu] = useState(false)
+
+    const bookNow = () => {
+        // Router.push('/book-an-appointment')
+        window.open('https://api.whatsapp.com/send?phone=9951355555')
+    }
 
     return (<Fragment>
         <div className={"outer " + ' ' + styles.headerOuter}>
@@ -31,10 +33,10 @@ export default function HomePageHeader() {
                     <Link href="/about">
                         <header>About</header>
                     </Link>
-                    <p>make AN appointment</p>
+                    <p onClick={bookNow}>make AN appointment</p>
                 </div>
                 <div className={styles.hRightMob}>
-                    <img src={'/icons/header/star.svg'} onClick={() => {
+                    <img src={'/icons/header/star.svg'} onClick={() => {    
                         set_show_menu(true)
                     }}/>
                 </div>
