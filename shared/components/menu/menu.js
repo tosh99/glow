@@ -10,6 +10,11 @@ export default function Menu({close}) {
 
     }
 
+    const bookNow = () => {
+        // Router.push('/book-an-appointment')
+        window.open('https://api.whatsapp.com/send?phone=9951355555')
+    }
+
     const navigateHome = () => {
         Router.push('/');
     }
@@ -47,7 +52,7 @@ export default function Menu({close}) {
                                 </Link>
                             </div>
                             <div className={styles.menuBottom}>
-                                <p>make AN appointment</p>
+                                <p onClick={bookNow}>make AN appointment</p>
                                 <div className={styles.menuLast}>
                                     <Link href="/">
                                         <header>HOME</header>
