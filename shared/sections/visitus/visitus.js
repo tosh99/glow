@@ -6,6 +6,7 @@ import NextBack from "../../components/nextback/nextback";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, Navigation, Pagination} from 'swiper/core';
 import Dots from "../../components/dots";
+import Image from "next/image";
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
@@ -69,16 +70,30 @@ export default function Visitus() {
                                         }}>
                                     <SwiperSlide>
                                         <div onClick={goToAddress}>
-                                            <img className={styles.imgDesktop} src={'/images/locations/chennai.png'}/>
-                                            <img className={styles.imgMob}
-                                                 src={'/images/locations/chennai_mobile.png'}/>
+                                            <div className={styles.imgDesktop}>
+                                                  <Image src={'/images/locations/chennai.png'} alt={'Skincare'}
+                                                        layout={'fill'} objectFit={'contain'}/>
+                                            </div>
+                                            <div className={styles.imgMob}>
+                                                <Image src={'/images/locations/chennai_mobile.png'} alt={'Skincare'}
+                                                       layout={'responsive'}
+                                                       width={'100%'} height={'100%'}/>
+
+                                            </div>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div onClick={goToAddress}>
-                                            <img className={styles.imgDesktop} src={'/images/locations/hyderabad.png'}/>
-                                            <img className={styles.imgMob}
-                                                 src={'/images/locations/hyderabad_mobile.png'}/>
+                                             <div className={styles.imgDesktop}>
+                                                  <Image src={'/images/locations/hyderabad.png'} alt={'Skincare'}
+                                                        layout={'fill'} objectFit={'contain'}/>
+                                            </div>
+                                            <div className={styles.imgMob}>
+                                                <Image src={'/images/locations/hyderabad_mobile.png'} alt={'Skincare'}
+                                                       layout={'responsive'}
+                                                       width={'100%'} height={'100%'}/>
+
+                                            </div>
                                         </div>
                                     </SwiperSlide>
                                 </Swiper>

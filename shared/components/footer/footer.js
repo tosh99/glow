@@ -19,6 +19,12 @@ export default function Footer() {
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
+
+    const bookNow = () => {
+        // Router.push('/book-an-appointment')
+        window.open('https://api.whatsapp.com/send?phone=9951355555')
+    }
+
     return (<Fragment>
         <div className={"outer " + ' ' + styles.footerOuter}>
             <div className={"inner " + styles.footer}>
@@ -104,7 +110,7 @@ export default function Footer() {
                                 <header>www.glow.shop</header>
                             </a>
                         </div>
-                        <div className={styles.appoint}>
+                        <div className={styles.appoint} onClick={bookNow}>
                             MAKE AN APPOINTMENT
                         </div>
                     </div>
