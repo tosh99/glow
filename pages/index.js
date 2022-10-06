@@ -13,6 +13,8 @@ import ReadMoreReact from "read-more-react";
 import Head from "next/head";
 import BackToTop from "../shared/components/back-to-top";
 import BookNow from "../shared/components/book-now";
+import Image from 'next/image'
+// import skincare from '../public/images/home/skincare.png'
 
 
 SwiperCore.use([Autoplay, Pagination, Navigation, Controller]);
@@ -157,7 +159,8 @@ export default function Home() {
                             <div className={"scrollable-section inner " + styles.skinCarePhil}
                                  id={'SkinCarePhilosophy'}>
                                 <div className={styles.scLeft}>
-                                    <img src={'/images/home/skincare.png'}/>
+                                    <Image src={'/images/home/skincare.png'} alt={'Skincare'} layout={'responsive'}
+                                           width={'100%'} height={'100%'}/>
                                 </div>
                                 <div className={styles.scRight}>
                                     <div>
@@ -233,7 +236,8 @@ export default function Home() {
                                     transition={{duration: 0.8}}>
                             <div className={"inner " + styles.skinCarePhil + ' ' + styles.services} id='services'>
                                 <div className={styles.scLeft}>
-                                    <img src={'/images/home/services.png'}/>
+                                    <Image src={'/images/home/services.png'} alt={'Skincare'} layout={'responsive'}
+                                           width={'100%'} height={'100%'}/>
                                 </div>
                                 <div className={styles.scRight}>
                                     <div>
@@ -447,7 +451,8 @@ export default function Home() {
                                     transition={{duration: 0.8}}>
                             <div className={"inner " + styles.skinCarePhil + ' ' + styles.glowEdit} id='edit'>
                                 <div className={styles.scLeft}>
-                                    <img src={'/images/home/glowedit.png'}/>
+                                    <Image src={'/images/home/glowedit.png'} alt={'Skincare'} layout={'responsive'}
+                                           width={'100%'} height={'100%'}/>
                                 </div>
                                 <div className={styles.scRight}>
                                     <div>
@@ -487,7 +492,10 @@ export default function Home() {
                             <div className={"inner " + styles.journey} id='journey'>
                                 <div className={styles.joTop}>
                                     <h2>Shedding Light on Dr.Varshini’s Journey</h2>
-                                    <img src={'/images/home/varshini.JPG'}/>
+                                    <div>
+                                        <Image src={'/images/home/varshini.JPG'} alt={'Skincare'} layout={'responsive'}
+                                               width={'100%'} height={'150%'}/>
+                                    </div>
                                 </div>
                                 <div className={styles.joBottom}>
                                     <div className={styles.jobTitle}>

@@ -36,6 +36,11 @@ export default function Ourclinic() {
     }
 
 
+    const bookNow = () => {
+        // Router.push('/book-an-appointment')
+        window.open('https://api.whatsapp.com/send?phone=9951355555')
+    }
+
     return (<Fragment>
         <InView threshold={0.25} triggerOnce={true}>
             {
@@ -109,7 +114,7 @@ export default function Ourclinic() {
                                     </header>
                                 </div>
                                 <div className={styles.vuaRight}>
-                                    <header>Make an Appointment</header>
+                                    <header onClick={bookNow}>Make an Appointment</header>
                                 </div>
                             </div>
                         </div>
@@ -118,3 +123,4 @@ export default function Ourclinic() {
         </InView>
     </Fragment>)
 }
+

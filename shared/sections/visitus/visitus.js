@@ -6,6 +6,7 @@ import NextBack from "../../components/nextback/nextback";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, Navigation, Pagination} from 'swiper/core';
 import Dots from "../../components/dots";
+import Image from "next/image";
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
