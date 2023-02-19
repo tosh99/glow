@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteCond %{HTTP_HOST} ^(www\.)?glow\.clinic
+RewriteRule ^(.*)$ https://www.glow.clinic/$1 [R,L]
