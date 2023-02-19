@@ -126,7 +126,7 @@ export default function About() {
                         </div>
 
 
-                        <img src={'/images/home/varshini.JPG'}/>
+                        <img src={'/images/home/varshini.JPG'} width={'30%'}/>
                     </div>
                     <div className={styles.joBottom}>
                         <div className={styles.jobTitle}>
